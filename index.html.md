@@ -183,7 +183,7 @@ This endpoint retrieves a specific kitten.
 
 ### URL Parameters
 
-Parameter | Description
+Parameter | Description 
 --------- | -----------
 ID | The ID of the kitten to retrieve
 
