@@ -159,7 +159,7 @@ const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
 let max = api.kittens.get(2);
-```
+``` 
 
 > The above command returns JSON structured like this:
 
