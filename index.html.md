@@ -166,7 +166,7 @@ let max = api.kittens.get(2);
 ```json
 {
   "id": 2,
-  "name": "Max",
+  "name": "Max", 
   "breed": "unknown",
   "fluffiness": 5,
   "cuteness": 10
