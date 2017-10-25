@@ -27,7 +27,7 @@ License: <a href="https://backoffice.paymentiq.io">PaymentIQ 1.0</a>
 
 
 
-- oAuth2 authentication test. 
+- oAuth2 authentication test 2. 
 
     - Flow: password
 
