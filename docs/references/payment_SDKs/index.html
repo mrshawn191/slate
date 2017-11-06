@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W92MC5');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon-9dabc470.png">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-32x32-b71a5283.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-16x16-ea515fe9.png" sizes="16x16">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<link rel="mask-icon" href="/images/favicon/safari-pinned-tab-fb883d2e.svg" color="#8247b5 ">
+<meta name="theme-color" content="#ffffff ">
+
+<!-- Site version (latest commit): 9f6f881b08ad1b133002af56bc1342ed0c0a2958
+ -->
+
+<title>Payment SDKs Overview</title>
+
+<link href="../../../stylesheets/ui.bambora.1.0.3-13e3506d.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/bambora_ui_sass_overwrite-d859adf4.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/portal-5e95ed43.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/page/tutorial-c59b694d.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+
+<script src="../../../javascripts/all-654c8dcb.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="docs docs_references docs_references_payment_SDKs docs_references_payment_SDKs_index">
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W92MC5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+
+<nav class="nav-pane nav-fixed">
+
+    <!-- Hamburger icon --> 
+    <a href="#" class="hamburger-icon"><svg width="19" height="14" viewBox="0 0 19 14" xmlns="http://www.w3.org/2000/svg"><title>list</title><path d="M7.968 2.28h10.245V0H7.968v2.28zM0 7.975h18.213v-2.28H0v2.28zm0 5.696h10.245v-2.278H0v2.278z" fill="#84898A" fill-rule="evenodd"/></svg></a>
+
+    <!-- Logo -->
+    <div class="pull-left nav-links">
+        <a href="/slate/docs/" class="logo">
+                <img src="../../../images/svg/zebraffe-dark-dev-05ffe493.svg" />
+        </a>
+    </div>
+
+    <div class="header-contents">
+
+    <!-- Links --> 
+    <div class="pull-left nav-links">
+                <a href="/slate/docs/guides/">Guides</a>
+                <a href="/slate/docs/references/">API</a>
+                <a href="/slate/docs/support/">PSP Service Reference</a>
+    </div>
+
+    <!-- Search / buttons -->
+    <div class="pull-right">
+        
+        <span class="button-wrap">
+            <a id="search-button" href="#"><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><title>search</title><path d="M5 0a5 5 0 1 0 3.164 8.87l5.13 5.13.706-.707-5.13-5.129A5 5 0 0 0 5 0m0 1c2.206 0 4 1.794 4 4 0 .934-.313 1.809-.904 2.53l-.254.312-.312.254A3.952 3.952 0 0 1 5 9C2.794 9 1 7.206 1 5s1.794-4 4-4" fill="#454545" fill-rule="evenodd"/></svg></a>
+        </span>
+
+            <span class="button-wrap">
+                    <a href="/slate/docs/sign_up/" class="btn btn-small btn-secondary" >
+                        Sign up
+                    </a>
+            </span>
+            <span class="button-wrap">
+                    <a href="https://web.na.bambora.com" class="btn btn-small" >
+                        Login
+                    </a>
+            </span>
+
+        <div class="dropdown-nav dropdown-open-on-hover" role="navigation" 
+id="region-switcher">
+    North America
+    <ul role="menu">
+        
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/apac" class="not-new-tab-for-link">
+                Asia-Pacific
+            </a>
+        </li>
+
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/europe" class="not-new-tab-for-link">
+                Europe
+            </a>
+        </li>
+    </ul>
+</div>
+    </div>
+
+    </div>
+</nav>
+
+<div id="search-overlay">
+  <a href="#" id="close-search-overlay"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></a>
+
+  <div class="container">
+
+    <form>
+      <div class="form-group">
+        <input type="text" id="search" placeholder="Search..." width="100%", autocomplete="off" >
+      </div>
+    </form>
+
+    <div id="result-count"></div>
+
+    <div class="list-group">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <ul class="search-results"></ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+    <div class="container">
+
+      <a id="edit-on-github" href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/docs/references/payment_SDKs/index.md">
+  Edit this page
+</a>
+
+
+<!-- Modal apears on link click -->
+<div class="modal-overlay">
+  <div class="modal github-modal" role="dialog">
+      <h3 class="js-toc-ignore">Edit on Github</h3>
+
+      <p> 
+      To propose changes to the Developer Portal click the link below and follow these steps: 
+      </p>
+
+      <ol>
+        <li>Sign in to Github. You will have to create an account if you don't already have one.</li>
+        <li>Click the <strong>Fork this repository and propose changes </strong>button.</li>
+        <li>Make your proposed changes to the file. Content is formatted with <a href="http://commonmark.org/help/">Markdown.</a></li>
+        <li>At the bottom of the page, optionally add a title and description to your changes, and click the <strong>Propose file change button</strong>.</li>
+        <li>On the next page, click <strong>Create pull request</strong>, and then click it again.</li>
+        <li>You're done! Someone will review your changes and they will appear on the site shortly.</li>
+      </ol>
+
+      <div class="btn-row">
+          <a href="#" class="btn continue-to-github" target="_blank">Continue to Github</a>
+          <button class="btn btn-secondary close-modal">Cancel</button>
+      </div>
+  </div>
+</div>      
+          <div class='breadcrumb-trail'><span><a href='/docs/'>Docs</a></span><span class='chevron'> / </span><span><a href='/docs/references/'>References</a></span><span class='chevron'> / </span><span class='this-page'>Payment SDKs</span></div>
+ 
+      
+
+
+<div class="nav-wrapper">
+<nav class="nav-left nav-sticky nav-vertical">
+
+  <div class="mobile-close"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></div>
+
+
+      <ul>
+
+          <li data-nav-title="/slate/docs/references/payment_SDKs/" class="">
+            <a href="/slate/docs/references/payment_SDKs/" class="nav-top-heading">
+              Overview 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/slate/docs/references/payment_SDKs/collect_card_data/" class="">
+            <a href="/slate/docs/references/payment_SDKs/collect_card_data/" class="nav-top-heading">
+              Collect Card Data 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/slate/docs/references/payment_SDKs/take_payments/" class="">
+            <a href="/slate/docs/references/payment_SDKs/take_payments/" class="nav-top-heading">
+              Take Payments 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/slate/docs/references/payment_SDKs/analyze_payments/" class="">
+            <a href="/slate/docs/references/payment_SDKs/analyze_payments/" class="nav-top-heading">
+              Analyze Payments 
+            </a>
+
+          </li>
+      </ul>
+</nav>
+</div>
+
+<!-- button to click on small screen to show toc -->
+<div class="show-toc">
+  Contents
+</div>
+
+
+
+
+
+      <div class="row">
+          <div class="col-md-9 col-md-offset-3 js-toc-content">
+
+          <div class="markdown">
+            <h1 id="overview">Overview</h1>
+
+<p>Our SDKs wrap our RESTful APIs. Our server and mobile SDKs make it easy for you to use our RESTful APIs in a range of languages: C#, Go, Java, Javascript (Node), PHP, Python, and Ruby. Our browser SDK, Custom Checkout, limits the scope of your PCI compliance to PCI SAQ-A.</p>
+
+<h2 id="server-sdk">Server SDK</h2>
+
+<p>Our Server SDKs wrap our Payments, Payment Profiles, and Reporting APIs. You can read more about the functionality <a href="./take_payments">here</a>.</p>
+
+<h3 id="source">Source</h3>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Language</th>
+<th>Source</th>
+<th>Additional Docs</th>
+<th>Packet Repository</th>
+</tr>
+</thead><tbody><tr>
+<td>NodeJS</td>
+<td><a href="https://github.com/beanstream/beanstream-nodejs">Source</a></td>
+<td></td>
+<td><a href="https://www.npmjs.com/package/beanstream-node">NPM</a></td>
+</tr>
+<tr>
+<td>PHP</td>
+<td><a href="https://github.com/beanstream/beanstream-php">Source</a></td>
+<td><a href="https://github.com/beanstream/beanstream-php/wiki">Docs</a></td>
+<td><a href="https://packagist.org/packages/beanstream/beanstream">Composer</a></td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td><a href="https://github.com/beanstream/beanstream-ruby">Source</a></td>
+<td></td>
+<td><a href="https://rubygems.org/gems/beanstream/versions/1.0.0.rc1">Gem</a></td>
+</tr>
+<tr>
+<td>Python</td>
+<td><a href="https://github.com/beanstream/beanstream-python">Source</a></td>
+<td><a href="https://github.com/beanstream/beanstream-python/blob/master/README.markdown">Docs</a></td>
+<td><a href="https://pypi.python.org/pypi/beanstream/1.0.1">PIP</a></td>
+</tr>
+<tr>
+<td>Java</td>
+<td><a href="https://github.com/beanstream/beanstream-java">Source</a></td>
+<td><a href="https://github.com/beanstream/beanstream-java/wiki">Docs</a></td>
+<td><a href="https://mvnrepository.com/artifact/com.beanstream.api">Maven</a></td>
+</tr>
+<tr>
+<td>C#</td>
+<td><a href="https://github.com/beanstream/beanstream-dotnet">Source</a></td>
+<td><a href="https://github.com/beanstream/beanstream-dotnet/wiki">Docs</a></td>
+<td><a href="https://www.nuget.org/packages/Beanstream/">Nuget</a></td>
+</tr>
+<tr>
+<td>Go</td>
+<td><a href="https://github.com/beanstream/beanstream-go">Source</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table></div>
+<h2 id="mobile-sdk">Mobile SDK</h2>
+
+<p>Our Mobile SDKs wraps our Tokenization API. You can read more about the functionality <a href="./collect_card_data#mobile-sdks">here</a>.</p>
+
+<h3 id="source">Source</h3>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Platform</th>
+<th>Source</th>
+</tr>
+</thead><tbody><tr>
+<td>Android</td>
+<td><a href="https://github.com/bambora/na-android-checkout">Source</a></td>
+</tr>
+<tr>
+<td>iOS</td>
+<td><a href="https://github.com/bambora/na-ios-checkout">Source</a></td>
+</tr>
+</tbody></table></div>
+<h2 id="browser-sdk">Browser SDK</h2>
+
+<p>Our Browser SDKs wraps our Tokenization API. It limits the scope of your PCI compliance to PCI SAQ-A. You can read more about the functionality <a href="./collect_card_data#browser-sdk-payfields">here</a>.</p>
+
+<h3 id="source">Source</h3>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Language</th>
+<th>Source</th>
+</tr>
+</thead><tbody><tr>
+<td>JS (ES5)</td>
+<td><a href="https://github.com/bambora-na/customcheckout">Source</a></td>
+</tr>
+</tbody></table></div> 
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+
+
+
+                © <a href="http://www.bambora.com/en/en/payment-solutions/" target="_blank">2017 Bambora</a>
+
+        <div class="links">
+                <a href="http://www.bambora.com/en/en/payment-solutions/customer-service/faq/terms-and-conditions/" target="_blank">Terms & Conditions</a>
+        </div>
+        
+        <div class="pull-right">
+                <a href="https://github.com/bambora/" target="_blank">Github</a>
+        </div>
+
+</footer>
+
+    <script src="../../../javascripts/template/tocbot_init_script-2dfca9f7.js" type="text/javascript"></script>
+
+  </body>
+</html>

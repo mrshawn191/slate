@@ -1,0 +1,329 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W92MC5');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon-9dabc470.png">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-32x32-b71a5283.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-16x16-ea515fe9.png" sizes="16x16">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<link rel="mask-icon" href="/images/favicon/safari-pinned-tab-fb883d2e.svg" color="#8247b5 ">
+<meta name="theme-color" content="#ffffff ">
+
+<!-- Site version (latest commit): 9f6f881b08ad1b133002af56bc1342ed0c0a2958
+ -->
+
+<title>Android Pay</title>
+
+<link href="../../../stylesheets/ui.bambora.1.0.3-13e3506d.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/bambora_ui_sass_overwrite-d859adf4.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/portal-5e95ed43.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/page/tutorial-c59b694d.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+
+<script src="../../../javascripts/all-654c8dcb.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="docs docs_guides docs_guides_android_pay docs_guides_android_pay_index">
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W92MC5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+
+<nav class="nav-pane nav-fixed">
+
+    <!-- Hamburger icon --> 
+    <a href="#" class="hamburger-icon"><svg width="19" height="14" viewBox="0 0 19 14" xmlns="http://www.w3.org/2000/svg"><title>list</title><path d="M7.968 2.28h10.245V0H7.968v2.28zM0 7.975h18.213v-2.28H0v2.28zm0 5.696h10.245v-2.278H0v2.278z" fill="#84898A" fill-rule="evenodd"/></svg></a>
+
+    <!-- Logo -->
+    <div class="pull-left nav-links">
+        <a href="/slate/docs/" class="logo">
+                <img src="../../../images/svg/zebraffe-dark-dev-05ffe493.svg" />
+        </a>
+    </div>
+
+    <div class="header-contents">
+
+    <!-- Links --> 
+    <div class="pull-left nav-links">
+                <a href="/slate/docs/guides/" class="active">Guides</a>
+                <a href="/slate/docs/references/">API</a>
+                <a href="/slate/docs/support/">PSP Service Reference</a>
+    </div>
+
+    <!-- Search / buttons -->
+    <div class="pull-right">
+        
+        <span class="button-wrap">
+            <a id="search-button" href="#"><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><title>search</title><path d="M5 0a5 5 0 1 0 3.164 8.87l5.13 5.13.706-.707-5.13-5.129A5 5 0 0 0 5 0m0 1c2.206 0 4 1.794 4 4 0 .934-.313 1.809-.904 2.53l-.254.312-.312.254A3.952 3.952 0 0 1 5 9C2.794 9 1 7.206 1 5s1.794-4 4-4" fill="#454545" fill-rule="evenodd"/></svg></a>
+        </span>
+
+            <span class="button-wrap">
+                    <a href="/slate/docs/sign_up/" class="btn btn-small btn-secondary" >
+                        Sign up
+                    </a>
+            </span>
+            <span class="button-wrap">
+                    <a href="https://web.na.bambora.com" class="btn btn-small" >
+                        Login
+                    </a>
+            </span>
+
+        <div class="dropdown-nav dropdown-open-on-hover" role="navigation" 
+id="region-switcher">
+    North America
+    <ul role="menu">
+        
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/apac" class="not-new-tab-for-link">
+                Asia-Pacific
+            </a>
+        </li>
+
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/europe" class="not-new-tab-for-link">
+                Europe
+            </a>
+        </li>
+    </ul>
+</div>
+    </div>
+
+    </div>
+</nav>
+
+<div id="search-overlay">
+  <a href="#" id="close-search-overlay"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></a>
+
+  <div class="container">
+
+    <form>
+      <div class="form-group">
+        <input type="text" id="search" placeholder="Search..." width="100%", autocomplete="off" >
+      </div>
+    </form>
+
+    <div id="result-count"></div>
+
+    <div class="list-group">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <ul class="search-results"></ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+    <div class="container">
+
+      <a id="edit-on-github" href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/docs/guides/android_pay/index.md">
+  Edit this page
+</a>
+
+
+<!-- Modal apears on link click -->
+<div class="modal-overlay">
+  <div class="modal github-modal" role="dialog">
+      <h3 class="js-toc-ignore">Edit on Github</h3>
+
+      <p> 
+      To propose changes to the Developer Portal click the link below and follow these steps: 
+      </p>
+
+      <ol>
+        <li>Sign in to Github. You will have to create an account if you don't already have one.</li>
+        <li>Click the <strong>Fork this repository and propose changes </strong>button.</li>
+        <li>Make your proposed changes to the file. Content is formatted with <a href="http://commonmark.org/help/">Markdown.</a></li>
+        <li>At the bottom of the page, optionally add a title and description to your changes, and click the <strong>Propose file change button</strong>.</li>
+        <li>On the next page, click <strong>Create pull request</strong>, and then click it again.</li>
+        <li>You're done! Someone will review your changes and they will appear on the site shortly.</li>
+      </ol>
+
+      <div class="btn-row">
+          <a href="#" class="btn continue-to-github" target="_blank">Continue to Github</a>
+          <button class="btn btn-secondary close-modal">Cancel</button>
+      </div>
+  </div>
+</div>      
+          <div class='breadcrumb-trail'><span><a href='/docs/'>Docs</a></span><span class='chevron'> / </span><span><a href='/docs/guides/'>Guides</a></span><span class='chevron'> / </span><span class='this-page'>Android Pay</span></div>
+ 
+      
+    
+
+
+<div class="nav-wrapper">
+<nav class="nav-left nav-sticky nav-vertical">
+
+  <div class="mobile-close"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></div>
+
+
+      <div class="page-only js-toc"></div> 
+</nav>
+</div>
+
+<!-- button to click on small screen to show toc -->
+<div class="show-toc">
+  Contents
+</div>
+
+
+
+
+
+      <div class="row">
+          <div class="col-md-9 col-md-offset-3 js-toc-content">
+
+          <div class="markdown">
+            <h1 id="android-pay">Android Pay</h1>
+
+<p><strong>Android Pay for Bambora is currently in closed Beta. Contact your Account Manager for early access.</strong></p>
+
+<p><a href="https://grow.na.bambora.com/android-pay-beta">https://grow.na.bambora.com/android-pay-beta</a></p>
+
+<h2 id="about-android-pay">About Android Pay</h2>
+
+<p>Our Payments API allows your mobile app and online store to accept payments through Android devices or from a desktop using Google Chome.</p>
+
+<p>When your customers use Android Pay, a virtual account number is used to represent their payment. No card details are sent with the transaction, keeping them safe and secure.</p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>If this is your first time implementing our APIs we recommend reviewing our <a href="/docs/references/payment_APIs/">Reference guide</a>, to get familiar with Bambora&#39;s Payment APIs.</p>
+
+<p>You can find more about Bambora and Android Pay on <a href="https://github.com/bambora/na-payment-apis-demo">Github</a>.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<h3 id="registering-your-android-pay-merchant-id">Registering your Android Pay Merchant ID</h3>
+
+<p>Before you accept Android Pay, you&#39;ll need to turn on and register an Android Merchant ID with Bambora. Start by logging into your <a href="https://web.na.bambora.com">Member Area</a>. Under <strong>configuration</strong>, click on <strong>mobile payments</strong>. From the Mobile Payments screen, you can enable Android Pay and add an Android Pay Merchant ID.</p>
+
+<p><img src="/docs/guides/android_pay/android-mobile-payments-screenshot-0f0299c2.png" alt="mobile-payments-screenshot"></p>
+
+<p>Enter a unique string and click <strong>ADD ANDROID MERCHANT ID</strong> to create your Android Pay Merchant ID. The ID comes with a newly created Public Key will be used as the <code class="prettyprint">publicKey</code> parameter in your Android app.</p>
+
+<p><img src="/docs/guides/android_pay/android-input-21cddc02.png" alt="apple-credentials"></p>
+
+<p>After you&#39;ve added your Android Pay Merchant ID to your account, you can start integrating to your app.</p>
+
+<h3 id="accepting-android-pay">Accepting Android Pay</h3>
+
+<p>Now that you&#39;re ready to accept Android Pay, you&#39;ll find plenty of code samples and instructions on integrating to your app through <a href="https://developers.google.com/android-pay/">Google&#39;s documentation</a>. To learn more about the basics of Android Pay, <a href="https://www.android.com/pay/">click here</a>.</p>
+
+<h2 id="api-requests">API requests</h2>
+
+<p>When you make an <code class="prettyprint">android_pay</code> request to our Payments API, it&#39;ll be formatted in JSON, calling to https://api.na.bambora.com/v1/payments/.</p>
+<pre class="highlight shell"><code>  curl https://api.na.bambora.com/v1/payments <span class="se">\</span>
+    -H <span class="s2">"Authorization: Passcode XXX1XXx11Xxx1xX1XxxxXxXXXXx1XXX1XxX1XXXxXXXxXxxxX11XXXxX1"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    -d <span class="s1">'{
+          "amount": 1.00,
+          "payment_method": "android_pay",
+          "android_pay": {
+            "android_pay_merchant_id": "&lt;your_android_pay_merchant_id&gt;",
+            "payment_token": "&lt;android_pay_base64_encoded_token&gt;",
+            "complete": true
+          }
+        }'</span>
+</code></pre>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>amount</td>
+<td>The amount of the transaction.</td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>The method of payment for the transaction. For Android Pay, this will always be <code class="prettyprint">android_pay</code></td>
+</tr>
+<tr>
+<td>android_pay</td>
+<td>The object needed to pass an Android Pay token including the Android Pay Merchant ID, and the base64 payment token.</td>
+</tr>
+<tr>
+<td>android_pay_merchant_id</td>
+<td>Your Android Pay Merchant ID found in your Bambora Member Area under <strong>configuration</strong> and then <strong>mobile payments</strong>.</td>
+</tr>
+<tr>
+<td>payment_token</td>
+<td>The encrypted Android Pay token containing card holder details, generated from within your Android app.</td>
+</tr>
+<tr>
+<td>complete</td>
+<td>The type of transaction being performed. True indicates a Purchase, and false is a Pre-Authorisation.</td>
+</tr>
+</tbody></table></div>
+<h2 id="additional-examples">Additional examples</h2>
+
+<h3 id="payment-button">Payment button</h3>
+
+<p>The sample below shows the action taken by a payment button in an Android app, generating a payment request.</p>
+<pre class="highlight java"><code><span class="n">SupportWalletFragment</span> <span class="n">walletFragment</span> <span class="o">=</span> <span class="n">SupportWalletFragment</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">walletFragmentOptions</span><span class="o">);</span>
+
+<span class="n">MaskedWalletRequest</span> <span class="n">maskedWalletRequest</span> <span class="o">=</span> <span class="n">WalletUtil</span><span class="o">.</span><span class="na">createMaskedWalletRequest</span><span class="o">(</span>
+        <span class="n">itemsToPurchase</span><span class="o">,</span>
+        <span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">public_key</span><span class="o">));</span>
+
+<span class="n">WalletFragmentInitParams</span><span class="o">.</span><span class="na">Builder</span> <span class="n">startParamsBuilder</span> <span class="o">=</span> <span class="n">WalletFragmentInitParams</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">setMaskedWalletRequest</span><span class="o">(</span><span class="n">maskedWalletRequest</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setMaskedWalletRequestCode</span><span class="o">(</span><span class="n">REQUEST_CODE_MASKED_WALLET</span><span class="o">);</span>
+
+<span class="n">walletFragment</span><span class="o">.</span><span class="na">initialize</span><span class="o">(</span><span class="n">startParamsBuilder</span><span class="o">.</span><span class="na">build</span><span class="o">());</span>
+
+<span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">android_pay_container</span><span class="o">,</span> <span class="n">walletFragment</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+</code></pre>
+
+<h3 id="process-payment-token">Process payment token</h3>
+
+<p>Your app will receive a payment token once the payment request has been successfully authorised. You then need to send the payment token to your server, and then from there send it to the Bambora Payments API.</p>
+
+<p><strong>Note:</strong> You can view additional source code examples for a demo Android client &amp; payment server that implements sending a payment token to the Bambora Payments API here: <a href="https://github.com/bambora/na-payment-apis-demo">Payments API Demo on Github</a>.</p>
+ 
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+
+
+
+                © <a href="http://www.bambora.com/en/en/payment-solutions/" target="_blank">2017 Bambora</a>
+
+        <div class="links">
+                <a href="http://www.bambora.com/en/en/payment-solutions/customer-service/faq/terms-and-conditions/" target="_blank">Terms & Conditions</a>
+        </div>
+        
+        <div class="pull-right">
+                <a href="https://github.com/bambora/" target="_blank">Github</a>
+        </div>
+
+</footer>
+
+    <script src="../../../javascripts/template/tocbot_init_script-2dfca9f7.js" type="text/javascript"></script>
+
+  </body>
+</html>

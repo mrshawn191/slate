@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W92MC5');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon-9dabc470.png">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-32x32-b71a5283.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-16x16-ea515fe9.png" sizes="16x16">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<link rel="mask-icon" href="/images/favicon/safari-pinned-tab-fb883d2e.svg" color="#8247b5 ">
+<meta name="theme-color" content="#ffffff ">
+
+<!-- Site version (latest commit): 9f6f881b08ad1b133002af56bc1342ed0c0a2958
+ -->
+
+<title>Link Builder</title>
+
+<link href="../../../stylesheets/ui.bambora.1.0.3-13e3506d.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/bambora_ui_sass_overwrite-d859adf4.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/portal-5e95ed43.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/page/tutorial-c59b694d.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+
+<script src="../../../javascripts/all-654c8dcb.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="docs docs_forms docs_forms_link_builder docs_forms_link_builder_index">
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W92MC5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+
+<nav class="nav-pane nav-fixed">
+
+    <!-- Hamburger icon --> 
+    <a href="#" class="hamburger-icon"><svg width="19" height="14" viewBox="0 0 19 14" xmlns="http://www.w3.org/2000/svg"><title>list</title><path d="M7.968 2.28h10.245V0H7.968v2.28zM0 7.975h18.213v-2.28H0v2.28zm0 5.696h10.245v-2.278H0v2.278z" fill="#84898A" fill-rule="evenodd"/></svg></a>
+
+    <!-- Logo -->
+    <div class="pull-left nav-links">
+        <a href="/slate/docs/" class="logo">
+                <img src="../../../images/svg/zebraffe-dark-dev-05ffe493.svg" />
+        </a>
+    </div>
+
+    <div class="header-contents">
+
+    <!-- Links --> 
+    <div class="pull-left nav-links">
+                <a href="/slate/docs/guides/">Guides</a>
+                <a href="/slate/docs/references/">API</a>
+                <a href="/slate/docs/support/">PSP Service Reference</a>
+    </div>
+
+    <!-- Search / buttons -->
+    <div class="pull-right">
+        
+        <span class="button-wrap">
+            <a id="search-button" href="#"><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><title>search</title><path d="M5 0a5 5 0 1 0 3.164 8.87l5.13 5.13.706-.707-5.13-5.129A5 5 0 0 0 5 0m0 1c2.206 0 4 1.794 4 4 0 .934-.313 1.809-.904 2.53l-.254.312-.312.254A3.952 3.952 0 0 1 5 9C2.794 9 1 7.206 1 5s1.794-4 4-4" fill="#454545" fill-rule="evenodd"/></svg></a>
+        </span>
+
+            <span class="button-wrap">
+                    <a href="/slate/docs/sign_up/" class="btn btn-small btn-secondary" >
+                        Sign up
+                    </a>
+            </span>
+            <span class="button-wrap">
+                    <a href="https://web.na.bambora.com" class="btn btn-small" >
+                        Login
+                    </a>
+            </span>
+
+        <div class="dropdown-nav dropdown-open-on-hover" role="navigation" 
+id="region-switcher">
+    North America
+    <ul role="menu">
+        
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/apac" class="not-new-tab-for-link">
+                Asia-Pacific
+            </a>
+        </li>
+
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/europe" class="not-new-tab-for-link">
+                Europe
+            </a>
+        </li>
+    </ul>
+</div>
+    </div>
+
+    </div>
+</nav>
+
+<div id="search-overlay">
+  <a href="#" id="close-search-overlay"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></a>
+
+  <div class="container">
+
+    <form>
+      <div class="form-group">
+        <input type="text" id="search" placeholder="Search..." width="100%", autocomplete="off" >
+      </div>
+    </form>
+
+    <div id="result-count"></div>
+
+    <div class="list-group">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <ul class="search-results"></ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+    <div class="container">
+
+      <a id="edit-on-github" href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/docs/forms/link_builder.html.erb">
+  Edit this page
+</a>
+
+
+<!-- Modal apears on link click -->
+<div class="modal-overlay">
+  <div class="modal github-modal" role="dialog">
+      <h3 class="js-toc-ignore">Edit on Github</h3>
+
+      <p> 
+      To propose changes to the Developer Portal click the link below and follow these steps: 
+      </p>
+
+      <ol>
+        <li>Sign in to Github. You will have to create an account if you don't already have one.</li>
+        <li>Click the <strong>Fork this repository and propose changes </strong>button.</li>
+        <li>Make your proposed changes to the file. Content is formatted with <a href="http://commonmark.org/help/">Markdown.</a></li>
+        <li>At the bottom of the page, optionally add a title and description to your changes, and click the <strong>Propose file change button</strong>.</li>
+        <li>On the next page, click <strong>Create pull request</strong>, and then click it again.</li>
+        <li>You're done! Someone will review your changes and they will appear on the site shortly.</li>
+      </ol>
+
+      <div class="btn-row">
+          <a href="#" class="btn continue-to-github" target="_blank">Continue to Github</a>
+          <button class="btn btn-secondary close-modal">Cancel</button>
+      </div>
+  </div>
+</div>      
+          <div class="breadcrumb-spacer"></div>
+ 
+      
+
+
+
+
+      <div class="row">
+          <div class="col-md-12">
+
+          <div class="markdown">
+            <div class="col-md-6 col-md-offset-3">
+
+<h1>Checkout - Link Builder</h1>
+
+<p>This form will help you create secure links to Checkout, our hosted payment form.
+    <strong>It will not validate your input.</strong>
+    You can view the documentation for Checkout, including the field requirements,
+    <a href="https://dev.na.bambora.com/docs/references/checkout">here</a>.
+</p>
+
+<form id="form">
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="merchant-id">Merchant ID*</label>
+        <input id="merchant-id" type="text" name="merchant-id" pattern="^\d{9}$"
+            oninvalid="setCustomValidity('This is a 9 digit string found in the Back Office at `Administration > Company Info`.')"
+            oninput="setCustomValidity('')"
+            required/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="hash-key">Hash Key</label>
+        <input id="hash-key" type="text" name="hash-key"
+            oninvalid="setCustomValidity('This string can be found in the Back Office at `Administration > Account Settings > Order Settings`.')"
+            oninput="setCustomValidity('')"
+            />
+        </div>
+    </div>
+    </div>
+
+    <div class="radio-group">
+    <div class="form-group">
+        <label>Hashing Algorithm*</label>
+    </div>
+    <div class="radio">
+        <input type="radio" name="radios" id="md5-radio" value="md5" >
+        <label for="md5-radio">MD5</label>
+    </div>
+    <div class="radio">
+        <input type="radio" name="radios" id="sha-1-radio" value="sha-1" checked>
+        <label for="sha-1-radio">SHA-1</label>
+    </div>
+    </div>
+
+    <h4>Order Info (optional)</h4>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" name="amount"
+            pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+            oninvalid="setCustomValidity('This number should be a decimal to two decimal places, eg. `1.00`.')"
+            oninput="setCustomValidity('')"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="order-number">Order Number</label>
+        <input id="order-number" type="text" name="order-number"/>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+    <label for="transaction-type">Transaction Type</label>
+    <input id="transaction-type" type="text" name="transaction-type"/>
+    </div>
+
+    <h4>Card Info (optional)</h4>
+    <div class="form-group">
+    <label for="card-owner">Card Owner</label>
+    <input id="card-owner" type="text" name="card-owner"/>
+    </div>
+
+    <h4>Language (optional)</h4>
+    <div class="form-group">
+    <label for="language">Language</label>
+    <input id="language" type="text" name="language"/>
+    </div>
+
+    <h4>Billing Info (optional)</h4>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="order-name">Name</label>
+        <input id="order-name" type="text" name="order-name"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="order-email">Email</label>
+        <input id="order-email" type="text" name="order-email"/>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="order-address-1">Address 1</label>
+        <input id="order-address-1" type="text" name="order-address-1"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="order-address-2">Address 2</label>
+        <input id="order-address-2" type="text" name="order-address-2"/>
+        </div>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="order-city">City</label>
+        <input id="order-city" type="text" name="order-city"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="order-province">Province</label>
+        <input id="order-province" type="text" name="order-province"/>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="order-postal-code">Postal Code</label>
+        <input id="order-postal-code" type="text" name="order-postal-code"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="order-country">Country</label>
+        <input id="order-country" type="text" name="order-country"/>
+        </div>
+    </div>
+    </div>
+
+
+    <h4>Shipping Info (optional)</h4>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ship-name">Name</label>
+        <input id="ship-name" type="text" name="ship-name"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ship-email">Email</label>
+        <input id="ship-email" type="text" name="ship-email"/>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ship-address-1">Address 1</label>
+        <input id="ship-address-1" type="text" name="ship-address-1"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ship-address-2">Address 2</label>
+        <input id="ship-address-2" type="text" name="ship-address-2"/>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ship-city">City</label>
+        <input id="ship-city" type="text" name="ship-city"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ship-province">Province</label>
+        <input id="ship-province" type="text" name="ship-province"/>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ship-postal-code">Postal Code</label>
+        <input id="ship-postal-code" type="text" name="ship-postal-code"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ship-country">Country</label>
+        <input id="ship-country" type="text" name="ship-country"/>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+    <label for="ship-phone">Phone</label>
+    <input id="ship-phone" type="text" name="ship-phone"/>
+    </div>
+
+
+    <h4>Redirects (optional)</h4>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="approved-link">Approved Link</label>
+        <input id="approved-link" type="text" name="approved-link"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="declined-link">Declined Link</label>
+        <input id="declined-link" type="text" name="declined-link"/>
+        </div>
+    </div>
+    </div>
+
+    <h4>Hash Expiry (optional)</h4>
+    <div class="form-group">
+    <label for="hash-expiry">Hash Expiry</label>
+    <input id="hash-expiry" type="text" name="hash-expiry"/>
+    </div>
+
+    <h4>References Info (optional)</h4>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ref1">Ref 1</label>
+        <input id="ref1" type="text" name="ref1"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ref2">Ref 2</label>
+        <input id="ref2" type="text" name="ref2"/>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ref3">Ref 3</label>
+        <input id="ref3" type="text" name="ref3"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="ref4">Ref 4</label>
+        <input id="ref4" type="text" name="ref4"/>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+    <label for="ref5">Ref 5</label>
+    <input id="ref5" type="text" name="ref5"/>
+    </div>
+
+    <h4>Desjardins Info (optional)</h4>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="d-financing-type">Financing Type</label>
+        <input id="d-financing-type" type="text" name="d-financing-type"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="d-plan-number">Plan Number</label>
+        <input id="d-plan-number" type="text" name="d-plan-number"/>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="d-grace-period">Grace Period</label>
+        <input id="d-grace-period" type="text" name="d-grace-period"/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="d-term">Term</label>
+        <input id="d-term" type="text" name="d-term"/>
+        </div>
+    </div>
+    </div>
+
+    <input type="submit" class="btn btn-default" value="Create link">
+    <input type="reset" class="btn btn-secondary" value="Clear form">
+</form>
+
+<br>
+
+<div class="block-highlight message hidden" id="message">
+    <strong>Your new link:</strong>
+    <div><a id="link" target="_blank"></a></div>
+</div>
+
+</div>
+
+<script src="../../../javascripts/na/sha1-e9077350.js" type="text/javascript"></script>
+<script src="../../../javascripts/na/md5-155d98c0.js" type="text/javascript"></script>
+<script src="../../../javascripts/na/link_builder-f32a2cdd.js" type="text/javascript"></script>
+ 
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+
+
+
+                © <a href="http://www.bambora.com/en/en/payment-solutions/" target="_blank">2017 Bambora</a>
+
+        <div class="links">
+                <a href="http://www.bambora.com/en/en/payment-solutions/customer-service/faq/terms-and-conditions/" target="_blank">Terms & Conditions</a>
+        </div>
+        
+        <div class="pull-right">
+                <a href="https://github.com/bambora/" target="_blank">Github</a>
+        </div>
+
+</footer>
+
+    <script src="../../../javascripts/template/tocbot_init_script-2dfca9f7.js" type="text/javascript"></script>
+
+  </body>
+</html>

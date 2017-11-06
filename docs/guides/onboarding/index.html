@@ -1,0 +1,591 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W92MC5');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon-9dabc470.png">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-32x32-b71a5283.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-16x16-ea515fe9.png" sizes="16x16">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<link rel="mask-icon" href="/images/favicon/safari-pinned-tab-fb883d2e.svg" color="#8247b5 ">
+<meta name="theme-color" content="#ffffff ">
+
+<!-- Site version (latest commit): 9f6f881b08ad1b133002af56bc1342ed0c0a2958
+ -->
+
+<title>Quickstart Onboarding</title>
+
+<link href="../../../stylesheets/ui.bambora.1.0.3-13e3506d.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/bambora_ui_sass_overwrite-d859adf4.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/portal-5e95ed43.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/page/tutorial-c59b694d.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+
+<script src="../../../javascripts/all-654c8dcb.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="docs docs_guides docs_guides_onboarding docs_guides_onboarding_index">
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W92MC5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+
+<nav class="nav-pane nav-fixed">
+
+    <!-- Hamburger icon --> 
+    <a href="#" class="hamburger-icon"><svg width="19" height="14" viewBox="0 0 19 14" xmlns="http://www.w3.org/2000/svg"><title>list</title><path d="M7.968 2.28h10.245V0H7.968v2.28zM0 7.975h18.213v-2.28H0v2.28zm0 5.696h10.245v-2.278H0v2.278z" fill="#84898A" fill-rule="evenodd"/></svg></a>
+
+    <!-- Logo -->
+    <div class="pull-left nav-links">
+        <a href="/slate/docs/" class="logo">
+                <img src="../../../images/svg/zebraffe-dark-dev-05ffe493.svg" />
+        </a>
+    </div>
+
+    <div class="header-contents">
+
+    <!-- Links --> 
+    <div class="pull-left nav-links">
+                <a href="/slate/docs/guides/" class="active">Guides</a>
+                <a href="/slate/docs/references/">API</a>
+                <a href="/slate/docs/support/">PSP Service Reference</a>
+    </div>
+
+    <!-- Search / buttons -->
+    <div class="pull-right">
+        
+        <span class="button-wrap">
+            <a id="search-button" href="#"><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><title>search</title><path d="M5 0a5 5 0 1 0 3.164 8.87l5.13 5.13.706-.707-5.13-5.129A5 5 0 0 0 5 0m0 1c2.206 0 4 1.794 4 4 0 .934-.313 1.809-.904 2.53l-.254.312-.312.254A3.952 3.952 0 0 1 5 9C2.794 9 1 7.206 1 5s1.794-4 4-4" fill="#454545" fill-rule="evenodd"/></svg></a>
+        </span>
+
+            <span class="button-wrap">
+                    <a href="/slate/docs/sign_up/" class="btn btn-small btn-secondary" >
+                        Sign up
+                    </a>
+            </span>
+            <span class="button-wrap">
+                    <a href="https://web.na.bambora.com" class="btn btn-small" >
+                        Login
+                    </a>
+            </span>
+
+        <div class="dropdown-nav dropdown-open-on-hover" role="navigation" 
+id="region-switcher">
+    North America
+    <ul role="menu">
+        
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/apac" class="not-new-tab-for-link">
+                Asia-Pacific
+            </a>
+        </li>
+
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/europe" class="not-new-tab-for-link">
+                Europe
+            </a>
+        </li>
+    </ul>
+</div>
+    </div>
+
+    </div>
+</nav>
+
+<div id="search-overlay">
+  <a href="#" id="close-search-overlay"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></a>
+
+  <div class="container">
+
+    <form>
+      <div class="form-group">
+        <input type="text" id="search" placeholder="Search..." width="100%", autocomplete="off" >
+      </div>
+    </form>
+
+    <div id="result-count"></div>
+
+    <div class="list-group">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <ul class="search-results"></ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+    <div class="container">
+
+      <a id="edit-on-github" href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/docs/guides/onboarding.md">
+  Edit this page
+</a>
+
+
+<!-- Modal apears on link click -->
+<div class="modal-overlay">
+  <div class="modal github-modal" role="dialog">
+      <h3 class="js-toc-ignore">Edit on Github</h3>
+
+      <p> 
+      To propose changes to the Developer Portal click the link below and follow these steps: 
+      </p>
+
+      <ol>
+        <li>Sign in to Github. You will have to create an account if you don't already have one.</li>
+        <li>Click the <strong>Fork this repository and propose changes </strong>button.</li>
+        <li>Make your proposed changes to the file. Content is formatted with <a href="http://commonmark.org/help/">Markdown.</a></li>
+        <li>At the bottom of the page, optionally add a title and description to your changes, and click the <strong>Propose file change button</strong>.</li>
+        <li>On the next page, click <strong>Create pull request</strong>, and then click it again.</li>
+        <li>You're done! Someone will review your changes and they will appear on the site shortly.</li>
+      </ol>
+
+      <div class="btn-row">
+          <a href="#" class="btn continue-to-github" target="_blank">Continue to Github</a>
+          <button class="btn btn-secondary close-modal">Cancel</button>
+      </div>
+  </div>
+</div>      
+          <div class='breadcrumb-trail'><span><a href='/docs/'>Docs</a></span><span class='chevron'> / </span><span><a href='/docs/guides/'>Guides</a></span><span class='chevron'> / </span><span class='this-page'>Onboarding</span></div>
+ 
+      
+    
+
+
+<div class="nav-wrapper">
+<nav class="nav-left nav-sticky nav-vertical">
+
+  <div class="mobile-close"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></div>
+
+
+      <div class="page-only js-toc"></div> 
+</nav>
+</div>
+
+<!-- button to click on small screen to show toc -->
+<div class="show-toc">
+  Contents
+</div>
+
+
+
+
+
+      <div class="row">
+          <div class="col-md-9 col-md-offset-3 js-toc-content">
+
+          <div class="markdown">
+            <h1 id="onboarding">Onboarding</h1>
+
+<p>This guide is for Partners building an onboarding integration with custom user interface (UI) to upload merchant applications and manage documentation.</p>
+
+<p>If you&#39;re interested in a hosted solution for onboarding, contact your Account Manager.</p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>To get a custom UI using our Onboarding API, you&#39;ll need to construct an environment that integrates our sandbox, and have it approved by our Onboarding Team.</p>
+
+<p>To begin, make sure you&#39;re <a href="/docs/forms/request_partner_account/">signed up for a partner account</a>. After you&#39;re accepted, we&#39;ll email you an API access token for our sandbox environment along with a Pricing Package ID.</p>
+
+<blockquote>
+<p>Your test Pricing Package ID will set the rates for customers that begin processing.</p>
+</blockquote>
+
+<p>Once you have your account and pricing ID, you&#39;ll be ready to start building your environments. To help with your integration you can review our <a href="/docs/references/onboarding_API">Onboarding API References</a>.</p>
+
+<h3 id="testing-environments">Testing environments</h3>
+
+<p>Using the API access token provided by your Account Manager, you can start building your integration.</p>
+
+<h4 id="sandbox">Sandbox</h4>
+
+<p>The sandbox you have access to will be a direct clone of the Production environment, and allows you to test the workflow of Onboarding.</p>
+
+<blockquote>
+<p>This sandbox is currently limited to Onboarding and does not include test payments.</p>
+</blockquote>
+
+<p>All API calls to the sandbox are made through the following URL:</p>
+
+<p><code class="prettyprint">https://sandbox-api.na.bambora.com/</code></p>
+
+<p>If an application is created using the <a href="#flow">PSP-CAD flow</a>, a request to <strong>GET</strong> it would look like:</p>
+
+<p><code class="prettyprint">https://sandbox-api.na.bambora.com/v1/boarding/workflows/psp-cad/applications/{applicationId}</code></p>
+
+<p>As an application moves through the Onboarding process, it will be in multiple states:</p>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>State</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td><code class="prettyprint">in_progress</code></td>
+<td>Any application created, but missing information in required fields.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">in_review</code></td>
+<td>Any application that is complete, but has not been approved or rejected. Applications in review cannot be updated or changed.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">on_hold</code></td>
+<td>Any application that is held from approval or rejection by a member of the Bambora Onboarding Team.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">approved</code></td>
+<td>Any complete application that is approved to begin processing.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">rejected</code></td>
+<td>Any complete application that fails to meet approval criteria.</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>An application that is <code class="prettyprint">rejected</code> cannot be reviewed further, and must be re-submitted as a new application.</p>
+</blockquote>
+
+<p>To test the transition between states in the sandbox environment, you can enter a magic string in the <code class="prettyprint">company_name</code> field on a POST or PUT request.</p>
+
+<ul>
+<li>TEST_APPROVED - Move the application from <code class="prettyprint">in_progress</code> to <code class="prettyprint">approved</code>.</li>
+<li>TEST_REJECTED -  Move the application from <code class="prettyprint">in_progress</code> to <code class="prettyprint">rejected</code>.</li>
+</ul>
+
+<h4 id="integration-review">Integration review</h4>
+
+<p>Once you&#39;ve completed all of your integration testing, contact your Account Manager to begin the review.</p>
+
+<p>Most reviews take no longer than a single business day, and ensure that your integration is:</p>
+
+<ul>
+<li>Submitting complete and correct forms.</li>
+<li>Correctly displaying or linking to Terms and Conditions.</li>
+<li>Correctly displaying or linking to card processing prices.</li>
+</ul>
+
+<h4 id="production">Production</h4>
+
+<p>After your integration is approved, you&#39;ll be provided with a Production API key for your Production environment. Other than your magic string no longer working, the two environments will be identical.</p>
+
+<p>All API calls to the sandbox are made through the following URL:</p>
+
+<p><code class="prettyprint">https://api.na.bambora.com/</code></p>
+
+<p>If an application is created using the <a href="#flow">PSP-CAD flow</a>, a request to <strong>GET</strong> it would look like:</p>
+
+<p><code class="prettyprint">https://api.na.bambora.com/v1/boarding/workflows/psp-cad/applications/{applicationId}</code></p>
+
+<h2 id="api-requests">API requests</h2>
+
+<h3 id="request-headers">Request headers</h3>
+
+<p>When you make an HTTP request to the API, headers are required for both authentication, and the API version.</p>
+
+<h4 id="authentication">Authentication</h4>
+
+<p>Every request that is made to the Onboarding and Payments API requires an API access token, and can be included in the header:</p>
+
+<p><code class="prettyprint">Authorization: Bearer YOUR_TOKEN_HERE</code></p>
+
+<h4 id="api-version">API version</h4>
+
+<p>You can find a list of our Onboarding API versions <a href="/docs/references/onboarding_API/">here</a>. Any new integrations require the most recent version.</p>
+
+<p>Add the version number to the Header of your API request:</p>
+
+<p><code class="prettyprint">X-API-Version: 2016-08-18</code></p>
+
+<p>If the API is updated, or a new one is introduced, it will appear in the <a href="/docs/references/onboarding_API/">Changelog</a>. If an API is ever deprecated, you&#39;ll be notified via email well in advance with assistance in updating.</p>
+
+<p><a name="flow"></a></p>
+
+<h3 id="select-a-flow">Select a flow</h3>
+
+<p>All endpoints in the Onboarding API are organised based on the functionality being requested. We call these, &#39;flows&#39;.</p>
+
+<p>All flows support the creation, reading, and updating of applications, as well as requesting Terms and Conditions. Some flows also support creating and reading of documents attached to applications.</p>
+
+<p>Each application can only be associated with a single flow. If a Merchant wants to work through multiple flows to accept multiple currencies, for example, they&#39;ll need to submit an application for each flow.</p>
+
+<h4 id="fund-transfer">Fund transfer</h4>
+
+<p>Fund transfer flow is used for financial transactions between institutions such as banks completing direct deposit, payroll, and batched transactions. Accounts using a fund transfer flow are locked to the specified region.</p>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Flow</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>SEPA-EUR</td>
+<td>Single Euro Payments in Europe.</td>
+</tr>
+<tr>
+<td>BACS-GBP</td>
+<td>Bankers Automated Clearing Service and Payment Schemes Limited in the United Kingdom.</td>
+</tr>
+<tr>
+<td>ACH-USD</td>
+<td>Automated Clearing House in the United States of America.</td>
+</tr>
+<tr>
+<td>EFT-CAD</td>
+<td>Electronic Funds Transfer in Canada.</td>
+</tr>
+</tbody></table></div>
+<h4 id="card-payments">Card payments</h4>
+
+<p>Used for processing payment transactions including credit cards. Accounts using a card payments flow are locked to the specified region.</p>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Flow</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>PSP-CAD</td>
+<td>Payment Service Providers in Canada.</td>
+</tr>
+<tr>
+<td>PSP-USD</td>
+<td>Payment Service Providers in the United States of America.</td>
+</tr>
+</tbody></table></div>
+<h4 id="gateway">Gateway</h4>
+
+<p>A flow for any Merchant Account held with another acquirer, the gateway flow allows transactions like the card payments flow.</p>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Flow</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td>GW-CDN</td>
+<td>Gateway Services in Canada.</td>
+</tr>
+<tr>
+<td>GW-USA</td>
+<td>Gateway Services in the United States of America.</td>
+</tr>
+</tbody></table></div>
+<p>You can find a complete list of flows in our <a href="/docs/references/onboarding_API">Onboarding API References</a>, with the most recent version of the API specs <a href="/docs/references/onboarding_API/v2016-08-18">here</a>, and Terms and Conditions <a href="/docs/references/onboarding_API/tac_v2016-08-18">here</a>.</p>
+
+<h2 id="sample-integration-calls">Sample integration calls</h2>
+
+<p>As we run through all of the parts of an integration call, we&#39;ll be referring to the <a href="#flow">PSP-CAD Card payments flow</a>.</p>
+
+<h3 id="terms-and-conditions">Terms and Conditions</h3>
+
+<p>In your UI, Bambora&#39;s Terms and Conditions must be linked to or displayed. Our API requires that you clearly specify the version of the terms, the pricing or rate, as well as the date and time when they are agreed to. This ensures that the merchant is aware of processing fees and their cost. If you require custom Terms and Conditions, you can reach out to your Account Manager to learn more.</p>
+
+<p>Standard Terms and Conditions are acquired through a <strong>GET</strong>, and can be requested as either a PDF or HTML.</p>
+
+<p><code class="prettyprint">/v1/boarding/workflows/psp-cad/terms/{partner}/{file_type}/version</code></p>
+
+<p>In the example below, the call is being made for the Terms as HTML. For default Terms, set the <code class="prettyprint">partner</code> value to <code class="prettyprint">default</code>.</p>
+
+<blockquote>
+<p>With Terms and Conditions calls, the version and authorisation header are optional</p>
+</blockquote>
+
+<p>To begin the two-step call, execute the following cURL command.</p>
+<pre class="highlight plaintext"><code>curl https://sandbox-api.na.bambora.com/v1/boarding/workflows/psp-cad/terms/default/html/version \
+-H "Authorization: Bearer YOUR_TOKEN_HERE" \
+-H "Content-Type: application/json" \
+-H "X-API-Version : SELECTED_VERSION_HERE"
+</code></pre>
+
+<p>A JSON object will be returned.</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"o5xq2r8JtnqYUWr1mURrOEZVXyx_fihe"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"psp-cad/default/html/2017-04-03_21:25:10"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Next, extract the <code class="prettyprint">version</code> for your second call.</p>
+<pre class="highlight plaintext"><code>curl https://sandbox-api.na.bambora.com/v1/boarding/workflows/psp-cad/terms/default/html/version/o5xq2r8JtnqYUWr1mURrOEZVXyx_fihe \
+-H "Authorization: Bearer YOUR_TOKEN_HERE" \
+-H "Content-Type: application/json" \
+-H "X-API-Version : SELECTED_VERSION_HERE"
+</code></pre>
+
+<p>This second API call will return a raw HTML or PDF of the Terms and Conditions.</p>
+
+<blockquote>
+<p>During the review process of your interface and integration, the Onboarding Team will ensure you&#39;re displaying the Terms and Pricing correctly.</p>
+</blockquote>
+
+<h3 id="creating-an-application">Creating an application</h3>
+
+<p>When you create an application, you&#39;ll need to include the first JSON <code class="prettyprint">version</code>, and <code class="prettyprint">name</code> call references from the Terms, not the name from the header of the second call.</p>
+
+<p>To create a new applicaton, you&#39;ll <strong>POST</strong> using
+<code class="prettyprint">/v1/boarding/workflows/psp-cad/applications</code></p>
+
+<p>While there are no required fields to make an HTTP request, <a href="/docs/references/onboarding_API">fields highlighted by a red asterisk</a> are required to move an application to the <code class="prettyprint">in_review</code> state. The sample below has all of the required fields for a PSP-CAD application. In the testing sandbox, this application would be moved to <code class="prettyprint">approved</code>.</p>
+
+<p>Execute the following cURL request by adding your version, authorisation header, and pricing package ID, and the <a href="/docs/references/onboarding_API">required application fields</a>.</p>
+<pre class="highlight plaintext"><code>curl https://sandbox-api.na.bambora.com/v1/boarding/workflows/psp-cad/applications \
+-H "Authorization: Bearer YOUR_TOKEN_HERE" \
+-H "Content-Type: application/json" \
+-H "X-API-Version : SELECTED_VERSION_HERE" \
+-d '{
+    "pricing_id": "123_YOUR_ID_123",
+    "applicant": {
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "date_of_birth": "1988-03-25T22:00:00.00000Z",
+      "phone_number": "222-222-2222",
+      "email": "test@example.com",
+      "agreement": {
+        "name": "psp-cad/default/html/2017-04-03_21:25:10",
+        "version": "o5xq2r8JtnqYUWr1mURrOEZVXyx_fihe",
+        "timestamp": "2017-03-25T22:04:10.04399Z"
+      },
+      "address": {
+        "address_line1": "123 Main Street",
+        "city": "Victoria",
+        "country":"CA"
+      }
+    },
+    "business": {
+      "company_name": "TEST_APPROVED",
+      "annual_sales": 800000.00,
+      "merchant_category": "5813",
+      "entity_type": "partnership",
+      "start_date": "2013-06-01T22:06:00.00000Z",
+      "address": {
+        "address_line1": "123 Main Street",
+        "city": "Victoria",
+        "country":"CA"
+      },
+      "bank_account": {
+        "owner_name": "Jane Doe",
+        "transit_number": "69877",
+        "institution_number": "345",
+        "account_number": "3453"
+      } 
+    }
+}'
+</code></pre>
+
+<blockquote>
+<p>The <code class="prettyprint">agreement</code> variables require the Terms and Conditions <code class="prettyprint">version</code> and <code class="prettyprint">name</code> from the first API call.
+All date and time variables are IS-8601 format <code class="prettyprint">YYYY-MM-DDThh:mm:ssTZD</code>. For full dates that have no specific time, set the time to zeros.</p>
+</blockquote>
+
+<h3 id="reading-an-application">Reading an application</h3>
+
+<p>All submitted applications can be fetched through a <strong>GET</strong>. </p>
+
+<p><code class="prettyprint">/v1/boarding/workflows/psp-cad/applications</code></p>
+
+<p>The application ID is returned in the initial POST request, and used to retrieve the application. Using the cURL below, you&#39;ll add your authorisation header, version, and application ID.</p>
+<pre class="highlight plaintext"><code>curl https://sandbox-api.na.bambora.com/v1/boarding/workflows/psp-cad/applications/{applicationId} \
+-H "Authorization: Bearer YOUR_TOKEN_HERE" \
+-H "Content-Type: application/json" \
+-H "X-API-Version : SELECTED_VERSION_HERE" \
+</code></pre>
+
+<p>After an application has reached the <code class="prettyprint">approved</code> state, the Merchant ID in the response will be used to process payments through your account.</p>
+
+<blockquote>
+<p>To find out if an application has been approved, use an HTTP GET with the application ID to request the application state.</p>
+</blockquote>
+
+<h3 id="updating-an-application">Updating an application</h3>
+
+<p>Any application currently in the <code class="prettyprint">in_progress</code> state can be modified and updated using a <strong>PUT</strong>.</p>
+
+<p><code class="prettyprint">/v1/boarding/workflows/psp-cad/applications/{applicationId}</code></p>
+
+<p>Using the application ID from the POST return, you&#39;ll be able to update information on an application.</p>
+
+<p>If your update to an application is a single variable such as <code class="prettyprint">phone_number</code>, like in the cURL below, you can add just that data. Any fields not passed will remain the way they were on creation.</p>
+<pre class="highlight plaintext"><code>curl https://sandbox-api.na.bambora.com/v1/boarding/workflows/psp-cad/applications/{applicationId} \
+-X PUT \
+-H "Authorization: Bearer YOUR_TOKEN_HERE" \
+-H "Content-Type: application/json" \
+-H "X-API-Version : SELECTED_VERSION_HERE" \
+-d '{
+      "applicant": {
+      "phone_number": "222-867-5309"
+      }
+    }'
+</code></pre>
+
+<p>To remove a field from a previously submitted application, set the value of the field to an empty string or zero.</p>
+<pre class="highlight plaintext"><code>curl https://sandbox-api.na.bambora.com/v1/boarding/workflows/psp-cad/applications/{applicationId} \
+-X PUT \
+-H "Authorization: Bearer YOUR_TOKEN_HERE" \
+-H "Content-Type: application/json" \
+-H "X-API-Version : SELECTED_VERSION_HERE" \
+-d '{
+      "applicant": {
+      "first_name": "",
+      "last_name": ""
+      }
+    }'
+</code></pre>
+
+<h3 id="uploading-documentation">Uploading documentation</h3>
+
+<p>If you&#39;re using the SEPA-EUR, BACS-GBP, ACH-USD, EFT-CAD, or PSP-USD flows, you can attach a document to an <code class="prettyprint">in_progress</code> application. For this example, we&#39;ll use the PSP-USD flow.</p>
+
+<p>To upload documents, use <strong>POST</strong>.</p>
+
+<p><code class="prettyprint">/v1/boarding/workflows/psp-usd/applications/{applicationId}/documents</code></p>
+
+<p>You&#39;ll use POST, GET, and DELETE for documents associated with an application. Execute the following cURL with your version, authorisation header, and application ID to add a document.</p>
+<pre class="highlight plaintext"><code>curl https://sandbox-api.na.bambora.com/v1/boarding/workflows/psp-usd/applications/{applicationId}/documents \
+-H "Authorization: Bearer YOUR_TOKEN_HERE" \
+-H "Content-Type: application/json" \
+-H "X-API-Version : SELECTED_VERSION_HERE" \
+-d '{
+     "name": "bank_statement",
+     "type": "pdf",
+     "base64": "XXxx_PUT_BASE_64_ENCODED_STRING_OF_DOCUMENT_HERE_xxXX" 
+    }'
+</code></pre>
+
+<h2 id="processing-payments">Processing payments</h2>
+
+<p>Now that you&#39;re ready to begin processing payments, you can learn about integrating with our <a href="/docs/references/payment_APIs">Payments API</a>. You can also use our <a href="/docs/guides/merchant_quickstart">Merchant Quickstart Guide</a> to get up and running fast.</p>
+ 
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+
+
+
+                © <a href="http://www.bambora.com/en/en/payment-solutions/" target="_blank">2017 Bambora</a>
+
+        <div class="links">
+                <a href="http://www.bambora.com/en/en/payment-solutions/customer-service/faq/terms-and-conditions/" target="_blank">Terms & Conditions</a>
+        </div>
+        
+        <div class="pull-right">
+                <a href="https://github.com/bambora/" target="_blank">Github</a>
+        </div>
+
+</footer>
+
+    <script src="../../../javascripts/template/tocbot_init_script-2dfca9f7.js" type="text/javascript"></script>
+
+  </body>
+</html>
