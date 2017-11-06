@@ -1,0 +1,4331 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W92MC5');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon-9dabc470.png">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-32x32-b71a5283.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-16x16-ea515fe9.png" sizes="16x16">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<link rel="mask-icon" href="/images/favicon/safari-pinned-tab-fb883d2e.svg" color="#8247b5 ">
+<meta name="theme-color" content="#ffffff ">
+
+<!-- Site version (latest commit): 865681dcbcfb33b881a7b0871215a0703cc4ec7e
+ -->
+
+<title>Bank response codes</title>
+
+<link href="../../../../../stylesheets/ui.bambora.1.0.3-13e3506d.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../stylesheets/bambora_ui_sass_overwrite-d859adf4.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../stylesheets/portal-5e95ed43.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../stylesheets/page/tutorial-c59b694d.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+
+<script src="../../../../../javascripts/all-654c8dcb.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="slate slate_docs slate_docs_references slate_docs_references_checkout slate_docs_references_checkout_bank slate_docs_references_checkout_bank_index">
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W92MC5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+
+<nav class="nav-pane nav-fixed">
+
+    <!-- Hamburger icon --> 
+    <a href="#" class="hamburger-icon"><svg width="19" height="14" viewBox="0 0 19 14" xmlns="http://www.w3.org/2000/svg"><title>list</title><path d="M7.968 2.28h10.245V0H7.968v2.28zM0 7.975h18.213v-2.28H0v2.28zm0 5.696h10.245v-2.278H0v2.278z" fill="#84898A" fill-rule="evenodd"/></svg></a>
+
+    <!-- Logo -->
+    <div class="pull-left nav-links">
+        <a href="/slate/docs/" class="logo">
+                <img src="../../../../../images/svg/zebraffe-dark-dev-05ffe493.svg" />
+        </a>
+    </div>
+
+    <div class="header-contents">
+
+    <!-- Links --> 
+    <div class="pull-left nav-links">
+                <a href="/slate/docs/guides/">Guides</a>
+                <a href="/slate/docs/references/">API</a>
+                <a href="/slate/docs/support/">PSP Service Reference</a>
+    </div>
+
+    <!-- Search / buttons -->
+    <div class="pull-right">
+        
+        <span class="button-wrap">
+            <a id="search-button" href="#"><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><title>search</title><path d="M5 0a5 5 0 1 0 3.164 8.87l5.13 5.13.706-.707-5.13-5.129A5 5 0 0 0 5 0m0 1c2.206 0 4 1.794 4 4 0 .934-.313 1.809-.904 2.53l-.254.312-.312.254A3.952 3.952 0 0 1 5 9C2.794 9 1 7.206 1 5s1.794-4 4-4" fill="#454545" fill-rule="evenodd"/></svg></a>
+        </span>
+
+            <span class="button-wrap">
+                    <a href="/slate/docs/sign_up/" class="btn btn-small btn-secondary" >
+                        Sign up
+                    </a>
+            </span>
+            <span class="button-wrap">
+                    <a href="https://web.na.bambora.com" class="btn btn-small" >
+                        Login
+                    </a>
+            </span>
+
+        <div class="dropdown-nav dropdown-open-on-hover" role="navigation" 
+id="region-switcher">
+    North America
+    <ul role="menu">
+        
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/apac" class="not-new-tab-for-link">
+                Asia-Pacific
+            </a>
+        </li>
+
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/europe" class="not-new-tab-for-link">
+                Europe
+            </a>
+        </li>
+    </ul>
+</div>
+    </div>
+
+    </div>
+</nav>
+
+<div id="search-overlay">
+  <a href="#" id="close-search-overlay"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></a>
+
+  <div class="container">
+
+    <form>
+      <div class="form-group">
+        <input type="text" id="search" placeholder="Search..." width="100%", autocomplete="off" >
+      </div>
+    </form>
+
+    <div id="result-count"></div>
+
+    <div class="list-group">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <ul class="search-results"></ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+    <div class="container">
+
+      <div id="edit-on-github" class="dropdown dropdown-open-on-hover" role="listbox">
+  Edit this page
+
+  <ul>
+    <li class="dropdown-title">Base page:</li>
+    <li role="option">
+      <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/slate/docs/references/checkout/bank.md">
+        bank.md
+      </a>
+    </li>
+
+    <li class="dropdown-title">Includes:</li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/bank_response_codes/_gateway.md">
+          gateway.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/bank_response_codes/_desjardins.md">
+          desjardins.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/bank_response_codes/_elavon.md">
+          elavon.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/bank_response_codes/_fd.md">
+          fd.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/bank_response_codes/_global.md">
+          global.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/bank_response_codes/_chase.md">
+          chase.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/bank_response_codes/_td.md">
+          td.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/bank_response_codes/_vital.md">
+          vital.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/bank_response_codes/_emulator.md">
+          emulator.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/bank_response_codes/_iop.md">
+          iop.md
+        </a>
+      </li>
+  </ul>
+</div>    
+
+<!-- Modal apears on link click -->
+<div class="modal-overlay">
+  <div class="modal github-modal" role="dialog">
+      <h3 class="js-toc-ignore">Edit on Github</h3>
+
+      <p> 
+      To propose changes to the Developer Portal click the link below and follow these steps: 
+      </p>
+
+      <ol>
+        <li>Sign in to Github. You will have to create an account if you don't already have one.</li>
+        <li>Click the <strong>Fork this repository and propose changes </strong>button.</li>
+        <li>Make your proposed changes to the file. Content is formatted with <a href="http://commonmark.org/help/">Markdown.</a></li>
+        <li>At the bottom of the page, optionally add a title and description to your changes, and click the <strong>Propose file change button</strong>.</li>
+        <li>On the next page, click <strong>Create pull request</strong>, and then click it again.</li>
+        <li>You're done! Someone will review your changes and they will appear on the site shortly.</li>
+      </ol>
+
+      <div class="btn-row">
+          <a href="#" class="btn continue-to-github" target="_blank">Continue to Github</a>
+          <button class="btn btn-secondary close-modal">Cancel</button>
+      </div>
+  </div>
+</div>      
+          <div class='breadcrumb-trail'><span><a href='/slate/'>Slate</a></span><span class='chevron'> / </span><span><a href='/slate/docs/'>Docs</a></span><span class='chevron'> / </span><span><a href='/slate/docs/references/'>References</a></span><span class='chevron'> / </span><span><a href='/slate/docs/references/checkout/'>Checkout</a></span><span class='chevron'> / </span><span class='this-page'>Bank</span></div>
+ 
+      
+
+
+<div class="nav-wrapper">
+<nav class="nav-left nav-sticky nav-vertical">
+
+  <div class="mobile-close"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></div>
+
+
+      <ul>
+
+          <li data-nav-title="/slate/docs/guides/checkout/" class="">
+            <a href="/slate/docs/guides/checkout/" class="nav-top-heading">
+              Guide 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/slate/docs/references/checkout/" class="">
+            <a href="/slate/docs/references/checkout/" class="nav-top-heading">
+              Link 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/slate/docs/references/checkout/redirect/" class="">
+            <a href="/slate/docs/references/checkout/redirect/" class="nav-top-heading">
+              Redirect 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/slate/docs/references/checkout/bank/" class="active">
+            <a href="/slate/docs/references/checkout/bank/" class="nav-top-heading">
+              Bank codes 
+            </a>
+
+              <div class="page-included js-toc"></div>
+          </li>
+
+          <li data-nav-title="/slate/docs/references/checkout/misc/" class="">
+            <a href="/slate/docs/references/checkout/misc/" class="nav-top-heading">
+              Misc codes 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/slate/docs/references/checkout/test_cards/" class="">
+            <a href="/slate/docs/references/checkout/test_cards/" class="nav-top-heading">
+              Test cards 
+            </a>
+
+          </li>
+      </ul>
+</nav>
+</div>
+
+<!-- button to click on small screen to show toc -->
+<div class="show-toc">
+  Contents
+</div>
+
+
+
+
+
+      <div class="row">
+          <div class="col-md-9 col-md-offset-3 js-toc-content">
+
+          <div class="markdown">
+            <h1 id="bank-response-codes">Bank response codes</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>This document lists the bank related response codes returned from the Payment API. The &quot;Message ID&quot; and &quot;Cardholder message&quot; columns correspond to the <code class="prettyprint">messageID</code> and <code class="prettyprint">messageText</code> properties returned by the API response object. The &quot;Merchant message&quot; column contains an additional detailed message that is not returned by the API.</p>
+
+<p>Responses are broken into 3 groups: gateway, credit card and Interac Online.
+Responses related to credit card transactions are sub-grouped by processor (Chase Paymentech, Desjardins, Elavon, First Data, Global, TD, Vital). If you are processing transactions against a test account you will receive responses from our emulator, rather than a processor.</p>
+
+<p>You should only map your responses handlers against message IDs as message strings are not guaranteed to be consistent over time.</p>
+ 
+          
+              <h2 id="gateway-responses">Gateway responses</h2>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Message ID</th>
+<th>Cardholder message</th>
+<th>Merchant message</th>
+</tr>
+</thead><tbody><tr>
+<td>14</td>
+<td>Invalid expiration date</td>
+<td>Invalid expiration date</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Duplicate Transaction – This transaction has already been approved</td>
+<td>Duplicate Transaction – This transaction has already been approved</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Validation is less than the minimum amount</td>
+<td>Validation is less than the minimum amount</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Validation greater than maximum amount</td>
+<td>Validation greater than maximum amount</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Invalid expiry date</td>
+<td>Invalid expiry date</td>
+</tr>
+<tr>
+<td>49</td>
+<td>Invalid transaction request string</td>
+<td>Invalid transaction request string</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Invalid transaction type</td>
+<td>Invalid transaction type</td>
+</tr>
+<tr>
+<td>51</td>
+<td>DECLINE</td>
+<td>Restricted Card or IP</td>
+</tr>
+<tr>
+<td>52</td>
+<td>Invalid Card Number</td>
+<td>Invalid Card Number</td>
+</tr>
+<tr>
+<td>53</td>
+<td>Application Error - Sending Request</td>
+<td>Application Error - Sending Request</td>
+</tr>
+<tr>
+<td>54</td>
+<td>Transaction timeout - No available device</td>
+<td>Transaction timeout - No available device</td>
+</tr>
+<tr>
+<td>55</td>
+<td>Transaction timeout - No transaction Response</td>
+<td>Transaction timeout - No transaction Response</td>
+</tr>
+<tr>
+<td>56</td>
+<td>Application Error - Retrieving Response</td>
+<td>Application Error - Retrieving Response</td>
+</tr>
+<tr>
+<td>59</td>
+<td>Declined - Operation must be performed by Master Merchant</td>
+<td>Declined - Operation must be performed by Master Merchant</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Declined - Operation restricted through Master Merchant</td>
+<td>Declined - Operation restricted through Master Merchant</td>
+</tr>
+<tr>
+<td>190</td>
+<td>Unknown transaction response</td>
+<td>Unknown transaction response</td>
+</tr>
+<tr>
+<td>191</td>
+<td>Invalid Transaction Amount</td>
+<td>Invalid Transaction Amount</td>
+</tr>
+<tr>
+<td>192</td>
+<td>Transaction cannot be voided after being returned</td>
+<td>Transaction cannot be voided after being returned</td>
+</tr>
+<tr>
+<td>193</td>
+<td>Amount does not match the transaction you are modifying.</td>
+<td>Amount does not match the transaction you are modifying.</td>
+</tr>
+<tr>
+<td>194</td>
+<td>Transaction exceeds return limit.</td>
+<td>Transaction exceeds return limit.</td>
+</tr>
+<tr>
+<td>195</td>
+<td>Invalid adjustment amount.</td>
+<td>Invalid adjustment amount.</td>
+</tr>
+<tr>
+<td>196</td>
+<td>Original purchase transaction has been voided</td>
+<td>Original purchase transaction has been voided</td>
+</tr>
+<tr>
+<td>197</td>
+<td>Transactions cannot be adjusted to a zero or negative value</td>
+<td>Transactions cannot be adjusted to a zero or negative value</td>
+</tr>
+<tr>
+<td>198</td>
+<td>Zero value transactions cannot be voided</td>
+<td>Zero value transactions cannot be voided</td>
+</tr>
+<tr>
+<td>199</td>
+<td>Credit card does not match original purchase.</td>
+<td>Credit card does not match original purchase.</td>
+</tr>
+<tr>
+<td>200</td>
+<td>Transaction cannot be adjusted</td>
+<td>Transaction cannot be adjusted</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Invalid transaction adjustment ID</td>
+<td>Invalid transaction adjustment ID</td>
+</tr>
+<tr>
+<td>202</td>
+<td>Invalid order number</td>
+<td>Invalid order number</td>
+</tr>
+<tr>
+<td>203</td>
+<td>Pre-Authorization already completed</td>
+<td>Pre-Authorization already completed</td>
+</tr>
+<tr>
+<td>204</td>
+<td>Declined: Use Pre-Auth Completion</td>
+<td>Declined: Use Pre-Auth Completion</td>
+</tr>
+<tr>
+<td>205</td>
+<td>Transaction only voidable on the date processed</td>
+<td>Transaction only voidable on the date processed</td>
+</tr>
+<tr>
+<td>206</td>
+<td>Account missing terminal id</td>
+<td>Account missing terminal id</td>
+</tr>
+<tr>
+<td>207</td>
+<td>Invalid merchant id</td>
+<td>Invalid merchant id</td>
+</tr>
+<tr>
+<td>208</td>
+<td>Completion greater than remaining reserve amount.</td>
+<td>Completion greater than remaining reserve amount.</td>
+</tr>
+<tr>
+<td>209</td>
+<td>Merchant Account Disabled</td>
+<td>Merchant Account Disabled</td>
+</tr>
+<tr>
+<td>210</td>
+<td>Merchant Account Closed</td>
+<td>Merchant Account Closed</td>
+</tr>
+<tr>
+<td>211</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>212</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>214</td>
+<td>Transaction reversed</td>
+<td>Transaction reversed</td>
+</tr>
+<tr>
+<td>215</td>
+<td>Address Validation Failed</td>
+<td>Address Validation Failed</td>
+</tr>
+<tr>
+<td>217</td>
+<td>DECLINE</td>
+<td>Transaction Declined TR</td>
+</tr>
+<tr>
+<td>218</td>
+<td>DECLINE</td>
+<td>Transaction Declined AC</td>
+</tr>
+<tr>
+<td>297</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>298</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>299</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>300</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>301</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>302</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>303</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>304</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>305</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>306</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>307</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>308</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>309</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>310</td>
+<td>Service Unavailable - Please try again later</td>
+<td>Service Unavailable - Please try again later</td>
+</tr>
+<tr>
+<td>311</td>
+<td>3D Secure Failed</td>
+<td>3D Secure Failed</td>
+</tr>
+<tr>
+<td>312</td>
+<td>Card type not accepted</td>
+<td>Card type not accepted</td>
+</tr>
+<tr>
+<td>313</td>
+<td>DECLINE</td>
+<td>Over sales limit</td>
+</tr>
+<tr>
+<td>314</td>
+<td>Missing or invalid payment information - Please validate all required payment information.</td>
+<td>Missing or invalid consumer payment information</td>
+</tr>
+<tr>
+<td>315</td>
+<td>CALL HELP DESK</td>
+<td>HTTPS Connection Required</td>
+</tr>
+<tr>
+<td>316</td>
+<td>CALL HELP DESK</td>
+<td>Invalid transaction validation type</td>
+</tr>
+<tr>
+<td>317</td>
+<td>CALL HELP DESK</td>
+<td>Authentication Failed</td>
+</tr>
+<tr>
+<td>318</td>
+<td>CALL HELP DESK</td>
+<td>No transaction request data received</td>
+</tr>
+<tr>
+<td>319</td>
+<td>CALL HELP DESK</td>
+<td>Transaction Declined - Restricted transaction type</td>
+</tr>
+<tr>
+<td>320</td>
+<td>CALL HELP DESK</td>
+<td>Missing errorPage URL</td>
+</tr>
+<tr>
+<td>321</td>
+<td>CALL HELP DESK</td>
+<td>Missing or invalid return URL</td>
+</tr>
+<tr>
+<td>322</td>
+<td>CALL HELP DESK</td>
+<td>Transaction amount does not match inventory calculation</td>
+</tr>
+<tr>
+<td>323</td>
+<td>CALL HELP DESK</td>
+<td>One or more products not found in inventory</td>
+</tr>
+<tr>
+<td>324</td>
+<td>CALL HELP DESK</td>
+<td>Invalid product quantity</td>
+</tr>
+<tr>
+<td>325</td>
+<td>File Transfer Approved</td>
+<td>File Transfer Approved</td>
+</tr>
+<tr>
+<td>326</td>
+<td>Declined - Invalid bank account</td>
+<td>Declined - Invalid bank account</td>
+</tr>
+<tr>
+<td>558</td>
+<td>Decline</td>
+<td>Decline</td>
+</tr>
+<tr>
+<td>559</td>
+<td>No Transaction Found</td>
+<td>No Transaction Found</td>
+</tr>
+<tr>
+<td>560</td>
+<td>Transaction In Process</td>
+<td>Transaction In Process</td>
+</tr>
+<tr>
+<td>632</td>
+<td>Decline</td>
+<td>Max number of recurring billing accounts reached</td>
+</tr>
+<tr>
+<td>674</td>
+<td>Payment declined</td>
+<td>Payment declined</td>
+</tr>
+<tr>
+<td>681</td>
+<td>Payment method not accepted on this account</td>
+<td>Payment method not accepted on this account</td>
+</tr>
+<tr>
+<td>682</td>
+<td>Decline</td>
+<td>Decline</td>
+</tr>
+<tr>
+<td>683</td>
+<td>Declined. Missing or invalid merchant data.</td>
+<td>Declined. Missing or invalid merchant data.</td>
+</tr>
+<tr>
+<td>760</td>
+<td>Multiple Transaction Matches Found</td>
+<td>Multiple Transaction Matches Found</td>
+</tr>
+<tr>
+<td>761</td>
+<td>Payment Cancelled</td>
+<td>Payment Cancelled</td>
+</tr>
+<tr>
+<td>762</td>
+<td>Expired session. Transaction not completed in allocated time.</td>
+<td>Expired session. Transaction not completed in allocated time.</td>
+</tr>
+<tr>
+<td>788</td>
+<td>Duplicate Order Number - This order number has already been processed</td>
+<td>Duplicate Order Number - This order number has already been processed</td>
+</tr>
+<tr>
+<td>789</td>
+<td>Card Number Mismatch</td>
+<td>Card Number Mismatch</td>
+</tr>
+<tr>
+<td>792</td>
+<td>Credit card must support 3D Secure VBV or SecureCode</td>
+<td>Credit card must support 3D Secure VBV or SecureCode</td>
+</tr>
+<tr>
+<td>793</td>
+<td>Address validation failed. Transaction reversed.</td>
+<td>Address validation failed. Transaction reversed.</td>
+</tr>
+<tr>
+<td>800</td>
+<td>Invalid customer code (token)</td>
+<td>Invalid customer code (token)</td>
+</tr>
+<tr>
+<td>801</td>
+<td>Card number missing for given customer code (token)</td>
+<td>Card number missing for given customer code (token)</td>
+</tr>
+<tr>
+<td>802</td>
+<td>Declined HASH EXPIRED</td>
+<td>Declined HASH EXPIRED</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Declined - Entered Information Cannot Be Authenticated</td>
+<td>Declined - Entered Information Cannot Be Authenticated</td>
+</tr>
+<tr>
+<td>807</td>
+<td>Batch close completed successfully</td>
+<td>Batch close completed successfully</td>
+</tr>
+<tr>
+<td>808</td>
+<td>Batch close failed on all terminals</td>
+<td>Batch close failed on all terminals</td>
+</tr>
+<tr>
+<td>809</td>
+<td>Batch close on one or more terminals</td>
+<td>Batch close on one or more terminals</td>
+</tr>
+<tr>
+<td>810</td>
+<td>Batch close failed on store and forward</td>
+<td>Batch close failed on store and forward</td>
+</tr>
+<tr>
+<td>811</td>
+<td>Insufficient user permission for processing payment transactions</td>
+<td>Insufficient user permission for processing payment transactions</td>
+</tr>
+<tr>
+<td>812</td>
+<td>Insufficient user permission for processing refund transactions</td>
+<td>Insufficient user permission for processing refund transactions</td>
+</tr>
+<tr>
+<td>813</td>
+<td>User session has expired</td>
+<td>User session has expired</td>
+</tr>
+<tr>
+<td>814</td>
+<td>User session validation failed</td>
+<td>User session validation failed</td>
+</tr>
+<tr>
+<td>815</td>
+<td>Invalid session source</td>
+<td>Invalid session source</td>
+</tr>
+<tr>
+<td>816</td>
+<td>Card track data cannot be decrypted</td>
+<td>Card track data cannot be decrypted</td>
+</tr>
+<tr>
+<td>817</td>
+<td>Card track data cannot be parsed for card number and expiry</td>
+<td>Card track data cannot be parsed for card number and expiry</td>
+</tr>
+<tr>
+<td>818</td>
+<td>Invalid track format indicator</td>
+<td>Invalid track format indicator</td>
+</tr>
+<tr>
+<td>819</td>
+<td>Missing AVS and CVD data required for Discover transaction</td>
+<td>Missing AVS and CVD data required for Discover transaction</td>
+</tr>
+<tr>
+<td>820</td>
+<td>Invalid use of trnAmount field, must pass ordItemPrice with taxes enabled.</td>
+<td>Invalid use of trnAmount field, must pass ordItemPrice with taxes enabled.</td>
+</tr>
+<tr>
+<td>821</td>
+<td>Declined</td>
+<td>CVD mismatch. Transaction reversed</td>
+</tr>
+<tr>
+<td>822</td>
+<td>Declined</td>
+<td>AVS mismatch. Transaction reversed</td>
+</tr>
+<tr>
+<td>825</td>
+<td>Missing or invalid term URL</td>
+<td>CALL HELP DESK</td>
+</tr>
+<tr>
+<td>827</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>935</td>
+<td>Adjustment failed, please wait one minute and retry</td>
+<td>Adjustment failed, please wait one minute and retry</td>
+</tr>
+<tr>
+<td>936</td>
+<td>Declined please try again</td>
+<td>Invalid or expired single use token</td>
+</tr>
+<tr>
+<td>937</td>
+<td>Declined please try again</td>
+<td>Single use token service unavailable</td>
+</tr>
+<tr>
+<td>938</td>
+<td>Authentication is required to process this transaction</td>
+<td>Authentication is required to process this transaction</td>
+</tr>
+<tr>
+<td>940</td>
+<td>DECLINE</td>
+<td>Masterpass account is not enabled</td>
+</tr>
+<tr>
+<td>941</td>
+<td>DECLINE</td>
+<td>oauth_verifier is required</td>
+</tr>
+<tr>
+<td>942</td>
+<td>DECLINE</td>
+<td>checkout_resource_url is required</td>
+</tr>
+<tr>
+<td>944</td>
+<td>Card entry method not accepted</td>
+<td>Card entry method not accepted</td>
+</tr>
+<tr>
+<td>1134</td>
+<td>Transaction cannot be voided</td>
+<td>Transaction cannot be voided</td>
+</tr>
+<tr>
+<td>1135</td>
+<td>Amount in the request does not match the amount in the payment token.</td>
+<td>Declined</td>
+</tr>
+</tbody></table></div>
+              <h2 id="credit-card-responses">Credit card responses</h2>
+
+<h3 id="desjardins">Desjardins</h3>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Message ID</th>
+<th>Cardholder message</th>
+<th>Merchant message</th>
+</tr>
+</thead><tbody><tr>
+<td>1001</td>
+<td>APPROVED</td>
+<td>Approved with balance</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>APPROVED</td>
+<td>Approved without the balance</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>APPROVED</td>
+<td>Approved VIP</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>APPROVED</td>
+<td>Approved. Administrative Transaction</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>DECLINED</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>EXPIRED CARD</td>
+<td>Declined. Expired card</td>
+</tr>
+<tr>
+<td>1007</td>
+<td>ADM PIN TRIES EXCEE</td>
+<td>Declined. Max PIN attempts with an Administrative card reached</td>
+</tr>
+<tr>
+<td>1008</td>
+<td>INVALID CARD</td>
+<td>Declined. The Admin card must be from the same institution as the POS</td>
+</tr>
+<tr>
+<td>1009</td>
+<td>SYSTEM NOT AVAIL.</td>
+<td>Declined. The host cannot authorize the transaction at this time</td>
+</tr>
+<tr>
+<td>1010</td>
+<td>TRX NOT ALLOWED</td>
+<td>Declined. The transaction type is invalid</td>
+</tr>
+<tr>
+<td>1011</td>
+<td>TRX NOT ALLOWED</td>
+<td>Declined. The transaction type is not supported on this terminal</td>
+</tr>
+<tr>
+<td>1012</td>
+<td>DECLINED</td>
+<td>Declined. The card status is lost or stolen</td>
+</tr>
+<tr>
+<td>1013</td>
+<td>DECLINED</td>
+<td>Declined. The status of the card is unknown</td>
+</tr>
+<tr>
+<td>1014</td>
+<td>ACCOUNT NOT SET UP</td>
+<td>Declined. The account used in the transaction is not defined</td>
+</tr>
+<tr>
+<td>1015</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Auth. type incorrectly defined. Host problem</td>
+</tr>
+<tr>
+<td>1016</td>
+<td>INVALID CARD</td>
+<td>Declined. Track2 invalid</td>
+</tr>
+<tr>
+<td>1017</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Partial cancellations are not supported</td>
+</tr>
+<tr>
+<td>1018</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Invalid amount</td>
+</tr>
+<tr>
+<td>1019</td>
+<td>PLEASE RETRY</td>
+<td>Declined. The transaction date is invalid.</td>
+</tr>
+<tr>
+<td>1020</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Transaction declined by the issuer</td>
+</tr>
+<tr>
+<td>1021</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Format error in the transaction</td>
+</tr>
+<tr>
+<td>1022</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Invalid acquirer institution</td>
+</tr>
+<tr>
+<td>1023</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Routing problem</td>
+</tr>
+<tr>
+<td>1024</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Routing problem</td>
+</tr>
+<tr>
+<td>1025</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Cannot authorize</td>
+</tr>
+<tr>
+<td>1026</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Invalid card number length</td>
+</tr>
+<tr>
+<td>1027</td>
+<td>DECLINED</td>
+<td>Declined. Insufficient funds</td>
+</tr>
+<tr>
+<td>1028</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Preauthorization limit reached for the period</td>
+</tr>
+<tr>
+<td>1029</td>
+<td>DECLINED</td>
+<td>Declined. Duplicate transaction</td>
+</tr>
+<tr>
+<td>1030</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Max online refund amount reached for a card for the period</td>
+</tr>
+<tr>
+<td>1031</td>
+<td>REFUND LIMIT</td>
+<td>Declined. Max offline refund amount reached for a card for the period</td>
+</tr>
+<tr>
+<td>1032</td>
+<td>REFUND LIMIT</td>
+<td>Declined. Max refund amount for a transaction</td>
+</tr>
+<tr>
+<td>1033</td>
+<td>OVER MAX NUMBER TRX</td>
+<td>Declined. Max number of refunds reached for a card for the period</td>
+</tr>
+<tr>
+<td>1034</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Max refund amount reached for a card for the period</td>
+</tr>
+<tr>
+<td>1035</td>
+<td>NOT AVAILABLE</td>
+<td>Declined. Balance inquiry transaction not permitted</td>
+</tr>
+<tr>
+<td>1036</td>
+<td>OVER MAX NUMBER TRX</td>
+<td>Declined. Usage limit has been reached</td>
+</tr>
+<tr>
+<td>1037</td>
+<td>OVER MAX NUMBER TRX</td>
+<td>Declined. The number of refunds for this card type has been reached</td>
+</tr>
+<tr>
+<td>1038</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Declined by the issuer</td>
+</tr>
+<tr>
+<td>1039</td>
+<td>DECLINED</td>
+<td>Declined. Status of the card inactive</td>
+</tr>
+<tr>
+<td>1040</td>
+<td>HOLD CARD</td>
+<td>Declined. Stolen card</td>
+</tr>
+<tr>
+<td>1041</td>
+<td>REFUND LIMIT</td>
+<td>Declined. Limit in the no. of trans. or refund amount and Interac cancellations reached for the terminal</td>
+</tr>
+<tr>
+<td>1042</td>
+<td>PIN REQUIRED</td>
+<td>Declined. The card PIN is required for this card (can be admin card)</td>
+</tr>
+<tr>
+<td>1043</td>
+<td>INVALID CARD</td>
+<td>Declined. The check digit of the card number is invalid</td>
+</tr>
+<tr>
+<td>1044</td>
+<td>PLEASE RETRY</td>
+<td>Declined. A forced transaction ended in error due to a system problem</td>
+</tr>
+<tr>
+<td>1045</td>
+<td>SYSTEM NOT AVAIL.</td>
+<td>Declined. The authorization host is not available</td>
+</tr>
+<tr>
+<td>1046</td>
+<td>CALL FOR AUTH</td>
+<td>Declined. The authorization host is not available</td>
+</tr>
+<tr>
+<td>1047</td>
+<td>CALL FOR AUTH</td>
+<td>Declined. The authorization host is not available</td>
+</tr>
+<tr>
+<td>1048</td>
+<td>PLEASE RETRY</td>
+<td>Declined. System error</td>
+</tr>
+<tr>
+<td>1049</td>
+<td>TRX NOT ALLOWED</td>
+<td>Declined. Unsupported transaction</td>
+</tr>
+<tr>
+<td>1050</td>
+<td>CALL FOR AUTH</td>
+<td>Declined. Maximum amount limit</td>
+</tr>
+<tr>
+<td>1051</td>
+<td>CALL FOR AUTH</td>
+<td>Declined. Maximum amount limit for the day reached</td>
+</tr>
+<tr>
+<td>1052</td>
+<td>CALL SERVICE</td>
+<td>Declined. Issuing host did not respond (timeout)</td>
+</tr>
+<tr>
+<td>1053</td>
+<td>CALL SERVICE</td>
+<td>Declined. System error</td>
+</tr>
+<tr>
+<td>1054</td>
+<td>CALL SERVICE</td>
+<td>Declined. System error</td>
+</tr>
+<tr>
+<td>1055</td>
+<td>CALL SERVICE</td>
+<td>Declined. System error (admin card)</td>
+</tr>
+<tr>
+<td>1056</td>
+<td>CALL FOR AUTH</td>
+<td>Declined. System error with security boxes</td>
+</tr>
+<tr>
+<td>1057</td>
+<td>CALL FOR AUTH</td>
+<td>Declined. ARQC error</td>
+</tr>
+<tr>
+<td>1058</td>
+<td>CALL FOR AUTH</td>
+<td>Declined. CVR error</td>
+</tr>
+<tr>
+<td>1059</td>
+<td>CALL FOR AUTH</td>
+<td>Declined. TVR error</td>
+</tr>
+<tr>
+<td>1060</td>
+<td>CALL FOR AUTH</td>
+<td>Declined. This message is an EMV referral - &quot;fallback&quot;</td>
+</tr>
+<tr>
+<td>1061</td>
+<td>RETAILER NOT FOUND</td>
+<td>Declined. The merchant number is invalid</td>
+</tr>
+<tr>
+<td>1062</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Account type invalid.</td>
+</tr>
+<tr>
+<td>1063</td>
+<td>INVALID ADMIN PIN</td>
+<td>Declined. The administrative PIN is invalid</td>
+</tr>
+<tr>
+<td>1064</td>
+<td>NEED ADMIN CARD</td>
+<td>Declined. Admin card required. Currently only validated for admin PIN change transactions</td>
+</tr>
+<tr>
+<td>1065</td>
+<td>CALL SERVICE</td>
+<td>Declined. The amount of the transaction is too high</td>
+</tr>
+<tr>
+<td>1066</td>
+<td>CARD NOT SET UP</td>
+<td>Declined. The card is not set up in the acquirer&#39;s host (POS)</td>
+</tr>
+<tr>
+<td>1067</td>
+<td>CALL SERVICE</td>
+<td>Declined. The transaction date is invalid</td>
+</tr>
+<tr>
+<td>1068</td>
+<td>INVALID DATE</td>
+<td>Declined. The expiry date of the card is invalid</td>
+</tr>
+<tr>
+<td>1069</td>
+<td>CALL SERVICE</td>
+<td>Declined. Transaction code invalid</td>
+</tr>
+<tr>
+<td>1070</td>
+<td>DECLINED</td>
+<td>Declined. Transaction amount exceeds the allowable limit</td>
+</tr>
+<tr>
+<td>1071</td>
+<td>DECLINED</td>
+<td>Declined. EMV - ARQC invalid</td>
+</tr>
+<tr>
+<td>1072</td>
+<td>DECLINED</td>
+<td>Declined. EMV - Error with the security box</td>
+</tr>
+<tr>
+<td>1073</td>
+<td>DECLINED</td>
+<td>Declined. EMV - Error with the security box</td>
+</tr>
+<tr>
+<td>1074</td>
+<td>DECLINED</td>
+<td>Declined. EMV - Key cannot be found in the security module</td>
+</tr>
+<tr>
+<td>1075</td>
+<td>DECLINED</td>
+<td>Declined. EMV - ATC error</td>
+</tr>
+<tr>
+<td>1076</td>
+<td>DECLINED</td>
+<td>Declined. EMV - CVR error</td>
+</tr>
+<tr>
+<td>1077</td>
+<td>DECLINED</td>
+<td>Declined. EMV - TVR error</td>
+</tr>
+<tr>
+<td>1078</td>
+<td>DECLINED</td>
+<td>Declined. EMV - Transaction in fallback</td>
+</tr>
+<tr>
+<td>1079</td>
+<td>INVALID PROGRAM</td>
+<td>Declined. PPC - The selected program is inactive</td>
+</tr>
+<tr>
+<td>1080</td>
+<td>TRX NOT ALLOWED</td>
+<td>Declined. PPC - The merchant does not have access to the transaction program</td>
+</tr>
+<tr>
+<td>1081</td>
+<td>INC. AMOUNT/CARD</td>
+<td>Declined. PPC - Amount differs from the program</td>
+</tr>
+<tr>
+<td>1082</td>
+<td>INVALID AMOUNT</td>
+<td>Declined. PPC - The amount does not correspond with the program</td>
+</tr>
+<tr>
+<td>1083</td>
+<td>DECLINED</td>
+<td>Declined. PPC - Activation correction impossible</td>
+</tr>
+<tr>
+<td>1084</td>
+<td>DECLINED</td>
+<td>Declined. PPC - amount of the transaction higher than the starting amount</td>
+</tr>
+<tr>
+<td>1085</td>
+<td>ALREADY ACTIVE</td>
+<td>Declined. PPC - card already activated</td>
+</tr>
+<tr>
+<td>1086</td>
+<td>INSUFF. FUNDS</td>
+<td>Declined. PPC - Insufficient funds</td>
+</tr>
+<tr>
+<td>1087</td>
+<td>INVALID CARD</td>
+<td>Declined. PPC - Invalid card</td>
+</tr>
+<tr>
+<td>1088</td>
+<td>FORMAT ERROR</td>
+<td>Declined. Error in the format of the transaction</td>
+</tr>
+<tr>
+<td>1089</td>
+<td>FORMAT ERROR</td>
+<td>Declined. Error in the contents of a field in the transaction</td>
+</tr>
+<tr>
+<td>1090</td>
+<td>FORMAT ERROR</td>
+<td>Declined. Error in Batch Close</td>
+</tr>
+<tr>
+<td>1091</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Desjardins acquirer system timeout</td>
+</tr>
+<tr>
+<td>1092</td>
+<td>FORMAT ERROR</td>
+<td>Declined. Error in the Desjardins host acquirer system</td>
+</tr>
+<tr>
+<td>1093</td>
+<td>TERMINAL DEACTIVATED</td>
+<td>Declined. The terminal is deactivated at the Desjardins acquirer host</td>
+</tr>
+<tr>
+<td>1094</td>
+<td>FORMAT ERROR</td>
+<td>Declined. The transaction is invalid. The response sent by the host only contains a header.</td>
+</tr>
+<tr>
+<td>1095</td>
+<td>INVALID PIN LENGTH</td>
+<td>Declined. PIN length invalid</td>
+</tr>
+<tr>
+<td>1096</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Cardholder card data decrypting error.</td>
+</tr>
+<tr>
+<td>1097</td>
+<td>PLEASE RETRY</td>
+<td>Declined. MAC error</td>
+</tr>
+<tr>
+<td>1098</td>
+<td>CALL SERVICE</td>
+<td>Declined. Sequence number (see header) is invalid</td>
+</tr>
+<tr>
+<td>1099</td>
+<td>PIN TRIES EXCEEDED</td>
+<td>Declined. Number of PIN attempts exceeded</td>
+</tr>
+<tr>
+<td>1100</td>
+<td>EXPIRED CARD</td>
+<td>Declined. Expired card</td>
+</tr>
+<tr>
+<td>1101</td>
+<td>HOLD CARD</td>
+<td>Declined. Card probably fraudulent.</td>
+</tr>
+<tr>
+<td>1102</td>
+<td>HOLD CARD</td>
+<td>Declined. Stolen card</td>
+</tr>
+<tr>
+<td>1103</td>
+<td>INVALID AMOUNT</td>
+<td>Declined. Invalid amount</td>
+</tr>
+<tr>
+<td>1104</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Invalid card</td>
+</tr>
+<tr>
+<td>1105</td>
+<td>HOLD CARD</td>
+<td>Declined. Card probably fraudulent.</td>
+</tr>
+<tr>
+<td>1106</td>
+<td>PLEASE RETRY</td>
+<td>Declined. Limit exceeded</td>
+</tr>
+<tr>
+<td>1107</td>
+<td>HOLD CARD</td>
+<td>Declined. Amount exceeds the limit</td>
+</tr>
+<tr>
+<td>1108</td>
+<td>HOLD CARD</td>
+<td>Declined. Retain card</td>
+</tr>
+<tr>
+<td>1109</td>
+<td>DECLINED</td>
+<td>Declined. EMV - ARQC error</td>
+</tr>
+<tr>
+<td>1110</td>
+<td>DECLINED</td>
+<td>Declined. EMV - CVR error</td>
+</tr>
+<tr>
+<td>1111</td>
+<td>DECLINED</td>
+<td>Declined. EMV - TVR error</td>
+</tr>
+<tr>
+<td>1112</td>
+<td>UNABLE TO PROCESS</td>
+<td>Declined. Error in the tax calculation</td>
+</tr>
+<tr>
+<td>1113</td>
+<td>CANCELLATION LIMITÂ</td>
+<td>Declined. Daily Interac cancellation limit reached</td>
+</tr>
+<tr>
+<td>1114</td>
+<td>KEY CHANGE REQUIRED</td>
+<td>Declined. First transaction for a terminal must be a transaction code 96</td>
+</tr>
+<tr>
+<td>1115</td>
+<td>CARD NOT SUPPORTED</td>
+<td>Declined.</td>
+</tr>
+<tr>
+<td>1116</td>
+<td>SELECT OTHER ACCT</td>
+<td>Declined. Inactive Desjardins Interac account</td>
+</tr>
+<tr>
+<td>1117</td>
+<td>CARD NOT SET UP</td>
+<td>Declined. Inactive Desjardins Interac card</td>
+</tr>
+<tr>
+<td>1118</td>
+<td>DECLINED</td>
+<td>Declined. Desjardins Interac card, insufficient funds</td>
+</tr>
+<tr>
+<td>1119</td>
+<td>NOT ALLOWED</td>
+<td>Declined. Transaction not allowed</td>
+</tr>
+<tr>
+<td>1120</td>
+<td>INVALID PIN</td>
+<td>Declined. Incorrect PIN</td>
+</tr>
+<tr>
+<td>1121</td>
+<td>DECLINED</td>
+<td>Declined. PIN Required. The card must be inserted into the chip reader.</td>
+</tr>
+<tr>
+<td>1122</td>
+<td>ADM PIN NOT IN FILE</td>
+<td>Declined. Unrecognized administrative card</td>
+</tr>
+<tr>
+<td>1123</td>
+<td>PIN CHG NOT ALLOWED</td>
+<td>Declined. This Admin card cannot be used to change the PIN</td>
+</tr>
+<tr>
+<td>1124</td>
+<td>SYSTEM NOT AVAIL.</td>
+<td>Declined. Desjardins Interac issuing host unavailable</td>
+</tr>
+<tr>
+<td>1125</td>
+<td>DECLINED</td>
+<td>Declined. Requires caisse authorization</td>
+</tr>
+<tr>
+<td>1126</td>
+<td>ACCOUNT NOT SET UP</td>
+<td>Declined. Non-existent account</td>
+</tr>
+<tr>
+<td>1127</td>
+<td>CARD NOT SUPPORTED</td>
+<td>Declined. Caisse (branch) does not exist</td>
+</tr>
+<tr>
+<td>1128</td>
+<td>CARD NOT SET UP</td>
+<td>Declined. Card inactive at the Desjardins Interac issuing host</td>
+</tr>
+<tr>
+<td>1129</td>
+<td>SELECT OTHER ACCT</td>
+<td>Declined. Account does not exist</td>
+</tr>
+<tr>
+<td>1130</td>
+<td>DECLINED</td>
+<td>Declined. Amount exceeds the allowable limit</td>
+</tr>
+<tr>
+<td>1131</td>
+<td>CARD NOT SET UP</td>
+<td>Declined. Account does not exist</td>
+</tr>
+<tr>
+<td>1132</td>
+<td>Invalid Accord D Transaction</td>
+<td>Invalid Accord D Transaction</td>
+</tr>
+<tr>
+<td>1133</td>
+<td>Accord D transaction cannot be processed as recurring.</td>
+<td>Accord D transaction cannot be processed as recurring.</td>
+</tr>
+</tbody></table></div>
+              <h3 id="elavon">Elavon</h3>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Message ID</th>
+<th>Cardholder message</th>
+<th>Merchant message</th>
+</tr>
+</thead><tbody><tr>
+<td>743</td>
+<td>APPROVAL</td>
+<td>APPROVAL</td>
+</tr>
+<tr>
+<td>744</td>
+<td>DECLINED-HELP 9999 (Gift Card - Host Busy)</td>
+<td>DECLINED-HELP 9999 (Gift Card - Host Busy)</td>
+</tr>
+<tr>
+<td>745</td>
+<td>INVALID CARD (Gift Card)</td>
+<td>INVALID CARD (Gift Card)</td>
+</tr>
+<tr>
+<td>746</td>
+<td>INVALID TERM ID (Gift Card)</td>
+<td>INVALID TERM ID (Gift Card)</td>
+</tr>
+<tr>
+<td>747</td>
+<td>AMOUNT ERROR (Gift Card)</td>
+<td>AMOUNT ERROR (Gift Card)</td>
+</tr>
+<tr>
+<td>748</td>
+<td>ALREADY ACTIVE (Gift Card</td>
+<td>ALREADY ACTIVE (Gift Card</td>
+</tr>
+<tr>
+<td>749</td>
+<td>REQ. EXCEEDS BAL. (Gift Card)</td>
+<td>REQ. EXCEEDS BAL. (Gift Card)</td>
+</tr>
+<tr>
+<td>750</td>
+<td>MAX REACHED (Gift Card)</td>
+<td>MAX REACHED (Gift Card)</td>
+</tr>
+<tr>
+<td>751</td>
+<td>NON RELOADABLE (Gift Card)</td>
+<td>NON RELOADABLE (Gift Card)</td>
+</tr>
+<tr>
+<td>752</td>
+<td>CARD NOT ACTIVE (Gift Card)</td>
+<td>CARD NOT ACTIVE (Gift Card)</td>
+</tr>
+<tr>
+<td>753</td>
+<td>SEQ ERR PLS CALL (Gift Card)</td>
+<td>SEQ ERR PLS CALL (Gift Card)</td>
+</tr>
+<tr>
+<td>754</td>
+<td>DECLINED-HELP 9999 (Gift Card – System Error)</td>
+<td>DECLINED-HELP 9999 (Gift Card – System Error)</td>
+</tr>
+<tr>
+<td>755</td>
+<td>DECLINE CVV2</td>
+<td>DECLINE CVV2</td>
+</tr>
+<tr>
+<td>756</td>
+<td>PICK UP CARD</td>
+<td>PICK UP CARD</td>
+</tr>
+<tr>
+<td>757</td>
+<td>DECLINED</td>
+<td>DECLINED</td>
+</tr>
+<tr>
+<td>758</td>
+<td>CALL AUTH. CENTER</td>
+<td>CALL AUTH. CENTER</td>
+</tr>
+<tr>
+<td>759</td>
+<td>ELAVON PROCESSING ERROR</td>
+<td>ELAVON PROCESSING ERROR</td>
+</tr>
+</tbody></table></div>
+              <h3 id="first-data">First Data</h3>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Message ID</th>
+<th>Cardholder message</th>
+<th>Merchant message</th>
+</tr>
+</thead><tbody><tr>
+<td>684</td>
+<td>APPROVAL</td>
+<td>APPROVAL</td>
+</tr>
+<tr>
+<td>685</td>
+<td>REFERRAL</td>
+<td>REFERRAL</td>
+</tr>
+<tr>
+<td>686</td>
+<td>INVLD MER ID</td>
+<td>INVLD MER ID</td>
+</tr>
+<tr>
+<td>687</td>
+<td>APPRV LESSER AMT</td>
+<td>APPRV LESSER AMT</td>
+</tr>
+<tr>
+<td>688</td>
+<td>BAD PROCESSING CODE</td>
+<td>BAD PROCESSING CODE</td>
+</tr>
+<tr>
+<td>689</td>
+<td>INV AMT</td>
+<td>INV AMT</td>
+</tr>
+<tr>
+<td>690</td>
+<td>INV ACCT NUM</td>
+<td>INV ACCT NUM</td>
+</tr>
+<tr>
+<td>691</td>
+<td>INV TERMINAL</td>
+<td>INV TERMINAL</td>
+</tr>
+<tr>
+<td>692</td>
+<td>PLEASE RETRY</td>
+<td>PLEASE RETRY</td>
+</tr>
+<tr>
+<td>693</td>
+<td>DECLINED</td>
+<td>DECLINED</td>
+</tr>
+<tr>
+<td>694</td>
+<td>EXPIRED CARD</td>
+<td>EXPIRED CARD</td>
+</tr>
+<tr>
+<td>695</td>
+<td>DECLINED</td>
+<td>DECLINED</td>
+</tr>
+<tr>
+<td>696</td>
+<td>HOLD - CALL CTR</td>
+<td>HOLD - CALL CTR</td>
+</tr>
+<tr>
+<td>697</td>
+<td>SERV NOT ALLOWED</td>
+<td>SERV NOT ALLOWED</td>
+</tr>
+<tr>
+<td>698</td>
+<td>APPROVAL</td>
+<td>APPROVAL</td>
+</tr>
+<tr>
+<td>699</td>
+<td>AVS ACCEPTED</td>
+<td>AVS ACCEPTED</td>
+</tr>
+<tr>
+<td>700</td>
+<td>INVALID TERM ID</td>
+<td>INVALID TERM ID</td>
+</tr>
+<tr>
+<td>701</td>
+<td>PLEASE RETRY</td>
+<td>PLEASE RETRY</td>
+</tr>
+<tr>
+<td>702</td>
+<td>RESEND BATCH</td>
+<td>RESEND BATCH</td>
+</tr>
+<tr>
+<td>703</td>
+<td>SYSTEM PROBLEM</td>
+<td>SYSTEM PROBLEM</td>
+</tr>
+<tr>
+<td>704</td>
+<td>CVV2 DECLINED</td>
+<td>CVV2 DECLINED</td>
+</tr>
+<tr>
+<td>705</td>
+<td>DOWNLOAD FAILED</td>
+<td>DOWNLOAD FAILED</td>
+</tr>
+<tr>
+<td>706</td>
+<td>INVLID MAC</td>
+<td>INVLID MAC</td>
+</tr>
+<tr>
+<td>707</td>
+<td>INVALID ID NBR</td>
+<td>INVALID ID NBR</td>
+</tr>
+<tr>
+<td>708</td>
+<td>INV DRIVER NBR</td>
+<td>INV DRIVER NBR</td>
+</tr>
+<tr>
+<td>709</td>
+<td>INV VEHICLE NBR</td>
+<td>INV VEHICLE NBR</td>
+</tr>
+<tr>
+<td>710</td>
+<td>INV EXP DATE</td>
+<td>INV EXP DATE</td>
+</tr>
+<tr>
+<td>711</td>
+<td>INVLD AMT 3</td>
+<td>INVLD AMT 3</td>
+</tr>
+<tr>
+<td>712</td>
+<td>INVLD ACCT 2</td>
+<td>INVLD ACCT 2</td>
+</tr>
+<tr>
+<td>713</td>
+<td>INV EXP DATE</td>
+<td>INV EXP DATE</td>
+</tr>
+<tr>
+<td>714</td>
+<td>INV ACCT</td>
+<td>INV ACCT</td>
+</tr>
+<tr>
+<td>715</td>
+<td>INVLD ACCT 1</td>
+<td>INVLD ACCT 1</td>
+</tr>
+<tr>
+<td>716</td>
+<td>CAPT. NOT ALLOWED</td>
+<td>CAPT. NOT ALLOWED</td>
+</tr>
+<tr>
+<td>717</td>
+<td>COMM ERR RESEND</td>
+<td>COMM ERR RESEND</td>
+</tr>
+<tr>
+<td>718</td>
+<td>INVL TERMINAL ID</td>
+<td>INVL TERMINAL ID</td>
+</tr>
+<tr>
+<td>719</td>
+<td>INVL ARRIVAL-DT</td>
+<td>INVL ARRIVAL-DT</td>
+</tr>
+<tr>
+<td>720</td>
+<td>INVL CHECKOUT DT</td>
+<td>INVL CHECKOUT DT</td>
+</tr>
+<tr>
+<td>721</td>
+<td>INVL ROOM RATE</td>
+<td>INVL ROOM RATE</td>
+</tr>
+<tr>
+<td>722</td>
+<td>INVL FOLIO NBR</td>
+<td>INVL FOLIO NBR</td>
+</tr>
+<tr>
+<td>723</td>
+<td>INV TRN TYPE</td>
+<td>INV TRN TYPE</td>
+</tr>
+<tr>
+<td>724</td>
+<td>MAX TIP $999</td>
+<td>MAX TIP $999</td>
+</tr>
+<tr>
+<td>725</td>
+<td>INCORRECT PIN</td>
+<td>INCORRECT PIN</td>
+</tr>
+<tr>
+<td>726</td>
+<td>AMT EXCEEDED LIMIT</td>
+<td>AMT EXCEEDED LIMIT</td>
+</tr>
+<tr>
+<td>727</td>
+<td>HOST KEY ERROR</td>
+<td>HOST KEY ERROR</td>
+</tr>
+<tr>
+<td>728</td>
+<td>PIN RETRY EXCEEDED</td>
+<td>PIN RETRY EXCEEDED</td>
+</tr>
+<tr>
+<td>729</td>
+<td>DUPLICATE TRAN</td>
+<td>DUPLICATE TRAN</td>
+</tr>
+<tr>
+<td>730</td>
+<td>REV REJECTED</td>
+<td>REV REJECTED</td>
+</tr>
+<tr>
+<td>731</td>
+<td>ENTER LESSER AMOUNT</td>
+<td>ENTER LESSER AMOUNT</td>
+</tr>
+<tr>
+<td>732</td>
+<td>PIN XLATE ERROR</td>
+<td>PIN XLATE ERROR</td>
+</tr>
+<tr>
+<td>733</td>
+<td>INV CASHBACK AMT</td>
+<td>INV CASHBACK AMT</td>
+</tr>
+<tr>
+<td>734</td>
+<td>CRYPTO BOX UNAV</td>
+<td>CRYPTO BOX UNAV</td>
+</tr>
+<tr>
+<td>735</td>
+<td>DBT SWITCH UNAVL</td>
+<td>DBT SWITCH UNAVL</td>
+</tr>
+<tr>
+<td>736</td>
+<td>ISSUER UNAV</td>
+<td>ISSUER UNAV</td>
+</tr>
+<tr>
+<td>737</td>
+<td>UNDEFINED CARD</td>
+<td>UNDEFINED CARD</td>
+</tr>
+<tr>
+<td>738</td>
+<td>DBTSW INV MERID</td>
+<td>DBTSW INV MERID</td>
+</tr>
+<tr>
+<td>739</td>
+<td>TRAN CT EXCD LMT</td>
+<td>TRAN CT EXCD LMT</td>
+</tr>
+<tr>
+<td>740</td>
+<td>RESUB EXCDS LMT</td>
+<td>RESUB EXCDS LMT</td>
+</tr>
+<tr>
+<td>741</td>
+<td>DBTSW PIN XL ERR</td>
+<td>DBTSW PIN XL ERR</td>
+</tr>
+<tr>
+<td>742</td>
+<td>DECLINE</td>
+<td>DECLINE</td>
+</tr>
+<tr>
+<td>823</td>
+<td>ISS UNAV/DATE ER</td>
+<td>ISS UNAV/DATE ER</td>
+</tr>
+<tr>
+<td>939</td>
+<td>Reversal Outside Window</td>
+<td>Reversal Outside Window</td>
+</tr>
+</tbody></table></div>
+              <h3 id="global-payments">Global Payments</h3>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Message ID</th>
+<th>Cardholder message</th>
+<th>Merchant message</th>
+</tr>
+</thead><tbody><tr>
+<td>561</td>
+<td>APPROVED</td>
+<td>APPROVED</td>
+</tr>
+<tr>
+<td>562</td>
+<td>CALL CARD ISSUER</td>
+<td>CALL CARD ISSUER</td>
+</tr>
+<tr>
+<td>563</td>
+<td>CALL</td>
+<td>CALL</td>
+</tr>
+<tr>
+<td>564</td>
+<td>INVLD MERCH ID</td>
+<td>INVLD MERCH ID</td>
+</tr>
+<tr>
+<td>565</td>
+<td>PIC UP</td>
+<td>PIC UP</td>
+</tr>
+<tr>
+<td>566</td>
+<td>DECLINE</td>
+<td>DECLINE</td>
+</tr>
+<tr>
+<td>567</td>
+<td>REVERSED</td>
+<td>REVERSED</td>
+</tr>
+<tr>
+<td>568</td>
+<td>Decline-CV2 FAIL</td>
+<td>Decline-CV2 FAIL</td>
+</tr>
+<tr>
+<td>569</td>
+<td>AP WITH ID</td>
+<td>AP WITH ID</td>
+</tr>
+<tr>
+<td>570</td>
+<td>INVLD</td>
+<td>INVLD</td>
+</tr>
+<tr>
+<td>571</td>
+<td>INVLD AMOUNT</td>
+<td>INVLD AMOUNT</td>
+</tr>
+<tr>
+<td>572</td>
+<td>INVLD ACCT</td>
+<td>INVLD ACCT</td>
+</tr>
+<tr>
+<td>573</td>
+<td>PLEASE RETRY</td>
+<td>PLEASE RETRY</td>
+</tr>
+<tr>
+<td>574</td>
+<td>INVLD EXP DATE</td>
+<td>INVLD EXP DATE</td>
+</tr>
+<tr>
+<td>575</td>
+<td>PIN INVALID</td>
+<td>PIN INVALID</td>
+</tr>
+<tr>
+<td>576</td>
+<td>UNAUTH TRANS</td>
+<td>UNAUTH TRANS</td>
+</tr>
+<tr>
+<td>577</td>
+<td>MAX PIN RETRIES</td>
+<td>MAX PIN RETRIES</td>
+</tr>
+<tr>
+<td>578</td>
+<td>AP DUPE</td>
+<td>AP DUPE</td>
+</tr>
+<tr>
+<td>579</td>
+<td>SYSTEM UNAVAILABLE</td>
+<td>SYSTEM UNAVAILABLE</td>
+</tr>
+<tr>
+<td>580</td>
+<td>INV ACCT MATCH</td>
+<td>INV ACCT MATCH</td>
+</tr>
+<tr>
+<td>581</td>
+<td>INV ACCT MATCH</td>
+<td>INV ACCT MATCH</td>
+</tr>
+<tr>
+<td>582</td>
+<td>INV ITEM NUM</td>
+<td>INV ITEM NUM</td>
+</tr>
+<tr>
+<td>583</td>
+<td>ITEM ADJ</td>
+<td>ITEM ADJ</td>
+</tr>
+<tr>
+<td>584</td>
+<td>MUST BALANCE NOW</td>
+<td>MUST BALANCE NOW</td>
+</tr>
+<tr>
+<td>585</td>
+<td>USE DUP THEN BAL</td>
+<td>USE DUP THEN BAL</td>
+</tr>
+<tr>
+<td>586</td>
+<td>NO DUP FOUND</td>
+<td>NO DUP FOUND</td>
+</tr>
+<tr>
+<td>587</td>
+<td>INVALID DATA</td>
+<td>INVALID DATA</td>
+</tr>
+<tr>
+<td>588</td>
+<td>NO TRANS FOUND</td>
+<td>NO TRANS FOUND</td>
+</tr>
+<tr>
+<td>589</td>
+<td>AP NOT CAPTURED</td>
+<td>AP NOT CAPTURED</td>
+</tr>
+<tr>
+<td>590</td>
+<td>AP AUTH-ONLY</td>
+<td>AP AUTH-ONLY</td>
+</tr>
+<tr>
+<td>591</td>
+<td>INV BANK</td>
+<td>INV BANK</td>
+</tr>
+<tr>
+<td>592</td>
+<td>TRAN TYPE INVLD</td>
+<td>TRAN TYPE INVLD</td>
+</tr>
+<tr>
+<td>593</td>
+<td>APPROVED</td>
+<td>APPROVED</td>
+</tr>
+<tr>
+<td>594</td>
+<td>DB UNAVAIL 02</td>
+<td>DB UNAVAIL 02</td>
+</tr>
+<tr>
+<td>595</td>
+<td>DB UNAVAIL 03</td>
+<td>DB UNAVAIL 03</td>
+</tr>
+<tr>
+<td>596</td>
+<td>DB UNAVAIL 04</td>
+<td>DB UNAVAIL 04</td>
+</tr>
+<tr>
+<td>597</td>
+<td>UNAUTH USER</td>
+<td>UNAUTH USER</td>
+</tr>
+<tr>
+<td>598</td>
+<td>INVALID CARD</td>
+<td>INVALID CARD</td>
+</tr>
+<tr>
+<td>599</td>
+<td>DB ISSUER UNAVAIL</td>
+<td>DB ISSUER UNAVAIL</td>
+</tr>
+<tr>
+<td>600</td>
+<td>INVALID POS CARD</td>
+<td>INVALID POS CARD</td>
+</tr>
+<tr>
+<td>601</td>
+<td>ACCT TYPE INVLD</td>
+<td>ACCT TYPE INVLD</td>
+</tr>
+<tr>
+<td>602</td>
+<td>INVALID PREFIX</td>
+<td>INVALID PREFIX</td>
+</tr>
+<tr>
+<td>603</td>
+<td>INVALID FIID</td>
+<td>INVALID FIID</td>
+</tr>
+<tr>
+<td>604</td>
+<td>VERIFY</td>
+<td>VERIFY</td>
+</tr>
+<tr>
+<td>605</td>
+<td>INVALID LIC</td>
+<td>INVALID LIC</td>
+</tr>
+<tr>
+<td>606</td>
+<td>INVALID STATE CD</td>
+<td>INVALID STATE CD</td>
+</tr>
+<tr>
+<td>607</td>
+<td>EDC UNAVAILABLE</td>
+<td>EDC UNAVAILABLE</td>
+</tr>
+<tr>
+<td>608</td>
+<td>DB UNAVAIL 01</td>
+<td>DB UNAVAIL 01</td>
+</tr>
+<tr>
+<td>609</td>
+<td>SCAN UNAVAILABLE</td>
+<td>SCAN UNAVAILABLE</td>
+</tr>
+<tr>
+<td>610</td>
+<td>EXCEEDS MAX AMT</td>
+<td>EXCEEDS MAX AMT</td>
+</tr>
+<tr>
+<td>611</td>
+<td>EXCEEDS MAX USES</td>
+<td>EXCEEDS MAX USES</td>
+</tr>
+<tr>
+<td>770</td>
+<td>INVALID CID</td>
+<td>INVALID CID</td>
+</tr>
+<tr>
+<td>803</td>
+<td>ISSUER UNAVAIL</td>
+<td>ISSUER UNAVAIL</td>
+</tr>
+<tr>
+<td>806</td>
+<td>TRAN NOT ALLOWED</td>
+<td>TRAN NOT ALLOWED</td>
+</tr>
+</tbody></table></div>
+              <h3 id="chase-paymentech">Chase Paymentech</h3>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Message ID</th>
+<th>Cardholder message</th>
+<th>Merchant message</th>
+</tr>
+</thead><tbody><tr>
+<td>346</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>347</td>
+<td>Auth Declined</td>
+<td>Auth Declined</td>
+</tr>
+<tr>
+<td>348</td>
+<td>Call Voice Oper</td>
+<td>Call Voice Oper</td>
+</tr>
+<tr>
+<td>349</td>
+<td>Hold - Call</td>
+<td>Hold - Call</td>
+</tr>
+<tr>
+<td>350</td>
+<td>Call Voice Oper</td>
+<td>Call Voice Oper</td>
+</tr>
+<tr>
+<td>351</td>
+<td>Invalid Card No</td>
+<td>Invalid Card No</td>
+</tr>
+<tr>
+<td>352</td>
+<td>Invalid Exp. Date</td>
+<td>Invalid Exp. Date</td>
+</tr>
+<tr>
+<td>353</td>
+<td>Invalid ICA No</td>
+<td>Invalid ICA No</td>
+</tr>
+<tr>
+<td>354</td>
+<td>Invalid ABA No</td>
+<td>Invalid ABA No</td>
+</tr>
+<tr>
+<td>355</td>
+<td>Invalid PIN No</td>
+<td>Invalid PIN No</td>
+</tr>
+<tr>
+<td>356</td>
+<td>Invalid Bank MID</td>
+<td>Invalid Bank MID</td>
+</tr>
+<tr>
+<td>357</td>
+<td>Invalid Term No</td>
+<td>Invalid Term No</td>
+</tr>
+<tr>
+<td>358</td>
+<td>Invalid Amount</td>
+<td>Invalid Amount</td>
+</tr>
+<tr>
+<td>359</td>
+<td>Invalid Tran Fmt</td>
+<td>Invalid Tran Fmt</td>
+</tr>
+<tr>
+<td>360</td>
+<td>Call Voice Oper</td>
+<td>Call Voice Oper</td>
+</tr>
+<tr>
+<td>361</td>
+<td>Lost/Stolen Card</td>
+<td>Lost/Stolen Card</td>
+</tr>
+<tr>
+<td>362</td>
+<td>Invalid PIN</td>
+<td>Invalid PIN</td>
+</tr>
+<tr>
+<td>363</td>
+<td>Over Credit Flr</td>
+<td>Over Credit Flr</td>
+</tr>
+<tr>
+<td>364</td>
+<td>Request Denied</td>
+<td>Request Denied</td>
+</tr>
+<tr>
+<td>365</td>
+<td>Not Online to XX</td>
+<td>Not Online to XX</td>
+</tr>
+<tr>
+<td>366</td>
+<td>Auth Down-Retry</td>
+<td>Auth Down-Retry</td>
+</tr>
+<tr>
+<td>367</td>
+<td>Auth Declined</td>
+<td>Auth Declined</td>
+</tr>
+<tr>
+<td>368</td>
+<td>Invalid Pin No</td>
+<td>Invalid Pin No</td>
+</tr>
+<tr>
+<td>369</td>
+<td>Auth Declined</td>
+<td>Auth Declined</td>
+</tr>
+<tr>
+<td>370</td>
+<td>Card Not Allowed</td>
+<td>Card Not Allowed</td>
+</tr>
+<tr>
+<td>371</td>
+<td>PL Setup Reqd</td>
+<td>PL Setup Reqd</td>
+</tr>
+<tr>
+<td>372</td>
+<td>BIN Not Allowed</td>
+<td>BIN Not Allowed</td>
+</tr>
+<tr>
+<td>373</td>
+<td>Card Not Allowed</td>
+<td>Card Not Allowed</td>
+</tr>
+<tr>
+<td>374</td>
+<td>Inv Merc Rstrct Code</td>
+<td>Inv Merc Rstrct Code</td>
+</tr>
+<tr>
+<td>375</td>
+<td>Prod Restricted</td>
+<td>Prod Restricted</td>
+</tr>
+<tr>
+<td>376</td>
+<td>Prod Not On File</td>
+<td>Prod Not On File</td>
+</tr>
+<tr>
+<td>377</td>
+<td>Auth Declined</td>
+<td>Auth Declined</td>
+</tr>
+<tr>
+<td>378</td>
+<td>Auth Declined</td>
+<td>Auth Declined</td>
+</tr>
+<tr>
+<td>379</td>
+<td>Auth Declined</td>
+<td>Auth Declined</td>
+</tr>
+<tr>
+<td>380</td>
+<td><em>Request Denied</em></td>
+<td><em>Request Denied</em></td>
+</tr>
+<tr>
+<td>381</td>
+<td>Invalid Driver Number</td>
+<td>Invalid Driver Number</td>
+</tr>
+<tr>
+<td>382</td>
+<td>PIN Not Selected</td>
+<td>PIN Not Selected</td>
+</tr>
+<tr>
+<td>383</td>
+<td>Auth Declined</td>
+<td>Auth Declined</td>
+</tr>
+<tr>
+<td>384</td>
+<td>CVC2/CID ERROR</td>
+<td>CVC2/CID ERROR</td>
+</tr>
+<tr>
+<td>385</td>
+<td>Tran Not Defined</td>
+<td>Tran Not Defined</td>
+</tr>
+<tr>
+<td>386</td>
+<td>Block Act Not Alwd</td>
+<td>Block Act Not Alwd</td>
+</tr>
+<tr>
+<td>387</td>
+<td>Incorrect Act Amt</td>
+<td>Incorrect Act Amt</td>
+</tr>
+<tr>
+<td>388</td>
+<td>Auth Down - Retry</td>
+<td>Auth Down - Retry</td>
+</tr>
+<tr>
+<td>389</td>
+<td>Auth Busy - Retry</td>
+<td>Auth Busy - Retry</td>
+</tr>
+<tr>
+<td>390</td>
+<td>Auth Busy - Retry</td>
+<td>Auth Busy - Retry</td>
+</tr>
+<tr>
+<td>391</td>
+<td>Auth Error - Retry</td>
+<td>Auth Error - Retry</td>
+</tr>
+<tr>
+<td>392</td>
+<td>Err - Pls Retry</td>
+<td>Err - Pls Retry</td>
+</tr>
+<tr>
+<td>393</td>
+<td>Err - Pls Retry</td>
+<td>Err - Pls Retry</td>
+</tr>
+<tr>
+<td>394</td>
+<td>Invalid Term ID</td>
+<td>Invalid Term ID</td>
+</tr>
+<tr>
+<td>395</td>
+<td>Invalid Function</td>
+<td>Invalid Function</td>
+</tr>
+<tr>
+<td>396</td>
+<td>Invalid Card</td>
+<td>Invalid Card</td>
+</tr>
+<tr>
+<td>397</td>
+<td>Invalid Exp. Date</td>
+<td>Invalid Exp. Date</td>
+</tr>
+<tr>
+<td>398</td>
+<td>Invalid Action Code</td>
+<td>Invalid Action Code</td>
+</tr>
+<tr>
+<td>399</td>
+<td>Amt Entry Error</td>
+<td>Amt Entry Error</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Invalid PIN</td>
+<td>Invalid PIN</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Invalid Card</td>
+<td>Invalid Card</td>
+</tr>
+<tr>
+<td>402</td>
+<td>Auth # Not Entered</td>
+<td>Auth # Not Entered</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Invalid Down Pay Ind</td>
+<td>Invalid Down Pay Ind</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Policy # Wrong Len</td>
+<td>Policy # Wrong Len</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Invalid Ind Code</td>
+<td>Invalid Ind Code</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Invalid Function</td>
+<td>Invalid Function</td>
+</tr>
+<tr>
+<td>407</td>
+<td>Entry Mode Invalid</td>
+<td>Entry Mode Invalid</td>
+</tr>
+<tr>
+<td>408</td>
+<td>Invalid Industry Data</td>
+<td>Invalid Industry Data</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Inv Fleet Data</td>
+<td>Inv Fleet Data</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Invalid Sys Info</td>
+<td>Invalid Sys Info</td>
+</tr>
+<tr>
+<td>411</td>
+<td>Invalid Format</td>
+<td>Invalid Format</td>
+</tr>
+<tr>
+<td>412</td>
+<td>Inv Transaction Class</td>
+<td>Inv Transaction Class</td>
+</tr>
+<tr>
+<td>413</td>
+<td>Inv PIN Capability</td>
+<td>Inv PIN Capability</td>
+</tr>
+<tr>
+<td>414</td>
+<td>Inv/Missing Retr Ref</td>
+<td>Inv/Missing Retr Ref</td>
+</tr>
+<tr>
+<td>415</td>
+<td>Inv MSDI</td>
+<td>Inv MSDI</td>
+</tr>
+<tr>
+<td>416</td>
+<td>Invalid Duration</td>
+<td>Invalid Duration</td>
+</tr>
+<tr>
+<td>417</td>
+<td>Inv Pref Cust Ind</td>
+<td>Inv Pref Cust Ind</td>
+</tr>
+<tr>
+<td>418</td>
+<td>Inv MO/TO Number</td>
+<td>Inv MO/TO Number</td>
+</tr>
+<tr>
+<td>419</td>
+<td>Inv Sale/Chg Des/Folio</td>
+<td>Inv Sale/Chg Des/Folio</td>
+</tr>
+<tr>
+<td>420</td>
+<td>Inv Mult Clr Seq No</td>
+<td>Inv Mult Clr Seq No</td>
+</tr>
+<tr>
+<td>421</td>
+<td>Inv Purch Card Data</td>
+<td>Inv Purch Card Data</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Inv Input/Use VRU</td>
+<td>Inv Input/Use VRU</td>
+</tr>
+<tr>
+<td>423</td>
+<td>Invalid EC Data 329</td>
+<td>Invalid EC Data 329</td>
+</tr>
+<tr>
+<td>424</td>
+<td>INV Function or Multiple FS or Unknown TKN</td>
+<td>INV Function or Multiple FS or Unknown TKN</td>
+</tr>
+<tr>
+<td>425</td>
+<td>INV TKN Value</td>
+<td>INV TKN Value</td>
+</tr>
+<tr>
+<td>426</td>
+<td>CVD Data Error</td>
+<td>CVD Data Error</td>
+</tr>
+<tr>
+<td>427</td>
+<td>TKN Data Error</td>
+<td>TKN Data Error</td>
+</tr>
+<tr>
+<td>428</td>
+<td>Invalid Term ID</td>
+<td>Invalid Term ID</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Invalid Term ID</td>
+<td>Invalid Term ID</td>
+</tr>
+<tr>
+<td>430</td>
+<td>Term Not Active</td>
+<td>Term Not Active</td>
+</tr>
+<tr>
+<td>431</td>
+<td>Invalid Act Code</td>
+<td>Invalid Act Code</td>
+</tr>
+<tr>
+<td>432</td>
+<td>Void Not Allowed</td>
+<td>Void Not Allowed</td>
+</tr>
+<tr>
+<td>433</td>
+<td>Ref Num Not Found</td>
+<td>Ref Num Not Found</td>
+</tr>
+<tr>
+<td>434</td>
+<td>Proc Error 7</td>
+<td>Proc Error 7</td>
+</tr>
+<tr>
+<td>435</td>
+<td>Too Many Batches</td>
+<td>Too Many Batches</td>
+</tr>
+<tr>
+<td>436</td>
+<td>Release Batch</td>
+<td>Release Batch</td>
+</tr>
+<tr>
+<td>437</td>
+<td>Invalid Function</td>
+<td>Invalid Function</td>
+</tr>
+<tr>
+<td>438</td>
+<td>Invalid Term ID</td>
+<td>Invalid Term ID</td>
+</tr>
+<tr>
+<td>439</td>
+<td>Invalid Term ID</td>
+<td>Invalid Term ID</td>
+</tr>
+<tr>
+<td>440</td>
+<td>Proc Error 13</td>
+<td>Proc Error 13</td>
+</tr>
+<tr>
+<td>441</td>
+<td>Proc Error 14</td>
+<td>Proc Error 14</td>
+</tr>
+<tr>
+<td>442</td>
+<td>Proc Error 15</td>
+<td>Proc Error 15</td>
+</tr>
+<tr>
+<td>443</td>
+<td>Invalid Function</td>
+<td>Invalid Function</td>
+</tr>
+<tr>
+<td>444</td>
+<td>Invalid Function</td>
+<td>Invalid Function</td>
+</tr>
+<tr>
+<td>445</td>
+<td>Invalid Function</td>
+<td>Invalid Function</td>
+</tr>
+<tr>
+<td>446</td>
+<td>Please Try Again</td>
+<td>Please Try Again</td>
+</tr>
+<tr>
+<td>447</td>
+<td>Invalid Function</td>
+<td>Invalid Function</td>
+</tr>
+<tr>
+<td>448</td>
+<td>Amount Too Large</td>
+<td>Amount Too Large</td>
+</tr>
+<tr>
+<td>449</td>
+<td>Amount Too Large</td>
+<td>Amount Too Large</td>
+</tr>
+<tr>
+<td>450</td>
+<td>Invalid Term ID</td>
+<td>Invalid Term ID</td>
+</tr>
+<tr>
+<td>451</td>
+<td>Proc Error 24</td>
+<td>Proc Error 24</td>
+</tr>
+<tr>
+<td>452</td>
+<td>Invalid Term ID</td>
+<td>Invalid Term ID</td>
+</tr>
+<tr>
+<td>453</td>
+<td>Invalid Function</td>
+<td>Invalid Function</td>
+</tr>
+<tr>
+<td>454</td>
+<td>Rev Not Allowed</td>
+<td>Rev Not Allowed</td>
+</tr>
+<tr>
+<td>455</td>
+<td>Rev Not Allowed</td>
+<td>Rev Not Allowed</td>
+</tr>
+<tr>
+<td>456</td>
+<td>Dscv Not Allowed</td>
+<td>Dscv Not Allowed</td>
+</tr>
+<tr>
+<td>457</td>
+<td>Rev Not Allowed</td>
+<td>Rev Not Allowed</td>
+</tr>
+<tr>
+<td>458</td>
+<td>Dscv Not Allowed</td>
+<td>Dscv Not Allowed</td>
+</tr>
+<tr>
+<td>459</td>
+<td>DC Not Allowed</td>
+<td>DC Not Allowed</td>
+</tr>
+<tr>
+<td>460</td>
+<td>CB Not Allowed</td>
+<td>CB Not Allowed</td>
+</tr>
+<tr>
+<td>461</td>
+<td>Invalid Key</td>
+<td>Invalid Key</td>
+</tr>
+<tr>
+<td>462</td>
+<td>Invalid Key</td>
+<td>Invalid Key</td>
+</tr>
+<tr>
+<td>463</td>
+<td>Failed-Plz Call</td>
+<td>Failed-Plz Call</td>
+</tr>
+<tr>
+<td>464</td>
+<td>Failed-Plz Call</td>
+<td>Failed-Plz Call</td>
+</tr>
+<tr>
+<td>465</td>
+<td>Failed-Plz Call</td>
+<td>Failed-Plz Call</td>
+</tr>
+<tr>
+<td>466</td>
+<td>Failed-Plz Call</td>
+<td>Failed-Plz Call</td>
+</tr>
+<tr>
+<td>467</td>
+<td>Failed-Plz Call</td>
+<td>Failed-Plz Call</td>
+</tr>
+<tr>
+<td>468</td>
+<td>Failed-Plz Call</td>
+<td>Failed-Plz Call</td>
+</tr>
+<tr>
+<td>469</td>
+<td>Failed-Plz Call</td>
+<td>Failed-Plz Call</td>
+</tr>
+<tr>
+<td>470</td>
+<td>JCB Not Allowed</td>
+<td>JCB Not Allowed</td>
+</tr>
+<tr>
+<td>471</td>
+<td>JCB Not Allowed</td>
+<td>JCB Not Allowed</td>
+</tr>
+<tr>
+<td>472</td>
+<td>Bank Not On File</td>
+<td>Bank Not On File</td>
+</tr>
+<tr>
+<td>473</td>
+<td>No Sponsor Inst</td>
+<td>No Sponsor Inst</td>
+</tr>
+<tr>
+<td>474</td>
+<td>Failed Plz Call</td>
+<td>Failed Plz Call</td>
+</tr>
+<tr>
+<td>475</td>
+<td>WX Not Allowed</td>
+<td>WX Not Allowed</td>
+</tr>
+<tr>
+<td>476</td>
+<td>Amount Too Large</td>
+<td>Amount Too Large</td>
+</tr>
+<tr>
+<td>477</td>
+<td>Reenter Odometer</td>
+<td>Reenter Odometer</td>
+</tr>
+<tr>
+<td>478</td>
+<td><Duplicate Tran></td>
+<td><Duplicate Tran></td>
+</tr>
+<tr>
+<td>479</td>
+<td>Tran Not Allowed</td>
+<td>Tran Not Allowed</td>
+</tr>
+<tr>
+<td>480</td>
+<td>Bat Already Rels</td>
+<td>Bat Already Rels</td>
+</tr>
+<tr>
+<td>481</td>
+<td>Invalid Rtng Ind</td>
+<td>Invalid Rtng Ind</td>
+</tr>
+<tr>
+<td>482</td>
+<td>AX Not Allowed</td>
+<td>AX Not Allowed</td>
+</tr>
+<tr>
+<td>483</td>
+<td>Invalid Merchant</td>
+<td>Invalid Merchant</td>
+</tr>
+<tr>
+<td>484</td>
+<td>Call Voice Op</td>
+<td>Call Voice Op</td>
+</tr>
+<tr>
+<td>485</td>
+<td>Auth Down-Retry</td>
+<td>Auth Down-Retry</td>
+</tr>
+<tr>
+<td>486</td>
+<td>Auth Busy-Retry</td>
+<td>Auth Busy-Retry</td>
+</tr>
+<tr>
+<td>487</td>
+<td>Auth Busy-Retry</td>
+<td>Auth Busy-Retry</td>
+</tr>
+<tr>
+<td>488</td>
+<td>Invalid Term ID</td>
+<td>Invalid Term ID</td>
+</tr>
+<tr>
+<td>489</td>
+<td>Term Not Active</td>
+<td>Term Not Active</td>
+</tr>
+<tr>
+<td>490</td>
+<td>No Transactions</td>
+<td>No Transactions</td>
+</tr>
+<tr>
+<td>491</td>
+<td>Bat Already Rels</td>
+<td>Bat Already Rels</td>
+</tr>
+<tr>
+<td>492</td>
+<td>Batch Not Found</td>
+<td>Batch Not Found</td>
+</tr>
+<tr>
+<td>794</td>
+<td>NO CHECKING ACCT</td>
+<td>NO CHECKING ACCT</td>
+</tr>
+<tr>
+<td>805</td>
+<td>Signature Debit Not Allowed</td>
+<td>Signature Debit Not Allowed</td>
+</tr>
+</tbody></table></div>
+              <h3 id="td">TD</h3>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Message ID</th>
+<th>Cardholder message</th>
+<th>Merchant message</th>
+</tr>
+</thead><tbody><tr>
+<td>61</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>62</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>63</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>64</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>65</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>66</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>67</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>68</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>69</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>70</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>71</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>72</td>
+<td>Declined EXPIRED CARD</td>
+<td>Declined EXPIRED CARD</td>
+</tr>
+<tr>
+<td>73</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>74</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>75</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>76</td>
+<td>PLEASE TRY AGAIN</td>
+<td>PLEASE TRY AGAIN</td>
+</tr>
+<tr>
+<td>77</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>78</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>79</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>80</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>81</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>82</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>83</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>84</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>85</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>86</td>
+<td>PLEASE TRY AGAIN</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>87</td>
+<td>Declined</td>
+<td>Declined ADJ NOT ALLOWED</td>
+</tr>
+<tr>
+<td>88</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>89</td>
+<td>Declined</td>
+<td>Declined INVALID TRAN DATE</td>
+</tr>
+<tr>
+<td>90</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>91</td>
+<td>PLEASE TRY AGAIN</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>92</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>93</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>94</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>95</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>96</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>97</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>98</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>99</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>100</td>
+<td>Declined</td>
+<td>Declined DUPLICATE TRAN</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Declined</td>
+<td>Declined MAX PER REFUND</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Declined</td>
+<td>Declined NUM TIMES USED</td>
+</tr>
+<tr>
+<td>105</td>
+<td>Declined</td>
+<td>Declined MAX REFUND TOTAL</td>
+</tr>
+<tr>
+<td>106</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>107</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>108</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>109</td>
+<td>Declined</td>
+<td>Declined MAX REFUND NUMBER</td>
+</tr>
+<tr>
+<td>110</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>112</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>113</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>114</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>115</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>116</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>117</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>118</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>119</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>120</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>121</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>122</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>123</td>
+<td>Call for Auth</td>
+<td>Call for Auth</td>
+</tr>
+<tr>
+<td>124</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>125</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>126</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>127</td>
+<td>Declined</td>
+<td>Declined CARD NOT SUPPORTED</td>
+</tr>
+<tr>
+<td>128</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>129</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>130</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>131</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>132</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>133</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>134</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>135</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>136</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>137</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>138</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>139</td>
+<td>Declined</td>
+<td>Declined SERVICE MERCHANT NOT ON FILE</td>
+</tr>
+<tr>
+<td>140</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>141</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>142</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>143</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>144</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>145</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>146</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>147</td>
+<td>Declined</td>
+<td>Declined INVALID TRAN DATE</td>
+</tr>
+<tr>
+<td>148</td>
+<td>Declined</td>
+<td>Declined INVALID EXP DATE</td>
+</tr>
+<tr>
+<td>149</td>
+<td>Declined</td>
+<td>Declined INVALID TRANCODE</td>
+</tr>
+<tr>
+<td>150</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>151</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>152</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>153</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>154</td>
+<td>Declined</td>
+<td>Declined BAD FORMAT</td>
+</tr>
+<tr>
+<td>155</td>
+<td>Declined</td>
+<td>Declined BAD DATA</td>
+</tr>
+<tr>
+<td>156</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>157</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>158</td>
+<td>PLEASE TRY AGAIN</td>
+<td>Declined - TIMEOUT</td>
+</tr>
+<tr>
+<td>159</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>160</td>
+<td>Declined</td>
+<td>Declined TERMINAL DEACTIVATED</td>
+</tr>
+<tr>
+<td>161</td>
+<td>Declined</td>
+<td>Declined BAD RESPONSE LENGTH</td>
+</tr>
+<tr>
+<td>162</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>163</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>164</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>165</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>166</td>
+<td>Declined</td>
+<td>Declined BAD SEQUENCE NUMBER</td>
+</tr>
+<tr>
+<td>167</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>168</td>
+<td>Declined</td>
+<td>Declined EXPIRED CARD</td>
+</tr>
+<tr>
+<td>169</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>170</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>171</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>172</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>173</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>174</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>175</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>176</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>177</td>
+<td>Declined</td>
+<td>Declined ADMIN CARD NOT FOUND</td>
+</tr>
+<tr>
+<td>178</td>
+<td>Declined</td>
+<td>Declined ADMIN CARD NOT ALLOWED</td>
+</tr>
+<tr>
+<td>179</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>180</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>181</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>182</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>183</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>184</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>185</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>186</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>187</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>188</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>189</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>771</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>772</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>773</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>774</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>775</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>776</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>777</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>778</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>779</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>780</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>781</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>782</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>783</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>784</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>785</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>786</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>787</td>
+<td>Declined</td>
+<td>Declined</td>
+</tr>
+<tr>
+<td>824</td>
+<td>Approved</td>
+<td>Approved</td>
+</tr>
+</tbody></table></div>
+              <h3 id="vital">Vital</h3>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Message ID</th>
+<th>Cardholder message</th>
+<th>Merchant message</th>
+</tr>
+</thead><tbody><tr>
+<td>494</td>
+<td>Approval</td>
+<td>Approval</td>
+</tr>
+<tr>
+<td>495</td>
+<td>Card OK</td>
+<td>Card OK</td>
+</tr>
+<tr>
+<td>496</td>
+<td>Call</td>
+<td>Call</td>
+</tr>
+<tr>
+<td>497</td>
+<td>Call</td>
+<td>Call</td>
+</tr>
+<tr>
+<td>498</td>
+<td>No Reply</td>
+<td>No Reply</td>
+</tr>
+<tr>
+<td>499</td>
+<td>No Reply</td>
+<td>No Reply</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Hold-call or Pick Up Card</td>
+<td>Hold-call or Pick Up Card</td>
+</tr>
+<tr>
+<td>501</td>
+<td>Hold-call or Pick Up Card</td>
+<td>Hold-call or Pick Up Card</td>
+</tr>
+<tr>
+<td>502</td>
+<td>Hold-call or Pick Up Card</td>
+<td>Hold-call or Pick Up Card</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Hold-call or Pick Up Card</td>
+<td>Hold-call or Pick Up Card</td>
+</tr>
+<tr>
+<td>504</td>
+<td>Acct Length Err</td>
+<td>Acct Length Err</td>
+</tr>
+<tr>
+<td>505</td>
+<td>Already Reversed</td>
+<td>Already Reversed</td>
+</tr>
+<tr>
+<td>506</td>
+<td>Amount Error</td>
+<td>Amount Error</td>
+</tr>
+<tr>
+<td>507</td>
+<td>Cant Verify PIN</td>
+<td>Cant Verify PIN</td>
+</tr>
+<tr>
+<td>508</td>
+<td>Cant Verify PIN</td>
+<td>Cant Verify PIN</td>
+</tr>
+<tr>
+<td>509</td>
+<td>Card No. Error</td>
+<td>Card No. Error</td>
+</tr>
+<tr>
+<td>510</td>
+<td>Cashback Not App</td>
+<td>Cashback Not App</td>
+</tr>
+<tr>
+<td>511</td>
+<td>Cashback Not Avl</td>
+<td>Cashback Not Avl</td>
+</tr>
+<tr>
+<td>512</td>
+<td>Check Digit Err</td>
+<td>Check Digit Err</td>
+</tr>
+<tr>
+<td>513</td>
+<td>CID Format Error</td>
+<td>CID Format Error</td>
+</tr>
+<tr>
+<td>514</td>
+<td>Date Error</td>
+<td>Date Error</td>
+</tr>
+<tr>
+<td>515</td>
+<td>Decline</td>
+<td>Decline</td>
+</tr>
+<tr>
+<td>516</td>
+<td>Decline</td>
+<td>Decline</td>
+</tr>
+<tr>
+<td>517</td>
+<td>Decline</td>
+<td>Decline</td>
+</tr>
+<tr>
+<td>518</td>
+<td>Decline</td>
+<td>Decline</td>
+</tr>
+<tr>
+<td>519</td>
+<td>Decline</td>
+<td>Decline</td>
+</tr>
+<tr>
+<td>520</td>
+<td>Decline</td>
+<td>Decline</td>
+</tr>
+<tr>
+<td>521</td>
+<td>Decline</td>
+<td>Decline</td>
+</tr>
+<tr>
+<td>522</td>
+<td>Encryption Error</td>
+<td>Encryption Error</td>
+</tr>
+<tr>
+<td>523</td>
+<td>Error</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>524</td>
+<td>Expired Card</td>
+<td>Expired Card</td>
+</tr>
+<tr>
+<td>525</td>
+<td>Failure HV</td>
+<td>Failure HV</td>
+</tr>
+<tr>
+<td>526</td>
+<td>Failure CV</td>
+<td>Failure CV</td>
+</tr>
+<tr>
+<td>527</td>
+<td>Invalid Routing</td>
+<td>Invalid Routing</td>
+</tr>
+<tr>
+<td>528</td>
+<td>Invalid Trans</td>
+<td>Invalid Trans</td>
+</tr>
+<tr>
+<td>529</td>
+<td>No Account</td>
+<td>No Account</td>
+</tr>
+<tr>
+<td>530</td>
+<td>No Action Taken</td>
+<td>No Action Taken</td>
+</tr>
+<tr>
+<td>531</td>
+<td>Unsolic Reversal</td>
+<td>Unsolic Reversal</td>
+</tr>
+<tr>
+<td>532</td>
+<td>No Action Taken</td>
+<td>No Action Taken</td>
+</tr>
+<tr>
+<td>533</td>
+<td>No Check Account</td>
+<td>No Check Account</td>
+</tr>
+<tr>
+<td>534</td>
+<td>No Credit Acct</td>
+<td>No Credit Acct</td>
+</tr>
+<tr>
+<td>535</td>
+<td>No Save Account</td>
+<td>No Save Account</td>
+</tr>
+<tr>
+<td>536</td>
+<td>No Such Issuer</td>
+<td>No Such Issuer</td>
+</tr>
+<tr>
+<td>537</td>
+<td>PIN Exceeded</td>
+<td>PIN Exceeded</td>
+</tr>
+<tr>
+<td>538</td>
+<td>RE Enter</td>
+<td>RE Enter</td>
+</tr>
+<tr>
+<td>539</td>
+<td>Sec Violation</td>
+<td>Sec Violation</td>
+</tr>
+<tr>
+<td>540</td>
+<td>Serv Not Allowed</td>
+<td>Serv Not Allowed</td>
+</tr>
+<tr>
+<td>541</td>
+<td>Serv Not Allowed</td>
+<td>Serv Not Allowed</td>
+</tr>
+<tr>
+<td>542</td>
+<td>Stop Recurring</td>
+<td>Stop Recurring</td>
+</tr>
+<tr>
+<td>543</td>
+<td>Stop Recurring</td>
+<td>Stop Recurring</td>
+</tr>
+<tr>
+<td>544</td>
+<td>System Error</td>
+<td>System Error</td>
+</tr>
+<tr>
+<td>545</td>
+<td>Term Id Error</td>
+<td>Term Id Error</td>
+</tr>
+<tr>
+<td>546</td>
+<td>Wrong Pin</td>
+<td>Wrong Pin</td>
+</tr>
+<tr>
+<td>547</td>
+<td>CVV2 Mismatch</td>
+<td>CVV2 Mismatch</td>
+</tr>
+<tr>
+<td>548</td>
+<td>Duplicate Trans</td>
+<td>Duplicate Trans</td>
+</tr>
+<tr>
+<td>549</td>
+<td>Approval</td>
+<td>Approval</td>
+</tr>
+<tr>
+<td>550</td>
+<td>Cannot Convert</td>
+<td>Cannot Convert</td>
+</tr>
+<tr>
+<td>551</td>
+<td>Invalid ABA</td>
+<td>Invalid ABA</td>
+</tr>
+<tr>
+<td>552</td>
+<td>Amount Error</td>
+<td>Amount Error</td>
+</tr>
+<tr>
+<td>553</td>
+<td>Unpaid Items</td>
+<td>Unpaid Items</td>
+</tr>
+<tr>
+<td>554</td>
+<td>Duplicate Number</td>
+<td>Duplicate Number</td>
+</tr>
+<tr>
+<td>555</td>
+<td>MICR Error</td>
+<td>MICR Error</td>
+</tr>
+<tr>
+<td>556</td>
+<td>Too Many Checks</td>
+<td>Too Many Checks</td>
+</tr>
+</tbody></table></div>
+              <h3 id="emulator">Emulator</h3>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Message ID</th>
+<th>Cardholder message</th>
+<th>Merchant message</th>
+</tr>
+</thead><tbody><tr>
+<td>1</td>
+<td>APPROVED</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>7</td>
+<td>APPROVED</td>
+<td>Transaction Declined</td>
+</tr>
+</tbody></table></div>
+              <h2 id="interac-online-responses">Interac Online responses</h2>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Message ID</th>
+<th>Cardholder message</th>
+<th>Merchant message</th>
+</tr>
+</thead><tbody><tr>
+<td>634</td>
+<td>APPROVED THANKS</td>
+<td>APPROVED</td>
+</tr>
+<tr>
+<td>635</td>
+<td>CARD USE LIMITED REFER TO BRANCH</td>
+<td>CARD USE LIMITED REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>636</td>
+<td>FUNDS NOT AVAIL REFER TO BRANCH</td>
+<td>FUNDS NOT AVAIL REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>637</td>
+<td>EXPIRED CARD REFER TO BRANCH</td>
+<td>EXPIRED CARD REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>638</td>
+<td>PIN ERROR PLEASE RE-TRY</td>
+<td>RE-TRY PIN ERROR</td>
+</tr>
+<tr>
+<td>639</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RE-TRY INVALID TRANSACTION</td>
+</tr>
+<tr>
+<td>640</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RE-TRY INVALID TRANSACTION</td>
+</tr>
+<tr>
+<td>641</td>
+<td>$ LIMIT EXCEEDED REFER TO BRANCH</td>
+<td>$ LIMIT EXCEEDED REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>642</td>
+<td>CARD USE LIMITED REFER TO BRANCH</td>
+<td>CARD USE LIMITED REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>643</td>
+<td>USAGE EXCEEDED REFER TO BRANCH</td>
+<td>USAGE EXCEEDED REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>644</td>
+<td>EXCESS PIN RETRY REFER TO BRANCH</td>
+<td>EXCESS PIN RETRY REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>645</td>
+<td>PIN ERROR PLEASE RE-TRY</td>
+<td>RE-TRY EDIT ERROR</td>
+</tr>
+<tr>
+<td>646</td>
+<td>INVALID CARD REFER TO BRANCH</td>
+<td>INVALID CARD REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>647</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RE-TRY EDIT ERROR</td>
+</tr>
+<tr>
+<td>648</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RE-TRY EDIT ERROR</td>
+</tr>
+<tr>
+<td>649</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RE-TRY EDIT ERROR</td>
+</tr>
+<tr>
+<td>650</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RE-TRY INVALID CARD</td>
+</tr>
+<tr>
+<td>651</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RE-TRY SYSTEM PROBLEM</td>
+</tr>
+<tr>
+<td>652</td>
+<td>INVALID CARD REFER TO BRANCH</td>
+<td>CARD NOT SUPPORTED REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>653</td>
+<td>ACCT NOT SET UP REFER TO BRANCH</td>
+<td>ACCT NOT SET UP REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>654</td>
+<td>ACCT NOT SET UP REFER TO BRANCH</td>
+<td>ACCT NOT SET UP REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>655</td>
+<td>CARD IS NOT SETUP REFER TO BRANCH</td>
+<td>CARD IS NOT SETUP REFER TO BRANCH</td>
+</tr>
+<tr>
+<td>656</td>
+<td>CANNOT PROCESS PLEASE RETRY</td>
+<td>RE-TRY EDIT ERROR</td>
+</tr>
+<tr>
+<td>657</td>
+<td>CANNOT PROCESS PLEASE RETRY</td>
+<td>RETRY SYSTEM TIMEOUT</td>
+</tr>
+<tr>
+<td>658</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RE-TRY EDIT ERROR</td>
+</tr>
+<tr>
+<td>659</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RE-TRY SYSTEM PROBLEM</td>
+</tr>
+<tr>
+<td>660</td>
+<td>Bad sequence number: resend transaction</td>
+<td>Bad sequence number: resend transaction</td>
+</tr>
+<tr>
+<td>661</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RE-TRY SYSTEM PROBLEM</td>
+</tr>
+<tr>
+<td>662</td>
+<td>CANNOT PROCESS PLEASE RETRY</td>
+<td>RE-TRY EDIT ERROR</td>
+</tr>
+<tr>
+<td>663</td>
+<td>CANNOT PROCESS PLEASE RETRY</td>
+<td>RE-TRY EDIT ERROR</td>
+</tr>
+<tr>
+<td>664</td>
+<td>CANNOT PROCESS PLEASE RETRY</td>
+<td>RE-TRY EDIT ERROR</td>
+</tr>
+<tr>
+<td>665</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RETRY SYSTEM PROBLEM</td>
+</tr>
+<tr>
+<td>666</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RETRY SYSTEM PROBLEM</td>
+</tr>
+<tr>
+<td>667</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RETRY SYSTEM PROBLEM</td>
+</tr>
+<tr>
+<td>668</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RETRY SYSTEM PROBLEM</td>
+</tr>
+<tr>
+<td>669</td>
+<td>CANNOT PROCESS OVER STORE LIMIT</td>
+<td>OVER RETAILER LIMIT</td>
+</tr>
+<tr>
+<td>670</td>
+<td>CANNOT PROCESS PLEASE RE-TRY</td>
+<td>RE-TRY INVALID TRANSACTION</td>
+</tr>
+<tr>
+<td>671</td>
+<td>CANNOT PROCESS</td>
+<td>CANNOT PROCESS</td>
+</tr>
+<tr>
+<td>672</td>
+<td>CANNOT PROCESS OVER CORR LIMIT</td>
+<td>EXCEEDS CORRECTION LIMIT</td>
+</tr>
+<tr>
+<td>673</td>
+<td>CANNOT PROCESS</td>
+<td>CANNOT PROCESS</td>
+</tr>
+</tbody></table></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+
+
+
+                © <a href="http://www.bambora.com/en/en/payment-solutions/" target="_blank">2017 Bambora</a>
+
+        <div class="links">
+                <a href="http://www.bambora.com/en/en/payment-solutions/customer-service/faq/terms-and-conditions/" target="_blank">Terms & Conditions</a>
+        </div>
+        
+        <div class="pull-right">
+                <a href="https://github.com/bambora/" target="_blank">Github</a>
+        </div>
+
+</footer>
+
+    <script src="../../../../../javascripts/template/tocbot_init_script-2dfca9f7.js" type="text/javascript"></script>
+
+  </body>
+</html>
