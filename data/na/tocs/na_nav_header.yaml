@@ -1,0 +1,18 @@
+logo: 
+  link: /docs/
+  light: svg/zebraffe-dev-white.svg
+  dark: svg/zebraffe-dark-dev.svg
+links:
+  - file: /docs/guides/
+    title: Guides
+  - file: /docs/references/
+    title: References
+  - file: /docs/support/
+    title: Support
+
+buttons:
+  - file: /docs/sign_up/
+    title: Sign up
+    secondary: true
+  - file: https://web.na.bambora.com
+    title: Login

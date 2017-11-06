@@ -1,3 +1,5 @@
+/* these are variables from slate, probably don't need a lot of them. */
+
 /*
 Copyright 2008-2013 Concur Technologies, Inc.
 
@@ -23,60 +25,72 @@ under the License.
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #261535 !default;
-$examples-bg: #261535 !default;
-$code-bg: #1E2224 !default;
-$code-annotation-bg: #191D1F !default;
-$nav-subitem-bg: #1E2224 !default;
-$nav-active-bg: #0F75D4 !default;
-$nav-active-parent-bg: #1E2224 !default; // parent links of the current section
-$lang-select-border: #000 !default;
-$lang-select-bg: #1E2224 !default;
-$lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
-$lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
-$main-bg: #F3F7F9 !default;
-$aside-notice-bg: #8fbcd4 !default;
-$aside-warning-bg: #c97a7e !default;
-$aside-success-bg: #6ac174 !default;
-$search-notice-bg: #c97a7e !default;
+
+// colors from https://bambora.github.io/ui.bambora.com/#colors
+@import 'bambora_ui_variables';
+
+$nav-bg: #fff;
+$top-nav-bg: #1F2532; // same as logo
+$bottom-nav-bg: #000000; 
+$examples-bg: $muted; // muted 
+$code-bg: #232323; // darkest
+$nav-gradient: #151414; 
+$code-annotation-bg: #4f5355; // contrast-dark
+$nav-subitem-bg: #fff;
+$nav-active-bg: #fff;
+$lang-select-bg: $muted; // muted 
+$lang-select-pressed-bg: #111; // color of language tab bg when mouse is pressed
+$main-bg: #fff;
+$aside-notice-bg: #8fbcd4; 
+$aside-warning-bg: #c97a7e;
+$aside-success-bg: #6ac174;
+$search-notice-bg: #c97a7e;
+$color-seperator: #ccc;
 
 
 // TEXT COLORS
 ////////////////////
-$main-text: #333 !default; // main content text color
-$nav-text: #fff !default;
-$nav-active-text: #fff !default;
-$nav-active-parent-text: #fff !default; // parent links of the current section
-$lang-select-text: #fff !default; // color of unselected language tab text
-$lang-select-active-text: #fff !default; // color of selected language tab text
-$lang-select-pressed-text: #fff !default; // color of language tab text when mouse is pressed
+$main-text: #4f5355; // main content text color, contrast-dark
+$nav-text: #4f5355; // contrast-dark
+$nav-active-text: $primary; // contrast-dark
+$nav-header: $darkest;
+$lang-select-text: #fff; // color of unselected language tab text
+$lang-select-active-text: #fff; // color of selected language tab text
+$lang-select-pressed-text: #fff; // color of language tab text when mouse is pressed
 
 
 // SIZES
 ////////////////////
-$nav-width: 230px !default; // width of the navbar
-$examples-width: 40% !default; // portion of the screen taken up by code examples
-$logo-margin: 0px !default; // margin below logo
-$main-padding: 28px !default; // padding to left and right of content & examples
-$nav-padding: 15px !default; // padding to left and right of navbar
-$nav-v-padding: 10px !default; // padding used vertically around search boxes and results
-$nav-indent: 10px !default; // extra padding for ToC subitems
-$code-annotation-padding: 13px !default; // padding inside code annotations
-$h1-margin-bottom: 21px !default; // padding under the largest header tags
-$tablet-width: 930px !default; // min width before reverting to tablet size
-$phone-width: $tablet-width - $nav-width !default; // min width before reverting to mobile size
-
+$nav-width: 230px; // width of the navbar
+$examples-width: 50%; // portion of the screen taken up by code examples
+$logo-margin: 20px; // margin between nav items and logo, ignored if search is active
+$main-padding: 28px; // padding to left and right of content & examples
+$nav-padding: 22px; // padding to left and right of navbar
+$nav-v-padding: 10px; // padding used vertically around search boxes and results
+$nav-top-padding: 10px; // padding to left and right of navbar for top level items
+$nav-indent: 10px; // extra padding for ToC subitems
+$code-annotation-padding: 13px; // padding inside code annotations
+$h1-margin-bottom: 21px; // padding under the largest header tags
+$tablet-width: 992px; // min width before reverting to tablet size
+$phone-width: 767px; // min width before reverting to mobile size
+$header-height: 57px;
 
 // FONTS
 ////////////////////
+
+
 %default-font {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
+  font-family: "Fakt Pro", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 %header-font {
   @extend %default-font;
   font-weight: bold;
+  margin-right: 5px;
+
 }
 
 %code-font {
@@ -85,11 +99,21 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
   line-height: 1.5;
 }
 
+%footer-font {
+  color: $nav-text;
+  font-weight: lighter;
+  text-decoration: none;
+  font-size: 0.9em;
+}
 
 // OTHER
 ////////////////////
-$nav-footer-border-color: #666 !default;
-$search-box-border-color: #666 !default;
+$nav-active-shadow: #000;
+$nav-footer-border-color: #666;
+$nav-embossed-border-top: #000;
+$nav-embossed-border-bottom: #939393;
+$main-embossed-text-shadow: 0px 1px 0px #fff;
+$search-box-border-color: #ccc;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -98,6 +122,10 @@ $search-box-border-color: #666 !default;
 // These settings are probably best left alone.
 
 %break-words {
-    word-break: break-all;
-    hyphens: auto;
+     word-break: break-all;
+
+     /* Non standard for webkit */
+     word-break: break-word;
+
+        hyphens: auto;
 }

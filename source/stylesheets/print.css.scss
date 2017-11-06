@@ -1,5 +1,8 @@
+/* print stylesheet from slate, probably don't need, or needs to be reworked */
+
 @charset "utf-8";
 @import 'normalize';
+@import 'compass';
 @import 'variables';
 @import 'icon-font';
 
@@ -45,12 +48,6 @@ body {
     border: 1px solid $print-color;
     border-radius: 5px;
     font-size: 0.8em;
-  }
-
-  pre {
-    code {
-      border: 0;
-    }
   }
 
   pre {
