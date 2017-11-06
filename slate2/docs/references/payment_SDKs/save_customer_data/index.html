@@ -1,0 +1,1114 @@
+<!doctype html>
+<html>
+  <head>
+
+    <link href="../../../../../stylesheets/slate-7bf8663b.css" rel="stylesheet" type="text/css" />
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W92MC5');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon-9dabc470.png">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-32x32-b71a5283.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-16x16-ea515fe9.png" sizes="16x16">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<link rel="mask-icon" href="/images/favicon/safari-pinned-tab-fb883d2e.svg" color="#8247b5 ">
+<meta name="theme-color" content="#ffffff ">
+
+<!-- Site version (latest commit): f8c73c7851ec31be7249dab08e4441bd38525420
+ -->
+
+<title>Save Customer Data</title>
+
+<link href="../../../../../stylesheets/ui.bambora.1.0.3-13e3506d.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../stylesheets/bambora_ui_sass_overwrite-d859adf4.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../stylesheets/portal-5e95ed43.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../stylesheets/page/spec-4625dc8e.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+
+<script src="../../../../../javascripts/all-654c8dcb.js" type="text/javascript"></script>
+
+
+      <script>
+        $(function() {
+          setupLanguages(["shell","python","csharp","java","ruby","php","javascript","go"]);
+        });
+      </script>
+  </head>
+
+  <body class="slate2 slate2_docs slate2_docs_references slate2_docs_references_payment_SDKs slate2_docs_references_payment_SDKs_save_customer_data slate2_docs_references_payment_SDKs_save_customer_data_index">
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W92MC5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <div class="fixed-header">
+    
+
+<nav class="nav-pane nav-fixed">
+
+    <!-- Hamburger icon --> 
+    <a href="#" class="hamburger-icon"><svg width="19" height="14" viewBox="0 0 19 14" xmlns="http://www.w3.org/2000/svg"><title>list</title><path d="M7.968 2.28h10.245V0H7.968v2.28zM0 7.975h18.213v-2.28H0v2.28zm0 5.696h10.245v-2.278H0v2.278z" fill="#84898A" fill-rule="evenodd"/></svg></a>
+
+    <!-- Logo -->
+    <div class="pull-left nav-links">
+        <a href="/slate/docs/" class="logo">
+                <img src="../../../../../images/svg/zebraffe-dark-dev-05ffe493.svg" />
+        </a>
+    </div>
+
+    <div class="header-contents">
+
+    <!-- Links --> 
+    <div class="pull-left nav-links">
+                <a href="/slate/docs/guides/">Guides</a>
+                <a href="/slate/docs/references/">API</a>
+                <a href="/slate/docs/support/">PSP Service Reference</a>
+    </div>
+
+    <!-- Search / buttons -->
+    <div class="pull-right">
+        
+        <span class="button-wrap">
+            <a id="search-button" href="#"><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><title>search</title><path d="M5 0a5 5 0 1 0 3.164 8.87l5.13 5.13.706-.707-5.13-5.129A5 5 0 0 0 5 0m0 1c2.206 0 4 1.794 4 4 0 .934-.313 1.809-.904 2.53l-.254.312-.312.254A3.952 3.952 0 0 1 5 9C2.794 9 1 7.206 1 5s1.794-4 4-4" fill="#454545" fill-rule="evenodd"/></svg></a>
+        </span>
+
+            <span class="button-wrap">
+                    <a href="/slate/docs/sign_up/" class="btn btn-small btn-secondary" >
+                        Sign up
+                    </a>
+            </span>
+            <span class="button-wrap">
+                    <a href="https://web.na.bambora.com" class="btn btn-small" >
+                        Login
+                    </a>
+            </span>
+
+        <div class="dropdown-nav dropdown-open-on-hover" role="navigation" 
+id="region-switcher">
+    North America
+    <ul role="menu">
+        
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/apac" class="not-new-tab-for-link">
+                Asia-Pacific
+            </a>
+        </li>
+
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/europe" class="not-new-tab-for-link">
+                Europe
+            </a>
+        </li>
+    </ul>
+</div>
+    </div>
+
+    </div>
+</nav>
+
+<div id="search-overlay">
+  <a href="#" id="close-search-overlay"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></a>
+
+  <div class="container">
+
+    <form>
+      <div class="form-group">
+        <input type="text" id="search" placeholder="Search..." width="100%", autocomplete="off" >
+      </div>
+    </form>
+
+    <div id="result-count"></div>
+
+    <div class="list-group">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <ul class="search-results"></ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+    </div>
+    <div class="nav-push"></div>
+
+    
+
+
+<div class="nav-wrapper">
+<nav class="nav-left nav-sticky nav-vertical">
+
+  <div class="mobile-close"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></div>
+
+  <div class="lang-selector">
+    <ul>
+          <li>
+            <a href="#" data-language-name="shell">
+              shell
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="python">
+              python
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="csharp">
+              csharp
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="java">
+              java
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="ruby">
+              ruby
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="php">
+              php
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="javascript">
+              javascript
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="go">
+              go
+            </a>
+          </li>
+    </ul>  
+  </div>
+
+      <ul>
+
+          <li data-nav-title="/slate/docs/references/payment_SDKs/" class="">
+            <a href="/slate/docs/references/payment_SDKs/" class="nav-top-heading">
+              Overview 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/slate/docs/references/payment_SDKs/collect_card_data/" class="">
+            <a href="/slate/docs/references/payment_SDKs/collect_card_data/" class="nav-top-heading">
+              Collect Card Data 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/slate/docs/references/payment_SDKs/take_payments/" class="">
+            <a href="/slate/docs/references/payment_SDKs/take_payments/" class="nav-top-heading">
+              Take Payments 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/slate/docs/references/payment_SDKs/analyze_payments/" class="">
+            <a href="/slate/docs/references/payment_SDKs/analyze_payments/" class="nav-top-heading">
+              Analyze Payments 
+            </a>
+
+          </li>
+      </ul>
+</nav>
+</div>
+
+<!-- button to click on small screen to show toc -->
+<div class="show-toc">
+  Contents
+</div>
+
+
+
+
+
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content js-toc-content markdown">
+
+        <div id="edit-on-github" class="dropdown dropdown-open-on-hover" role="listbox">
+  Edit this page
+
+  <ul>
+    <li class="dropdown-title">Base page:</li>
+    <li role="option">
+      <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/slate2/docs/references/payment_SDKs/save_customer_data.md">
+        save_customer_data.md
+      </a>
+    </li>
+
+    <li class="dropdown-title">Includes:</li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/save_customer_data/_overview.md">
+          overview.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/save_customer_data/_code_samples.md">
+          code_samples.md
+        </a>
+      </li>
+  </ul>
+</div>    
+
+<!-- Modal apears on link click -->
+<div class="modal-overlay">
+  <div class="modal github-modal" role="dialog">
+      <h3 class="js-toc-ignore">Edit on Github</h3>
+
+      <p> 
+      To propose changes to the Developer Portal click the link below and follow these steps: 
+      </p>
+
+      <ol>
+        <li>Sign in to Github. You will have to create an account if you don't already have one.</li>
+        <li>Click the <strong>Fork this repository and propose changes </strong>button.</li>
+        <li>Make your proposed changes to the file. Content is formatted with <a href="http://commonmark.org/help/">Markdown.</a></li>
+        <li>At the bottom of the page, optionally add a title and description to your changes, and click the <strong>Propose file change button</strong>.</li>
+        <li>On the next page, click <strong>Create pull request</strong>, and then click it again.</li>
+        <li>You're done! Someone will review your changes and they will appear on the site shortly.</li>
+      </ol>
+
+      <div class="btn-row">
+          <a href="#" class="btn continue-to-github" target="_blank">Continue to Github</a>
+          <button class="btn btn-secondary close-modal">Cancel</button>
+      </div>
+  </div>
+</div>
+            <div class='breadcrumb-trail'><span><a href='/slate2/'>Slate2</a></span><span class='chevron'> / </span><span><a href='/slate2/docs/'>Docs</a></span><span class='chevron'> / </span><span><a href='/slate2/docs/references/'>References</a></span><span class='chevron'> / </span><span><a href='/slate2/docs/references/payment_SDKs/'>Payment SDKs</a></span><span class='chevron'> / </span><span class='this-page'>Save Customer Data</span></div>
+
+
+          
+            <h1 id="save-customer-data">Save Customer Data</h1>
+
+<p>Our Secure Payment Profile service allows merchants to create secure payment accounts — or &quot;profiles&quot; — for storing confidential contact and/or credit details on our server. Transactions can then be processed against these profiles without the need to recollect payment information from the customer. Also, you do not need to store payment information on the merchant’s system. Each profile can store multiple cards.</p>
+
+<p>When you save a payment profile you will be given a customer code ID in return. This ID can be used for retrieving the profile information, updating it, and also for making payments.</p>
+
+<p>Payment Profiles can be created with a plain credit card number, however we recommend that you first tokenize the card data in the client-side application and then use that token to create the profile.</p>
+
+<p>Creating and modifying Secure Payment Profiles requires you use your Profiles API Key. If you get an authentication error you might be using your Payments API Key, so double check!</p>
+
+            <h2 id="create-profile-card">Create Profile (Card)</h2>
+<pre class="highlight shell"><code>Definition
+POST /v1/profiles HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/profiles <span class="se">\</span>
+-H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OkQ5N0QzQkUxRUU5NjRBNjE5M0QxN0E1NzFEOUZCQzgw"</span> <span class="se">\</span>
+-d <span class="s1">'{
+   "language":"en",
+   "comments":"hello",
+   "card":{  
+      "name":"John Doe",
+      "number":"4030000010001234",
+      "expiry_month":"12",
+      "expiry_year":"23",
+      "cvd":"123"
+  },
+  "billing": {
+    "name": "joh doe",
+    "address_line1": "123 main st",
+    "address_line2": "111",
+    "city": "victoria",
+    "province": "bc",
+    "country": "ca",
+    "postal_code": "V9A3Z4",
+    "phone_number": "25012312345",
+    "email_address": "dngache@beanstream.com"
+  },
+  "custom": {
+    "ref1": "test1",
+    "ref2": "test2",
+    "ref3": "test3",
+    "ref4": "test4",
+    "ref5": "test5"
+  }
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">profile</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">card</span><span class="p">:{</span>
+    <span class="na">name</span><span class="p">:</span><span class="s2">"Jon Profile"</span><span class="p">,</span>
+    <span class="na">number</span><span class="p">:</span><span class="s2">"5100000010001004"</span><span class="p">,</span>
+    <span class="na">expiry_month</span><span class="p">:</span><span class="s2">"02"</span><span class="p">,</span>
+    <span class="na">expiry_year</span><span class="p">:</span><span class="s2">"19"</span><span class="p">,</span>
+    <span class="na">cvd</span><span class="p">:</span><span class="s2">"123"</span>
+  <span class="p">},</span>
+  <span class="na">billing</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s2">"Jon Profile"</span><span class="p">,</span>
+    <span class="na">address_line1</span><span class="p">:</span> <span class="s2">"123 fake street"</span><span class="p">,</span>
+    <span class="na">city</span><span class="p">:</span> <span class="s2">"victoria"</span><span class="p">,</span>
+    <span class="na">province</span><span class="p">:</span> <span class="s2">"bc"</span><span class="p">,</span>
+    <span class="na">postal_code</span><span class="p">:</span> <span class="s2">"V9A3Z4"</span><span class="p">,</span>
+    <span class="na">country</span><span class="p">:</span> <span class="s2">"ca"</span><span class="p">,</span>
+    <span class="na">email_address</span><span class="p">:</span> <span class="s2">"fake@example.com"</span><span class="p">,</span>
+    <span class="na">phone_number</span><span class="p">:</span><span class="s2">"12345678"</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">profiles</span><span class="p">.</span><span class="nx">createProfile</span><span class="p">(</span><span class="nx">profile</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$profile_create = array(
+    'billing' =&gt; array(
+        'name' =&gt; 'Profile Billing Name',
+        'email_address' =&gt; 'email@email.com',
+        'phone_number' =&gt; '1234567890',
+        'address_line1' =&gt; '456-123 Billing St.',
+        'city' =&gt; 'Shippingville',
+        'province' =&gt; 'BC',
+        'postal_code' =&gt; 'V8J9I5',
+        'country' =&gt; 'CA'
+    ),
+    'card' =&gt; array(
+        'name' =&gt; 'John Doe',
+        'number' =&gt; '4030000010001234',
+        'expiry_month' =&gt; '07',
+        'expiry_year' =&gt; '22',
+        'cvd' =&gt; '123'
+    )
+);
+$profile_id = $beanstream-&gt;profiles()-&gt;createProfile($profile_create);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">profile</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">getCreateProfileWithCardTemplate</span><span class="p">()</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:card</span><span class="p">][</span><span class="ss">:name</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Bob Test"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:card</span><span class="p">][</span><span class="ss">:number</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"4030000010001234"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:card</span><span class="p">][</span><span class="ss">:expiry_month</span><span class="p">]</span> <span class="o">=</span><span class="s2">"07"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:card</span><span class="p">][</span><span class="ss">:expiry_year</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"22"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:card</span><span class="p">][</span><span class="ss">:cvd</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"123"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:name</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Bob Test"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:address_line1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"123 Fake St."</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:city</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Victoria"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:province</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"BC"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:country</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"CA"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:postal_code</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"v1v2v2"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:phone_number</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"12505551234"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:email_address</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"fake@example.com"</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">create_profile</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">card</span> <span class="o">=</span> <span class="n">billing</span><span class="o">.</span><span class="n">CreditCard</span><span class="p">(</span>
+    <span class="s">'John Doe'</span><span class="p">,</span>
+    <span class="s">'4030000010001234'</span><span class="p">,</span>
+    <span class="s">'03'</span><span class="p">,</span>
+    <span class="s">'2019'</span><span class="p">,</span>
+    <span class="s">'123'</span><span class="p">)</span>
+<span class="n">billing_address</span> <span class="o">=</span> <span class="n">billing_address</span> <span class="o">=</span> <span class="n">billing</span><span class="o">.</span><span class="n">Address</span><span class="p">(</span>
+    <span class="s">'John Doe'</span><span class="p">,</span>
+    <span class="s">'john.doe@example.com'</span><span class="p">,</span>
+    <span class="s">'555-555-5555'</span><span class="p">,</span>
+    <span class="s">'123 Fake Street'</span><span class="p">,</span>
+    <span class="s">''</span><span class="p">,</span>
+    <span class="s">'Fake City'</span><span class="p">,</span>
+    <span class="s">'ON'</span><span class="p">,</span>
+    <span class="s">'A1A1A1'</span><span class="p">,</span>
+    <span class="s">'CA'</span><span class="p">)</span>
+<span class="n">txn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beanstream</span><span class="o">.</span><span class="n">create_payment_profile</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="n">billing_address</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="k">try</span> <span class="o">{</span>
+    <span class="n">Address</span> <span class="n">billing</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Address</span><span class="o">();</span>
+    <span class="n">billing</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"JANE DOE"</span><span class="o">);</span>
+    <span class="n">billing</span><span class="o">.</span><span class="na">setCity</span><span class="o">(</span><span class="s">"VICTORIA"</span><span class="o">);</span>
+    <span class="n">billing</span><span class="o">.</span><span class="na">setProvince</span><span class="o">(</span><span class="s">"BC"</span><span class="o">);</span>
+    <span class="n">billing</span><span class="o">.</span><span class="na">setCountry</span><span class="o">(</span><span class="s">"CA"</span><span class="o">);</span>
+    <span class="n">billing</span><span class="o">.</span><span class="na">setAddressLine1</span><span class="o">(</span><span class="s">"123 FAKE ST."</span><span class="o">);</span>
+    <span class="n">billing</span><span class="o">.</span><span class="na">setPostalCode</span><span class="o">(</span><span class="s">"V9T2G6"</span><span class="o">);</span>
+    <span class="n">billing</span><span class="o">.</span><span class="na">setEmailAddress</span><span class="o">(</span><span class="s">"TEST@BEANSTREAM.COM"</span><span class="o">);</span>
+    <span class="n">billing</span><span class="o">.</span><span class="na">setPhoneNumber</span><span class="o">(</span><span class="s">"12501234567"</span><span class="o">);</span>
+
+    <span class="n">Card</span> <span class="n">card</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Card</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="s">"John Doe"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setNumber</span><span class="o">(</span><span class="s">"5100000010001004"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setExpiryMonth</span><span class="o">(</span><span class="s">"12"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setExpiryYear</span><span class="o">(</span><span class="s">"18"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setCvd</span><span class="o">(</span><span class="s">"123"</span><span class="o">);</span>
+
+    <span class="n">ProfileResponse</span> <span class="n">createdProfile</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">profiles</span><span class="o">().</span><span class="na">createProfile</span><span class="o">(</span><span class="n">card</span><span class="o">,</span> <span class="n">billing</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//TODO handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">ProfileResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Profiles</span><span class="p">.</span><span class="nf">CreateProfile</span> <span class="p">(</span>
+    <span class="k">new</span> <span class="nf">Card</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Name</span> <span class="p">=</span> <span class="s">"Jane Doe"</span><span class="p">,</span>
+        <span class="n">Number</span> <span class="p">=</span> <span class="s">"5100000010001004"</span><span class="p">,</span>
+        <span class="n">ExpiryMonth</span> <span class="p">=</span> <span class="s">"12"</span><span class="p">,</span>
+        <span class="n">ExpiryYear</span> <span class="p">=</span> <span class="s">"18"</span><span class="p">,</span>
+        <span class="n">Cvd</span> <span class="p">=</span> <span class="s">"123"</span>
+    <span class="p">},</span>
+    <span class="k">new</span> <span class="nf">Address</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Name</span> <span class="p">=</span> <span class="s">"Jane Doe"</span><span class="p">,</span>
+        <span class="n">AddressLine1</span> <span class="p">=</span> <span class="s">"123 Fake St."</span><span class="p">,</span>
+        <span class="n">City</span> <span class="p">=</span> <span class="s">"victoria"</span><span class="p">,</span>
+        <span class="n">Province</span> <span class="p">=</span> <span class="s">"bc"</span><span class="p">,</span>
+        <span class="n">Country</span> <span class="p">=</span> <span class="s">"ca"</span><span class="p">,</span>
+        <span class="n">PostalCode</span> <span class="p">=</span> <span class="s">"v9t2g6"</span><span class="p">,</span>
+        <span class="n">PhoneNumber</span> <span class="p">=</span> <span class="s">"12501234567"</span><span class="p">,</span>
+        <span class="n">EmailAddress</span> <span class="p">=</span> <span class="s">"test@beanstream.com"</span>
+    <span class="p">});</span>
+</code></pre>
+<pre class="highlight go"><code><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="n">beanstream</span><span class="x"> </span><span class="s">"github.com/Beanstream/beanstream-go"</span><span class="x">
+    </span><span class="s">"github.com/Beanstream/beanstream-go/paymentMethods"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="n">config</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">DefaultConfig</span><span class="p">()</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">MerchantId</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"300200578"</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">PaymentsApiKey</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="x">
+
+</span><span class="n">gateway</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Gateway</span><span class="p">{</span><span class="n">config</span><span class="p">}</span><span class="x">
+</span><span class="n">request</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">PaymentRequest</span><span class="p">{</span><span class="x">
+    </span><span class="n">PaymentMethod</span><span class="o">:</span><span class="x"> </span><span class="n">paymentMethods</span><span class="o">.</span><span class="n">CASH</span><span class="p">,</span><span class="x">
+    </span><span class="n">OrderNumber</span><span class="o">:</span><span class="x">   </span><span class="s">"order12345b"</span><span class="p">,</span><span class="x">
+    </span><span class="n">Amount</span><span class="o">:</span><span class="x">        </span><span class="m">12.00</span><span class="p">}</span><span class="x">
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">MakePayment</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<p>With this action, you can create a new payment profile tied to one individual, assigning, and validating one or more credit cards.</p>
+
+<h2 id="create-profile-single-use-token">Create Profile (Single-Use Token)</h2>
+<pre class="highlight shell"><code>Definition
+POST /v1/profiles HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/profiles <span class="se">\</span>
+-H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYUQ4MkQ5MTk3YjRjYzRiNzBhMjIxOTExZUU5Zjcw"</span> <span class="se">\</span>
+-d <span class="s1">'{
+   "language":"en",
+   "comments":"hello",
+   "token":{  
+      "name":"John Doe",
+      "code":"1eCe9480a7D94919997071a483505D17",
+  },
+  "billing": {
+    "name": "joh doe",
+    "address_line1": "123 main st",
+    "address_line2": "111",
+    "city": "victoria",
+    "province": "bc",
+    "country": "ca",
+    "postal_code": "V9A3Z4",
+    "phone_number": "25012312345",
+    "email_address": "example@example.com"
+  },
+  "custom": {
+    "ref1": "test1",
+    "ref2": "test2",
+    "ref3": "test3",
+    "ref4": "test4",
+    "ref5": "test5"
+  }
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">profile</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">token</span><span class="p">:</span> <span class="p">{</span>
+     <span class="na">name</span><span class="p">:</span> <span class="s2">"Jon Profile"</span><span class="p">,</span>
+     <span class="na">code</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token</span>
+  <span class="p">},</span>
+  <span class="na">billing</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s2">"Jon Profile"</span><span class="p">,</span>
+    <span class="na">address_line1</span><span class="p">:</span> <span class="s2">"123 fake street"</span><span class="p">,</span>
+    <span class="na">city</span><span class="p">:</span> <span class="s2">"victoria"</span><span class="p">,</span>
+    <span class="na">province</span><span class="p">:</span> <span class="s2">"bc"</span><span class="p">,</span>
+    <span class="na">postal_code</span><span class="p">:</span> <span class="s2">"V9A3Z4"</span><span class="p">,</span>
+    <span class="na">country</span><span class="p">:</span> <span class="s2">"ca"</span><span class="p">,</span>
+    <span class="na">email_address</span><span class="p">:</span> <span class="s2">"fake@example.com"</span><span class="p">,</span>
+    <span class="na">phone_number</span><span class="p">:</span><span class="s2">"12345678"</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">profiles</span><span class="p">.</span><span class="nx">createProfile</span><span class="p">(</span><span class="nx">profile</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$profile_create_token = array(
+    'billing' =&gt; array(
+        'name' =&gt; 'Profile Billing Name',
+        'email_address' =&gt; 'email@email.com',
+        'phone_number' =&gt; '1234567890',
+        'address_line1' =&gt; '456-123 Billing St.',
+        'city' =&gt; 'Shippingville',
+        'province' =&gt; 'BC',
+        'postal_code' =&gt; 'V8J9I5',
+        'country' =&gt; 'CA'
+        ),
+    'token' =&gt; array(
+        'name' =&gt; 'John Doe',
+        'code' =&gt; $legatoToken
+    )
+);
+$profile_id = $beanstream-&gt;profiles()-&gt;createProfile($profile_create_token);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">profile</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">getCreateProfileWithTokenTemplate</span><span class="p">()</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:token</span><span class="p">][</span><span class="ss">:name</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Bob Test"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:token</span><span class="p">][</span><span class="ss">:code</span><span class="p">]</span> <span class="o">=</span> <span class="n">token</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:name</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Bob Test"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:address_line1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"123 Fake St."</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:city</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Victoria"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:province</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"BC"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:country</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"CA"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:postal_code</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"v1v2v2"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:phone_number</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"12505551234"</span>
+<span class="n">profile</span><span class="p">[</span><span class="ss">:billing</span><span class="p">][</span><span class="ss">:email_address</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"fake@example.com"</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">create_profile</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">address</span> <span class="o">=</span> <span class="n">billing</span><span class="o">.</span><span class="n">Address</span><span class="p">(</span>
+    <span class="s">'John Doe'</span><span class="p">,</span>
+    <span class="s">'john.doe@example.com'</span><span class="p">,</span>
+    <span class="s">'555-555-5555'</span><span class="p">,</span>
+    <span class="s">'123 Fake Street'</span><span class="p">,</span>
+    <span class="s">''</span><span class="p">,</span>
+    <span class="s">'Fake City'</span><span class="p">,</span>
+    <span class="s">'ON'</span><span class="p">,</span>
+    <span class="s">'A1A1A1'</span><span class="p">,</span>
+    <span class="s">'CA'</span><span class="p">)</span>
+<span class="n">txn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beanstream</span><span class="o">.</span><span class="n">create_payment_profile_from_token</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span>
+<span class="n">txn</span><span class="o">.</span><span class="n">set_card_owner</span><span class="p">(</span><span class="s">'Joe Python'</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">Address</span> <span class="n">billing</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Address</span><span class="o">();</span>
+<span class="n">billing</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"JANE DOE"</span><span class="o">);</span>
+<span class="n">billing</span><span class="o">.</span><span class="na">setCity</span><span class="o">(</span><span class="s">"VICTORIA"</span><span class="o">);</span>
+<span class="n">billing</span><span class="o">.</span><span class="na">setProvince</span><span class="o">(</span><span class="s">"BC"</span><span class="o">);</span>
+<span class="n">billing</span><span class="o">.</span><span class="na">setCountry</span><span class="o">(</span><span class="s">"CA"</span><span class="o">);</span>
+<span class="n">billing</span><span class="o">.</span><span class="na">setAddressLine1</span><span class="o">(</span><span class="s">"123 FAKE ST."</span><span class="o">);</span>
+<span class="n">billing</span><span class="o">.</span><span class="na">setPostalCode</span><span class="o">(</span><span class="s">"V9T2G6"</span><span class="o">);</span>
+<span class="n">billing</span><span class="o">.</span><span class="na">setEmailAddress</span><span class="o">(</span><span class="s">"TEST@BEANSTREAM.COM"</span><span class="o">);</span>
+<span class="n">billing</span><span class="o">.</span><span class="na">setPhoneNumber</span><span class="o">(</span><span class="s">"12501234567"</span><span class="o">);</span>
+<span class="n">Token</span> <span class="n">token</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Token</span><span class="o">(</span><span class="s">"John Doe"</span><span class="o">,</span> <span class="s">"myLegatoToken"</span><span class="o">);</span>
+
+<span class="n">ProfileResponse</span> <span class="n">createdProfile</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">profiles</span><span class="o">().</span><span class="na">createProfile</span><span class="o">(</span><span class="n">token</span><span class="o">,</span> <span class="n">billing</span><span class="o">);</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">ProfileResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Profiles</span><span class="p">.</span><span class="nf">CreateProfile</span> <span class="p">(</span>
+  <span class="k">new</span> <span class="nf">Token</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Name</span> <span class="p">=</span> <span class="s">"Jane Doe"</span><span class="p">,</span>
+    <span class="n">Code</span> <span class="p">=</span> <span class="s">"myLegatoToken"</span>
+  <span class="p">},</span>
+  <span class="k">new</span> <span class="nf">Address</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Name</span> <span class="p">=</span> <span class="s">"Jane Doe"</span><span class="p">,</span>
+    <span class="n">AddressLine1</span> <span class="p">=</span> <span class="s">"123 Fake St."</span><span class="p">,</span>
+    <span class="n">City</span> <span class="p">=</span> <span class="s">"victoria"</span><span class="p">,</span>
+    <span class="n">Province</span> <span class="p">=</span> <span class="s">"bc"</span><span class="p">,</span>
+    <span class="n">Country</span> <span class="p">=</span> <span class="s">"ca"</span><span class="p">,</span>
+    <span class="n">PostalCode</span> <span class="p">=</span> <span class="s">"v9t2g6"</span><span class="p">,</span>
+    <span class="n">PhoneNumber</span> <span class="p">=</span> <span class="s">"12501234567"</span><span class="p">,</span>
+    <span class="n">EmailAddress</span> <span class="p">=</span> <span class="s">"test@beanstream.com"</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight go"><code><span class="n">request</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Profile</span><span class="p">{</span><span class="x">
+    </span><span class="n">Token</span><span class="o">:</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Token</span><span class="p">{</span><span class="x">
+        </span><span class="n">Name</span><span class="o">:</span><span class="x">  </span><span class="s">"John Doe"</span><span class="p">,</span><span class="x">
+        </span><span class="n">Token</span><span class="o">:</span><span class="x"> </span><span class="n">token</span><span class="p">},</span><span class="x">
+    </span><span class="n">BillingAddress</span><span class="o">:</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Address</span><span class="p">{</span><span class="x">
+        </span><span class="s">"John Doe"</span><span class="p">,</span><span class="x">
+        </span><span class="s">"123 Fake St."</span><span class="p">,</span><span class="x">
+        </span><span class="s">"suite 3"</span><span class="p">,</span><span class="x">
+        </span><span class="s">"Victoria"</span><span class="p">,</span><span class="x">
+        </span><span class="s">"BC"</span><span class="p">,</span><span class="x">
+        </span><span class="s">"CA"</span><span class="p">,</span><span class="x">
+        </span><span class="s">"V8T4M3"</span><span class="p">,</span><span class="x">
+        </span><span class="s">"12505550123"</span><span class="p">,</span><span class="x">
+        </span><span class="s">"test@example.com"</span><span class="p">}}</span><span class="x">
+
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Profiles</span><span class="p">()</span><span class="o">.</span><span class="n">CreateProfile</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<p>You can also create a profile with a single-use token instead of a credit card. This is the suggested method of creating profiles since the card number never has to touch your servers, thus lowering your PCI scope.</p>
+
+<h2 id="retrieve-profile">Retrieve Profile</h2>
+<pre class="highlight shell"><code>Definition
+GET /v1/profiles/<span class="o">{</span>id<span class="o">}</span> HTTP/1.1
+
+Request
+curl -X GET https://api.na.bambora.com/v1/profiles/<span class="o">{</span>id<span class="o">}</span><span class="se">\</span>
+-H <span class="s2">"Authorization: Passcode bWVyY2hhbnRfaWQ6cGFzc2NvZGU="</span> <span class="se">\</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">beanstream</span><span class="p">.</span><span class="nx">profiles</span><span class="p">.</span><span class="nx">getProfile</span><span class="p">(</span><span class="nx">profileId</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">profile</span><span class="p">){</span>
+    <span class="c1">// success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$result = $beanstream-&gt;profiles()-&gt;getProfile($profile_id);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">get_profile</span><span class="p">(</span><span class="n">customer_code</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">txn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beanstream</span><span class="o">.</span><span class="n">get_payment_profile</span><span class="p">(</span><span class="n">customer_code</span><span class="p">)</span> <span class="c">#customer_code = profile ID</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="k">try</span> <span class="o">{</span>
+      <span class="n">PaymentProfile</span> <span class="n">paymentProfile</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">profiles</span><span class="o">().</span><span class="na">getProfileById</span><span class="o">(</span><span class="n">profileId</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//TODO handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">PaymentProfile</span> <span class="n">profile</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Profiles</span><span class="p">.</span><span class="nf">GetProfile</span> <span class="p">(</span><span class="n">profileId</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="n">profile</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Profiles</span><span class="p">()</span><span class="o">.</span><span class="n">GetProfile</span><span class="p">(</span><span class="n">profileId</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<h2 id="update-a-profile">Update a Profile</h2>
+<pre class="highlight shell"><code>Definition
+PUT /v1/profiles/<span class="o">{</span>id<span class="o">}</span> HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/profiles/<span class="o">{</span>id<span class="o">}</span> <span class="se">\</span>
+-H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+-H <span class="s2">"Authorization: Passcode bWVyY2hhbnRfaWQ6cGFzc2NvZGU="</span> <span class="se">\</span>
+-d <span class="s1">'{
+   "billing": {
+    "name": "joh doe",
+    "address_line1": "123 main st",
+    "address_line2": "111",
+    "city": "victoria",
+    "province": "bc",
+    "country": "ca",
+    "postal_code": "V8T4M3",
+    "phone_number": "25012312345",
+    "email_address": "dngache@beanstream.com"
+  },
+  "language": "en",
+  "comment": "updated account"
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">updatedProfile</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">billing</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">address_line1</span><span class="p">:</span> <span class="s2">"123 fake street"</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">profiles</span><span class="p">.</span><span class="nx">updateProfile</span><span class="p">(</span><span class="nx">updatedProfile</span><span class="p">,</span> <span class="nx">profileId</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$profile_data = array(
+    'billing' =&gt; array(
+        'name' =&gt; 'Bobby Bob Jr',
+        'email_address' =&gt; 'email@email.com',
+        'phone_number' =&gt; '1234567890',
+        'address_line1' =&gt; '456-123 Shipping St.',
+        'city' =&gt; 'Shippingville',
+        'province' =&gt; 'BC',
+        'postal_code' =&gt; 'V8J9I5',
+        'country' =&gt; 'CA'
+        )
+    );
+$result = $beanstream-&gt;profiles()-&gt;updateProfile($profile_id, $profile_data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="c1"># get profile</span>
+<span class="n">profile1</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">get_profile</span><span class="p">(</span><span class="n">customer_code</span><span class="p">)</span>
+
+<span class="c1"># update profile</span>
+<span class="n">profile1</span><span class="p">[</span><span class="s1">'billing'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Gizmo test"</span>
+<span class="n">profile1</span><span class="p">[</span><span class="s1">'language'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"en"</span>
+<span class="n">profile1</span><span class="p">[</span><span class="s1">'comments'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"test profile"</span>
+<span class="n">profile1</span><span class="p">[</span><span class="s1">'custom'</span><span class="p">][</span><span class="s1">'ref1'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"i wish"</span>
+<span class="n">profile1</span><span class="p">[</span><span class="s1">'custom'</span><span class="p">][</span><span class="s1">'ref2'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"i was"</span>
+<span class="n">profile1</span><span class="p">[</span><span class="s1">'custom'</span><span class="p">][</span><span class="s1">'ref3'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"an oscar"</span>
+<span class="n">profile1</span><span class="p">[</span><span class="s1">'custom'</span><span class="p">][</span><span class="s1">'ref4'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"mayer"</span>
+<span class="n">profile1</span><span class="p">[</span><span class="s1">'custom'</span><span class="p">][</span><span class="s1">'ref5'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"weiner"</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">update_profile</span><span class="p">(</span><span class="n">profile1</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">txn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beanstream</span><span class="o">.</span><span class="n">modify_payment_profile</span><span class="p">(</span><span class="n">customer_code</span><span class="p">)</span>
+<span class="n">txn</span><span class="o">.</span><span class="n">set_status</span><span class="p">(</span><span class="s">'disabled'</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="k">try</span> <span class="o">{</span>
+      <span class="c1">// get profile</span>
+    <span class="n">PaymentProfile</span> <span class="n">paymentProfile</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">profiles</span><span class="o">().</span><span class="na">getProfileById</span><span class="o">(</span><span class="n">profileId</span><span class="o">);</span>
+
+    <span class="c1">// change the profile to francais</span>
+    <span class="n">paymentProfile</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="s">"fr"</span><span class="o">);</span>
+
+    <span class="c1">// update profile</span>
+    <span class="n">beanstream</span><span class="o">.</span><span class="na">profiles</span><span class="o">().</span><span class="na">updateProfile</span><span class="o">(</span><span class="n">paymentProfile</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//TODO handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">PaymentProfile</span> <span class="n">profile</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Profiles</span><span class="p">.</span><span class="nf">GetProfile</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
+
+<span class="n">profile</span><span class="p">.</span><span class="n">Billing</span><span class="p">.</span><span class="n">City</span> <span class="p">=</span> <span class="s">"penticton"</span><span class="p">;</span>
+<span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Profiles</span><span class="p">.</span><span class="nf">UpdateProfile</span> <span class="p">(</span><span class="n">profile</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="c">// get profile</span><span class="x">
+</span><span class="n">profile</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Profiles</span><span class="p">()</span><span class="o">.</span><span class="n">GetProfile</span><span class="p">(</span><span class="n">profileId</span><span class="p">)</span><span class="x">
+
+</span><span class="c">// update profile</span><span class="x">
+</span><span class="n">profile</span><span class="o">.</span><span class="n">BillingAddress</span><span class="o">.</span><span class="n">AddressLine1</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"456 Dingle Bingle Road"</span><span class="x">
+</span><span class="n">res2</span><span class="p">,</span><span class="x"> </span><span class="n">err2</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Profiles</span><span class="p">()</span><span class="o">.</span><span class="n">UpdateProfile</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<h2 id="delete-a-profile">Delete a Profile</h2>
+<pre class="highlight shell"><code>Definition
+DELETE /v1/profiles/<span class="o">{</span>id<span class="o">}</span> HTTP/1.1
+
+Request
+curl -X DELETE https://api.na.bambora.com/v1/profiles/<span class="o">{</span>id<span class="o">}</span><span class="se">\</span>
+-H <span class="s2">"Authorization: Passcode bWVyY2hhbnRfaWQ6cGFzc2NvZGU="</span> <span class="se">\</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">beanstream</span><span class="p">.</span><span class="nx">profiles</span><span class="p">.</span><span class="nx">deleteProfile</span><span class="p">(</span><span class="nx">profileId</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$result = $beanstream-&gt;profiles()-&gt;deleteProfile($profile_id);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">delete_profile</span><span class="p">(</span><span class="n">customer_code</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">txn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beanstream</span><span class="o">.</span><span class="n">delete_payment_profile</span><span class="p">(</span><span class="n">customer_code</span><span class="p">)</span> <span class="c">#customer_code = profile ID</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="k">try</span> <span class="o">{</span>
+      <span class="n">beanstream</span><span class="o">.</span><span class="na">profiles</span><span class="o">().</span><span class="na">deleteProfileById</span><span class="o">(</span><span class="n">profileId</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//TODO handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">beanstream</span><span class="p">.</span><span class="n">Profiles</span><span class="p">.</span><span class="nf">DeleteProfile</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Profiles</span><span class="p">()</span><span class="o">.</span><span class="n">DeleteProfile</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">Id</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<h2 id="add-a-card">Add a Card</h2>
+<pre class="highlight shell"><code>Definition
+POST /v1/profiles/<span class="o">{</span>id<span class="o">}</span>/cards HTTP/1.1
+
+Request
+curl -X POST https://api.na.bambora.com/v1/profiles/<span class="o">{</span>id<span class="o">}</span>/cards <span class="se">\</span>
+-H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+-H <span class="s2">"Authorization: Passcode bWVyY2hhbnRfaWQ6cGFzc2NvZGU="</span> <span class="se">\</span>
+-d <span class="s1">'{
+   "card":{
+      "name":"John Doe",
+      "number":"5100000010001004",
+      "expiry_month":"02",
+      "expiry_year":"14"    
+   }
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">card2</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span><span class="s2">"Jon Profile"</span><span class="p">,</span>
+  <span class="na">number</span><span class="p">:</span><span class="s2">"4030000010001234"</span><span class="p">,</span>
+  <span class="na">expiry_month</span><span class="p">:</span><span class="s2">"04"</span><span class="p">,</span>
+  <span class="na">expiry_year</span><span class="p">:</span><span class="s2">"20"</span><span class="p">,</span>
+  <span class="na">cvd</span><span class="p">:</span><span class="s2">"123"</span>
+<span class="p">};</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">profiles</span><span class="p">.</span><span class="nx">addCard</span><span class="p">(</span><span class="nx">profileId</span><span class="p">,</span> <span class="nx">card2</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// card successfully added</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$card_data = array(
+    'card' =&gt; array(
+        'name' =&gt; 'Test Testerson',
+        'number' =&gt; '4030000010001234',
+        'expiry_month' =&gt; '07',
+        'expiry_year' =&gt; '22',
+        'cvd' =&gt; '123'
+        )
+    );
+$result = $beanstream-&gt;profiles()-&gt;addCard($profile_id, $card_data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">card2</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">:card</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Hilary Test"</span><span class="p">,</span>
+    <span class="ss">:number</span> <span class="o">=&gt;</span> <span class="s2">"4030000010001234"</span><span class="p">,</span>
+    <span class="ss">:expiry_month</span> <span class="o">=&gt;</span> <span class="s2">"07"</span><span class="p">,</span>
+    <span class="ss">:expiry_year</span> <span class="o">=&gt;</span> <span class="s2">"22"</span><span class="p">,</span>
+    <span class="ss">:cvd</span> <span class="o">=&gt;</span> <span class="s2">"123"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">insert_card</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">add_profile_card</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span><span class="n">card2</span><span class="p">)</span> <span class="c1">#profile hash with a 'customer_code' key</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">card</span> <span class="o">=</span> <span class="n">billing</span><span class="o">.</span><span class="n">CreditCard</span><span class="p">(</span><span class="s">'John Doe'</span><span class="p">,</span> <span class="s">'5100000010001004'</span><span class="p">,</span> <span class="s">'3'</span><span class="p">,</span> <span class="s">'2019'</span><span class="p">,</span> <span class="s">'123'</span><span class="p">)</span>
+<span class="n">txn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beanstream</span><span class="o">.</span><span class="n">add_card_to_payment_profile</span><span class="p">(</span><span class="n">customer_code</span><span class="p">,</span> <span class="n">card</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="k">try</span> <span class="o">{</span>
+    <span class="n">Card</span> <span class="n">newCard</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Card</span><span class="o">()</span>
+      <span class="o">.</span><span class="na">setCvd</span><span class="o">(</span><span class="s">"123"</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"Tester Doe"</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setNumber</span><span class="o">(</span><span class="s">"4030000010001234"</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setExpiryMonth</span><span class="o">(</span><span class="s">"01"</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setExpiryYear</span><span class="o">(</span><span class="s">"19"</span><span class="o">);</span>
+    <span class="n">ProfileResponse</span> <span class="n">newCardResp</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">profiles</span><span class="o">().</span><span class="na">addCard</span><span class="o">(</span><span class="n">profileId</span><span class="o">,</span> <span class="n">newCard</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//TODO handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">ProfileResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">profile</span><span class="p">.</span><span class="nf">AddCard</span> <span class="p">(</span><span class="n">beanstream</span><span class="p">.</span><span class="n">Profiles</span><span class="p">,</span> <span class="k">new</span> <span class="n">Card</span> <span class="p">{</span>
+  <span class="n">Name</span> <span class="p">=</span> <span class="s">"Jane Doe"</span><span class="p">,</span>
+  <span class="n">Number</span> <span class="p">=</span> <span class="s">"4030000010001234"</span><span class="p">,</span>
+  <span class="n">ExpiryMonth</span> <span class="p">=</span> <span class="s">"03"</span><span class="p">,</span>
+  <span class="n">ExpiryYear</span> <span class="p">=</span> <span class="s">"22"</span><span class="p">,</span>
+  <span class="n">Cvd</span> <span class="p">=</span> <span class="s">"123"</span>
+<span class="p">});</span>
+</code></pre>
+<pre class="highlight go"><code><span class="n">card2</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">CreditCard</span><span class="p">{</span><span class="x">
+        </span><span class="n">Name</span><span class="o">:</span><span class="x">        </span><span class="s">"Jane Doe"</span><span class="p">,</span><span class="x">
+        </span><span class="n">Number</span><span class="o">:</span><span class="x">      </span><span class="s">"4030000010001234"</span><span class="p">,</span><span class="x">
+        </span><span class="n">ExpiryMonth</span><span class="o">:</span><span class="x"> </span><span class="s">"03"</span><span class="p">,</span><span class="x">
+        </span><span class="n">ExpiryYear</span><span class="o">:</span><span class="x">  </span><span class="s">"18"</span><span class="p">,</span><span class="x">
+        </span><span class="n">Cvd</span><span class="o">:</span><span class="x">         </span><span class="s">"123"</span><span class="p">}</span><span class="x">
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Profiles</span><span class="p">()</span><span class="o">.</span><span class="n">AddCard</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">Id</span><span class="p">,</span><span class="x"> </span><span class="n">card2</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<h2 id="retrieve-cards">Retrieve Cards</h2>
+<pre class="highlight shell"><code>Definition
+GET /v1/profiles<span class="o">{</span>id<span class="o">}</span>/cards HTTP/1.1
+
+Request
+curl -X GET https://api.na.bambora.comv1/profiles/<span class="o">{</span>id<span class="o">}</span>/cards <span class="se">\</span>
+-H <span class="s2">"Authorization: Passcode bWVyY2hhbnRfaWQ6cGFzc2NvZGU="</span> <span class="se">\</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">beanstream</span><span class="p">.</span><span class="nx">profiles</span><span class="p">.</span><span class="nx">getCards</span><span class="p">(</span><span class="nx">profileId</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">cards</span><span class="p">){</span>
+    <span class="c1">// success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$result = $beanstream-&gt;profiles()-&gt;getCards($profile_id);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">card</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">get_profile_card</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span> <span class="c1">#profile: a hash with a 'customer_code' key</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">txn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beanstream</span><span class="o">.</span><span class="n">get_cards_from_payment_profile</span><span class="p">(</span><span class="n">customer_code</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="k">try</span> <span class="o">{</span>
+      <span class="n">List</span><span class="o">&lt;</span><span class="n">Card</span><span class="o">&gt;</span> <span class="n">profileCards</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">profiles</span><span class="o">().</span><span class="na">getCards</span><span class="o">(</span><span class="n">profileId</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//TODO handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">IList</span><span class="p">&lt;</span><span class="n">Card</span><span class="p">&gt;</span> <span class="n">cards</span> <span class="p">=</span> <span class="n">profile</span><span class="p">.</span><span class="nf">getCards</span> <span class="p">(</span><span class="n">beanstream</span><span class="p">.</span><span class="n">Profiles</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="n">cards</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Profiles</span><span class="p">()</span><span class="o">.</span><span class="n">GetCards</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">Id</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<h2 id="update-a-card">Update a Card</h2>
+<pre class="highlight shell"><code>Definition
+PUT /v1/profiles/<span class="o">{</span>id<span class="o">}</span>/cards/<span class="o">{</span>card_id<span class="o">}</span> HTTP/1.1
+
+Request
+curl -X PUT https://api.na.bambora.com/v1/profiles/<span class="o">{</span>id<span class="o">}</span>/cards/<span class="o">{</span>card_id<span class="o">}</span> <span class="se">\</span>
+-H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+-H <span class="s2">"Authorization: Passcode bWVyY2hhbnRfaWQ6cGFzc2NvZGU="</span> <span class="se">\</span>
+-d <span class="s1">'{
+   "card":{
+      "name":"John Doe",
+      "expiry_month":"02",
+      "expiry_year":"14"    
+   }
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">updatedCard</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">expiry_year</span><span class="p">:</span><span class="s2">"20"</span>
+<span class="p">};</span>
+
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">profiles</span><span class="p">.</span><span class="nx">updateCard</span><span class="p">(</span><span class="nx">profileId</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">updatedCard</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$card_data = array(
+    'card' =&gt; array(
+        'name' =&gt; 'Test Testerson',
+        'expiry_month' =&gt; '07',
+        'expiry_year' =&gt; '22',
+        'cvd' =&gt; '123'
+    )
+);
+$result = $beanstream-&gt;profiles()-&gt;updateCard($profile_id, 1, $card_data); // update the 1st card
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">updated_card</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">:card</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Brent Test"</span><span class="p">,</span>
+    <span class="ss">:expiry_month</span> <span class="o">=&gt;</span> <span class="s2">"07"</span><span class="p">,</span>
+    <span class="ss">:expiry_year</span> <span class="o">=&gt;</span> <span class="s2">"20"</span><span class="p">,</span>
+    <span class="ss">:cvd</span> <span class="o">=&gt;</span> <span class="s2">"123"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">update_card</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">update_profile_card</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">updated_card</span><span class="p">)</span> <span class="c1">#update card 1</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">card</span> <span class="o">=</span> <span class="n">billing</span><span class="o">.</span><span class="n">CreditCard</span><span class="p">(</span><span class="s">'John Doe'</span><span class="p">,</span> <span class="s">'5100XXXXXXXX1004'</span><span class="p">,</span> <span class="s">'06'</span><span class="p">,</span> <span class="s">'2019'</span><span class="p">,</span> <span class="s">'123'</span><span class="p">)</span> <span class="c">#this masked card number will not be updated, but the other data will</span>
+<span class="n">txn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beanstream</span><span class="o">.</span><span class="n">update_card_on_payment_profile</span><span class="p">(</span><span class="n">customer_code</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">card</span><span class="p">)</span> <span class="c"># replace card 2 with new data</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="k">try</span> <span class="o">{</span>
+    <span class="c1">// get card</span>
+    <span class="n">Card</span> <span class="n">cardUpdated</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">profiles</span><span class="o">().</span><span class="na">getCard</span><span class="o">(</span><span class="n">profileId</span><span class="o">,</span> <span class="s">"1"</span><span class="o">);</span>
+
+    <span class="c1">// update card</span>
+    <span class="n">cardUpdated</span><span class="o">.</span><span class="na">setExpiryMonth</span><span class="o">(</span><span class="s">"04"</span><span class="o">);</span>
+    <span class="n">beanstream</span><span class="o">.</span><span class="na">profiles</span><span class="o">().</span><span class="na">updateCard</span><span class="o">(</span><span class="n">profileId</span><span class="o">,</span> <span class="n">cardUpdated</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//TODO handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="c1">// get card #1
+</span><span class="n">Card</span> <span class="n">card</span> <span class="p">=</span> <span class="n">profile</span><span class="p">.</span><span class="nf">getCard</span> <span class="p">(</span><span class="n">beanstream</span><span class="p">.</span><span class="n">Profiles</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+
+<span class="c1">// update card
+</span><span class="n">card</span><span class="p">.</span><span class="n">ExpiryYear</span> <span class="p">=</span> <span class="s">"20"</span><span class="p">;</span>
+<span class="n">profile</span><span class="p">.</span><span class="nf">UpdateCard</span> <span class="p">(</span><span class="n">beanstream</span><span class="p">.</span><span class="n">Profiles</span><span class="p">,</span> <span class="n">card</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="c">// get card</span><span class="x">
+</span><span class="n">card</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">profile</span><span class="o">.</span><span class="n">GetCard</span><span class="p">(</span><span class="n">gateway</span><span class="o">.</span><span class="n">Profiles</span><span class="p">(),</span><span class="x"> </span><span class="m">1</span><span class="p">)</span><span class="x"> </span><span class="c">// the first card is always #1</span><span class="x">
+
+</span><span class="c">// update card</span><span class="x">
+</span><span class="n">card</span><span class="o">.</span><span class="n">ExpiryMonth</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"04"</span><span class="x">
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err2</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">profile</span><span class="o">.</span><span class="n">UpdateCard</span><span class="p">(</span><span class="n">gateway</span><span class="o">.</span><span class="n">Profiles</span><span class="p">(),</span><span class="x"> </span><span class="o">*</span><span class="n">card</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<h2 id="delete-a-card">Delete a Card</h2>
+<pre class="highlight shell"><code>Definition
+DELETE /v1/profiles/<span class="o">{</span>id<span class="o">}</span>/cards/<span class="o">{</span>card_id<span class="o">}</span> HTTP/1.1
+
+Request
+curl -X DELETE https://api.na.bambora.com/v1/profiles/<span class="o">{</span>id<span class="o">}</span>/cards/<span class="o">{</span>card_id<span class="o">}</span> <span class="se">\</span>
+-H <span class="s2">"Authorization: Passcode bWVyY2hhbnRfaWQ6cGFzc2NvZGU="</span> <span class="se">\</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">beanstream</span><span class="p">.</span><span class="nx">profiles</span><span class="p">.</span><span class="nx">deleteCard</span><span class="p">(</span><span class="nx">profileId</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$result = $beanstream-&gt;profiles()-&gt;deleteCard($profile_id, 2); // delete card #2
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">delete_card</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">ProfilesAPI</span><span class="p">.</span><span class="nf">delete_profile_card</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#delete card 1</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">txn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beanstream</span><span class="o">.</span><span class="n">delete_card_on_payment_profile</span><span class="p">(</span><span class="n">customer_code</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="k">try</span> <span class="o">{</span>
+    <span class="n">ProfileResponse</span> <span class="n">result</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">profiles</span><span class="o">().</span><span class="na">removeCard</span><span class="o">(</span><span class="n">profileId</span><span class="o">,</span> <span class="s">"2"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//TODO handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">ProfileResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">profile</span><span class="p">.</span><span class="nf">RemoveCard</span> <span class="p">(</span><span class="n">beanstream</span><span class="p">.</span><span class="n">Profiles</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span> <span class="c1">// delete card #2
+</span></code></pre>
+<pre class="highlight go"><code><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">profile</span><span class="o">.</span><span class="n">DeleteCard</span><span class="p">(</span><span class="n">gateway</span><span class="o">.</span><span class="n">Profiles</span><span class="p">(),</span><span class="x"> </span><span class="n">cardId</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<h2 id="errors">Errors</h2>
+
+<p>You can read the errors returned by the API <a href="/docs/references/payment_APIs">here</a>.</p>
+
+      </div>
+      
+      <div class="dark-box">
+
+          <div class="tabs lang-selector">
+                <a href="#" data-language-name="shell"> 
+                  shell
+                </a>
+                <a href="#" data-language-name="python"> 
+                  python
+                </a>
+                <a href="#" data-language-name="csharp"> 
+                  csharp
+                </a>
+                <a href="#" data-language-name="java"> 
+                  java
+                </a>
+                <a href="#" data-language-name="ruby"> 
+                  ruby
+                </a>
+                <a href="#" data-language-name="php"> 
+                  php
+                </a>
+                <a href="#" data-language-name="javascript"> 
+                  javascript
+                </a>
+                <a href="#" data-language-name="go"> 
+                  go
+                </a>
+          </div>
+        
+      </div>
+    </div>
+
+    <footer>
+
+
+
+                © <a href="http://www.bambora.com/en/en/payment-solutions/" target="_blank">2017 Bambora</a>
+
+        <div class="links">
+                <a href="http://www.bambora.com/en/en/payment-solutions/customer-service/faq/terms-and-conditions/" target="_blank">Terms & Conditions</a>
+        </div>
+        
+        <div class="pull-right">
+                <a href="https://github.com/bambora/" target="_blank">Github</a>
+        </div>
+
+</footer>
+    <script src="../../../../../javascripts/template/tocbot_init_script-2dfca9f7.js" type="text/javascript"></script>
+
+    <script>
+      // spec template has different headingsOffset for tocbot
+      tocbot.init({
+        tocSelector: '.js-toc',
+        contentSelector: '.js-toc-content',
+        headingSelector: 'h2, h3, h4, h5',
+        ignoreSelector: '.js-toc-ignore',
+        collapseDepth: 1,
+        headingsOffset: 80,
+        smoothScrollOptions: {
+          offset: 100
+        }
+      });
+    </script>
+
+  </body>
+</html>
