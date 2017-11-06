@@ -1,5 +1,5 @@
 ---
-title: PaymentIQ Admin API v1.3.5
+title: PaymentIQ test API v1.3.5
 language_tabs: []
 toc_footers: []
 includes: []
