@@ -1,0 +1,1879 @@
+<!doctype html>
+<html>
+  <head>
+
+    <link href="../../../../stylesheets/slate-7bf8663b.css" rel="stylesheet" type="text/css" />
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W92MC5');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon-9dabc470.png">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-32x32-b71a5283.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-16x16-ea515fe9.png" sizes="16x16">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<link rel="mask-icon" href="/images/favicon/safari-pinned-tab-fb883d2e.svg" color="#8247b5 ">
+<meta name="theme-color" content="#ffffff ">
+
+<!-- Site version (latest commit): 8e4a392b8aa751a6ce5c945a7b9f17bad9355071
+ -->
+
+<title>Take Payments</title>
+
+<link href="../../../../stylesheets/ui.bambora.1.0.3-13e3506d.css" rel="stylesheet" type="text/css" />
+<link href="../../../../stylesheets/bambora_ui_sass_overwrite-d859adf4.css" rel="stylesheet" type="text/css" />
+<link href="../../../../stylesheets/portal-5e95ed43.css" rel="stylesheet" type="text/css" />
+<link href="../../../../stylesheets/page/spec-4625dc8e.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+
+<script src="../../../../javascripts/all-654c8dcb.js" type="text/javascript"></script>
+
+
+      <script>
+        $(function() {
+          setupLanguages(["shell","python","csharp","java","ruby","php","javascript","go"]);
+        });
+      </script>
+  </head>
+
+  <body class="docs docs_references docs_references_payment_SDKs docs_references_payment_SDKs_take_payments docs_references_payment_SDKs_take_payments_index">
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W92MC5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <div class="fixed-header">
+    
+
+<nav class="nav-pane nav-fixed">
+
+    <!-- Hamburger icon --> 
+    <a href="#" class="hamburger-icon"><svg width="19" height="14" viewBox="0 0 19 14" xmlns="http://www.w3.org/2000/svg"><title>list</title><path d="M7.968 2.28h10.245V0H7.968v2.28zM0 7.975h18.213v-2.28H0v2.28zm0 5.696h10.245v-2.278H0v2.278z" fill="#84898A" fill-rule="evenodd"/></svg></a>
+
+    <!-- Logo -->
+    <div class="pull-left nav-links">
+        <a href="/docs/" class="logo">
+                <img src="../../../../images/svg/zebraffe-dark-dev-05ffe493.svg" />
+        </a>
+    </div>
+
+    <div class="header-contents">
+
+    <!-- Links --> 
+    <div class="pull-left nav-links">
+                <a href="/docs/guides/">Guides</a>
+                <a href="/docs/references/" class="active">References</a>
+                <a href="/docs/support/">Support</a>
+    </div>
+
+    <!-- Search / buttons -->
+    <div class="pull-right">
+        
+        <span class="button-wrap">
+            <a id="search-button" href="#"><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><title>search</title><path d="M5 0a5 5 0 1 0 3.164 8.87l5.13 5.13.706-.707-5.13-5.129A5 5 0 0 0 5 0m0 1c2.206 0 4 1.794 4 4 0 .934-.313 1.809-.904 2.53l-.254.312-.312.254A3.952 3.952 0 0 1 5 9C2.794 9 1 7.206 1 5s1.794-4 4-4" fill="#454545" fill-rule="evenodd"/></svg></a>
+        </span>
+
+            <span class="button-wrap">
+                    <a href="/docs/sign_up/" class="btn btn-small btn-secondary" >
+                        Sign up
+                    </a>
+            </span>
+            <span class="button-wrap">
+                    <a href="https://web.na.bambora.com" class="btn btn-small" >
+                        Login
+                    </a>
+            </span>
+
+        <div class="dropdown-nav dropdown-open-on-hover" role="navigation" 
+id="region-switcher">
+    North America
+    <ul role="menu">
+        
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/apac" class="not-new-tab-for-link">
+                Asia-Pacific
+            </a>
+        </li>
+
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/europe" class="not-new-tab-for-link">
+                Europe
+            </a>
+        </li>
+    </ul>
+</div>
+    </div>
+
+    </div>
+</nav>
+
+<div id="search-overlay">
+  <a href="#" id="close-search-overlay"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></a>
+
+  <div class="container">
+
+    <form>
+      <div class="form-group">
+        <input type="text" id="search" placeholder="Search..." width="100%", autocomplete="off" >
+      </div>
+    </form>
+
+    <div id="result-count"></div>
+
+    <div class="list-group">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <ul class="search-results"></ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+    </div>
+    <div class="nav-push"></div>
+
+    
+
+
+<div class="nav-wrapper">
+<nav class="nav-left nav-sticky nav-vertical">
+
+  <div class="mobile-close"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></div>
+
+  <div class="lang-selector">
+    <ul>
+          <li>
+            <a href="#" data-language-name="shell">
+              shell
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="python">
+              python
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="csharp">
+              csharp
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="java">
+              java
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="ruby">
+              ruby
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="php">
+              php
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="javascript">
+              javascript
+            </a>
+          </li>
+          <li>
+            <a href="#" data-language-name="go">
+              go
+            </a>
+          </li>
+    </ul>  
+  </div>
+
+      <ul>
+
+          <li data-nav-title="/docs/references/payment_SDKs/" class="">
+            <a href="/docs/references/payment_SDKs/" class="nav-top-heading">
+              Overview 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/docs/references/payment_SDKs/collect_card_data/" class="">
+            <a href="/docs/references/payment_SDKs/collect_card_data/" class="nav-top-heading">
+              Collect Card Data 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/docs/references/payment_SDKs/take_payments/" class="active">
+            <a href="/docs/references/payment_SDKs/take_payments/" class="nav-top-heading">
+              Take Payments 
+            </a>
+
+              <div class="page-included js-toc"></div>
+          </li>
+
+          <li data-nav-title="/docs/references/payment_SDKs/analyze_payments/" class="">
+            <a href="/docs/references/payment_SDKs/analyze_payments/" class="nav-top-heading">
+              Analyze Payments 
+            </a>
+
+          </li>
+      </ul>
+</nav>
+</div>
+
+<!-- button to click on small screen to show toc -->
+<div class="show-toc">
+  Contents
+</div>
+
+
+
+
+
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content js-toc-content markdown">
+
+        <div id="edit-on-github" class="dropdown dropdown-open-on-hover" role="listbox">
+  Edit this page
+
+  <ul>
+    <li class="dropdown-title">Base page:</li>
+    <li role="option">
+      <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/docs/references/payment_SDKs/take_payments.md">
+        take_payments.md
+      </a>
+    </li>
+
+    <li class="dropdown-title">Includes:</li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/take_payments/_overview.md">
+          overview.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/take_payments/_payment_card.md">
+          payment_card.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/take_payments/_payment_token.md">
+          payment_token.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/take_payments/_payment_profile.md">
+          payment_profile.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/take_payments/_payment_interac.md">
+          payment_interac.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/take_payments/_payment_3d_secure.md">
+          payment_3d_secure.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/take_payments/_payment_cash_and_cheque.md">
+          payment_cash_and_cheque.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/take_payments/_voids_and_returns.md">
+          voids_and_returns.md
+        </a>
+      </li>
+      <li role="option">
+        <a href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/includes/na/take_payments/_errors.md">
+          errors.md
+        </a>
+      </li>
+  </ul>
+</div>    
+
+<!-- Modal apears on link click -->
+<div class="modal-overlay">
+  <div class="modal github-modal" role="dialog">
+      <h3 class="js-toc-ignore">Edit on Github</h3>
+
+      <p> 
+      To propose changes to the Developer Portal click the link below and follow these steps: 
+      </p>
+
+      <ol>
+        <li>Sign in to Github. You will have to create an account if you don't already have one.</li>
+        <li>Click the <strong>Fork this repository and propose changes </strong>button.</li>
+        <li>Make your proposed changes to the file. Content is formatted with <a href="http://commonmark.org/help/">Markdown.</a></li>
+        <li>At the bottom of the page, optionally add a title and description to your changes, and click the <strong>Propose file change button</strong>.</li>
+        <li>On the next page, click <strong>Create pull request</strong>, and then click it again.</li>
+        <li>You're done! Someone will review your changes and they will appear on the site shortly.</li>
+      </ol>
+
+      <div class="btn-row">
+          <a href="#" class="btn continue-to-github" target="_blank">Continue to Github</a>
+          <button class="btn btn-secondary close-modal">Cancel</button>
+      </div>
+  </div>
+</div>
+            <div class='breadcrumb-trail'><span><a href='/docs/'>Docs</a></span><span class='chevron'> / </span><span><a href='/docs/references/'>References</a></span><span class='chevron'> / </span><span><a href='/docs/references/payment_SDKs/'>Payment SDKs</a></span><span class='chevron'> / </span><span class='this-page'>Take Payments</span></div>
+
+
+          <h1 id="take-payments">Take Payments</h1>
+
+            <p>All payment requests are made via server-side requests. You can either call our RESTful Payments API directly, or via one of our API wrapping libraries (our SDKs).</p>
+
+<p>Our RESTful APIs allow you to take payments, analyze payments, create payment profile to record customer details for future payments, and create credit card tokens to reduce the scope of your PCI compliance. You can read the API Spec <a href="/docs/references/payment_APIs">here</a>.</p>
+
+<h2 id="include-the-server-sdk">Include the Server SDK</h2>
+<pre class="highlight javascript"><code><span class="c1">// Step 1) Install module with NPM</span>
+<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">beanstream</span><span class="o">-</span><span class="nx">node</span>
+
+<span class="c1">// Step 2) Import module into your project</span>
+<span class="kd">var</span> <span class="nx">beanstream</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'beanstream-node'</span><span class="p">)(</span><span class="s1">'merchantId'</span><span class="p">,</span> <span class="s1">'Payments API passcode'</span><span class="p">,</span> <span class="s1">'Profiles API passcode'</span><span class="p">,</span> <span class="s1">'Reporting API passcode'</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight php"><code>
+// Composer
+// 1. Edit composer.json
+{
+    "require": {
+        "beanstream/beanstream": "dev-master"
+    }
+}
+// 2. Install the SDK
+composer install
+
+// 3. Require in your php file
+require 'vendor/autoload.php';
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">gem</span> <span class="n">install</span> <span class="n">beanstream</span> <span class="o">--</span><span class="n">pre</span>
+</code></pre>
+<pre class="highlight python"><code><span class="o">//</span> <span class="n">Pip</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">beanstream</span>
+</code></pre>
+<pre class="highlight java"><code><span class="c1">// Maven</span>
+<span class="o">&lt;</span><span class="n">repositories</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">repository</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">id</span><span class="o">&gt;</span><span class="n">snapshots</span><span class="o">-</span><span class="n">repo</span><span class="o">&lt;/</span><span class="n">id</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span><span class="nl">https:</span><span class="c1">//oss.sonatype.org/content/repositories/snapshots&lt;/url&gt;</span>
+<span class="o">&lt;</span><span class="n">releases</span><span class="o">&gt;&lt;</span><span class="n">enabled</span><span class="o">&gt;</span><span class="kc">false</span><span class="o">&lt;/</span><span class="n">enabled</span><span class="o">&gt;&lt;/</span><span class="n">releases</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">snapshots</span><span class="o">&gt;&lt;</span><span class="n">enabled</span><span class="o">&gt;</span><span class="kc">true</span><span class="o">&lt;/</span><span class="n">enabled</span><span class="o">&gt;&lt;/</span><span class="n">snapshots</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">repository</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">repositories</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">dependencies</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="na">beanstream</span><span class="o">.</span><span class="na">api</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">beanstream</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependencies</span><span class="o">&gt;</span>
+
+<span class="c1">//Gradle</span>
+<span class="n">repositories</span> <span class="o">{</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s">"https://oss.sonatype.org/content/repositories/snapshots"</span> <span class="o">}</span>
+<span class="o">}</span>
+<span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span><span class="o">(</span><span class="s">"com.beanstream.api:beanstream:1.0.0-SNAPSHOT"</span><span class="o">)</span> <span class="o">{</span><span class="n">changing</span><span class="o">=</span><span class="kc">true</span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="c1">//Nuget
+</span><span class="n">Id</span><span class="p">:</span> <span class="n">Beanstream</span>
+
+<span class="n">PM</span><span class="p">&gt;</span> <span class="n">Install</span><span class="p">-</span><span class="n">Package</span> <span class="n">Beanstream</span>
+</code></pre>
+<pre class="highlight go"><code><span class="c">// Go Get</span><span class="x">
+</span><span class="k">import</span><span class="x"> </span><span class="n">beanstream</span><span class="x"> </span><span class="s">"github.com/Beanstream/beanstream-go"</span><span class="x">
+</span></code></pre>
+
+<p>Select the programming language of your project from the tabs at the top of the right-hand column.</p>
+
+            <h2 id="purchases-and-pre-auth-39-s">Purchases and Pre-Auth&#39;s</h2>
+
+<p>A payment processes the credit card right away. A pre-authorization (aka “pre-auth”) checks to see if the customer has the funds available without actually charging them. After a pre-auth you will want to “complete” the payment for less than or equal to the original pre-auth amount.</p>
+
+<p>Set the Credit Card object’s “complete” value to true to complete a payment after a pre-auth, or to just push the payment through in the first place without pre-auth.</p>
+
+<h2 id="credit-card">Credit Card</h2>
+<pre class="highlight shell"><code><span class="c"># Definition</span>
+<span class="c"># POST /v1/payments HTTP/1.1</span>
+
+curl https://api.na.bambora.com/v1/payments
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+   "order_number":"10000123",
+   "amount":100.00,
+   "payment_method":"card",
+   "card":{
+      "name":"John Doe",
+      "number":"5100000010001004",
+      "expiry_month":"02",
+      "expiry_year":"14",
+      "cvd":"123"
+   }
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">beanstream</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'beanstream-node'</span><span class="p">)(</span><span class="s1">'YOUR_MERCHANT_ID'</span><span class="p">,</span> <span class="s1">'YOUR_PAYMENTS_API_PASSCODE'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">cardPayment</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">order_number</span><span class="p">:</span> <span class="s1">'order123456abc'</span><span class="p">,</span>
+  <span class="na">amount</span><span class="p">:</span><span class="mf">10.00</span><span class="p">,</span>
+  <span class="na">payment_method</span><span class="p">:</span><span class="s2">"card"</span><span class="p">,</span>
+  <span class="na">card</span><span class="p">:{</span>
+    <span class="na">name</span><span class="p">:</span><span class="s2">"John Doe"</span><span class="p">,</span>
+    <span class="na">number</span><span class="p">:</span><span class="s2">"5100000010001004"</span><span class="p">,</span>
+    <span class="na">expiry_month</span><span class="p">:</span><span class="s2">"02"</span><span class="p">,</span>
+    <span class="na">expiry_year</span><span class="p">:</span><span class="s2">"19"</span><span class="p">,</span>
+    <span class="na">cvd</span><span class="p">:</span><span class="s2">"123"</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">payments</span><span class="p">.</span><span class="nx">makePayment</span><span class="p">(</span><span class="nx">cardPayment</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// display syccess</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="c1">// display error</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$beanstream = new \Beanstream\Gateway('YOUR_MERCHANT_ID', 'YOUR_PAYMENTS_API_PASSCODE', 'www', 'v1');
+
+$payment_data = array(
+        'order_number' =&gt; 'orderNumber0023',
+        'amount' =&gt; 19.99,
+        'payment_method' =&gt; 'card',
+        'card' =&gt; array(
+            'name' =&gt; 'Mr. Card Testerson',
+            'number' =&gt; '4030000010001234',
+            'expiry_month' =&gt; '07',
+            'expiry_year' =&gt; '22',
+            'cvd' =&gt; '123'
+        )
+);
+try {
+    $result = $beanstream-&gt;payments()-&gt;makeCardPayment($payment_data, TRUE); //set to FALSE for Pre-Auth
+    print_r( $result );
+} catch (\Beanstream\Exception $e) {
+    //handle exception
+}
+</code></pre>
+<pre class="highlight ruby"><code><span class="k">begin</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">make_payment</span><span class="p">(</span>
+  <span class="p">{</span>
+    <span class="ss">:order_number</span> <span class="o">=&gt;</span> <span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">generateRandomOrderId</span><span class="p">(</span><span class="s2">"test"</span><span class="p">),</span>
+    <span class="ss">:amount</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="ss">:payment_method</span> <span class="o">=&gt;</span> <span class="no">PaymentMethods</span><span class="o">::</span><span class="no">CARD</span><span class="p">,</span>
+    <span class="ss">:card</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Mr. Card Testerson"</span><span class="p">,</span>
+      <span class="ss">:number</span> <span class="o">=&gt;</span> <span class="s2">"4030000010001234"</span><span class="p">,</span>
+      <span class="ss">:expiry_month</span> <span class="o">=&gt;</span> <span class="s2">"07"</span><span class="p">,</span>
+      <span class="ss">:expiry_year</span> <span class="o">=&gt;</span> <span class="s2">"22"</span><span class="p">,</span>
+      <span class="ss">:cvd</span> <span class="o">=&gt;</span> <span class="s2">"123"</span><span class="p">,</span>
+      <span class="ss">:complete</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+  <span class="nb">puts</span> <span class="s2">"Success! TransactionID: </span><span class="si">#{</span><span class="n">result</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="k">rescue</span> <span class="no">BeanstreamException</span> <span class="o">=&gt;</span> <span class="n">ex</span>
+  <span class="nb">puts</span> <span class="s2">"Exception: </span><span class="si">#{</span><span class="n">ex</span><span class="p">.</span><span class="nf">user_facing_message</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">beanstream</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">Beanstream</span><span class="p">()</span>
+<span class="n">beanstream</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span>
+    <span class="s">'YOUR_MERCHANT_ID'</span><span class="p">,</span>
+    <span class="n">payment_passcode</span><span class="o">=</span><span class="s">'YOUR_PAYMENTS_API_PASSCODE'</span><span class="p">)</span>
+<span class="n">card</span> <span class="o">=</span> <span class="n">billing</span><span class="o">.</span><span class="n">CreditCard</span><span class="p">(</span>
+  <span class="s">'John Doe'</span><span class="p">,</span>
+  <span class="s">'4030000010001234'</span><span class="p">,</span>
+  <span class="s">'03'</span><span class="p">,</span>
+  <span class="s">'2019'</span><span class="p">,</span>
+  <span class="s">'123'</span><span class="p">)</span>
+<span class="n">trans</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">purchase</span><span class="p">(</span><span class="mf">51.32</span><span class="p">,</span> <span class="n">card</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">trans</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gateway</span><span class="o">(</span><span class="s">"v1"</span><span class="o">,</span>
+    <span class="n">YOUR_MERCHANT_ID</span><span class="o">,</span>
+    <span class="s">"YOUR_PAYMENTS_API_PASSCODE"</span><span class="o">);</span>
+
+<span class="n">CardPaymentRequest</span> <span class="n">req</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CardPaymentRequest</span><span class="o">();</span>
+<span class="n">req</span><span class="o">.</span><span class="na">setAmount</span><span class="o">(</span><span class="mf">100.0</span><span class="o">);</span>
+<span class="n">req</span><span class="o">.</span><span class="na">setOrderNumber</span><span class="o">(</span><span class="s">"orderNum000112"</span><span class="o">);</span>
+<span class="n">req</span><span class="o">.</span><span class="na">getCard</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"John Doe"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setNumber</span><span class="o">(</span><span class="s">"5100000010001004"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setExpiryMonth</span><span class="o">(</span><span class="s">"12"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setExpiryYear</span><span class="o">(</span><span class="s">"18"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setCvd</span><span class="o">(</span><span class="s">"123"</span><span class="o">);</span>
+
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">PaymentResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">makePayment</span><span class="o">(</span><span class="n">req</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Card Payment Approved? "</span><span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">isApproved</span><span class="o">());</span>
+
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// todo handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Gateway</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">MerchantId</span> <span class="p">=</span> <span class="n">YOUR_MERCHANT_ID</span><span class="p">,</span>
+    <span class="n">PaymentsApiKey</span> <span class="p">=</span> <span class="s">"YOUR_PAYMENTS_API_PASSCODE"</span><span class="p">,</span>
+    <span class="n">ApiVersion</span> <span class="p">=</span> <span class="s">"1"</span>
+<span class="p">};</span>
+
+<span class="n">PaymentResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">MakePayment</span> <span class="p">(</span>
+    <span class="k">new</span> <span class="n">CardPaymentRequest</span> <span class="p">{</span>
+        <span class="n">Amount</span> <span class="p">=</span> <span class="m">100.00</span><span class="p">,</span>
+        <span class="n">OrderNumber</span> <span class="p">=</span> <span class="s">"orderNum002233"</span><span class="p">,</span>
+        <span class="n">Card</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Card</span> <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">"John Doe"</span><span class="p">,</span>
+            <span class="n">Number</span> <span class="p">=</span> <span class="s">"5100000010001004"</span><span class="p">,</span>
+            <span class="n">ExpiryMonth</span> <span class="p">=</span> <span class="s">"12"</span><span class="p">,</span>
+            <span class="n">ExpiryYear</span> <span class="p">=</span> <span class="s">"18"</span><span class="p">,</span>
+            <span class="n">Cvd</span> <span class="p">=</span> <span class="s">"123"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+  </span><span class="n">beanstream</span><span class="x"> </span><span class="s">"github.com/Beanstream/beanstream-go"</span><span class="x">
+  </span><span class="s">"github.com/Beanstream/beanstream-go/paymentMethods"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="n">config</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">DefaultConfig</span><span class="p">()</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">MerchantId</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"YOUR_MERCHANT_ID"</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">PaymentsApiKey</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"YOUR_PAYMENTS_API_PASSCODE"</span><span class="x">
+
+</span><span class="n">gateway</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Gateway</span><span class="p">{</span><span class="n">config</span><span class="p">}</span><span class="x">
+</span><span class="n">request</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">PaymentRequest</span><span class="p">{</span><span class="x">
+  </span><span class="n">PaymentMethod</span><span class="o">:</span><span class="x"> </span><span class="n">paymentMethods</span><span class="o">.</span><span class="n">CARD</span><span class="p">,</span><span class="x">
+  </span><span class="n">OrderNumber</span><span class="o">:</span><span class="x">   </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Util_randOrderId</span><span class="p">(</span><span class="m">6</span><span class="p">),</span><span class="x">
+  </span><span class="n">Amount</span><span class="o">:</span><span class="x">        </span><span class="m">12.99</span><span class="p">,</span><span class="x">
+  </span><span class="n">Card</span><span class="o">:</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">CreditCard</span><span class="p">{</span><span class="x">
+    </span><span class="n">Name</span><span class="o">:</span><span class="x">        </span><span class="s">"John Doe"</span><span class="p">,</span><span class="x">
+    </span><span class="n">Number</span><span class="o">:</span><span class="x">      </span><span class="s">"5100000010001004"</span><span class="p">,</span><span class="x">
+    </span><span class="n">ExpiryMonth</span><span class="o">:</span><span class="x"> </span><span class="s">"11"</span><span class="p">,</span><span class="x">
+    </span><span class="n">ExpiryYear</span><span class="o">:</span><span class="x">  </span><span class="s">"19"</span><span class="p">,</span><span class="x">
+    </span><span class="n">Cvd</span><span class="o">:</span><span class="x">         </span><span class="s">"123"</span><span class="p">,</span><span class="x">
+    </span><span class="n">Complete</span><span class="o">:</span><span class="x">    </span><span class="no">true</span><span class="p">}}</span><span class="x"> </span><span class="c">// set to false for pre-auth</span><span class="x">
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">MakePayment</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<p><strong>Test Cards</strong><br/>
+If you are using a test account, or a production account that is still in its initial &#39;test&#39; mode, you’ll need to use test card numbers. You’ll be able to view the transaction process from beginning to end without sending real information to the banking network. See <a href="https://support.na.bambora.com/bic/w/index.html#docs/using-test-card-numbers.htm">here</a> for a list of test card numbers.</p>
+
+<p><strong>Required Parameters</strong><br/>
+Please refer to the <a href="/docs/references/payment_APIs">API Spec</a> for full details on parameters.</p>
+
+<p><strong>Approved and declined responses</strong><br/>
+If you are using an SDK an approved payment will return a payment response object. A declined payment will throw an exception or return an error. If you are using the REST API directly then an approved payment will return a 200 OK http status response as well as a response object.</p>
+
+<p>You can view the data model of the response below in the REST API section. The data model there is the same in the REST response as well as the SDKs.</p>
+
+<p>The response objects will contain all of the relevant payment information as well as a transaction ID.</p>
+
+<p><strong>Note:</strong><br/></p>
+
+<ul>
+<li>For a regular credit card payment, set &quot;complete&quot; to &quot;true&quot;</li>
+<li>For a pre-authorization, set &quot;complete&quot; to &quot;false&quot;</li>
+<li>For a pre-authorization completion, set &quot;complete&quot; to &quot;true&quot;</li>
+</ul>
+
+<h3 id="pre-auth-and-complete">Pre-Auth and Complete</h3>
+<pre class="highlight shell"><code><span class="c"># Definition</span>
+<span class="c"># POST /v1/payments HTTP/1.1</span>
+
+curl https://api.na.bambora.com/v1/payments
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+   "order_number":"10000123",
+   "amount":100.00,
+   "payment_method":"card",
+   "card":{
+      "name":"John Doe",
+      "number":"5100000010001004",
+      "expiry_month":"02",
+      "expiry_year":"14",
+      "cvd":"123",
+      "complete":false
+   }
+}'</span>
+
+<span class="c">#</span>
+<span class="c"># completion:</span>
+<span class="c">#</span>
+
+Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments/<span class="o">{</span>transId<span class="o">}</span>/completions
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+    "amount":59.33
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">cardPayment</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">order_number</span><span class="p">:</span> <span class="s1">'order123456abc'</span><span class="p">,</span>
+  <span class="na">amount</span><span class="p">:</span><span class="mf">80.00</span><span class="p">,</span>
+  <span class="na">payment_method</span><span class="p">:</span><span class="s2">"card"</span><span class="p">,</span>
+  <span class="na">card</span><span class="p">:{</span>
+    <span class="na">name</span><span class="p">:</span><span class="s2">"John Doe"</span><span class="p">,</span>
+    <span class="na">number</span><span class="p">:</span><span class="s2">"5100000010001004"</span><span class="p">,</span>
+    <span class="na">expiry_month</span><span class="p">:</span><span class="s2">"02"</span><span class="p">,</span>
+    <span class="na">expiry_year</span><span class="p">:</span><span class="s2">"19"</span><span class="p">,</span>
+    <span class="na">cvd</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span>
+    <span class="na">complete</span><span class="p">:</span> <span class="kc">false</span> <span class="c1">// false for pre-auth</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">payments</span><span class="p">.</span><span class="nx">makePayment</span><span class="p">(</span><span class="nx">cardPayment</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// approved</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+
+<span class="c1">// capture/complete a lesser amount</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">payments</span><span class="p">.</span><span class="nx">completePayment</span><span class="p">(</span><span class="nx">transId</span><span class="p">,</span> <span class="p">{</span><span class="na">amount</span><span class="p">:</span> <span class="mf">50.50</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// payment captured/completed</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$beanstream = new \Beanstream\Gateway('300200578', '4BaD82D9197b4cc4b70a221911eE9f70', 'www', 'v1');
+
+$payment_data = array(
+    'order_number' =&gt; 'orderNumber002y',
+    'amount' =&gt; 19.99,
+    'payment_method' =&gt; 'card',
+    'card' =&gt; array(
+        'name' =&gt; 'Mr. Card Testerson',
+        'number' =&gt; '4030000010001234',
+        'expiry_month' =&gt; '07',
+        'expiry_year' =&gt; '22',
+        'cvd' =&gt; '123'
+    )
+);
+try {
+    $result = $beanstream-&gt;payments()-&gt;makeCardPayment($payment_data, FALSE); //set to FALSE for Pre-Auth
+    $transaction_id = $result['id'];
+    // complete payment
+    $result = $beanstream-&gt;payments()-&gt;complete($transaction_id, 12.5);
+    print_r( $result );
+} catch (\Beanstream\Exception $e) {
+    //todo handle exception
+}
+</code></pre>
+<pre class="highlight ruby"><code><span class="k">begin</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">make_payment</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="ss">:order_number</span> <span class="o">=&gt;</span> <span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">generateRandomOrderId</span><span class="p">(</span><span class="s2">"test"</span><span class="p">),</span>
+      <span class="ss">:amount</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">,</span>
+      <span class="ss">:payment_method</span> <span class="o">=&gt;</span> <span class="no">PaymentMethods</span><span class="o">::</span><span class="no">CARD</span><span class="p">,</span>
+      <span class="ss">:card</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Mr. Card Testerson"</span><span class="p">,</span>
+        <span class="ss">:number</span> <span class="o">=&gt;</span> <span class="s2">"4030000010001234"</span><span class="p">,</span>
+        <span class="ss">:expiry_month</span> <span class="o">=&gt;</span> <span class="s2">"07"</span><span class="p">,</span>
+        <span class="ss">:expiry_year</span> <span class="o">=&gt;</span> <span class="s2">"22"</span><span class="p">,</span>
+        <span class="ss">:cvd</span> <span class="o">=&gt;</span> <span class="s2">"123"</span><span class="p">,</span>
+        <span class="ss">:complete</span> <span class="o">=&gt;</span> <span class="kp">false</span> <span class="c1">#false makes it a pre-auth</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"pre-authorized success: </span><span class="si">#{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span>
+  <span class="n">transaction_id</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span>
+  <span class="nb">puts</span> <span class="s2">"TransactionId: </span><span class="si">#{</span><span class="n">transaction_id</span><span class="si">}</span><span class="s2">"</span>
+
+  <span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">complete_preauth</span><span class="p">(</span><span class="n">transaction_id</span><span class="p">,</span> <span class="mi">59</span><span class="o">.</span><span class="mi">50</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"completion success: </span><span class="si">#{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="k">rescue</span> <span class="no">BeanstreamException</span> <span class="o">=&gt;</span> <span class="n">ex</span>
+  <span class="nb">puts</span> <span class="s2">"Exception: </span><span class="si">#{</span><span class="n">ex</span><span class="p">.</span><span class="nf">user_facing_message</span><span class="si">}</span><span class="s2">"</span> <span class="c1"># declined</span>
+<span class="k">end</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">beanstream</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">Beanstream</span><span class="p">()</span>
+<span class="n">beanstream</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span>
+    <span class="s">'300200578'</span><span class="p">,</span>
+    <span class="n">payment_passcode</span><span class="o">=</span><span class="s">'4BaD82D9197b4cc4b70a221911eE9f70'</span><span class="p">)</span>
+<span class="n">card</span> <span class="o">=</span> <span class="n">billing</span><span class="o">.</span><span class="n">CreditCard</span><span class="p">(</span>
+    <span class="s">'John Doe'</span><span class="p">,</span>
+    <span class="s">'4030000010001234'</span><span class="p">,</span>
+    <span class="s">'03'</span><span class="p">,</span>
+    <span class="s">'2019'</span><span class="p">,</span>
+    <span class="s">'123'</span><span class="p">)</span>
+<span class="n">trans</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">preauth</span><span class="p">(</span><span class="mf">51.32</span><span class="p">,</span> <span class="n">card</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">trans</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">trans2</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">preauth_completion</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">transaction_id</span><span class="p">(),</span> <span class="mf">25.00</span><span class="p">)</span>
+<span class="n">resp2</span> <span class="o">=</span> <span class="n">trans2</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gateway</span><span class="o">(</span><span class="s">"v1"</span><span class="o">,</span>
+    <span class="mi">300200578</span><span class="o">,</span>
+    <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="o">);</span>
+<span class="n">CardPaymentRequest</span> <span class="n">paymentRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CardPaymentRequest</span><span class="o">();</span>
+<span class="n">paymentRequest</span><span class="o">.</span><span class="na">setAmount</span><span class="o">(</span><span class="mf">90.0</span><span class="o">);</span>
+<span class="n">paymentRequest</span><span class="o">.</span><span class="na">setMerchantId</span><span class="o">(</span><span class="s">"300200578"</span><span class="o">);</span>
+<span class="n">paymentRequest</span><span class="o">.</span><span class="na">setOrderNumber</span><span class="o">(</span><span class="s">"order00345"</span><span class="o">);</span>
+<span class="n">paymentRequest</span><span class="o">.</span><span class="na">getCard</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"John Doe"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setNumber</span><span class="o">(</span><span class="s">"5100000010001004"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setExpiryMonth</span><span class="o">(</span><span class="s">"12"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setExpiryYear</span><span class="o">(</span><span class="s">"18"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setCvd</span><span class="o">(</span><span class="s">"123"</span><span class="o">);</span>
+
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">PaymentResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">preAuth</span><span class="o">(</span><span class="n">paymentRequest</span><span class="o">);</span>
+    <span class="n">PaymentResponse</span> <span class="n">authResp</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">preAuthCompletion</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">id</span><span class="o">,</span> <span class="mf">43.50</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Gateway</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">MerchantId</span> <span class="p">=</span> <span class="m">300200578</span><span class="p">,</span>
+    <span class="n">PaymentsApiKey</span> <span class="p">=</span> <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="p">,</span>
+    <span class="n">ApiVersion</span> <span class="p">=</span> <span class="s">"1"</span>
+<span class="p">};</span>
+
+<span class="n">PaymentResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">PreAuth</span> <span class="p">(</span>
+    <span class="k">new</span> <span class="n">CardPaymentRequest</span> <span class="p">{</span>
+        <span class="n">Amount</span> <span class="p">=</span> <span class="m">100.00</span><span class="p">,</span>
+        <span class="n">OrderNumber</span> <span class="p">=</span> <span class="nf">getRandomOrderId</span><span class="p">(</span><span class="s">"test"</span><span class="p">),</span>
+        <span class="n">Card</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Card</span> <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">"John Doe"</span><span class="p">,</span>
+            <span class="n">Number</span> <span class="p">=</span> <span class="s">"5100000010001004"</span><span class="p">,</span>
+            <span class="n">ExpiryMonth</span> <span class="p">=</span> <span class="s">"12"</span><span class="p">,</span>
+            <span class="n">ExpiryYear</span> <span class="p">=</span> <span class="s">"18"</span><span class="p">,</span>
+            <span class="n">Cvd</span> <span class="p">=</span> <span class="s">"123"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="n">PaymentResponse</span> <span class="n">response2</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">PreAuthCompletion</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">TransactionId</span><span class="p">,</span> <span class="m">35.99</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="n">beanstream</span><span class="x"> </span><span class="s">"github.com/Beanstream/beanstream-go"</span><span class="x">
+    </span><span class="s">"github.com/Beanstream/beanstream-go/paymentMethods"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="n">config</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">DefaultConfig</span><span class="p">()</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">MerchantId</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"300200578"</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">PaymentsApiKey</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="x">
+
+</span><span class="n">gateway</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Gateway</span><span class="p">{</span><span class="n">config</span><span class="p">}</span><span class="x">
+</span><span class="n">request</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">PaymentRequest</span><span class="p">{</span><span class="x">
+    </span><span class="n">PaymentMethod</span><span class="o">:</span><span class="x"> </span><span class="n">paymentMethods</span><span class="o">.</span><span class="n">CARD</span><span class="p">,</span><span class="x">
+    </span><span class="n">OrderNumber</span><span class="o">:</span><span class="x">   </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Util_randOrderId</span><span class="p">(</span><span class="m">6</span><span class="p">),</span><span class="x">
+    </span><span class="n">Amount</span><span class="o">:</span><span class="x">        </span><span class="m">12.99</span><span class="p">,</span><span class="x">
+    </span><span class="n">Card</span><span class="o">:</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">CreditCard</span><span class="p">{</span><span class="x">
+        </span><span class="n">Name</span><span class="o">:</span><span class="x">        </span><span class="s">"John Doe"</span><span class="p">,</span><span class="x">
+        </span><span class="n">Number</span><span class="o">:</span><span class="x">      </span><span class="s">"5100000010001004"</span><span class="p">,</span><span class="x">
+        </span><span class="n">ExpiryMonth</span><span class="o">:</span><span class="x"> </span><span class="s">"11"</span><span class="p">,</span><span class="x">
+        </span><span class="n">ExpiryYear</span><span class="o">:</span><span class="x">  </span><span class="s">"19"</span><span class="p">,</span><span class="x">
+        </span><span class="n">Cvd</span><span class="o">:</span><span class="x">         </span><span class="s">"123"</span><span class="p">,</span><span class="x">
+        </span><span class="n">Complete</span><span class="o">:</span><span class="x">    </span><span class="no">false</span><span class="p">}}</span><span class="x"> </span><span class="c">// false for pre-auth</span><span class="x">
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">MakePayment</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="x">
+</span><span class="c">// complete payment</span><span class="x">
+</span><span class="n">res2</span><span class="p">,</span><span class="x"> </span><span class="n">err2</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">CompletePayment</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="x"> </span><span class="m">5.67</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<p>For completions you will have to supply the Transaction Id {TransId} to the URL when using REST. The transId is returned from the pre-auth.</p>
+
+            <h2 id="single-use-token">Single-use Token</h2>
+<pre class="highlight shell"><code>Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+    "payment_method":"token",
+    "order_number":"MyOrderId-01234",
+    "amount":15.99,
+    "token":{
+        "code":"gt7-0f2f20dd-777e-487e-b688-940b...",
+        "name":"John Doe",
+        "complete":true
+    }
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">tokenPayment</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">order_number</span><span class="p">:</span> <span class="s1">'order123456'</span><span class="p">,</span>
+  <span class="na">amount</span><span class="p">:</span><span class="mf">12.00</span><span class="p">,</span>
+  <span class="na">payment_method</span><span class="p">:</span><span class="s2">"token"</span><span class="p">,</span>
+  <span class="na">token</span><span class="p">:{</span>
+    <span class="na">name</span><span class="p">:</span><span class="s2">"John Doe"</span><span class="p">,</span>
+    <span class="na">code</span><span class="p">:</span> <span class="nx">myTokenString</span><span class="p">,</span>
+    <span class="na">complete</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">payments</span><span class="p">.</span><span class="nx">makePayment</span><span class="p">(</span><span class="nx">tokenPayment</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// display success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$beanstream = new \Beanstream\Gateway('300200578', '4BaD82D9197b4cc4b70a221911eE9f70', 'www', 'v1');
+
+$legato_payment_data = array(
+    'order_number' =&gt; "orderNum45678",
+    'amount' =&gt; 100.0,
+    'name' =&gt; 'Mrs. Legato Testerson'
+);
+try {
+    $result = $beanstream-&gt;payments()-&gt;makeLegatoTokenPayment($token, $legato_payment_data, TRUE);
+    print_r( $result );
+} catch (\Beanstream\Exception $e) {
+    //handle exception
+}
+</code></pre>
+<pre class="highlight ruby"><code><span class="k">begin</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">make_payment</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="ss">:order_number</span> <span class="o">=&gt;</span> <span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">generateRandomOrderId</span><span class="p">(</span><span class="s2">"test"</span><span class="p">),</span>
+      <span class="ss">:amount</span> <span class="o">=&gt;</span> <span class="mi">13</span><span class="o">.</span><span class="mi">99</span><span class="p">,</span>
+      <span class="ss">:payment_method</span> <span class="o">=&gt;</span> <span class="no">PaymentMethods</span><span class="o">::</span><span class="no">TOKEN</span><span class="p">,</span>
+      <span class="ss">:token</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Craig Test"</span><span class="p">,</span>
+        <span class="ss">:code</span> <span class="o">=&gt;</span> <span class="n">token</span><span class="p">,</span> <span class="c1"># add your token here</span>
+        <span class="ss">:complete</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Success: </span><span class="si">#{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="k">rescue</span> <span class="no">BeanstreamException</span> <span class="o">=&gt;</span> <span class="n">ex</span>
+  <span class="nb">puts</span> <span class="s2">"Error: </span><span class="si">#{</span><span class="n">ex</span><span class="p">.</span><span class="nf">user_facing_message</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">beanstream</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">Beanstream</span><span class="p">()</span>
+<span class="n">beanstream</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span>
+        <span class="s">'300200578'</span><span class="p">,</span>
+        <span class="n">payment_passcode</span><span class="o">=</span><span class="s">'4BaD82D9197b4cc4b70a221911eE9f70'</span><span class="p">)</span>
+<span class="n">txn</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">purchase_with_token</span><span class="p">(</span><span class="mf">22.13</span><span class="p">,</span> <span class="n">token</span><span class="p">)</span>
+<span class="n">txn</span><span class="o">.</span><span class="n">set_cardholder_name</span><span class="p">(</span><span class="s">"Gizmo"</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gateway</span><span class="o">(</span><span class="s">"v1"</span><span class="o">,</span>
+    <span class="mi">300200578</span><span class="o">,</span>
+    <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="o">);</span>
+
+<span class="n">TokenPaymentRequest</span> <span class="n">tokenReq</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TokenPaymentRequest</span><span class="o">();</span>
+<span class="n">tokenReq</span><span class="o">.</span><span class="na">setAmount</span><span class="o">(</span><span class="mf">100.00</span><span class="o">);</span>
+<span class="n">tokenReq</span><span class="o">.</span><span class="na">setOrderNumber</span><span class="o">(</span><span class="s">"myOrder9999"</span><span class="o">);</span>
+<span class="n">tokenReq</span><span class="o">.</span><span class="na">getToken</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"John Doe"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setCode</span><span class="o">(</span><span class="n">myLegatoToken</span><span class="o">);</span>
+
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">PaymentResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">makePayment</span><span class="o">(</span><span class="n">tokenReq</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Token Payment Approved? "</span><span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">isApproved</span><span class="o">());</span>
+
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//TODO handle exception</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Gateway</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">MerchantId</span> <span class="p">=</span> <span class="m">300200578</span><span class="p">,</span>
+    <span class="n">PaymentsApiKey</span> <span class="p">=</span> <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="p">,</span>
+    <span class="n">ApiVersion</span> <span class="p">=</span> <span class="s">"1"</span>
+<span class="p">};</span>
+
+<span class="n">PaymentResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">MakePayment</span> <span class="p">(</span>
+    <span class="k">new</span> <span class="nf">TokenPaymentRequest</span> <span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Amount</span> <span class="p">=</span> <span class="m">30.0</span><span class="p">,</span>
+        <span class="n">OrderNumber</span> <span class="p">=</span> <span class="s">"myOrder88888"</span><span class="p">,</span>
+        <span class="n">Token</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Token</span> <span class="p">{</span>
+            <span class="n">Code</span> <span class="p">=</span> <span class="n">token</span><span class="p">,</span> <span class="c1">// your Legato token
+</span>            <span class="n">Name</span> <span class="p">=</span> <span class="s">"John Doe"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="n">beanstream</span><span class="x"> </span><span class="s">"github.com/Beanstream/beanstream-go"</span><span class="x">
+    </span><span class="s">"github.com/Beanstream/beanstream-go/paymentMethods"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="n">config</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">DefaultConfig</span><span class="p">()</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">MerchantId</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"300200578"</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">PaymentsApiKey</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="x">
+
+</span><span class="n">gateway</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Gateway</span><span class="p">{</span><span class="n">config</span><span class="p">}</span><span class="x">
+</span><span class="n">request</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">PaymentRequest</span><span class="p">{</span><span class="x">
+    </span><span class="n">PaymentMethod</span><span class="o">:</span><span class="x"> </span><span class="n">paymentMethods</span><span class="o">.</span><span class="n">TOKEN</span><span class="p">,</span><span class="x">
+    </span><span class="n">OrderNumber</span><span class="o">:</span><span class="x">   </span><span class="s">"order0012345"</span><span class="p">,</span><span class="x">
+    </span><span class="n">Amount</span><span class="o">:</span><span class="x">        </span><span class="m">15.99</span><span class="p">,</span><span class="x">
+    </span><span class="n">Token</span><span class="o">:</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Token</span><span class="p">{</span><span class="x">
+        </span><span class="n">token</span><span class="p">,</span><span class="x">
+        </span><span class="s">"John Doe"</span><span class="p">,</span><span class="x">
+        </span><span class="no">true</span><span class="p">}}</span><span class="x"> </span><span class="c">// set to false for pre-auth</span><span class="x">
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">MakePayment</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<p>Single-use tokens provide a secure method of taking payments that reduces your PCI scope. You can take a payment using a token the same as you would take a payment with a credit card, the main difference being the ‘payment_method’ parameter and supplying the token.</p>
+
+<p>To process a transaction using a token, you first need to have created a token. You can either do this from the browser/client using the <a href="/docs/references/payment_APIs">Tokenization API</a> or using the <a href="/docs/references/payment_SDKs/collect_card_data">Mobile or Browser SDKs</a>.</p>
+
+<p>A single-use token is a &#39;single-use nonce&#39;. It is distinct from a multi-use Payment Profile token. See <a href="/docs/references/payment_SDKs/save_customer_data">here</a>.</p>
+
+<h4 id="pre-auth-and-complete">Pre-Auth and Complete</h4>
+<pre class="highlight shell"><code>Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+    "payment_method":"token",
+    "order_number":"MyOrderId-01234",
+    "amount":15.99,
+    "token":{
+        "code":"gt7-0f2f20dd-777e-487e-b688-940b526172cd",
+        "name":"John Doe",
+        "complete":false
+    }
+}'</span>
+
+<span class="c">#</span>
+<span class="c"># completion:</span>
+<span class="c">#</span>
+
+Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments/<span class="o">{</span>transId<span class="o">}</span>/completions
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+    "amount":9.33
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">tokenPayment</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">order_number</span><span class="p">:</span> <span class="s1">'order123456abc'</span><span class="p">,</span>
+  <span class="na">amount</span><span class="p">:</span><span class="mf">12.00</span><span class="p">,</span>
+  <span class="na">payment_method</span><span class="p">:</span><span class="s2">"token"</span><span class="p">,</span>
+  <span class="na">token</span><span class="p">:{</span>
+    <span class="na">name</span><span class="p">:</span><span class="s2">"John Doe"</span><span class="p">,</span>
+    <span class="na">code</span><span class="p">:</span> <span class="nx">myTokenString</span><span class="p">,</span>
+    <span class="na">complete</span><span class="p">:</span> <span class="kc">false</span> <span class="c1">// false for pre auth</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">payments</span><span class="p">.</span><span class="nx">makePayment</span><span class="p">(</span><span class="nx">tokenPayment</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// display success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+
+<span class="c1">// capture/complete a lesser amount</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">payments</span><span class="p">.</span><span class="nx">completePayment</span><span class="p">(</span><span class="nx">transId</span><span class="p">,</span> <span class="p">{</span><span class="na">amount</span><span class="p">:</span> <span class="mf">50.50</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// payment captured/completed</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$beanstream = new \Beanstream\Gateway('300200578', '4BaD82D9197b4cc4b70a221911eE9f70', 'www', 'v1');
+
+$legato_payment_data = array(
+    'order_number' =&gt; "orderNum45678",
+    'amount' =&gt; 100.0,
+    'name' =&gt; 'Mrs. Legato Testerson'
+);
+try {
+    $result = $beanstream-&gt;payments()-&gt;makeLegatoTokenPayment($token, $legato_payment_data, FALSE);//set to FALSE for Pre-Auth
+    $transaction_id = $result['id'];
+    // complete payment
+    $result = $beanstream-&gt;payments()-&gt;complete($transaction_id, 12.5);
+    print_r( $result );
+} catch (\Beanstream\Exception $e) {
+    //todo handle exception
+}
+</code></pre>
+<pre class="highlight ruby"><code><span class="k">begin</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">make_payment</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="ss">:order_number</span> <span class="o">=&gt;</span> <span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">generateRandomOrderId</span><span class="p">(</span><span class="s2">"test"</span><span class="p">),</span>
+      <span class="ss">:amount</span> <span class="o">=&gt;</span> <span class="mi">13</span><span class="o">.</span><span class="mi">99</span><span class="p">,</span>
+      <span class="ss">:payment_method</span> <span class="o">=&gt;</span> <span class="no">PaymentMethods</span><span class="o">::</span><span class="no">TOKEN</span><span class="p">,</span>
+      <span class="ss">:token</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Gizmo Test"</span><span class="p">,</span>
+        <span class="ss">:code</span> <span class="o">=&gt;</span> <span class="n">token</span><span class="p">,</span> <span class="c1"># add your token here</span>
+        <span class="ss">:complete</span> <span class="o">=&gt;</span> <span class="kp">false</span> <span class="c1">#false makes it a pre-auth</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"result: </span><span class="si">#{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span>
+  <span class="n">transaction_id</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span>
+
+  <span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">complete_preauth</span><span class="p">(</span><span class="n">transaction_id</span><span class="p">,</span> <span class="mi">10</span><span class="o">.</span><span class="mi">33</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"completion result: </span><span class="si">#{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">rescue</span> <span class="no">BeanstreamException</span> <span class="o">=&gt;</span> <span class="n">ex</span>
+  <span class="nb">puts</span> <span class="s2">"Error: </span><span class="si">#{</span><span class="n">ex</span><span class="p">.</span><span class="nf">user_facing_message</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">beanstream</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">Beanstream</span><span class="p">()</span>
+<span class="n">beanstream</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span>
+    <span class="s">'300200578'</span><span class="p">,</span>
+    <span class="n">payment_passcode</span><span class="o">=</span><span class="s">'4BaD82D9197b4cc4b70a221911eE9f70'</span><span class="p">)</span>
+<span class="n">txn</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">preauth_with_token</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="n">token</span><span class="p">)</span>
+<span class="n">txn</span><span class="o">.</span><span class="n">set_cardholder_name</span><span class="p">(</span><span class="s">"Gizmo"</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="c"># complete payment</span>
+<span class="n">trans2</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">preauth_completion</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">transaction_id</span><span class="p">(),</span> <span class="mf">25.00</span><span class="p">)</span>
+<span class="n">resp2</span> <span class="o">=</span> <span class="n">trans2</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gateway</span><span class="o">(</span><span class="s">"v1"</span><span class="o">,</span>
+    <span class="mi">300200578</span><span class="o">,</span>
+    <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="o">);</span>
+
+<span class="n">TokenPaymentRequest</span> <span class="n">req</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TokenPaymentRequest</span><span class="o">();</span>
+<span class="n">req</span><span class="o">.</span><span class="na">setAmount</span><span class="o">(</span><span class="mf">80.00</span><span class="o">);</span>
+<span class="n">req</span><span class="o">.</span><span class="na">setOrderNumber</span><span class="o">(</span><span class="s">"myOrder77777"</span><span class="o">);</span>
+<span class="n">req</span><span class="o">.</span><span class="na">getToken</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"John Doe"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setCode</span><span class="o">(</span><span class="n">myLegatoToken</span><span class="o">);</span>
+
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">PaymentResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">preAuth</span><span class="o">(</span><span class="n">req</span><span class="o">);</span>
+    <span class="c1">// complete payment</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">preAuthCompletion</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">id</span><span class="o">,</span> <span class="mf">55.30</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">orderNumber</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//todo handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Gateway</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">MerchantId</span> <span class="p">=</span> <span class="m">300200578</span><span class="p">,</span>
+    <span class="n">PaymentsApiKey</span> <span class="p">=</span> <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="p">,</span>
+    <span class="n">ApiVersion</span> <span class="p">=</span> <span class="s">"1"</span>
+<span class="p">};</span>
+
+<span class="n">PaymentResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">PreAuth</span> <span class="p">(</span>
+    <span class="k">new</span> <span class="nf">TokenPaymentRequest</span> <span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Amount</span> <span class="p">=</span> <span class="m">30</span><span class="p">,</span>
+        <span class="n">OrderNumber</span> <span class="p">=</span> <span class="s">"orderNumber66666"</span><span class="p">,</span>
+        <span class="n">Token</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Token</span> <span class="p">{</span>
+            <span class="n">Code</span> <span class="p">=</span> <span class="n">token</span><span class="p">,</span> <span class="c1">// your Legato token
+</span>            <span class="n">Name</span> <span class="p">=</span> <span class="s">"John Doe"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">PreAuthCompletion</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">TransactionId</span><span class="p">,</span> <span class="m">15.45</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="n">beanstream</span><span class="x"> </span><span class="s">"github.com/Beanstream/beanstream-go"</span><span class="x">
+    </span><span class="s">"github.com/Beanstream/beanstream-go/paymentMethods"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="n">config</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">DefaultConfig</span><span class="p">()</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">MerchantId</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"300200578"</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">PaymentsApiKey</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="x">
+
+</span><span class="n">gateway</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Gateway</span><span class="p">{</span><span class="n">config</span><span class="p">}</span><span class="x">
+</span><span class="n">request</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">PaymentRequest</span><span class="p">{</span><span class="x">
+    </span><span class="n">PaymentMethod</span><span class="o">:</span><span class="x"> </span><span class="n">paymentMethods</span><span class="o">.</span><span class="n">TOKEN</span><span class="p">,</span><span class="x">
+    </span><span class="n">OrderNumber</span><span class="o">:</span><span class="x">   </span><span class="s">"order0012345"</span><span class="p">,</span><span class="x">
+    </span><span class="n">Amount</span><span class="o">:</span><span class="x">        </span><span class="m">15.99</span><span class="p">,</span><span class="x">
+    </span><span class="n">Token</span><span class="o">:</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Token</span><span class="p">{</span><span class="x">
+        </span><span class="n">token</span><span class="p">,</span><span class="x"> </span><span class="c">// add your Legato token here</span><span class="x">
+        </span><span class="s">"John Doe"</span><span class="p">,</span><span class="x">
+        </span><span class="no">false</span><span class="p">}}</span><span class="x"> </span><span class="c">// false for pre-auth</span><span class="x">
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">MakePayment</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="x">
+</span><span class="c">// complete payment</span><span class="x">
+</span><span class="n">res2</span><span class="p">,</span><span class="x"> </span><span class="n">err2</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">CompletePayment</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="x"> </span><span class="m">5.67</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+            <h2 id="payment-profile">Payment Profile</h2>
+<pre class="highlight shell"><code>Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+    "payment_method":"payment_profile",
+    "order_number":"UPDQWX1429722203",
+    "amount":12.99,
+    "payment_profile":{
+        "customer_code":"053EF0CFD9b847dE8115ED21C2b1e7df",
+        "card_id":1,
+        "complete":true
+    }
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">profilePayment</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">order_number</span><span class="p">:</span> <span class="s1">'order123456abc'</span><span class="p">,</span>
+    <span class="na">amount</span><span class="p">:</span><span class="mf">3.00</span><span class="p">,</span>
+    <span class="na">payment_method</span><span class="p">:</span><span class="s2">"payment_profile"</span><span class="p">,</span>
+    <span class="na">payment_profile</span><span class="p">:{</span>
+      <span class="na">customer_code</span><span class="p">:</span> <span class="nx">profileCustomerCode</span><span class="p">,</span>
+      <span class="na">card_id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="na">complete</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="na">comment</span><span class="p">:</span> <span class="s1">'making a payment with a tokenized card on a payment profile.'</span>
+  <span class="p">};</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">payments</span><span class="p">.</span><span class="nx">makePayment</span><span class="p">(</span><span class="nx">profilePayment</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// display success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$beanstream = new \Beanstream\Gateway('300200578', '4BaD82D9197b4cc4b70a221911eE9f70', 'www', 'v1');
+
+$profile_payment_data = array(
+    'order_number' =&gt; "abc123",
+    'amount' =&gt; 75.50
+);
+try {
+    $result = $beanstream-&gt;payments()-&gt;makeProfilePayment($profile_id, 1, $profile_payment_data, TRUE); //set to FALSE for Pre-Auth
+    print_r( $result );
+} catch (\Beanstream\Exception $e) {
+    //handle exception
+}
+</code></pre>
+<pre class="highlight ruby"><code><span class="k">begin</span>
+  <span class="n">profile_payment</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">getProfilePaymentRequestTemplate</span><span class="p">()</span>
+  <span class="n">profile_payment</span><span class="p">[</span><span class="ss">:payment_profile</span><span class="p">][</span><span class="ss">:customer_code</span><span class="p">]</span> <span class="o">=</span> <span class="n">profile_id</span>
+  <span class="n">profile_payment</span><span class="p">[</span><span class="ss">:amount</span><span class="p">]</span> <span class="o">=</span> <span class="mi">77</span><span class="o">.</span><span class="mi">50</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">make_payment</span><span class="p">(</span><span class="n">profile_payment</span><span class="p">)</span>
+<span class="k">rescue</span> <span class="no">BeanstreamException</span> <span class="o">=&gt;</span> <span class="n">ex</span>
+  <span class="nb">puts</span> <span class="s2">"Error: </span><span class="si">#{</span><span class="n">ex</span><span class="p">.</span><span class="nf">user_facing_message</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">beanstream</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">Beanstream</span><span class="p">()</span>
+<span class="n">beanstream</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span>
+    <span class="s">'300200578'</span><span class="p">,</span>
+    <span class="n">payment_passcode</span><span class="o">=</span><span class="s">'4BaD82D9197b4cc4b70a221911eE9f70'</span><span class="p">)</span>
+<span class="n">trans</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">purchase_with_payment_profile</span><span class="p">(</span><span class="mf">50.43</span><span class="p">,</span> <span class="n">profile_id</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">trans</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gateway</span><span class="o">(</span><span class="s">"v1"</span><span class="o">,</span>
+    <span class="mi">300200578</span><span class="o">,</span>
+    <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="o">);</span>
+
+<span class="n">ProfilePaymentRequest</span> <span class="n">req</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProfilePaymentRequest</span><span class="o">();</span>
+<span class="n">req</span><span class="o">.</span><span class="na">setProfile</span><span class="o">(</span><span class="k">new</span> <span class="n">ProfilePaymentRequestData</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">setCardId</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setCustomerCode</span><span class="o">(</span><span class="n">profile</span><span class="o">.</span><span class="na">getId</span><span class="o">()));</span>
+<span class="n">req</span><span class="o">.</span><span class="na">setAmount</span><span class="o">(</span><span class="mi">13</span><span class="o">);</span>
+<span class="n">req</span><span class="o">.</span><span class="na">setOrderNumber</span><span class="o">(</span><span class="s">"myOrderId00002"</span><span class="o">);</span>
+
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">PaymentResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">makePayment</span><span class="o">(</span><span class="n">req</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Card Payment Approved? "</span><span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">isApproved</span><span class="o">());</span>
+
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// todo handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Gateway</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">MerchantId</span> <span class="p">=</span> <span class="m">300200578</span><span class="p">,</span>
+    <span class="n">PaymentsApiKey</span> <span class="p">=</span> <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="p">,</span>
+    <span class="n">ApiVersion</span> <span class="p">=</span> <span class="s">"1"</span>
+<span class="p">};</span>
+
+<span class="n">PaymentResponse</span> <span class="n">payment</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">MakePayment</span> <span class="p">(</span><span class="k">new</span> <span class="nf">ProfilePaymentRequest</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Amount</span> <span class="p">=</span> <span class="m">40.95</span><span class="p">,</span>
+    <span class="n">OrderNumber</span> <span class="p">=</span> <span class="s">"myOrder002233"</span><span class="p">,</span>
+    <span class="n">PaymentProfile</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">PaymentProfileField</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">CardId</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span>
+        <span class="n">CustomerCode</span> <span class="p">=</span> <span class="n">profile_id</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+<pre class="highlight go"><code><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="n">beanstream</span><span class="x"> </span><span class="s">"github.com/Beanstream/beanstream-go"</span><span class="x">
+    </span><span class="s">"github.com/Beanstream/beanstream-go/paymentMethods"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="n">config</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">DefaultConfig</span><span class="p">()</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">MerchantId</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"300200578"</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">PaymentsApiKey</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="x">
+
+</span><span class="n">gateway</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Gateway</span><span class="p">{</span><span class="n">config</span><span class="p">}</span><span class="x">
+</span><span class="n">payment</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">PaymentRequest</span><span class="p">{</span><span class="x">
+    </span><span class="n">PaymentMethod</span><span class="o">:</span><span class="x"> </span><span class="n">paymentMethods</span><span class="o">.</span><span class="n">PROFILE</span><span class="p">,</span><span class="x">
+    </span><span class="n">OrderNumber</span><span class="o">:</span><span class="x">   </span><span class="s">"orderId000345"</span><span class="p">,</span><span class="x">
+    </span><span class="n">Amount</span><span class="o">:</span><span class="x">        </span><span class="m">12.99</span><span class="p">,</span><span class="x">
+    </span><span class="n">Profile</span><span class="o">:</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">ProfilePayment</span><span class="p">{</span><span class="x">
+        </span><span class="n">res</span><span class="o">.</span><span class="n">Id</span><span class="p">,</span><span class="x">
+        </span><span class="m">1</span><span class="p">,</span><span class="x">
+        </span><span class="no">true</span><span class="p">}}</span><span class="x"> </span><span class="c">// set to false for pre-auth</span><span class="x">
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">MakePayment</span><span class="p">(</span><span class="n">payment</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<p>Payment Profiles provide a secure method of taking payments that reduces your PCI scope. You can take a payment using a token the same as you would take a payment with a credit card, the main difference being you have to supply the Profile’s customer_code.</p>
+
+<p>Before processing a transaction using a &#39;Payment Profile&#39;, you need to have created a one. See <a href="/docs/references/payment_SDKs/save_customer_data">here</a>.</p>
+
+<p>A multi-use payment profile token is distinct from a single-use card token. See <a href="/docs/references/payment_SDKs/save_customer_data">here</a>.</p>
+
+<h3 id="pre-auth-and-complete">Pre-Auth and Complete</h3>
+<pre class="highlight shell"><code>Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+    "payment_method":"payment_profile",
+    "order_number":"UPDQWX1429722203",
+    "amount":12.99,
+    "payment_profile":{
+        "customer_code":"053EF0CFD9b847dE8115ED21C2b1e7df",
+        "card_id":1,
+        "complete":false
+    }
+}'</span>
+
+<span class="c">#</span>
+<span class="c"># completion:</span>
+<span class="c">#</span>
+
+Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments/<span class="o">{</span>transId<span class="o">}</span>/completions
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+    "amount":9.20
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">profilePayment</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">order_number</span><span class="p">:</span> <span class="s1">'order123456abc'</span><span class="p">,</span>
+    <span class="na">amount</span><span class="p">:</span><span class="mf">3.00</span><span class="p">,</span>
+    <span class="na">payment_method</span><span class="p">:</span><span class="s2">"payment_profile"</span><span class="p">,</span>
+    <span class="na">payment_profile</span><span class="p">:{</span>
+      <span class="na">customer_code</span><span class="p">:</span> <span class="nx">profileCustomerCode</span><span class="p">,</span>
+      <span class="na">card_id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="na">complete</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="na">comment</span><span class="p">:</span> <span class="s1">'making a payment with a tokenized card on a payment profile.'</span>
+  <span class="p">};</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">payments</span><span class="p">.</span><span class="nx">makePayment</span><span class="p">(</span><span class="nx">profilePayment</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// display success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+
+<span class="c1">// capture/complete a lesser amount</span>
+<span class="nx">beanstream</span><span class="p">.</span><span class="nx">payments</span><span class="p">.</span><span class="nx">completePayment</span><span class="p">(</span><span class="nx">transId</span><span class="p">,</span> <span class="p">{</span><span class="na">amount</span><span class="p">:</span> <span class="mf">50.50</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// payment captured/completed</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$beanstream = new \Beanstream\Gateway('300200578', '4BaD82D9197b4cc4b70a221911eE9f70', 'www', 'v1');
+
+$profile_payment_data = array(
+    'order_number' =&gt; "abc123",
+    'amount' =&gt; 75.50
+);
+try {
+    $result = $beanstream-&gt;payments()-&gt;makeProfilePayment($profile_id, 1, $profile_payment_data, FALSE); // FALSE for Pre-Auth
+    $transaction_id = $result['id'];
+    // complete payment
+    $result = $beanstream-&gt;payments()-&gt;complete($transaction_id, 12.5);
+    print_r( $result );
+} catch (\Beanstream\Exception $e) {
+    //todo handle exception
+}
+</code></pre>
+<pre class="highlight ruby"><code><span class="k">begin</span>
+  <span class="c1"># pre-auth</span>
+  <span class="n">profile_payment</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">getProfilePaymentRequestTemplate</span><span class="p">()</span>
+  <span class="n">profile_payment</span><span class="p">[</span><span class="ss">:amount</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span>
+  <span class="n">profile_payment</span><span class="p">[</span><span class="ss">:payment_profile</span><span class="p">][</span><span class="ss">:customer_code</span><span class="p">]</span> <span class="o">=</span> <span class="n">profile_id</span>
+  <span class="n">profile_payment</span><span class="p">[</span><span class="ss">:payment_profile</span><span class="p">][</span><span class="ss">:complete</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span> <span class="c1">#false for pre-auth</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">make_payment</span><span class="p">(</span><span class="n">profile_payment</span><span class="p">)</span>
+
+  <span class="c1">#complete pre-auth</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">complete_preauth</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">'id'</span><span class="p">],</span> <span class="mi">40</span><span class="o">.</span><span class="mi">50</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"success: </span><span class="si">#{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">rescue</span> <span class="no">BeanstreamException</span> <span class="o">=&gt;</span> <span class="n">ex</span>
+  <span class="nb">puts</span> <span class="s2">"Error: </span><span class="si">#{</span><span class="n">ex</span><span class="p">.</span><span class="nf">user_facing_message</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">txn</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">preauth_profile</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="n">customer_code</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">trans</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">preauth_completion</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">transaction_id</span><span class="p">(),</span> <span class="mf">25.00</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gateway</span><span class="o">(</span><span class="s">"v1"</span><span class="o">,</span>
+    <span class="mi">300200578</span><span class="o">,</span>
+    <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="o">);</span>
+
+<span class="n">ProfilePaymentRequest</span> <span class="n">req</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProfilePaymentRequest</span><span class="o">();</span>
+<span class="n">req</span><span class="o">.</span><span class="na">setProfile</span><span class="o">(</span><span class="k">new</span> <span class="n">ProfilePaymentRequestData</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">setCardId</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setCustomerCode</span><span class="o">(</span><span class="n">profile</span><span class="o">.</span><span class="na">getId</span><span class="o">()));</span>
+<span class="n">req</span><span class="o">.</span><span class="na">setAmount</span><span class="o">(</span><span class="mi">130</span><span class="o">);</span>
+<span class="n">req</span><span class="o">.</span><span class="na">setOrderNumber</span><span class="o">(</span><span class="s">"myOrderId00002"</span><span class="o">);</span>
+
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">PaymentResponse</span> <span class="n">result</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">preAuth</span><span class="o">(</span><span class="n">paymentRequest</span><span class="o">);</span>
+
+    <span class="c1">// complete the pre-auth</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">preAuthCompletion</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">id</span><span class="o">,</span> <span class="mi">100</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// todo handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Gateway</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">MerchantId</span> <span class="p">=</span> <span class="m">300200578</span><span class="p">,</span>
+    <span class="n">PaymentsApiKey</span> <span class="p">=</span> <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="p">,</span>
+    <span class="n">ApiVersion</span> <span class="p">=</span> <span class="s">"1"</span>
+<span class="p">};</span>
+<span class="c1">// pre-auth
+</span><span class="n">PaymentResponse</span> <span class="n">payment</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">PreAuth</span> <span class="p">(</span><span class="k">new</span> <span class="nf">ProfilePaymentRequest</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Amount</span> <span class="p">=</span> <span class="m">50</span><span class="p">,</span>
+    <span class="n">OrderNumber</span> <span class="p">=</span> <span class="s">"myFancyOrderID-1234"</span><span class="p">,</span>
+    <span class="n">PaymentProfile</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">PaymentProfileField</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">CardId</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span>
+        <span class="n">CustomerCode</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Id</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+<span class="c1">// complete payment
+</span><span class="n">payment</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">PreAuthCompletion</span> <span class="p">(</span><span class="n">payment</span><span class="p">.</span><span class="n">TransactionId</span><span class="p">,</span> <span class="m">15.12</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="n">beanstream</span><span class="x"> </span><span class="s">"github.com/Beanstream/beanstream-go"</span><span class="x">
+    </span><span class="s">"github.com/Beanstream/beanstream-go/paymentMethods"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="n">config</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">DefaultConfig</span><span class="p">()</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">MerchantId</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"300200578"</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">PaymentsApiKey</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="x">
+
+</span><span class="n">gateway</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Gateway</span><span class="p">{</span><span class="n">config</span><span class="p">}</span><span class="x">
+</span><span class="n">payment</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">PaymentRequest</span><span class="p">{</span><span class="x">
+    </span><span class="n">PaymentMethod</span><span class="o">:</span><span class="x"> </span><span class="n">paymentMethods</span><span class="o">.</span><span class="n">PROFILE</span><span class="p">,</span><span class="x">
+    </span><span class="n">OrderNumber</span><span class="o">:</span><span class="x">   </span><span class="s">"orderId000345"</span><span class="p">,</span><span class="x">
+    </span><span class="n">Amount</span><span class="o">:</span><span class="x">        </span><span class="m">12.99</span><span class="p">,</span><span class="x">
+    </span><span class="n">Profile</span><span class="o">:</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">ProfilePayment</span><span class="p">{</span><span class="x">
+        </span><span class="n">res</span><span class="o">.</span><span class="n">Id</span><span class="p">,</span><span class="x">
+        </span><span class="m">1</span><span class="p">,</span><span class="x">
+        </span><span class="no">false</span><span class="p">}}</span><span class="x"> </span><span class="c">// false for pre-auth</span><span class="x">
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">MakePayment</span><span class="p">(</span><span class="n">payment</span><span class="p">)</span><span class="x">
+</span><span class="c">// complete payment</span><span class="x">
+</span><span class="n">res2</span><span class="p">,</span><span class="x"> </span><span class="n">err2</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">CompletePayment</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="x"> </span><span class="m">5.67</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+            <h2 id="interac-online">Interac Online</h2>
+<pre class="highlight shell"><code>Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+      "order_number":"MyOrderId-01234",
+      "amount":100.00,
+      "payment_method":"interac"     
+    }'</span>
+</code></pre>
+
+<p>Interac Online is a transaction method available to Canadian merchants only. It allows customers to authenticate direct debits without sharing their debit card details with the merchant.</p>
+
+<p>See <a href="/docs/guides/interac_online">here</a> for more information on how to implement Interac Online.</p>
+
+            <h2 id="3d-secure">3D Secure</h2>
+<pre class="highlight shell"><code>Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+      "payment_method":"token",
+      "order_number":"MyOrderId-01234",
+      "amount":15.99,
+      "token":{
+        "code":"gt7-0f2f20dd-777e-487e-b688-940b...",
+        "name":"John Doe"
+      },
+      "term_url":"https://myserver.com/redirect/3ds"
+    }'</span>
+</code></pre>
+
+<p>Verified by Visa (VbV), MasterCard SecureCode, and AMEX SafeKey are security features that prompt customers to enter a passcode when they pay by Visa, MasterCard, or AMEX. Merchants that want to integrate VbV, SecureCode, or SafeKey must have signed up for the service through their bank merchant account issuer. This service must also be enabled by our support team.</p>
+
+<p>See <a href="/docs/guides/3D_secure">here</a> for more information on how to implement 3D Secure.</p>
+
+            <h2 id="cash">Cash</h2>
+<pre class="highlight shell"><code>Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+    "payment_method":"cash",
+    "order_number":"MyOrderId-01234",
+    "amount":15.00
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code></code></pre>
+<pre class="highlight php"><code>$beanstream = new \Beanstream\Gateway('300200578', '4BaD82D9197b4cc4b70a221911eE9f70', 'www', 'v1');
+
+$legato_payment_data = array(
+    'order_number' =&gt; "orderNum45678",
+    'amount' =&gt; 100.0,
+    'name' =&gt; 'Mrs. Testerson'
+);
+</code></pre>
+<pre class="highlight ruby"><code></code></pre>
+<pre class="highlight python"><code><span class="n">beanstream</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">Beanstream</span><span class="p">()</span>
+<span class="n">beanstream</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span>
+        <span class="s">'300200578'</span><span class="p">,</span>
+        <span class="n">payment_passcode</span><span class="o">=</span><span class="s">'4BaD82D9197b4cc4b70a221911eE9f70'</span><span class="p">)</span>
+
+<span class="n">txn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beanstream</span><span class="o">.</span><span class="n">record_cash_purchase</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gateway</span><span class="o">(</span><span class="s">"v1"</span><span class="o">,</span>
+    <span class="mi">300200578</span><span class="o">,</span>
+    <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="o">);</span>
+
+<span class="n">CashPaymentRequest</span> <span class="n">cashReq</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CashPaymentRequest</span><span class="o">();</span>
+<span class="n">cashReq</span><span class="o">.</span><span class="na">setAmount</span><span class="o">(</span><span class="mf">123.45</span><span class="o">);</span>
+<span class="n">cashReq</span><span class="o">.</span><span class="na">setOrderNumber</span><span class="o">(</span><span class="s">"fancyPantsOrder001"</span><span class="o">);</span>
+
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">PaymentResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">makePayment</span><span class="o">(</span><span class="n">cashReq</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//TODO handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Gateway</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">MerchantId</span> <span class="p">=</span> <span class="m">300200578</span><span class="p">,</span>
+    <span class="n">PaymentsApiKey</span> <span class="p">=</span> <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="p">,</span>
+    <span class="n">ApiVersion</span> <span class="p">=</span> <span class="s">"1"</span>
+<span class="p">};</span>
+<span class="n">PaymentResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">MakePayment</span> <span class="p">(</span>
+    <span class="k">new</span> <span class="nf">CashPaymentRequest</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">Amount</span> <span class="p">=</span> <span class="m">50.00</span><span class="p">,</span>
+        <span class="n">OrderNumber</span> <span class="p">=</span> <span class="s">"orderNum-GobBluth"</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="n">beanstream</span><span class="x"> </span><span class="s">"github.com/Beanstream-DRWP/beanstream-go"</span><span class="x">
+    </span><span class="s">"github.com/Beanstream-DRWP/beanstream-go/paymentMethods"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="n">config</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">DefaultConfig</span><span class="p">()</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">MerchantId</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"300200578"</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">PaymentsApiKey</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="x">
+
+</span><span class="n">gateway</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Gateway</span><span class="p">{</span><span class="n">config</span><span class="p">}</span><span class="x">
+</span><span class="n">request</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">PaymentRequest</span><span class="p">{</span><span class="x">
+    </span><span class="n">PaymentMethod</span><span class="o">:</span><span class="x"> </span><span class="n">paymentMethods</span><span class="o">.</span><span class="n">CASH</span><span class="p">,</span><span class="x">
+    </span><span class="n">OrderNumber</span><span class="o">:</span><span class="x">   </span><span class="s">"order12345b"</span><span class="p">,</span><span class="x">
+    </span><span class="n">Amount</span><span class="o">:</span><span class="x">        </span><span class="m">12.00</span><span class="p">}</span><span class="x">
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">MakePayment</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<p>If you receive a cash or cheque payment, you can record it through our REST API. We offer this payment method to help provide a centralized record of all your sales.</p>
+
+<h2 id="cheque">Cheque</h2>
+<pre class="highlight shell"><code>Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+    "payment_method":"cheque",
+    "order_number":"MyOrderId-01234",
+    "amount":15.00
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code></code></pre>
+<pre class="highlight php"><code>$beanstream = new \Beanstream\Gateway('300200578', '4BaD82D9197b4cc4b70a221911eE9f70', 'www', 'v1');
+
+$payment_data = array(
+    'order_number' =&gt; "987654321",
+    'amount' =&gt; 10.50
+);
+
+$result = $beanstream-&gt;payments()-&gt;makeChequePayment($payment_data);
+</code></pre>
+<pre class="highlight ruby"><code></code></pre>
+<pre class="highlight python"><code><span class="n">beanstream</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">Beanstream</span><span class="p">()</span>
+<span class="n">beanstream</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span>
+        <span class="s">'300200578'</span><span class="p">,</span>
+        <span class="n">payment_passcode</span><span class="o">=</span><span class="s">'4BaD82D9197b4cc4b70a221911eE9f70'</span><span class="p">)</span>
+
+<span class="n">txn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beanstream</span><span class="o">.</span><span class="n">record_cheque_purchase</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gateway</span><span class="o">(</span><span class="s">"v1"</span><span class="o">,</span>
+    <span class="mi">300200578</span><span class="o">,</span>
+    <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="o">);</span>
+
+<span class="n">ChequePaymentRequest</span> <span class="n">chequeReq</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ChequePaymentRequest</span><span class="o">();</span>
+<span class="n">chequeReq</span><span class="o">.</span><span class="na">setAmount</span><span class="o">(</span><span class="mf">12.99</span><span class="o">);</span>
+<span class="n">chequeReq</span><span class="o">.</span><span class="na">setOrderNumber</span><span class="o">(</span><span class="s">"fancyPantsOrder002"</span><span class="o">);</span>
+
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">PaymentResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">makePayment</span><span class="o">(</span><span class="n">chequeReq</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">BeanstreamApiException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//TODO handle error</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">Gateway</span> <span class="n">beanstream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Gateway</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="n">MerchantId</span> <span class="p">=</span> <span class="m">300200578</span><span class="p">,</span>
+    <span class="n">PaymentsApiKey</span> <span class="p">=</span> <span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="p">,</span>
+    <span class="n">ApiVersion</span> <span class="p">=</span> <span class="s">"1"</span>
+<span class="p">};</span>
+<span class="n">PaymentResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">MakePayment</span> <span class="p">(</span>
+    <span class="k">new</span> <span class="nf">ChequePaymentRequest</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">Amount</span> <span class="p">=</span> <span class="m">50.00</span><span class="p">,</span>
+        <span class="n">OrderNumber</span> <span class="p">=</span> <span class="s">"orderNum-TobiasFunke"</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="n">beanstream</span><span class="x"> </span><span class="s">"github.com/Beanstream-DRWP/beanstream-go"</span><span class="x">
+    </span><span class="s">"github.com/Beanstream-DRWP/beanstream-go/paymentMethods"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="n">config</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">DefaultConfig</span><span class="p">()</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">MerchantId</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"300200578"</span><span class="x">
+</span><span class="n">config</span><span class="o">.</span><span class="n">PaymentsApiKey</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"4BaD82D9197b4cc4b70a221911eE9f70"</span><span class="x">
+
+</span><span class="n">gateway</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">Gateway</span><span class="p">{</span><span class="n">config</span><span class="p">}</span><span class="x">
+</span><span class="n">request</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">beanstream</span><span class="o">.</span><span class="n">PaymentRequest</span><span class="p">{</span><span class="x">
+    </span><span class="n">PaymentMethod</span><span class="o">:</span><span class="x"> </span><span class="n">paymentMethods</span><span class="o">.</span><span class="n">CHEQUE</span><span class="p">,</span><span class="x">
+    </span><span class="n">OrderNumber</span><span class="o">:</span><span class="x">   </span><span class="s">"order12345b"</span><span class="p">,</span><span class="x">
+    </span><span class="n">Amount</span><span class="o">:</span><span class="x">        </span><span class="m">12.00</span><span class="p">}</span><span class="x">
+</span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">MakePayment</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<p>If you receive a cash or cheque payment, you can record it through our REST API. We offer this payment method to help provide a centralized record of all your sales.</p>
+
+            <h2 id="voids">Voids</h2>
+<pre class="highlight shell"><code>Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments/<span class="o">{</span>transId<span class="o">}</span>/void
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+    "amount":14.30
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">beanstream</span><span class="p">.</span><span class="nx">payments</span><span class="p">.</span><span class="nx">voidPayment</span><span class="p">(</span><span class="nx">transId</span><span class="p">,</span> <span class="p">{</span><span class="na">amount</span><span class="p">:</span> <span class="mi">30</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$result = $beanstream-&gt;payments()-&gt;voidPayment($transaction_id, 12.99);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">void_result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">void_payment</span><span class="p">(</span><span class="n">transaction_id</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">void_purchase</span><span class="p">(</span><span class="n">transaction_id</span><span class="p">,</span> <span class="mf">12.99</span><span class="p">)</span>
+
+<span class="s">''' OR for voiding returns: '''</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">void_return</span><span class="p">(</span><span class="n">transaction_id</span><span class="p">,</span> <span class="mf">12.99</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">PaymentResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">voidPayment</span><span class="o">(</span><span class="n">transactionId</span><span class="o">,</span> <span class="mf">70.00</span><span class="o">);</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">PaymentResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">Void</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">TransactionId</span><span class="p">,</span> <span class="m">30</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">VoidPayment</span><span class="p">(</span><span class="n">transactionId</span><span class="p">,</span><span class="x"> </span><span class="m">12.99</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<p>A Void will cancel a transaction before it is registered against a customer’s credit card account. Cardholders will never see a voided transaction on their credit card statement. As a result voids can only be attempted on the same day as the original transaction. After the end of day (roughly 11:59 PM EST/EDT), void requests will be rejected from the API if attempted. From that point on, for that transaction, you will need to perform a Return.</p>
+
+<p>You can Void purchases and returns and you must supply the amount to void. This amount must equal the amount of that transaction, no more or less.</p>
+
+<h2 id="returns">Returns</h2>
+<pre class="highlight shell"><code>Definition
+POST /v1/payments HTTP/1.1
+
+Request
+curl https://api.na.bambora.com/v1/payments/<span class="o">{</span>transId<span class="o">}</span>/returns
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-H <span class="s2">"Content-Type: application/json"</span>
+-d <span class="s1">'{
+    "amount":12.50
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">beanstream</span><span class="p">.</span><span class="nx">payments</span><span class="p">.</span><span class="nx">returnPayment</span><span class="p">(</span><span class="nx">transId</span><span class="p">,</span> <span class="p">{</span><span class="na">amount</span><span class="p">:</span> <span class="mi">40</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// success</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+<pre class="highlight php"><code>$result = $beanstream-&gt;payments()-&gt;returnPayment($transaction_id, 12.99, $order_number);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">return_result</span> <span class="o">=</span> <span class="no">Beanstream</span><span class="o">.</span><span class="no">PaymentsAPI</span><span class="p">.</span><span class="nf">return_payment</span><span class="p">(</span><span class="n">transaction_id</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="n">return_purchase</span><span class="p">(</span><span class="n">transaction_id</span><span class="p">,</span> <span class="mf">12.99</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">PaymentResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">beanstream</span><span class="o">.</span><span class="na">payments</span><span class="o">().</span><span class="na">returnPayment</span><span class="o">(</span><span class="n">transactionId</span><span class="o">,</span> <span class="mf">70.00</span><span class="o">);</span>
+</code></pre>
+<pre class="highlight csharp"><code><span class="n">PaymentResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">beanstream</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="nf">Return</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">TransactionId</span><span class="p">,</span> <span class="m">40.0</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight go"><code><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gateway</span><span class="o">.</span><span class="n">Payments</span><span class="p">()</span><span class="o">.</span><span class="n">ReturnPayment</span><span class="p">(</span><span class="n">transactionId</span><span class="p">,</span><span class="x"> </span><span class="m">12.99</span><span class="p">)</span><span class="x">
+</span></code></pre>
+
+<h3 id="unreferenced-returns">Unreferenced Returns</h3>
+<pre class="highlight shell"><code>Definition
+POST /v1/payments/0/returns HTTP/1.1
+
+curl https://api.na.bambora.com/v1/payments/0/returns
+-H <span class="s2">"Authorization: Passcode MzAwMjAwNTc4OjRCYU..."</span>
+-d <span class="s1">'{
+   "merchant_id":280001000,
+   "order_number":"10000123",
+   "amount":500.00,
+   "payment_method":"card",
+   "card":{
+      "name":"John Doe",
+      "number":"5100000010001004",
+      "expiry_month":"02",
+      "expiry_year":"14",
+      "cvd":"642"
+   }
+}'</span>
+</code></pre>
+<pre class="highlight javascript"><code>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$req</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s1">'https://api.na.bambora.com/v1/payments/0/returns'</span><span class="p">);</span>
+
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'Content-Type:application/json'</span><span class="p">,</span>
+    <span class="s1">'Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ='</span>
+<span class="p">);</span>
+
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$req</span><span class="p">,</span><span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="nv">$headers</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$req</span><span class="p">,</span><span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$req</span><span class="p">,</span><span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="nv">$post</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'merchant_id'</span> <span class="o">=&gt;</span> <span class="mi">280001000</span><span class="p">,</span>
+    <span class="s1">'order_number'</span> <span class="o">=&gt;</span> <span class="s1">'10000123'</span><span class="p">,</span>
+    <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mf">500.00</span><span class="p">,</span>
+    <span class="s1">'payment_method'</span> <span class="o">=&gt;</span> <span class="s1">'card'</span><span class="p">,</span>
+    <span class="s1">'card'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'John Doe'</span><span class="p">,</span>
+        <span class="s1">'number'</span> <span class="o">=&gt;</span> <span class="s1">'5100000010001004'</span><span class="p">,</span>
+        <span class="s1">'expiry_month'</span> <span class="o">=&gt;</span> <span class="s1">'02'</span><span class="p">,</span>
+        <span class="s1">'expiry_year'</span> <span class="o">=&gt;</span> <span class="s1">'14'</span><span class="p">,</span>
+        <span class="s1">'cvd'</span> <span class="o">=&gt;</span> <span class="s1">'642'</span>
+    <span class="p">)</span>
+<span class="p">);</span>   
+
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$req</span><span class="p">,</span><span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$req</span><span class="p">,</span><span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$post</span><span class="p">));</span>
+
+<span class="nv">$res_json</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$req</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res_json</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$req</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'open-uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.na.bambora.com/v1/payments/0/returns'</span><span class="p">)</span>
+<span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">path</span><span class="p">)</span> <span class="c1"># Ruby 2.0: use .new(uri) instead</span>
+<span class="n">req</span><span class="p">[</span><span class="s1">'Content-Type'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">req</span><span class="p">[</span><span class="s1">'Authorization'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Basic dXNlcm5hbWU6cGFzc3dvcmQ='</span>
+
+<span class="n">req</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="ss">:merchant_id</span> <span class="o">=&gt;</span> <span class="mi">280001000</span><span class="p">,</span>
+   <span class="ss">:order_number</span> <span class="o">=&gt;</span> <span class="s1">'10000123'</span><span class="p">,</span>
+   <span class="ss">:amount</span> <span class="o">=&gt;</span> <span class="mi">500</span><span class="o">.</span><span class="mo">00</span><span class="p">,</span>
+   <span class="ss">:payment_method</span> <span class="o">=&gt;</span> <span class="s1">'card'</span><span class="p">,</span>
+   <span class="ss">:card</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">'John Doe'</span><span class="p">,</span>
+      <span class="ss">:number</span> <span class="o">=&gt;</span> <span class="s1">'5100000010001004'</span><span class="p">,</span>
+      <span class="ss">:expiry_month</span> <span class="o">=&gt;</span> <span class="s1">'02'</span><span class="p">,</span>
+      <span class="ss">:expiry_year</span> <span class="o">=&gt;</span> <span class="s1">'14'</span><span class="p">,</span>
+      <span class="ss">:cvd</span> <span class="o">=&gt;</span> <span class="s1">'642'</span>
+   <span class="p">}</span>
+<span class="p">}.</span><span class="nf">to_json</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">start</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">hostname</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">,</span> <span class="ss">:use_ssl</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">http</span><span class="o">|</span>
+    <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nb">puts</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">UNREFERENCED RETURN"</span>
+<span class="nb">puts</span> <span class="n">res</span><span class="p">.</span><span class="nf">inspect</span>
+<span class="nb">puts</span> <span class="n">res</span><span class="p">.</span><span class="nf">body</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span><span class="p">,</span> <span class="n">HTTPError</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">req_body</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+    <span class="s">'merchant_id'</span><span class="p">:</span> <span class="mi">280001000</span><span class="p">,</span>
+    <span class="s">'order_number'</span><span class="p">:</span> <span class="s">'10000123'</span><span class="p">,</span>
+    <span class="s">'amount'</span><span class="p">:</span> <span class="mf">500.00</span><span class="p">,</span>
+    <span class="s">'payment_method'</span><span class="p">:</span> <span class="s">'card'</span><span class="p">,</span>
+    <span class="s">'card'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'name'</span><span class="p">:</span> <span class="s">'John Doe'</span><span class="p">,</span>
+        <span class="s">'number'</span><span class="p">:</span> <span class="s">'5100000010001004'</span><span class="p">,</span>
+        <span class="s">'expiry_month'</span><span class="p">:</span> <span class="s">'02'</span><span class="p">,</span>
+        <span class="s">'expiry_year'</span><span class="p">:</span> <span class="s">'14'</span><span class="p">,</span>
+        <span class="s">'cvd'</span><span class="p">:</span> <span class="s">'642'</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="n">req</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span>
+    <span class="s">'https://api.na.bambora.com/v1/payments/0/returns'</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">req_body</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+        <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Basic dXNlcm5hbWU6cGFzc3dvcmQ='</span>
+    <span class="p">})</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c"># HTTP Request success</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">HTTPError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c"># Handle errors here</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight java"><code>
+</code></pre>
+<pre class="highlight csharp"><code>
+</code></pre>
+<pre class="highlight go"><code><span class="x">
+</span></code></pre>
+
+<p>A Return will refund the customer part or all of the money from a transaction.</p>
+
+<p>In order to perform a Return you must know the transaction ID from the purchase. This is returned in the response to the transaction.</p>
+
+<p>You can return all or some of the original purchase amount.</p>
+
+            <h2 id="errors">Errors</h2>
+
+<p>You can read the errors returned by the API <a href="/docs/references/payment_APIs">here</a>.</p>
+
+      </div>
+      
+      <div class="dark-box">
+
+          <div class="tabs lang-selector">
+                <a href="#" data-language-name="shell"> 
+                  shell
+                </a>
+                <a href="#" data-language-name="python"> 
+                  python
+                </a>
+                <a href="#" data-language-name="csharp"> 
+                  csharp
+                </a>
+                <a href="#" data-language-name="java"> 
+                  java
+                </a>
+                <a href="#" data-language-name="ruby"> 
+                  ruby
+                </a>
+                <a href="#" data-language-name="php"> 
+                  php
+                </a>
+                <a href="#" data-language-name="javascript"> 
+                  javascript
+                </a>
+                <a href="#" data-language-name="go"> 
+                  go
+                </a>
+          </div>
+        
+      </div>
+    </div>
+
+    <footer>
+
+
+
+                © <a href="http://www.bambora.com/en/en/payment-solutions/" target="_blank">2017 Bambora</a>
+
+        <div class="links">
+                <a href="http://www.bambora.com/en/en/payment-solutions/customer-service/faq/terms-and-conditions/" target="_blank">Terms & Conditions</a>
+        </div>
+        
+        <div class="pull-right">
+                <a href="https://github.com/bambora/" target="_blank">Github</a>
+        </div>
+
+</footer>
+    <script src="../../../../javascripts/template/tocbot_init_script-2dfca9f7.js" type="text/javascript"></script>
+
+    <script>
+      // spec template has different headingsOffset for tocbot
+      tocbot.init({
+        tocSelector: '.js-toc',
+        contentSelector: '.js-toc-content',
+        headingSelector: 'h2, h3, h4, h5',
+        ignoreSelector: '.js-toc-ignore',
+        collapseDepth: 1,
+        headingsOffset: 80,
+        smoothScrollOptions: {
+          offset: 100
+        }
+      });
+    </script>
+
+  </body>
+</html>

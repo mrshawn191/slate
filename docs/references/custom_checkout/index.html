@@ -1,0 +1,669 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W92MC5');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon-9dabc470.png">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-32x32-b71a5283.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-16x16-ea515fe9.png" sizes="16x16">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<link rel="mask-icon" href="/images/favicon/safari-pinned-tab-fb883d2e.svg" color="#8247b5 ">
+<meta name="theme-color" content="#ffffff ">
+
+<!-- Site version (latest commit): 8e4a392b8aa751a6ce5c945a7b9f17bad9355071
+ -->
+
+<title>Custom Checkout Reference</title>
+
+<link href="../../../stylesheets/ui.bambora.1.0.3-13e3506d.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/bambora_ui_sass_overwrite-d859adf4.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/portal-5e95ed43.css" rel="stylesheet" type="text/css" />
+<link href="../../../stylesheets/page/tutorial-c59b694d.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+
+<script src="../../../javascripts/all-654c8dcb.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="docs docs_references docs_references_custom_checkout docs_references_custom_checkout_index">
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W92MC5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+
+<nav class="nav-pane nav-fixed">
+
+    <!-- Hamburger icon --> 
+    <a href="#" class="hamburger-icon"><svg width="19" height="14" viewBox="0 0 19 14" xmlns="http://www.w3.org/2000/svg"><title>list</title><path d="M7.968 2.28h10.245V0H7.968v2.28zM0 7.975h18.213v-2.28H0v2.28zm0 5.696h10.245v-2.278H0v2.278z" fill="#84898A" fill-rule="evenodd"/></svg></a>
+
+    <!-- Logo -->
+    <div class="pull-left nav-links">
+        <a href="/docs/" class="logo">
+                <img src="../../../images/svg/zebraffe-dark-dev-05ffe493.svg" />
+        </a>
+    </div>
+
+    <div class="header-contents">
+
+    <!-- Links --> 
+    <div class="pull-left nav-links">
+                <a href="/docs/guides/">Guides</a>
+                <a href="/docs/references/" class="active">References</a>
+                <a href="/docs/support/">Support</a>
+    </div>
+
+    <!-- Search / buttons -->
+    <div class="pull-right">
+        
+        <span class="button-wrap">
+            <a id="search-button" href="#"><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><title>search</title><path d="M5 0a5 5 0 1 0 3.164 8.87l5.13 5.13.706-.707-5.13-5.129A5 5 0 0 0 5 0m0 1c2.206 0 4 1.794 4 4 0 .934-.313 1.809-.904 2.53l-.254.312-.312.254A3.952 3.952 0 0 1 5 9C2.794 9 1 7.206 1 5s1.794-4 4-4" fill="#454545" fill-rule="evenodd"/></svg></a>
+        </span>
+
+            <span class="button-wrap">
+                    <a href="/docs/sign_up/" class="btn btn-small btn-secondary" >
+                        Sign up
+                    </a>
+            </span>
+            <span class="button-wrap">
+                    <a href="https://web.na.bambora.com" class="btn btn-small" >
+                        Login
+                    </a>
+            </span>
+
+        <div class="dropdown-nav dropdown-open-on-hover" role="navigation" 
+id="region-switcher">
+    North America
+    <ul role="menu">
+        
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/apac" class="not-new-tab-for-link">
+                Asia-Pacific
+            </a>
+        </li>
+
+        <li role="menuitem">
+            <a href="https://developer.bambora.com/europe" class="not-new-tab-for-link">
+                Europe
+            </a>
+        </li>
+    </ul>
+</div>
+    </div>
+
+    </div>
+</nav>
+
+<div id="search-overlay">
+  <a href="#" id="close-search-overlay"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></a>
+
+  <div class="container">
+
+    <form>
+      <div class="form-group">
+        <input type="text" id="search" placeholder="Search..." width="100%", autocomplete="off" >
+      </div>
+    </form>
+
+    <div id="result-count"></div>
+
+    <div class="list-group">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <ul class="search-results"></ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+    <div class="container">
+
+      <a id="edit-on-github" href="https://github.com/bambora/dev.na.bambora.com/edit/staging/source/docs/references/custom_checkout/index.md">
+  Edit this page
+</a>
+
+
+<!-- Modal apears on link click -->
+<div class="modal-overlay">
+  <div class="modal github-modal" role="dialog">
+      <h3 class="js-toc-ignore">Edit on Github</h3>
+
+      <p> 
+      To propose changes to the Developer Portal click the link below and follow these steps: 
+      </p>
+
+      <ol>
+        <li>Sign in to Github. You will have to create an account if you don't already have one.</li>
+        <li>Click the <strong>Fork this repository and propose changes </strong>button.</li>
+        <li>Make your proposed changes to the file. Content is formatted with <a href="http://commonmark.org/help/">Markdown.</a></li>
+        <li>At the bottom of the page, optionally add a title and description to your changes, and click the <strong>Propose file change button</strong>.</li>
+        <li>On the next page, click <strong>Create pull request</strong>, and then click it again.</li>
+        <li>You're done! Someone will review your changes and they will appear on the site shortly.</li>
+      </ol>
+
+      <div class="btn-row">
+          <a href="#" class="btn continue-to-github" target="_blank">Continue to Github</a>
+          <button class="btn btn-secondary close-modal">Cancel</button>
+      </div>
+  </div>
+</div>      
+          <div class='breadcrumb-trail'><span><a href='/docs/'>Docs</a></span><span class='chevron'> / </span><span><a href='/docs/references/'>References</a></span><span class='chevron'> / </span><span class='this-page'>Custom Checkout</span></div>
+ 
+      
+
+
+<div class="nav-wrapper">
+<nav class="nav-left nav-sticky nav-vertical">
+
+  <div class="mobile-close"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M1.608 0L0 1.61l7.498 7.505L0 16.62l1.608 1.61 7.498-7.505 7.498 7.505 1.608-1.61-7.498-7.505 7.499-7.505L16.604 0 9.106 7.507z" fill="#616668" fill-rule="evenodd"/></svg></div>
+
+
+      <ul>
+
+          <li data-nav-title="/docs/guides/custom_checkout/" class="">
+            <a href="/docs/guides/custom_checkout/" class="nav-top-heading">
+              Overview 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/docs/guides/custom_checkout/demos/" class="">
+            <a href="/docs/guides/custom_checkout/demos/" class="nav-top-heading">
+              Demos 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/docs/guides/custom_checkout/setup/" class="">
+            <a href="/docs/guides/custom_checkout/setup/" class="nav-top-heading">
+              Setup 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/docs/references/custom_checkout/" class="active">
+            <a href="/docs/references/custom_checkout/" class="nav-top-heading">
+              References 
+            </a>
+
+              <div class="page-included js-toc"></div>
+          </li>
+
+          <li data-nav-title="/docs/references/custom_checkout/versions/" class="">
+            <a href="/docs/references/custom_checkout/versions/" class="nav-top-heading">
+              Versions 
+            </a>
+
+          </li>
+
+          <li data-nav-title="/docs/references/custom_checkout/release_notes/" class="">
+            <a href="/docs/references/custom_checkout/release_notes/" class="nav-top-heading">
+              Release Notes 
+            </a>
+
+          </li>
+      </ul>
+</nav>
+</div>
+
+<!-- button to click on small screen to show toc -->
+<div class="show-toc">
+  Contents
+</div>
+
+
+
+
+
+      <div class="row">
+          <div class="col-md-9 col-md-offset-3 js-toc-content">
+
+          <div class="markdown">
+            <h1 id="custom-checkout-reference">Custom Checkout Reference</h1>
+
+<h3 id="customcheckout-create">customcheckout.create</h3>
+
+<p><code class="prettyprint">customcheckout.create(type[, options])</code></p>
+
+<p>Creates an input of <em>type</em>  and passes the optional specified <em>options</em> to it. Returns a field object.</p>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td><em>type</em></td>
+<td>String</td>
+<td>The type of field to create. Can be <code class="prettyprint">&#39;card-number&#39;</code>, <code class="prettyprint">&#39;cvv&#39;</code>, or <code class="prettyprint">&#39;expiry&#39;</code>.</td>
+</tr>
+<tr>
+<td><em>options</em></td>
+<td>Object</td>
+<td>Optional options object that can be specified for the field.</td>
+</tr>
+</tbody></table></div><pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">cardNumber</span> <span class="o">=</span> <span class="nx">customCheckout</span><span class="p">().</span><span class="nx">create</span><span class="p">(</span><span class="s1">'card-number'</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre>
+
+<h4 id="options">options</h4>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td><code class="prettyprint">placeholder</code></td>
+<td>String</td>
+<td>A placeholder value for the input field.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">style</code></td>
+<td>Object</td>
+<td>Style information for the field.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">classes</code></td>
+<td>Object</td>
+<td>Custom classes to be applied to the wrapper.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">brands</code></td>
+<td>Array</td>
+<td>Only pass to card-number input. Value is an array of supported card brands, all other brands will be treated as invalid. If not passed in, all brands are accepted. Can be <code class="prettyprint">&#39;amex&#39;</code>, <code class="prettyprint">&#39;diners&#39;</code>, <code class="prettyprint">&#39;discover&#39;</code>, <code class="prettyprint">&#39;jcb&#39;</code>, <code class="prettyprint">&#39;mastercard&#39;</code>, <code class="prettyprint">&#39;visa&#39;</code>, or <code class="prettyprint">&#39;maestro&#39;</code>.</td>
+</tr>
+</tbody></table></div>
+<p>Note: The <code class="prettyprint">style</code> property affects the remote styling of text inside the iframe input. The <code class="prettyprint">classes</code> property updates the class list of the element the field is mounted to on your page.</p>
+
+<h4 id="options-style">options.style</h4>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td><code class="prettyprint">base</code></td>
+<td>Object</td>
+<td>Default styles to be applied to the input.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">complete</code></td>
+<td>Object</td>
+<td>Styles to be applied when the input is valid.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">empty</code></td>
+<td>Object</td>
+<td>Styles to be applied when the input is empty.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">error</code></td>
+<td>Object</td>
+<td>Styles to be applied when the input is invalid.</td>
+</tr>
+</tbody></table></div>
+<p>The following CSS properties can be set on the objects set on the style object:</p>
+
+<ul>
+<li><code class="prettyprint">color</code></li>
+<li><code class="prettyprint">fontFamily</code></li>
+<li><code class="prettyprint">fontSize</code></li>
+<li><code class="prettyprint">fontStyle</code></li>
+<li><code class="prettyprint">fontWeight</code></li>
+<li><code class="prettyprint">textDecoration</code></li>
+<li><code class="prettyprint">padding</code>, <code class="prettyprint">paddingLeft</code>, <code class="prettyprint">paddingTop</code>, <code class="prettyprint">paddingRight</code>, and <code class="prettyprint">paddingBottom</code></li>
+</ul>
+
+<p>As well as these pseudo-classes:</p>
+
+<ul>
+<li><code class="prettyprint">:hover</code></li>
+<li><code class="prettyprint">:focus</code></li>
+</ul>
+
+<h4 id="options-classes">options.classes</h4>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td><code class="prettyprint">base</code></td>
+<td>String</td>
+<td>Base class applied to the wrapper. Defaults to <code class="prettyprint">bambora-checkoutfield</code>.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">complete</code></td>
+<td>String</td>
+<td>Class to apply when input is complete. Defaults to <code class="prettyprint">bambora-checkoutfield-complete</code>.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">empty</code></td>
+<td>String</td>
+<td>Class to apply when input is empty. Defaults to <code class="prettyprint">bambora-checkoutfield-empty</code>.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">focus</code></td>
+<td>String</td>
+<td>Class to apply when input has focus. Defaults to <code class="prettyprint">bambora-checkoutfield-focus</code>.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">error</code></td>
+<td>String</td>
+<td>Class to apply when input is in error. Defaults to <code class="prettyprint">bambora-checkoutfield-error</code>.</td>
+</tr>
+</tbody></table></div><pre class="highlight javascript"><code><span class="c1">// Styles to be applied to the text in the iframe when it changes state.</span>
+<span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">error</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">color</span><span class="p">:</span> <span class="s1">'red'</span><span class="p">,</span>
+    <span class="s1">':focus'</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">fontStyle</span><span class="p">:</span> <span class="s1">'italic'</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="c1">// Classes to be applied to the element wrapping the iframe</span>
+<span class="c1">// when it changes state.</span>
+<span class="kd">var</span> <span class="nx">classes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">error</span><span class="p">:</span> <span class="s1">'my-error-class'</span><span class="p">,</span>        
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">placeholder</span><span class="p">:</span> <span class="s1">'Card number'</span><span class="p">,</span>
+  <span class="na">style</span><span class="p">:</span> <span class="nx">style</span><span class="p">,</span>
+  <span class="na">classes</span><span class="p">:</span> <span class="nx">classes</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">cardNumber</span> <span class="o">=</span> <span class="nx">customCheckout</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'card-number'</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre>
+
+<h3 id="customcheckout-mount">customcheckout.mount</h3>
+
+<p><code class="prettyprint">checkoutObject.mount(cssSelector)</code></p>
+
+<p>Mounts the custom input inside an element on the page identified by <em>cssSelector</em>. Returns an error if <em>cssSelector</em> is not found.  </p>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td><em>cssSelector</em></td>
+<td><em>String</em></td>
+<td>CSS selector of your parent element.</td>
+</tr>
+</tbody></table></div><pre class="highlight html"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">'https://libs.na.bambora.com/customcheckout/1/customcheckout.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"checkout-form"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"card-number"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"card-cvv"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"card-expiry"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    ...
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">customCheckout</span> <span class="o">=</span> <span class="nx">customcheckout</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">cardNumber</span> <span class="o">=</span> <span class="nx">customCheckout</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'card-number'</span><span class="p">)</span>
+    <span class="nx">cardNumber</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">'#card-number'</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+
+<h3 id="customcheckout-on">customcheckout.on</h3>
+
+<p><code class="prettyprint">customcheckout.on(event, callback)</code></p>
+
+<p>Adds an event listener to Custom Checkout.</p>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td><em>event</em></td>
+<td><em>String</em></td>
+<td>The name of the event to listen for.</td>
+</tr>
+<tr>
+<td><em>callback</em></td>
+<td><em>Function</em></td>
+<td>The function to be run when the event is triggered.</td>
+</tr>
+</tbody></table></div>
+<h4 id="event">event</h4>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Event</th>
+<th>Trigger</th>
+</tr>
+</thead><tbody><tr>
+<td><code class="prettyprint">blur</code></td>
+<td>Input loses focus.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">focus</code></td>
+<td>Input gains focus.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">empty</code></td>
+<td>Input switches to or from an empty state.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">complete</code></td>
+<td>Input becomes complete and valid.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">brand</code></td>
+<td>Card brand changes.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">error</code></td>
+<td>Input becomes invalid.</td>
+</tr>
+</tbody></table></div><div class='table-wrap'><table class='table'><thead><tr>
+<th>Event</th>
+<th>Trigger</th>
+<th>Event argument for callback</th>
+</tr>
+</thead><tbody><tr>
+<td><code class="prettyprint">blur</code></td>
+<td>Input loses focus.</td>
+<td><code class="prettyprint">{ field: &#39;card-number cvv expiry&#39; }</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">focus</code></td>
+<td>Input gains focus.</td>
+<td><code class="prettyprint">{ field: &#39;card-number cvv expiry&#39; }</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">empty</code></td>
+<td>Input switches to or from an empty state.</td>
+<td><code class="prettyprint">{ field: &#39;card-number cvv expiry&#39;, empty: &#39;true false&#39; }</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">complete</code></td>
+<td>Input becomes complete and valid.</td>
+<td><code class="prettyprint">{ field: &#39;card-number cvv expiry&#39;, complete: &#39;true false&#39; }</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">brand</code></td>
+<td>Card brand changes.</td>
+<td><code class="prettyprint">{ field: &#39;card-number&#39;, brand: &#39;amex diners discover jcb mastercard visa maestro&#39; }</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">error</code></td>
+<td>Input becomes invalid.</td>
+<td><code class="prettyprint">{ field: &#39;card-number cvv expiry&#39;, type: &#39;See below for a list of error types.&#39;,  message: &#39;A descriptive error message.&#39; }</code></td>
+</tr>
+</tbody></table></div><pre class="highlight javascript"><code><span class="nx">customCheckout</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'blur'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'blur: '</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">event</span><span class="p">));</span>
+  <span class="c1">//...</span>
+<span class="p">});</span>
+</code></pre>
+
+<h4 id="error-type">error.type</h4>
+
+<p><strong><em>Input Validation</em></strong></p>
+
+<ul>
+<li><code class="prettyprint">CardNumberInvalid</code></li>
+<li><code class="prettyprint">CvvNotSet</code></li>
+<li><code class="prettyprint">ExpiryIsInThePast</code></li>
+<li><code class="prettyprint">ExpiryIsNotSet</code></li>
+</ul>
+
+<p><strong><em>Tokenization</em></strong></p>
+
+<ul>
+<li><code class="prettyprint">TokenizationValidationFailed</code></li>
+<li><code class="prettyprint">TokenizationFailed</code></li>
+<li><code class="prettyprint">TokenizationNoResponse</code></li>
+</ul>
+
+<h3 id="customcheckout-createtoken">customcheckout.createToken</h3>
+
+<p><code class="prettyprint">customcheckout.createToken(callback)</code></p>
+
+<p>Validate and create a payment token from the input values. This token can then be used to process a payment using our Payments API.</p>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td><em>callback</em></td>
+<td><em>Function</em></td>
+<td>The function to be run when the event is triggered.</td>
+</tr>
+</tbody></table></div><pre class="highlight javascript"><code><span class="nx">customCheckout</span><span class="p">.</span><span class="nx">createToken</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// handle result.error or result.token</span>
+<span class="p">});</span>
+</code></pre>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>callback event property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td><code class="prettyprint">code</code></td>
+<td>String</td>
+<td>The HTTP status code of the tokenization request.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">error</code></td>
+<td>Object</td>
+<td><code class="prettyprint">{field: &#39;token&#39;, type: &#39;See below for a list of error types.&#39;, message: &#39;A descriptive error message.&#39; }</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">token</code></td>
+<td>String</td>
+<td>Only present if no error. The payment token result.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">last4</code></td>
+<td>String</td>
+<td>Only present if no error. The last 4 digits of the card number.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">expiryMonth</code></td>
+<td>String</td>
+<td>Only present if no error. The expiry month of the card.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">expiryYear</code></td>
+<td>String</td>
+<td>Only present if no error. The expiry year of the card.</td>
+</tr>
+</tbody></table></div>
+<h3 id="input-update">input.update</h3>
+
+<p><code class="prettyprint">input.update(options)</code></p>
+
+<p>Updates an input instance with the specified <em>options</em>. Any previously set options will be lost.</p>
+<div class='table-wrap'><table class='table'><thead><tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody><tr>
+<td><em>options</em></td>
+<td>Object</td>
+<td>Optional options object that can be specified for the field.</td>
+</tr>
+</tbody></table></div><pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">cardNumber</span> <span class="o">=</span> <span class="nx">customCheckout</span><span class="p">().</span><span class="nx">create</span><span class="p">(</span><span class="s1">'card-number'</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+
+<span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+<span class="nx">cardNumber</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</code></pre>
+
+<h3 id="input-focus">input.focus</h3>
+
+<p><code class="prettyprint">input.focus()</code></p>
+
+<p>Requests to gain focus on a given input.</p>
+<pre class="highlight javascript"><code><span class="nx">cardNumber</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+</code></pre>
+
+<h3 id="input-blur">input.blur</h3>
+
+<p><code class="prettyprint">input.blur()</code></p>
+
+<p>Requests to lose focus from a given input.</p>
+<pre class="highlight javascript"><code><span class="nx">cardNumber</span><span class="p">.</span><span class="nx">blur</span><span class="p">();</span>
+</code></pre>
+
+<h3 id="input-clear">input.clear</h3>
+
+<p><code class="prettyprint">input.clear()</code></p>
+
+<p>Removes any text entered from a given input.</p>
+<pre class="highlight javascript"><code><span class="nx">cardNumber</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+</code></pre>
+
+<h3 id="input-unmount">input.unmount</h3>
+
+<p><code class="prettyprint">input.unmount()</code></p>
+
+<p>Removes a given input from the DOM.</p>
+<pre class="highlight javascript"><code><span class="nx">cardNumber</span><span class="p">.</span><span class="nx">unmount</span><span class="p">();</span>
+</code></pre>
+ 
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+
+
+
+                © <a href="http://www.bambora.com/en/en/payment-solutions/" target="_blank">2017 Bambora</a>
+
+        <div class="links">
+                <a href="http://www.bambora.com/en/en/payment-solutions/customer-service/faq/terms-and-conditions/" target="_blank">Terms & Conditions</a>
+        </div>
+        
+        <div class="pull-right">
+                <a href="https://github.com/bambora/" target="_blank">Github</a>
+        </div>
+
+</footer>
+
+    <script src="../../../javascripts/template/tocbot_init_script-2dfca9f7.js" type="text/javascript"></script>
+
+  </body>
+</html>
