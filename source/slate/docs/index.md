@@ -18,7 +18,7 @@ hero_unit:
         The single source of truth for our North America payment gateway.
     button:
         text: Get started
-        link: /docs/guides/merchant_quickstart/
+        link: /slate/docs/guides/merchant_quickstart/
     gradient: true
 
 card_sets:
@@ -32,19 +32,19 @@ card_sets:
                 description: >
                     Get up and running fast by opening a test account and hitting a few of our API endpoints.
                 icon: flag
-                link: /docs/guides/merchant_quickstart/
+                link: /slate/docs/guides/merchant_quickstart/
             -
                 title: Partner Quickstart
                 description: >
                     Get up and running fast by opening a test account and hitting a few of our API endpoints.
                 icon: flag
-                link: /docs/guides/partner_quickstart/
+                link: /slate/docs/guides/partner_quickstart/
             -
                 title: More...
                 description: >
                     Learn how to get things done. See all the guides.
                 icon: more
-                link: /docs/guides/
+                link: /slate/docs/guides/
     -
         title: References
         description: >
@@ -55,17 +55,17 @@ card_sets:
                 description: >
                     Our Payment APIs supports online payments, card tokenization, payment profiles and reporting.
                 icon: flag
-                link: /docs/references/payment_APIs/
+                link: /slate/docs/references/payment_APIs/
             -
                 title: Onboarding API
                 description: >
                     Our Onboarding API allows partners to submit applications on behalf of new sub-merchants.
                 icon: comment
-                link: /docs/references/onboarding_API/
+                link: /slate/docs/references/onboarding_API/
             -
                 title: More...
                 description: >
                     Get an in-depth knowledge of our payment gateway. See all the references.
                 icon: more
-                link: /docs/references/
+                link: /slate/docs/references/
 ---

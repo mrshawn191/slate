@@ -6,9 +6,9 @@ links:
   - file: /docs/guides/
     title: Guides
   - file: /docs/references/
-    title: References
+    title: API
   - file: /docs/support/
-    title: Support
+    title: PSP Service Reference
 
 buttons:
   - file: /docs/sign_up/

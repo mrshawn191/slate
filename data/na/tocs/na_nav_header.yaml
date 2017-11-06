@@ -1,17 +1,17 @@
 logo: 
-  link: /docs/
+  link: /slate/docs/
   light: svg/zebraffe-dev-white.svg
   dark: svg/zebraffe-dark-dev.svg
 links:
-  - file: /docs/guides/
+  - file: /slate/docs/guides/
     title: Guides
-  - file: /docs/references/
-    title: References
-  - file: /docs/support/
-    title: Support
+  - file: /slate/docs/references/
+    title: API
+  - file: /slate/docs/support/
+    title: PSP Service Reference
 
 buttons:
-  - file: /docs/sign_up/
+  - file: /slate/docs/sign_up/
     title: Sign up
     secondary: true
   - file: https://web.na.bambora.com

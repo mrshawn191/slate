@@ -1,12 +1,12 @@
-- file: /docs/guides/checkout/
+- file: /slate/docs/guides/checkout/
   title: Guide
-- file: /docs/references/checkout/
+- file: /slate/docs/references/checkout/
   title: Link
-- file: /docs/references/checkout/redirect/
+- file: /slate/docs/references/checkout/redirect/
   title: Redirect
-- file: /docs/references/checkout/bank/
+- file: /slate/docs/references/checkout/bank/
   title: Bank codes
-- file: /docs/references/checkout/misc/
+- file: /slate/docs/references/checkout/misc/
   title: Misc codes
-- file: /docs/references/checkout/test_cards/
+- file: /slate/docs/references/checkout/test_cards/
   title: Test cards

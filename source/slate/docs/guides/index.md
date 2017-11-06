@@ -16,91 +16,91 @@ cards:
         description: >
             Create a test account and test our Payment APIs.
         icon: notification-active
-        link: /docs/guides/merchant_quickstart/
+        link: /slate/docs/guides/merchant_quickstart/
     -
         title: Quickstart - Partner
         description: >
             Get a Partner API key and try our Onboarding API.
         icon: checkmark
-        link: /docs/guides/partner_quickstart/
+        link: /slate/docs/guides/partner_quickstart/
     -
         title: Checkout
         description: >
             Add Checkout to your emails or site for a turnkey mobile-ready payment flow.
         icon: creditcard-outline
-        link: /docs/guides/checkout/
+        link: /slate/docs/guides/checkout/
     -
         title: Custom Checkout
         description: >
             Create a fully customizable payment form while minimizing the scope of your PCI compliance.
         icon: creditcard-outline
-        link: /docs/guides/custom_checkout/
+        link: /slate/docs/guides/custom_checkout/
     -
         title: Apple Pay
         description: >
             Work with Apple Pay based payments from mobile devices and the Web.
         icon: list
-        link: /docs/guides/apple_pay
+        link: /slate/docs/guides/apple_pay
     -
         title: Android Pay
         description: >
             Start accepting Android Pay based payments.
         icon: list
-        link: /docs/guides/android_pay      
+        link: /slate/docs/guides/android_pay
     -
         title: Onboarding
         description: >
             Get up to speed on our Onboarding API in minutes.
         icon: list
-        link: /docs/guides/onboarding/
+        link: /slate/docs/guides/onboarding/
     -
         title: Payment Profiles
         description: >
             Lean about managing secure payment profiles.
         icon: checkmark
-        link: /docs/guides/payment_profiles
+        link: /slate/docs/guides/payment_profiles
     -
         title: 3D Secure
         description: >
             Learn about implementing 3D Secure based payments.
         icon: list
-        link: /docs/guides/3D_secure
+        link: /slate/docs/guides/3D_secure
     -
         title: Masterpass
         description: >
             Process payments with Masterpass.
         icon: creditcard-outline
-        link: /docs/guides/masterpass
+        link: /slate/docs/guides/masterpass
     -
         title: Visa Checkout
         description: >
             Process payments with Visa Checkout.
         icon: creditcard-outline
-        link: /docs/guides/visa_checkout
+        link: /slate/docs/guides/visa_checkout
     -
         title: Interac Online
         description: >
             Process payments with Interac Online.
         icon: creditcard-outline
-        link: /docs/guides/interac_online
+        link: /slate/docs/guides/interac_online
     -
         title: Batch Payment
         description: >
             Batch credit card, EFT and ACH transactions.
         icon: creditcard-outline
-        link: /docs/guides/batch_payment
+        link: /slate/docs/guides/batch_payment
     -
         title: Recurring Payment
         description: >
             Schedule series of automatic payments.
         icon: creditcard-outline
-        link: /docs/guides/recurring_payment
+        link: /slate/docs/guides/recurring_payment
     -
         title: SSL
         description: >
             Encrypt information and provide computer to computer authentication.
         icon: checkmark
-        link: /docs/guides/SSL
+        link: /slate/docs/guides/SSL
 ---
 
 # Guides

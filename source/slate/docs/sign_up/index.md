@@ -19,7 +19,7 @@ cards:
             Merchant Quickstart guide for more information on using 
             your test account.
         icon: checkmark
-        link: /docs/forms/create_test_merchant_account/
+        link: /slate/docs/forms/create_test_merchant_account/
     -
         title: Sign up for an account
         description: >
