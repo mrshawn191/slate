@@ -1,0 +1,186 @@
+<h1 id="address-verification-system-avs">Address Verification System (AVS)</h1>
+<p>The <a href="https://en.wikipedia.org/wiki/Address_Verification_System">Address Verification System (AVS)</a> is a system used to verify the address of a person claiming to own a credit card. The system will check the billing address of the credit card provided by the user with the address on file at the credit card company.</p>
+
+<p>AVS is unable to verify all addresses as some cards may not have address information associated with them. AVS results are only returned after a transaction has completed processing. This means that a merchant must refund or void a high-risk transaction, rather than blocking it before completing the initial purchase.</p>
+
+<p>You can configure your account in the <a href="https://web.na.bambora.com">Back Office</a> to decline a transaction if either the street address or the postal codes do not match. Navigate to <code>Administration &gt; Account Settings &gt; Order Settings</code>.</p>
+
+<p>AVS response codes are returned by the Payments API for purchases and pre-authorizations. You can read the Payment APIs spec <a href="/docs/references/payment_APIs/">here</a>. They are also displayed in the transaction report in the <a href="https://web.na.bambora.com">Back Office</a>. Navigate to <code>Reporting/Analysis &gt; Transaction Report</code>.</p>
+
+<h2 id="avs-response-codes">AVS Response Codes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Results</th>
+      <th>Processed</th>
+      <th>Address Match</th>
+      <th>Postal/ZIP Match</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Address Verification not performed for this transaction.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Invalid AVS Response.</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Address Verification Data contains edit error.</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Street address matches, Postal/ZIP does not match.</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Street address matches, Postal/ZIP not verified.</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Street address and Postal/ZIP not verified.</td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Street address and Postal/ZIP match.</td>
+    </tr>
+    <tr>
+      <td>E</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Transaction ineligible.</td>
+    </tr>
+    <tr>
+      <td>G</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Non AVS participant. Information not verified.</td>
+    </tr>
+    <tr>
+      <td>I</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Address information not verified for international transaction.</td>
+    </tr>
+    <tr>
+      <td>M</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Street address and Postal/ZIP match.</td>
+    </tr>
+    <tr>
+      <td>N</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Street address and Postal/ZIP do not match.</td>
+    </tr>
+    <tr>
+      <td>P</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Postal/ZIP matches. Street address not verified.</td>
+    </tr>
+    <tr>
+      <td>R</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>System unavailable or timeout.</td>
+    </tr>
+    <tr>
+      <td>S</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>AVS not supported at this time.</td>
+    </tr>
+    <tr>
+      <td>U</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Address information is unavailable.</td>
+    </tr>
+    <tr>
+      <td>W</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Postal/ZIP matches, street address does not match.</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Street address and Postal/ZIP match.</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Street address and Postal/ZIP match.</td>
+    </tr>
+    <tr>
+      <td>Z</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Postal/ZIP matches, street address does not match.</td>
+    </tr>
+  </tbody>
+</table>
+

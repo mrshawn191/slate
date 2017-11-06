@@ -1,0 +1,160 @@
+<h1 id="masterpass">Masterpass</h1>
+
+<p><em>Note: This is a draft document. All information is accurate, but some information may be missing.
+It will completed soon.</em></p>
+
+<p>Masterpass simplifies and secures online payments by storing payment information.
+It removes the need for a customer to re-enter and share card information.</p>
+
+<p>Masterpass is a digital wallet. Customers load their digital wallet with their credit, debit and prepaid cards once. They can then retrieve their payment information at any checkout that supports Masterpass.</p>
+
+<p>Masterpass benefits users by securing their payment information and saving them
+time checking out. MasterPass benefits merchants by reducing checkout abandonment.</p>
+
+<h2 id="standard-integration">Standard integration</h2>
+
+<p>A Masterpass payment involves three steps for a merchant.</p>
+
+<ol>
+  <li>Retrieve a redirect URL from our Payment API.</li>
+  <li>Redirect the user to Masterpass and handle the return redirect from Masterpass.</li>
+  <li>Complete the payment on our Payment API.</li>
+</ol>
+
+<h3 id="caveats">Caveats</h3>
+
+<p>Bambora’s Masterpass integration does not support 3D Secure.</p>
+
+<h3 id="testing">Testing</h3>
+
+<p>Masterpass is not enabled by default on test accounts. Contact us and we will enable it.</p>
+
+<h3 id="example-requests">Example requests:</h3>
+<p>The first sample request is optional. It is only required if you need to retrieve addresses.</p>
+
+<h4 id="step-1-first-request">(Step 1) First request</h4>
+
+<p><code>shell
+includeShipping=1&amp;paymentMethod=MP&amp;passcode=81B156fbD41540D08D254dF7061D4AB3&amp;
+requestType=BACKEND&amp;termUrl=http://8df6431a.ngrok.io/payment/masterpass/callback&amp;
+merchant_id=123456789
+</code></p>
+
+<h5 id="first-response">First Response</h5>
+
+<p><code>shell
+responseType=R&amp;merchantData=27330dbb10d9895283b18804c65eee43320ede34&amp;pageContents=%3Chtml%3E%3Chead%3E%3C%2Fhead%3E%3Cbody%3E%3Cform%20action%3D%22https%3A%2F%2Fsandbox%2Emasterpass%2Ecom%2FCheckout%2FAuthorize%3Facceptable%5Fcards%3Damex%2Cjcb%2Cmaster%2Cdiscover%2Cvisa%2C%26checkout%5Fidentifier%3Dd492cead841f4ccf9887110d30de8192%26version%3Dv5%26auth%5Flevel%3Dbasic%26oauth%5Ftoken%3D27330dbb10d9895283b18804c65eee43320ede34%22%20method%3D%22post%22%20id%3D%22masterpass%22%20name%3D%22masterpass%22%20%2F%3E%3Cscript%20language%3D%22javascript%22%3Edocument%2Emasterpass%2Esubmit%28%29%3B%3C%2Fscript%3E%3C%2Fbody%3E%3C%2Fhtml%3E
+</code></p>
+
+<h4 id="step-2-return-redirect">(Step 2) Return redirect</h4>
+
+<p><code>shell
+oauth_token=27330dbb10d9895283b18804c65eee43320ede34&amp;
+oauth_verifier=c8495a0e749a79760a14cefabe8be7739922db3c&amp;
+checkoutId=7503921781901832211&amp;
+checkout_resource_url=https%3A%2F%2Fsandbox.api.mastercard.com%2Fonline%2Fv5%2Fcheckout%2F7503921781901832211&amp;
+mpstatus=success
+</code></p>
+
+<h4 id="step-3-second-request">(Step 3) Second request</h4>
+
+<p><code>shell
+vbvEnabled=0&amp;
+oauth_verifier=c8495a0e749a79760a14cefabe8be7739922db3c&amp;
+trnAmount=10.00&amp;
+oauth_token=27330dbb10d9895283b18804c65eee43320ede34&amp;
+passcode=81B156fbD41540D08D254dF7065D4AB6&amp;
+scEnabled=0&amp;
+requestType=BACKEND&amp;
+checkout_resource_url=https://sandbox.api.mastercard.com/online/v5/checkout/7503921781901832211&amp;
+sKeyEnabled=0&amp;
+requestType=123456789&amp;
+</code></p>
+
+<h5 id="second-response">Second response</h5>
+<p><code>shell
+trnApproved=1&amp;trnId=10000011&amp;messageId=1&amp;messageText=Approved&amp;trnOrderNumber=10000011&amp;authCode=TEST&amp;errorType=N&amp;errorFields=&amp;responseType=T&amp;trnAmount=10%2E00&amp;trnDate=8%2F27%2F2017+12%3A43%3A02+AM&amp;avsProcessed=1&amp;avsId=N&amp;avsResult=0&amp;avsAddrMatch=0&amp;avsPostalMatch=0&amp;avsMessage=Street+address+and+Postal%2FZIP+do+not+match%2E&amp;cvdId=5&amp;cardType=MC&amp;trnType=P&amp;paymentMethod=CC&amp;ref1=&amp;ref2=&amp;ref3=&amp;ref4=&amp;ref5=&amp;hashValue=1e48a7346bac9cb6da3dfc4e26d2cd9b2a3e5c6b
+</code></p>
+
+<h2 id="advanced-integration">Advanced integration</h2>
+
+<p>If you have integrated and certified to Mastercard’s Masterpass API and are handling the redirect to the Masterpass Portal independently of Bambora’s internal integration, you will need to pass the Masterpass wallet ID with your Payment API request to Bambora. This ensures that your transaction is picked up by the Card Issuer as being a Masterpass transaction.</p>
+
+<p>The Masterpass Wallet ID must be sent with the transaction request using the following system variable:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>masterpass_wallet_id</td>
+      <td>The Masterpass code related to the wallet that the card information was sent from.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="request">Request</h4>
+<p><code>shell
+curl https://api.na.bambora.com/v1/payments \
+-H "Authorization: Passcode MzAwMjAwNTc4OjRCYUQ4MkQ5MTk3YjRjYzRiNzBhMjIxOTExZUU5Zjcw" \
+-H "Content-Type: application/json" \
+-d '{
+    "payment_method":"card",
+    "order_number":"MyOrderId000011223344",
+    "amount":15.99,
+    "card":{
+        "name":"John Doe",
+		"number": "5100000010001004",
+		"expiry_month": "12",
+		"expiry_year": "18",
+		"masterpass_wallet_id": "101"
+    }
+}'
+</code></p>
+
+<h5 id="response">Response</h5>
+<p><code>
+{
+    "id": "10000026",
+    "approved": "1",
+    "message_id": "1",
+    "message": "Approved",
+    "auth_code": "TEST",
+    "created": "2017-02-23T17:26:26",
+    "order_number": "MyOrderId000011223344",
+    "type": "P",
+    "payment_method": "CC",
+    "amount": 15.99,
+    "custom": {
+        "ref1": "",
+        "ref2": "",
+        "ref3": "",
+        "ref4": "",
+        "ref5": ""
+    },
+    "card": {
+        "card_type": "MC",
+        "last_four": "1004",
+        "address_match": 0,
+        "postal_result": 0,
+        "cvd_result": 1,
+	    "eci": 7
+    },
+  "links": [
+	    {
+		    "rel": "void",
+		    "href": "https://api.na.bambora.com/api/v1/payments/10000026/void",
+		    "method": "POST"
+	    },
+	    {
+		    "rel": "return",
+		    "href": "https://api.na.bambora.com/api/v1/payments/10000026/returns",
+		    "method": "POST"
+	    }
+  ]
+}
+</code></p>

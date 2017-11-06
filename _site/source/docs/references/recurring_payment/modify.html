@@ -1,0 +1,144 @@
+<h1 id="modify-a-recurring-payment">Modify a recurring payment</h1>
+
+<h2 id="request-parameters">Request parameters</h2>
+
+<p><strong>URL:</strong> https://api.na.bambora.com/scripts/recurring_billing.asp &lt;/br&gt;
+<strong>Method:</strong> POST</p>
+
+<h4 id="authorisation">Authorisation</h4>
+<p>| Parameter | Format | Description |
+|———-|——–|————-|
+| requestType | BACKEND | Always pass “BACKEND” (case sensitive). |
+| merchantId | 9 digits | Unique identifier for your Bambora merchant account (not “merchant_id”). |
+| passcode | 32 digits | Recurring Payment API Passcode (not the Payment API passcode) |</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Format</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>serviceVersion</td>
+      <td>“1.0”</td>
+      <td>Always “1.0”.</td>
+    </tr>
+    <tr>
+      <td>operationType</td>
+      <td>“M” or “C”</td>
+      <td>“M” for modify or “C” for close</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="schedule">Schedule</h4>
+<p>| Parameter | Format | Description |
+|———-|——–|————-|
+| rbBillingPeriod | D, W, M, or Y | D for day, W for week, M for month, or Y for year. |
+| rbBillingIncrement | Numeric | Number of units in a billing period. Unit determined by rbBillingIncrement parameter. |
+| rbBillingEndMonth | 1 or 0 | Charge on last day in month. |
+| rbNeverExpires | 1 or 0 | Alternative to rbExpiry parameter. |
+| processBackPayments | 1 or 0 | Only relevant to transactions updating the billing state to Active. Controls whether missed payments are charged. |
+| rbAccountId | Up to 10 digits | The identifier of the recurring payment to be modified. |
+| Amount | Max. 9-digits | The new amount. |
+| rbBillingState | O, C, or A | “O” to pause payments by putting an account on hold. “C” to close the recurring account. “A” – to reactivate an account that was on hold or closed. |
+| rbFirstBilling | 8 digits | Date of the first charge against the customer’s recurring billing account. Passing a new value in this field overrides the data in the system even if the existing First Billing date has already passed. |
+| rbSecondBilling | 8 digits | Date of the second charge against the customer’s recurring billing account. The second billing date is updated to reflect one full billing period after the First Billing date. Use this variable to process the second charge at a date outside the regular schedule and prorate the first payment. After the second billing date, all payments are scheduled at regular increments |
+| rbExpiry | 8 digits | Expiry date for the recurring billing account. Format MMDDYYYY. |</p>
+
+<h4 id="billing-address">Billing address</h4>
+<p>| Parameter | Format | Description |
+|———-|——–|————-|
+| ordName | Max. 64 alphanumeric characters | Update the recurring billing account holder name (use trnCardOwner to change the name of a card owner). |
+| ordAddress1 | Max. 64 alphanumeric characters | First line of the customer’s recurring billing profile address. |
+| ordAddress2 | Max. 64 alphanumeric characters | Second line of the customer’s recurring billing profile address. |
+| ordCity | Max. 32 alphanumeric characters | Customer’s city. |
+| ordProvince | 2 characters | Must match a valid province code. |
+| ordCountry | 2 characters | Must match a valid country code |
+| ordPostalCode | Max. 16 alphanumeric characters | Postal code for the customer’s recurring billing profile address. |
+| ordEmailAddress | Max. 64 characters | Customer email address. |
+| ordPhoneNumber | Max. 32 alphanumeric characters | Customer phone number |</p>
+
+<h4 id="card-info">Card info</h4>
+<p>| Parameter | Format | Description |
+|———-|——–|————-|
+| trnCardOwner | Max. 64 alphanumeric characters | Credit card owner’s name. |
+| trnCardNumber | Max. 20 digits | Customer credit card number. |
+| trnExpMonth | 2 digits | Credit card expiry month. Format MM (January = 01). |
+| trnExpYear | 2 digits | Credit card expiry year. Format YY. (2008 = 08) |</p>
+
+<h2 id="response-codes">Response codes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Request successful</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Secure connection required</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Service version not supported</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Invalid login credentials</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Invalid operation type</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Invalid amount value</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Invalid recurring billing account id</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Merchant account is closed or disabled</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Invalid XML message</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Unexpected error</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Login failure. Service Lockout</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Invalid process back payments parameter</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>No fields to update in modification request</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Customer address/payment information failed data validation</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Invalid recurring billing account state</td>
+    </tr>
+  </tbody>
+</table>

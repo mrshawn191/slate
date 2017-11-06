@@ -1,0 +1,503 @@
+<h1 id="custom-checkout-reference">Custom Checkout Reference</h1>
+
+<h3 id="customcheckoutcreate">customcheckout.create</h3>
+
+<p><code>customcheckout.create(type[, options])</code></p>
+
+<p>Creates an input of <em>type</em>  and passes the optional specified <em>options</em> to it. Returns a field object.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>type</em></td>
+      <td>String</td>
+      <td>The type of field to create. Can be <code>'card-number'</code>, <code>'cvv'</code>, or <code>'expiry'</code>.</td>
+    </tr>
+    <tr>
+      <td><em>options</em></td>
+      <td>Object</td>
+      <td>Optional options object that can be specified for the field.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code>javascript
+var options = { ... };
+var cardNumber = customCheckout().create('card-number', options);
+</code></p>
+
+<h4 id="options">options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>placeholder</code></td>
+      <td>String</td>
+      <td>A placeholder value for the input field.</td>
+    </tr>
+    <tr>
+      <td><code>style</code></td>
+      <td>Object</td>
+      <td>Style information for the field.</td>
+    </tr>
+    <tr>
+      <td><code>classes</code></td>
+      <td>Object</td>
+      <td>Custom classes to be applied to the wrapper.</td>
+    </tr>
+    <tr>
+      <td><code>brands</code></td>
+      <td>Array</td>
+      <td>Only pass to card-number input. Value is an array of supported card brands, all other brands will be treated as invalid. If not passed in, all brands are accepted. Can be <code>'amex'</code>, <code>'diners'</code>, <code>'discover'</code>, <code>'jcb'</code>, <code>'mastercard'</code>, <code>'visa'</code>, or <code>'maestro'</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note: The <code>style</code> property affects the remote styling of text inside the iframe input. The <code>classes</code> property updates the class list of the element the field is mounted to on your page.</p>
+
+<h4 id="optionsstyle">options.style</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>base</code></td>
+      <td>Object</td>
+      <td>Default styles to be applied to the input.</td>
+    </tr>
+    <tr>
+      <td><code>complete</code></td>
+      <td>Object</td>
+      <td>Styles to be applied when the input is valid.</td>
+    </tr>
+    <tr>
+      <td><code>empty</code></td>
+      <td>Object</td>
+      <td>Styles to be applied when the input is empty.</td>
+    </tr>
+    <tr>
+      <td><code>error</code></td>
+      <td>Object</td>
+      <td>Styles to be applied when the input is invalid.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following CSS properties can be set on the objects set on the style object:</p>
+
+<ul>
+  <li><code>color</code></li>
+  <li><code>fontFamily</code></li>
+  <li><code>fontSize</code></li>
+  <li><code>fontStyle</code></li>
+  <li><code>fontWeight</code></li>
+  <li><code>textDecoration</code></li>
+  <li><code>padding</code>, <code>paddingLeft</code>, <code>paddingTop</code>, <code>paddingRight</code>, and <code>paddingBottom</code></li>
+</ul>
+
+<p>As well as these pseudo-classes:</p>
+
+<ul>
+  <li><code>:hover</code></li>
+  <li><code>:focus</code></li>
+</ul>
+
+<h4 id="optionsclasses">options.classes</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>base</code></td>
+      <td>String</td>
+      <td>Base class applied to the wrapper. Defaults to <code>bambora-checkoutfield</code>.</td>
+    </tr>
+    <tr>
+      <td><code>complete</code></td>
+      <td>String</td>
+      <td>Class to apply when input is complete. Defaults to <code>bambora-checkoutfield-complete</code>.</td>
+    </tr>
+    <tr>
+      <td><code>empty</code></td>
+      <td>String</td>
+      <td>Class to apply when input is empty. Defaults to <code>bambora-checkoutfield-empty</code>.</td>
+    </tr>
+    <tr>
+      <td><code>focus</code></td>
+      <td>String</td>
+      <td>Class to apply when input has focus. Defaults to <code>bambora-checkoutfield-focus</code>.</td>
+    </tr>
+    <tr>
+      <td><code>error</code></td>
+      <td>String</td>
+      <td>Class to apply when input is in error. Defaults to <code>bambora-checkoutfield-error</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>```javascript
+// Styles to be applied to the text in the iframe when it changes state.
+var style = {
+  error: {
+    color: ‘red’,
+    ‘:focus’: {
+      fontStyle: ‘italic’,
+    },
+  },
+};</p>
+
+<p>// Classes to be applied to the element wrapping the iframe
+// when it changes state.
+var classes = {
+  error: ‘my-error-class’,      <br />
+};</p>
+
+<p>var options = {
+  placeholder: ‘Card number’,
+  style: style,
+  classes: classes,
+};</p>
+
+<p>var cardNumber = customCheckout.create(‘card-number’, options);
+```</p>
+
+<h3 id="customcheckoutmount">customcheckout.mount</h3>
+
+<p><code>checkoutObject.mount(cssSelector)</code></p>
+
+<p>Mounts the custom input inside an element on the page identified by <em>cssSelector</em>. Returns an error if <em>cssSelector</em> is not found.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>cssSelector</em></td>
+      <td><em>String</em></td>
+      <td>CSS selector of your parent element.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>```html
+<script src="https://libs.na.bambora.com/customcheckout/1/customcheckout.js"></script></p>
+<form id="checkout-form">
+    <div id="card-number"></div>
+    <div id="card-cvv"></div>
+    <div id="card-expiry"></div>
+    ...
+</form>
+
+<script>
+    var customCheckout = customcheckout();
+    var cardNumber = customCheckout.create('card-number')
+    cardNumber.mount('#card-number');
+</script>
+
+<p>```</p>
+
+<h3 id="customcheckouton">customcheckout.on</h3>
+
+<p><code>customcheckout.on(event, callback)</code></p>
+
+<p>Adds an event listener to Custom Checkout.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>event</em></td>
+      <td><em>String</em></td>
+      <td>The name of the event to listen for.</td>
+    </tr>
+    <tr>
+      <td><em>callback</em></td>
+      <td><em>Function</em></td>
+      <td>The function to be run when the event is triggered.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="event">event</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Trigger</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>blur</code></td>
+      <td>Input loses focus.</td>
+    </tr>
+    <tr>
+      <td><code>focus</code></td>
+      <td>Input gains focus.</td>
+    </tr>
+    <tr>
+      <td><code>empty</code></td>
+      <td>Input switches to or from an empty state.</td>
+    </tr>
+    <tr>
+      <td><code>complete</code></td>
+      <td>Input becomes complete and valid.</td>
+    </tr>
+    <tr>
+      <td><code>brand</code></td>
+      <td>Card brand changes.</td>
+    </tr>
+    <tr>
+      <td><code>error</code></td>
+      <td>Input becomes invalid.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Trigger</th>
+      <th>Event argument for callback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>blur</code></td>
+      <td>Input loses focus.</td>
+      <td><code>{ field: 'card-number cvv expiry' }</code></td>
+    </tr>
+    <tr>
+      <td><code>focus</code></td>
+      <td>Input gains focus.</td>
+      <td><code>{ field: 'card-number cvv expiry' }</code></td>
+    </tr>
+    <tr>
+      <td><code>empty</code></td>
+      <td>Input switches to or from an empty state.</td>
+      <td><code>{ field: 'card-number cvv expiry', empty: 'true false' }</code></td>
+    </tr>
+    <tr>
+      <td><code>complete</code></td>
+      <td>Input becomes complete and valid.</td>
+      <td><code>{ field: 'card-number cvv expiry', complete: 'true false' }</code></td>
+    </tr>
+    <tr>
+      <td><code>brand</code></td>
+      <td>Card brand changes.</td>
+      <td><code>{ field: 'card-number', brand: 'amex diners discover jcb mastercard visa maestro' }</code></td>
+    </tr>
+    <tr>
+      <td><code>error</code></td>
+      <td>Input becomes invalid.</td>
+      <td><code>{ field: 'card-number cvv expiry', type: 'See below for a list of error types.',  message: 'A descriptive error message.' }</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code>javascript
+customCheckout.on('blur', function(event) {
+  console.log('blur: ' + JSON.stringify(event));
+  //...
+});
+</code></p>
+
+<h4 id="errortype">error.type</h4>
+
+<p><strong><em>Input Validation</em></strong></p>
+
+<ul>
+  <li><code>CardNumberInvalid</code></li>
+  <li><code>CvvNotSet</code></li>
+  <li><code>ExpiryIsInThePast</code></li>
+  <li><code>ExpiryIsNotSet</code></li>
+</ul>
+
+<p><strong><em>Tokenization</em></strong></p>
+
+<ul>
+  <li><code>TokenizationValidationFailed</code></li>
+  <li><code>TokenizationFailed</code></li>
+  <li><code>TokenizationNoResponse</code></li>
+</ul>
+
+<h3 id="customcheckoutcreatetoken">customcheckout.createToken</h3>
+
+<p><code>customcheckout.createToken(callback)</code></p>
+
+<p>Validate and create a payment token from the input values. This token can then be used to process a payment using our Payments API.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>callback</em></td>
+      <td><em>Function</em></td>
+      <td>The function to be run when the event is triggered.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code>javascript
+customCheckout.createToken(function(result) {
+    // handle result.error or result.token
+});
+</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>callback event property</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>code</code></td>
+      <td>String</td>
+      <td>The HTTP status code of the tokenization request.</td>
+    </tr>
+    <tr>
+      <td><code>error</code></td>
+      <td>Object</td>
+      <td><code>{field: 'token', type: 'See below for a list of error types.', message: 'A descriptive error message.' }</code></td>
+    </tr>
+    <tr>
+      <td><code>token</code></td>
+      <td>String</td>
+      <td>Only present if no error. The payment token result.</td>
+    </tr>
+    <tr>
+      <td><code>last4</code></td>
+      <td>String</td>
+      <td>Only present if no error. The last 4 digits of the card number.</td>
+    </tr>
+    <tr>
+      <td><code>expiryMonth</code></td>
+      <td>String</td>
+      <td>Only present if no error. The expiry month of the card.</td>
+    </tr>
+    <tr>
+      <td><code>expiryYear</code></td>
+      <td>String</td>
+      <td>Only present if no error. The expiry year of the card.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputupdate">input.update</h3>
+
+<p><code>input.update(options)</code></p>
+
+<p>Updates an input instance with the specified <em>options</em>. Any previously set options will be lost.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>options</em></td>
+      <td>Object</td>
+      <td>Optional options object that can be specified for the field.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>```javascript
+var options = { … };
+var cardNumber = customCheckout().create(‘card-number’, options);</p>
+
+<p>options = { … };
+cardNumber.update(options);
+```</p>
+
+<h3 id="inputfocus">input.focus</h3>
+
+<p><code>input.focus()</code></p>
+
+<p>Requests to gain focus on a given input.</p>
+
+<p><code>javascript
+cardNumber.focus();
+</code></p>
+
+<h3 id="inputblur">input.blur</h3>
+
+<p><code>input.blur()</code></p>
+
+<p>Requests to lose focus from a given input.</p>
+
+<p><code>javascript
+cardNumber.blur();
+</code></p>
+
+<h3 id="inputclear">input.clear</h3>
+
+<p><code>input.clear()</code></p>
+
+<p>Removes any text entered from a given input.</p>
+
+<p><code>javascript
+cardNumber.clear();
+</code></p>
+
+<h3 id="inputunmount">input.unmount</h3>
+
+<p><code>input.unmount()</code></p>
+
+<p>Removes a given input from the DOM.</p>
+
+<p><code>javascript
+cardNumber.unmount();
+</code></p>

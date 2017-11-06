@@ -1,0 +1,163 @@
+<h1 id="onboarding-api">Onboarding API</h1>
+
+<p>The Onboarding API allows partners to build their own custom interface through which sub-merchants can sign up for an account.</p>
+
+<p>Applications can be submitted completed or as partial updates. This allows flexibility for partners and allows full control of how integrators upload sub-merchant data to the API. Partners can integrate to different <strong>workflows</strong> of the API to sign sub-merchants up for various services.</p>
+
+<p>The following workflows are currently supported:</p>
+
+<ul>
+  <li>PSP-CAD - Canadian Card Payments</li>
+  <li>PSP-USD - United States Card Payments</li>
+  <li>GW-CDN - Canadian Payment Gateway</li>
+  <li>GW-USA - United States Payment Gateway</li>
+  <li>EFT-CAD - Canadian Funds Transfer</li>
+  <li>ACH-USD - United States Funds Transfer</li>
+  <li>BACS-GBP - United Kingdom Funds Transfer</li>
+  <li>SEPA-EUR - European Funds Transfer</li>
+</ul>
+
+<h2 id="changelog">Changelog</h2>
+
+<h3 id="api-version-2016-08-18"><strong>API Version 2016-08-18</strong></h3>
+
+<p><a href="./v2016-08-18">Specification</a></p>
+
+<p><a href="./tac_v2016-08-18">Terms API Spec</a></p>
+
+<h4 id="may-30th-2017">May 30th, 2017</h4>
+<ul>
+  <li>New fields for GW-USA and GW-CDN
+    <ul>
+      <li>terminal.first_data_nashville_terminal.visa_debit_number</li>
+      <li>terminal.first_data_nashville_terminal.jcb_number</li>
+      <li>terminal.first_data_nashville_terminal.token_type</li>
+      <li>terminal.global_terminal.amex_number</li>
+      <li>terminal.global_terminal.jcb_number</li>
+      <li>terminal.global_terminal.discover_number</li>
+      <li>terminal.chase_paymentech_terminal.amex_number</li>
+      <li>terminal.chase_paymentech_terminal.discover_number</li>
+      <li>terminal.elavon_terminal.amex_number</li>
+      <li>terminal.elavon_terminal.discover_number</li>
+      <li>terminal.tsys_terminal.amex_number</li>
+      <li>terminal.tsys_terminal.discover_number</li>
+    </ul>
+  </li>
+  <li>New fields for GW-CDN
+    <ul>
+      <li>terminal.td_terminal.visa_debit_number</li>
+      <li>terminal.td_terminal.debit_mc_number</li>
+      <li>terminal.td_terminal.amex_number</li>
+      <li>terminal.td_terminal.discover_number</li>
+    </ul>
+  </li>
+  <li>New desjardins_terminal for GW-CDN
+    <ul>
+      <li>terminal.desjardins_terminal.terminal_id</li>
+      <li>terminal.desjardins_terminal.visa_number</li>
+      <li>terminal.desjardins_terminal.mc_number</li>
+      <li>terminal.desjardins_terminal.amex_number</li>
+      <li>terminal.desjardins_terminal.visa_debit_number</li>
+      <li>terminal.desjardins_terminal.jcb_number</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="may-9th-2017">May 9th, 2017</h4>
+<ul>
+  <li>Update and rewrite <a href="../../guides/onboarding">Onboarding API Guide</a></li>
+  <li>Updated all Onboarding documentation to now use the ‘Bambora’ name</li>
+</ul>
+
+<h4 id="march-6th-2017">March 6th, 2017</h4>
+<ul>
+  <li>Changes to all workflows:
+    <ul>
+      <li>on_hold is a new state an application can be in while being processed.</li>
+    </ul>
+  </li>
+  <li>Changes to GW-USA and GW-CDN
+    <ul>
+      <li>discover_merchant_id is a new field for first data terminals.</li>
+      <li>amex_merchant_id is a new field for first data terminals.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="november-28th-2016">November 28th, 2016</h4>
+<ul>
+  <li>New Gateway USA workflow added.</li>
+</ul>
+
+<h4 id="november-16th-2016">November 16th, 2016</h4>
+<ul>
+  <li>Extensive changes to PSP-USD workflow. See API spec for full details.</li>
+  <li>New Gateway CDN workflow added.</li>
+</ul>
+
+<h4 id="september-10th-2016">September 10th, 2016</h4>
+<ul>
+  <li>Changes to all workflows:
+    <ul>
+      <li>agreement.personal_guarantee_accepted is <strong>new</strong> and is optional. The personal guarantee must be accepted where entity_type is “sole_proprietor” or “partnership”.</li>
+      <li>Remove restriction on country fields so that full ISO 3166 list of country codes can be accepted.</li>
+      <li>address.region and address.postal_code are now optional.</li>
+      <li>pending_issues.message is new and contains a human readable message about the error.</li>
+      <li>Error responses have renamed field error.name.</li>
+      <li>Error responses have renamed field error.reason.</li>
+      <li>error.message is new and contains a human readable message about the error.</li>
+    </ul>
+  </li>
+  <li>Changes to PSP-CAD:
+    <ul>
+      <li>Owner fields are now optional. The fields must be supplied where business.entity_type is “non_profit” or “corporation”.</li>
+      <li>business.has_existing_account is removed.</li>
+      <li>Owners percentage field is removed.</li>
+      <li>business.currency is removed.</li>
+    </ul>
+  </li>
+  <li>Changes to EFT-CAD:
+    <ul>
+      <li>Director all fields are now optional. Director fields must be supplied where business.entity_type is “non_profit” or “corporation” or “publicly_traded”.</li>
+      <li>director.start_date is removed.</li>
+      <li>director.percentage is removed.</li>
+      <li>applicant.email is now required.</li>
+      <li>applicant.date_of_birth is <strong>new</strong> and required.</li>
+      <li>business.services_description is <strong>new</strong> and required.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="api-version-2016-06-11"><strong>API Version 2016-06-11</strong></h3>
+
+<p><a href="./v2016-06-11">Specification</a></p>
+
+<h4 id="july-20th-2017">July 20th, 2017</h4>
+<ul>
+  <li>Added optional custom_data field to all flows.</li>
+</ul>
+
+<h4 id="june-8th-2017">June 8th, 2017</h4>
+<ul>
+  <li>Added optional Address to Bank flows for BACS-GBP</li>
+</ul>
+
+<h4 id="june-11th-2016">June 11th, 2016</h4>
+<ul>
+  <li>Changes to all workflows:
+    <ul>
+      <li><strong>API version is now required in the header attributes X-API-Version: 2016-06-11</strong></li>
+      <li>Additional properties are no longer allowed. This means that no extra/undefined properties will be allowed to be passed in that are not already in the swagger specification.</li>
+      <li>The list of countries for each flow is now more extensive.</li>
+      <li>Postal code is no longer a required field.</li>
+      <li>Region is now being collected in all flows, it was an enum in previous specific flows for provinces and is now a string maxlength 64.</li>
+      <li>Global address fields replace all existing address fields as follows: Address line 1, Address line 2, Region (includes: state/province/municipality/region), City, Postal Code (includes ZipCode), Country.</li>
+    </ul>
+  </li>
+  <li>Changes to PSP-USD:
+    <ul>
+      <li>applicant.social_security_number is now required.</li>
+    </ul>
+  </li>
+</ul>
+

@@ -1,0 +1,119 @@
+<h1 id="android-pay">Android Pay</h1>
+
+<p><strong>Android Pay for Bambora is currently in closed Beta. Contact your Account Manager for early access.</strong></p>
+
+<p><a href="https://grow.na.bambora.com/android-pay-beta">https://grow.na.bambora.com/android-pay-beta</a></p>
+
+<h2 id="about-android-pay">About Android Pay</h2>
+
+<p>Our Payments API allows your mobile app and online store to accept payments through Android devices or from a desktop using Google Chome.</p>
+
+<p>When your customers use Android Pay, a virtual account number is used to represent their payment. No card details are sent with the transaction, keeping them safe and secure.</p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>If this is your first time implementing our APIs we recommend reviewing our <a href="/docs/references/payment_APIs/">Reference guide</a>, to get familiar with Bambora’s Payment APIs.</p>
+
+<p>You can find more about Bambora and Android Pay on <a href="https://github.com/bambora/na-payment-apis-demo">Github</a>.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<h3 id="registering-your-android-pay-merchant-id">Registering your Android Pay Merchant ID</h3>
+
+<p>Before you accept Android Pay, you’ll need to turn on and register an Android Merchant ID with Bambora. Start by logging into your <a href="https://web.na.bambora.com">Member Area</a>. Under <strong>configuration</strong>, click on <strong>mobile payments</strong>. From the Mobile Payments screen, you can enable Android Pay and add an Android Pay Merchant ID.</p>
+
+<p><img src="/docs/guides/android_pay/android-mobile-payments-screenshot.png" alt="mobile-payments-screenshot" /></p>
+
+<p>Enter a unique string and click <strong>ADD ANDROID MERCHANT ID</strong> to create your Android Pay Merchant ID. The ID comes with a newly created Public Key will be used as the <code>publicKey</code> parameter in your Android app.</p>
+
+<p><img src="/docs/guides/android_pay/android-input.png" alt="apple-credentials" /></p>
+
+<p>After you’ve added your Android Pay Merchant ID to your account, you can start integrating to your app.</p>
+
+<h3 id="accepting-android-pay">Accepting Android Pay</h3>
+
+<p>Now that you’re ready to accept Android Pay, you’ll find plenty of code samples and instructions on integrating to your app through <a href="https://developers.google.com/android-pay/">Google’s documentation</a>. To learn more about the basics of Android Pay, <a href="https://www.android.com/pay/">click here</a>.</p>
+
+<h2 id="api-requests">API requests</h2>
+
+<p>When you make an <code>android_pay</code> request to our Payments API, it’ll be formatted in JSON, calling to https://api.na.bambora.com/v1/payments/.</p>
+
+<p><code>shell
+  curl https://api.na.bambora.com/v1/payments \
+    -H "Authorization: Passcode XXX1XXx11Xxx1xX1XxxxXxXXXXx1XXX1XxX1XXXxXXXxXxxxX11XXXxX1" \
+    -H "Content-Type: application/json" \
+    -d '{
+          "amount": 1.00,
+          "payment_method": "android_pay",
+          "android_pay": {
+            "android_pay_merchant_id": "&lt;your_android_pay_merchant_id&gt;",
+            "payment_token": "&lt;android_pay_base64_encoded_token&gt;",
+            "complete": true
+          }
+        }'
+</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>amount</td>
+      <td>The amount of the transaction.</td>
+    </tr>
+    <tr>
+      <td>payment_method</td>
+      <td>The method of payment for the transaction. For Android Pay, this will always be <code>android_pay</code></td>
+    </tr>
+    <tr>
+      <td>android_pay</td>
+      <td>The object needed to pass an Android Pay token including the Android Pay Merchant ID, and the base64 payment token.</td>
+    </tr>
+    <tr>
+      <td>android_pay_merchant_id</td>
+      <td>Your Android Pay Merchant ID found in your Bambora Member Area under <strong>configuration</strong> and then <strong>mobile payments</strong>.</td>
+    </tr>
+    <tr>
+      <td>payment_token</td>
+      <td>The encrypted Android Pay token containing card holder details, generated from within your Android app.</td>
+    </tr>
+    <tr>
+      <td>complete</td>
+      <td>The type of transaction being performed. True indicates a Purchase, and false is a Pre-Authorisation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="additional-examples">Additional examples</h2>
+
+<h3 id="payment-button">Payment button</h3>
+
+<p>The sample below shows the action taken by a payment button in an Android app, generating a payment request.</p>
+
+<p>```java
+SupportWalletFragment walletFragment = SupportWalletFragment.newInstance(walletFragmentOptions);</p>
+
+<p>MaskedWalletRequest maskedWalletRequest = WalletUtil.createMaskedWalletRequest(
+        itemsToPurchase,
+        getString(R.string.public_key));</p>
+
+<p>WalletFragmentInitParams.Builder startParamsBuilder = WalletFragmentInitParams.newBuilder()
+        .setMaskedWalletRequest(maskedWalletRequest)
+        .setMaskedWalletRequestCode(REQUEST_CODE_MASKED_WALLET);</p>
+
+<p>walletFragment.initialize(startParamsBuilder.build());</p>
+
+<p>getSupportFragmentManager().beginTransaction()
+        .replace(R.id.android_pay_container, walletFragment)
+        .commit();
+```</p>
+
+<h3 id="process-payment-token">Process payment token</h3>
+
+<p>Your app will receive a payment token once the payment request has been successfully authorised. You then need to send the payment token to your server, and then from there send it to the Bambora Payments API.</p>
+
+<p><strong>Note:</strong> You can view additional source code examples for a demo Android client &amp; payment server that implements sending a payment token to the Bambora Payments API here: <a href="https://github.com/bambora/na-payment-apis-demo">Payments API Demo on Github</a>.</p>

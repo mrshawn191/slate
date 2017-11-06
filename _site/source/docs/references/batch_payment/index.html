@@ -1,0 +1,255 @@
+<h1 id="batch-payment-api">Batch Payment API</h1>
+
+<p>This document lists and describes the properties expected in the request and response objects.</p>
+
+<ul>
+  <li><strong>URL</strong> - https://api.na.bambora.com/v1/batchpayments</li>
+  <li><strong>Method</strong> - POST</li>
+</ul>
+
+<h2 id="request-parameters">Request parameters</h2>
+
+<p>The following parameters are passed as a JSON object on a Content-Disposition header (<code>Content-Disposition: form-data; name="criteria"</code>).</p>
+
+<ul>
+  <li><strong>process_now</strong> - Overrides process_date parameter and processes transactions on receipt. Credit card transactions only.
+    <ul>
+      <li><strong>1</strong> – Process immediately. Any value passed in the process_date field is ignored.</li>
+      <li><strong>0</strong> – Transactions are processed on the date passed in the process_date field.</li>
+    </ul>
+  </li>
+  <li><strong>process_date</strong> - The date the transactions starts processing. Format <strong>YYYYMMDD</strong>.</li>
+  <li><strong>sub_merchant_id</strong> - The merchant account on which to process the transactions. Required only if request is authorized by a partner account.</li>
+  <li><strong>addendum</strong> - A note associated with the batch file. <strong>no max string lengths listed</strong></li>
+</ul>
+
+<h3 id="format-of-data-in-file">Format of data in file</h3>
+
+<p>The API expects a single CSV file with one transaction per row. It does not expect a header row.</p>
+
+<p>The expected format for the data varies according to the transaction type.</p>
+
+<h4 id="canadian-funds-transfer-eft">Canadian funds transfer (EFT)</h4>
+
+<p>For batches of EFT transactions, the API expects the following columns:</p>
+
+<ul>
+  <li><strong>Transaction type</strong> - The type of transaction.
+    <ul>
+      <li>E - EFT</li>
+    </ul>
+  </li>
+  <li><strong>Transaction type</strong>
+    <ul>
+      <li>C – Credit recipient bank accounts</li>
+      <li>D – Debit an outside bank account and depositing funds into your own</li>
+    </ul>
+  </li>
+  <li><strong>Financial institution number</strong> - The 3 digit financial institution number</li>
+  <li><strong>Bank transit number</strong> - The 5 digit bank transit number</li>
+  <li><strong>Account number</strong> - The 5-12 digit account number</li>
+  <li><strong>Amount</strong> - Transaction amount in pennies</li>
+  <li><strong>Reference number</strong> - An optional reference number of up to 19 digits. If you don’t want a reference number, enter “0” (zero).</li>
+  <li><strong>Recipient name</strong> - Full name of the bank account holder</li>
+  <li><strong>Customer code</strong> - The 32-character customer code located in the Payment Profile. Do not populate bank account fields in the file when processing against a Payment Profile.</li>
+  <li><strong>Dynamic descriptor</strong> - By default the Bambora merchant company name will show on your customer’s bank statement. You can override this default by populating the Dynamic Descriptor field.</li>
+</ul>
+
+<h4 id="american-finds-transfer-ach">American finds transfer (ACH)</h4>
+
+<p>For batches of ACH transactions, the API expects the following columns:</p>
+
+<ul>
+  <li><strong>Transaction type</strong> - The type of transaction.
+    <ul>
+      <li>A - ACH</li>
+    </ul>
+  </li>
+  <li><strong>Transaction type</strong>
+    <ul>
+      <li>C – Credit recipient bank accounts</li>
+      <li>D – Debit an outside bank account and depositing funds into your own</li>
+    </ul>
+  </li>
+  <li><strong>Transit Routing Number</strong> - The 9-digit transit number</li>
+  <li><strong>Account Number</strong> - The 5-15 digit account number</li>
+  <li><strong>Account Code</strong> - Designates the type of bank account
+    <ul>
+      <li>PC – Personal Checking</li>
+      <li>PS – Personal Savings</li>
+      <li>CC – Corporate Checking</li>
+      <li>CS – Corporate Savings</li>
+    </ul>
+  </li>
+  <li><strong>Amount</strong> - Transaction amount in pennies</li>
+  <li><strong>Reference number</strong> - An optional reference number of up to 19 digits. If you don’t want a reference number, enter “0” (zero).</li>
+  <li><strong>Recipient Name</strong> - Full name of the bank account holder</li>
+  <li><strong>Customer Code</strong> - The 32-character customer code located in the Payment Profile. Do not populate bank account fields in the file when processing against a Payment Profile.</li>
+  <li><strong>Dynamic Descriptor</strong> - By default the Bambora merchant company name will show on your customer’s bank statement. You can override this default by populating the Dynamic Descriptor field.</li>
+  <li><strong>Standard Entry Code</strong> - Leave black unless your account has SEC code permissions enabled.</li>
+  <li><strong>Entry Detail Addenda Record</strong> - Leave black unless your account has SEC code permissions enabled.</li>
+</ul>
+
+<h4 id="credit-card">Credit card</h4>
+
+<p>For batches of credit card transactions, the API expects the following columns:</p>
+
+<ul>
+  <li><strong>Transaction type</strong> - The type of transaction.
+    <ul>
+      <li>C - Credit card</li>
+    </ul>
+  </li>
+  <li><strong>Transaction type</strong>
+    <ul>
+      <li>P – Purchase</li>
+      <li>R – Return</li>
+      <li>PA – Pre-authorization</li>
+      <li>PAC – Pre auth completion</li>
+      <li>VP – Void Purchase</li>
+      <li>VR – Void Return</li>
+    </ul>
+  </li>
+  <li><strong>Transaction ID</strong> - The ID of the transaction to be adjusted. Leave this field blank if the transaction type is “P” or “PA”.</li>
+  <li><strong>Card Number</strong> - The Card number. Leave this field blank if the Transaction ID is populated.</li>
+  <li><strong>Expiry</strong> - The card expiry date formatted as <strong>MMYY</strong>. If an Adjustment Id is included, this field is optional.</li>
+  <li><strong>Amount</strong> - Transaction amount in pennies. Max length: 9 digits.</li>
+  <li><strong>Reference</strong> - An optional reference number of up to 32 alphanumeric chars.</li>
+  <li><strong>Card Owner</strong> - Name of card owner. Max length: 32 characters.</li>
+  <li><strong>Email</strong> - Max length: 64 characters.</li>
+  <li><strong>Recurring</strong> - Flag to indicate the the bank that you do regular business with the customer. This will not create a  transaction that recurs.
+    <ul>
+      <li>1 – Recurring transaction</li>
+      <li>0 – Not a recurring transaction</li>
+    </ul>
+  </li>
+  <li><strong>Dynamic descriptor</strong> - By default the Bambora merchant company name will show on your customer’s bank statement. You can override this default by populating the Dynamic Descriptor field.</li>
+  <li><strong>Customer code</strong> - The 32-character customer code located in the Payment Profile. Do not populate bank account fields in the file when processing against a Payment Profile.</li>
+</ul>
+
+<h2 id="response-object">Response object</h2>
+
+<h3 id="success">Success</h3>
+
+<p>HTTP Status: 200 OK</p>
+
+<ul>
+  <li><strong>code</strong> - See table below.</li>
+  <li><strong>message</strong> - See table below.</li>
+  <li><strong>batch_id</strong> - A unique identifier for the batch file.</li>
+  <li><strong>process_date</strong> - The date the transactions will begin processing.</li>
+  <li><strong>process_time_zone</strong> - Usually “GMT-08:00”.</li>
+  <li><strong>batch_mode</strong> - Indicates whether the batch will be processed.
+    <ul>
+      <li>live - If there are no errors, then the batch will be sent to the bank for processing.</li>
+      <li>test - The batch will not be processed.  The merchant account is not in a live state.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="error">Error</h3>
+
+<p>HTTP Status: 400 Bad Request</p>
+
+<ul>
+  <li><strong>code</strong> - See table below.</li>
+  <li><strong>category</strong> - See table below.</li>
+  <li><strong>message</strong> - See table below.</li>
+  <li><strong>reference</strong> - Always NULL.</li>
+</ul>
+
+<h2 id="response-codes">Response Codes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>File successfully received</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Secure connection required</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Authentication failure</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Insufficient user permissions</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Invalid processing date</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Service is busy importing another file. Try again later</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>File greater than maximum allowable size</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Unexpected error - Contact support</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Multipart message file content is missing or invalid</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Invalid file type</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Content type must be set to multipart/form-data</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Missing or invalid parameter content</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Invalid multipart message structure</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Invalid merchant_id for sub-merchant</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Addendum contains invalid characters or too long</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Action requires administrator access</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Transmitting merchant account is inactive</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Submitted sub-merchant account is inactive</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>Transmitting merchant account is invalid</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="response-categories">Response Categories</h2>
+<p>Category | Description
+———|—–
+1        | Technical Problem
+2        | Input Data Problem
+3        | Business Rule Violation</p>

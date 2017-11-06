@@ -1,0 +1,66 @@
+<h1 id="recurring-payment">Recurring Payment</h1>
+
+<p>The Recurring Payment API allows you to schedule series of payments to automatically charge your customers every day, week, month or year.</p>
+
+<p>Note: The Recurring Payment API supports basic use cases only. For all other recurring payments we recommend that you handle scheduling on your side while using our Payment Profiles to store card data.</p>
+
+<h2 id="create">Create</h2>
+
+<p>Create from a Payment Profile or with a single-use token returned by Custom Checkout.</p>
+
+<p>Scheduling is set by both <code>rbBillingPeriod</code> and <code>rbBillingIncrement</code> parameters. The period is unit of measurement for  the frequency of the payment: day, week, month or year. The increment is the number of periods between each payment. For example, you may want a payment to recur once a month or every 3 months.</p>
+
+<p>A billing cycle can begin on any day or date. If you are setting a monthly billing cycle, you can set the last day of each month as the billing date with the <code>rbEndMonth</code> parameters.</p>
+
+<p>You can set an end date for a billing cycle using the <code>rbExpiry</code> parameter, or you can set the payment to continue indefinitely with the <code>rbNeverExpires</code>.</p>
+
+<p>You can defer the first charge by setting both <code>rbCharge</code> and <code>rbFirstBilling</code> parameters. The first parameter controls whether or not to charge the card immediately. The second sets the date for the first charge.</p>
+
+<p>You can prorate the first payment by setting both <code>rbFirstBilling</code> and <code>rbSecondBilling</code> parameters. The value of the first payment will be calculated according to the difference between the first and second payment dates and the set interval for the payment.</p>
+
+<h3 id="sample-request">Sample request</h3>
+<p><code>curl
+curl -X POST \
+  'https://web.na.bambora.com/scripts/process_transaction.asp?requestType=BACKEND&amp;merchant_Id=your_merchant_id&amp;passcode=your_payment_api_passcode&amp;trnType=P&amp;singleUseToken=any_single_use_token&amp;trnAmount=10&amp;trnRecurring=1&amp;rbBillingPeriod=D&amp;rbBillingIncrement=30&amp;trnCardOwner=Rosanna%20Sylvester'
+</code></p>
+
+<h3 id="sample-response">Sample response</h3>
+<p><code>curl
+trnApproved=1&amp;trnId=10000677&amp;messageId=1&amp;messageText=Approved&amp;trnOrderNumber=10000677&amp;authCode=TEST&amp;errorType=N&amp;errorFields=&amp;responseType=T&amp;trnAmount=10&amp;trnDate=9%2F12%2F2017+8%3A49%3A34+PM&amp;rbAccountId=6217641&amp;avsProcessed=0&amp;avsId=U&amp;avsResult=0&amp;avsAddrMatch=0&amp;avsPostalMatch=0&amp;avsMessage=Address+information+is+unavailable%2E&amp;cvdId=1&amp;cardType=VI&amp;trnType=P&amp;paymentMethod=CC&amp;ref1=&amp;ref2=&amp;ref3=&amp;ref4=&amp;ref5=&amp;hashValue=fa879fac34852060e908899b9c634608931f97ad
+</code></p>
+
+<h2 id="modify">Modify</h2>
+
+<p>You can modify a recurring payment to change its amount or schedule. You can put a payment on hold or you can close it.</p>
+
+<p>If a recurring payment is disabled and later reactivated back, payments will be charged unless the <code>processBackPayments</code> parameter is passed.</p>
+
+<p>You can only use actual card data when updating the payment card associated with a recurring payment account. Using either a single-use token, or a Payment Profile customer code will not work. We recommend that you create a new recurring payment if you need to change card data.</p>
+
+<p>You cannot update the payment card a recurring payment account using either a using a single-use token, or a Payment Profile. We recommend that you create a new recurring payment if you need to change card data.</p>
+
+<h3 id="sample-request-1">Sample request</h3>
+<p><code>curl
+curl -X POST \
+  'https://web.na.bambora.com/scripts/recurring_billing.asp?serviceVersion=1.0&amp;operationType=M&amp;merchantId=your_merchant_id&amp;passCode=your_recurring_payment_api_passcode&amp;rbAccountId=6217641&amp;amount=12.00'
+</code></p>
+
+<h3 id="sample-response-1">Sample response</h3>
+<p>```curl
+<?xml version="1.0" encoding="ISO-8859-1"?></p>
+<response>
+    <accountid>6217641</accountid>
+    <code>1</code>
+    <message>Request successful</message>
+</response>
+<p>```</p>
+
+<h2 id="notifications">Notifications</h2>
+<p>You can register for a callback when recurring payments are processed. The callback URL is set in the <a href="https://web.na.bambora.com">Member Area</a>. Click <strong>administration</strong>, then <strong>account settings</strong>, and then <strong>order settings</strong>, under <strong>Response Notification</strong>.</p>
+
+<p>The parameters posted to the webhook are the same as those returned by the API when first creating a Recurring Account.</p>
+
+<p><strong>Caveat:</strong> The callback is made over HTTPS using TLS 1.0 (rather than TLS 1.2).</p>
+
+<h3 id="testing-redirects">Testing redirects</h3>
+<p>You may find it helpful while testing to use tools that allow you to inspect and debug webhook requests like <a href="http://putsreq.com">PutsReq</a>.</p>

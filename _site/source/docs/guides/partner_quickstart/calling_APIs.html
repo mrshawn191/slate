@@ -1,0 +1,37 @@
+<h1 id="calling-the-onboarding-apis">Calling the Onboarding APIs</h1>
+
+<p>This will guide you through quickly hitting one of our Onboarding API endpoints.</p>
+
+<p>This API requires an authentication passcode from a partner account that you requested in the setup stage of this Quickstart Guide.</p>
+
+<p>The Onboarding API endpoints are divided by account type, or ‘flow’. This guide will focus on ‘psp-cad’.</p>
+
+<h2 id="create-a-partial-application">1. Create a partial application</h2>
+<p><code>shell
+curl https://uat-onboarding-api.beanstream.com/v1/workflows/psp-cad/applications  \
+  -H "Authorization: Passcode your_onboarding_passcode"  \
+  -H "Content-Type: application/json" \
+  -d '{
+  "pricing_id":"ABC123",
+  "applicant":{
+    "first_name":"John",
+    "last_name":"Doe",
+    "phone_number":"222-222-2222",
+    "date_of_birth":"2013-03-25T22:04:10.04399Z",
+    "email":"buser2@beanstream.com"
+  }
+}'
+</code></p>
+
+<p>You will receive a response with a HTTP status 201 Created. The response body will have an ID, a state, and an array of pending fields. The state of an application will remain ‘in_progress’ until all required fields have been submitted.</p>
+
+<h2 id="retrieve-the-partial-application">2. Retrieve the partial application</h2>
+
+<p><code>
+curl https://uat-onboarding-api.beanstream.com/v1/workflows/psp-cad/applications/{applicationId}
+</code></p>
+
+<p>Using the ID returned from your first request you can now request the submitted application.</p>
+
+<h2 id="next-steps">3. Next steps</h2>
+<p>You can read more about Onboarding in the <a href="/docs/guides/onboarding">Onboarding Guide</a> and the <a href="/docs/references/onboarding_API/">Onboarding API Spec</a>.</p>

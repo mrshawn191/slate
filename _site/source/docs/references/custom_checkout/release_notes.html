@@ -1,0 +1,51 @@
+<h1 id="custom-checkout-release-notes">Custom Checkout Release Notes</h1>
+
+<h2 id="section">1.0.1</h2>
+
+<p><strong>September 11, 2017</strong></p>
+
+<ul>
+  <li>Update the library url to support using only the MAJOR version to get the latest backwards compatible changes.</li>
+  <li>Properly load iFrames when non-Custom Checkout iFrames are included within the same page</li>
+</ul>
+
+<h2 id="section-1">1.0.0</h2>
+
+<p><strong>August 15, 2017</strong></p>
+
+<ul>
+  <li>The injected inputs now have a transparent background. This allows for changing the color of the input by changing the background color of the div it is mounted to.</li>
+  <li>The library now behaves correctly in IE 9, 10, and 11.</li>
+  <li>The 404 page for library files no longer redirects to web.na.bambora.com after a timeout.</li>
+  <li>Autofill of credit card information now behaves correctly in browsers that support it.</li>
+  <li>Validation error types have been simplified. See the <a href="/docs/references/custom_checkout/#error-type">documentation</a> for the updated list.</li>
+  <li>Added the following new methods to input objects:
+    <ul>
+      <li><code>input.unmount()</code>: remove an input from the DOM</li>
+      <li><code>input.update()</code>: update the options passed to an input</li>
+      <li><code>input.focus()</code>: give focus to the input</li>
+      <li><code>input.blur()</code>: remove focus from the input</li>
+      <li><code>input.clear()</code>: reset the value of the input</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="section-2">0.1.1</h2>
+
+<p><strong>August 1, 2017</strong></p>
+
+<ul>
+  <li>A hash in the URL of a page integrating custom checkout will no longer break integration.</li>
+  <li>Firefox and IE no longer require two tabs to switch between fields.</li>
+  <li>Padding is now a supported property in the style options. This can be used to increase the selectable area of the inputs.</li>
+</ul>
+
+<hr />
+
+<h2 id="section-3">0.1.0</h2>
+
+<p><strong>June 26, 2017</strong></p>
+
+<ul>
+  <li>Alpha release of Custom Checkout.</li>
+</ul>

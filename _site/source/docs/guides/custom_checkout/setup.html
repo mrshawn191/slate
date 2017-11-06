@@ -1,0 +1,119 @@
+<h1 id="setup">Setup</h1>
+
+<p>A payment with Custom Checkout involves 3 steps:</p>
+
+<ol>
+  <li>Configure Custom Checkout in your client</li>
+  <li>Create a token through Custom Checkout</li>
+  <li>Create a payment by passing the token to our Payment API via your server</li>
+</ol>
+
+<h2 id="step-1-configure-custom-checkout">Step 1: Configure Custom Checkout</h2>
+
+<p><strong>First</strong>, include and initialize Custom Checkout.</p>
+
+<p>```html
+<script src="https://libs.na.bambora.com/customcheckout/1/customcheckout.js"></script></p>
+
+<script>
+    var customCheckout = customcheckout();
+</script>
+
+<p>```</p>
+
+<p><strong>Second</strong>, create and mount the inputs. Mount the custom input to the HTML element using its CSS selector.</p>
+
+<p>```html
+<!-- ... --></p>
+<form id="checkout-form">
+    <div id="card-number"></div>
+    <div id="card-cvv"></div>
+    <div id="card-expiry"></div>
+    <!-- ... -->
+</form>
+
+<script>
+    var customCheckout = customcheckout();
+    var cardNumber = customCheckout.create('card-number')
+    cardNumber.mount('#card-number');
+    // ...
+</script>
+
+<!-- ... -->
+<p>```</p>
+
+<p>You can add styling to the inputs when passing the <code>options</code> argument to <code>customcheckout.create()</code>.</p>
+
+<p>```javascript
+// Styles to be applied to the text rendered in the iframe
+var style = {
+  error: {
+    color: ‘red’,
+    ‘:focus’: {
+      fontStyle: ‘italic’,
+    },
+  },
+};</p>
+
+<p>// Classes to be applied to the element wrapping the iframe
+var classes = {
+  error: ‘my-error-class’,      <br />
+};</p>
+
+<p>var options = {
+  placeholder: ‘Card number’,
+  style: style,
+  classes: classes,
+  brands: [‘visa’, ‘mastercard’],
+};</p>
+
+<p>var cardNumber = customCheckout.create(‘card-number’, options);
+```</p>
+
+<p><strong>Third</strong>, add an event listener so that you can handle validation errors.</p>
+
+<p>```javascript
+customCheckout.on(‘error’, function(event) {
+    if (event.field === ‘card-number’) {
+      console.log(‘Card number has errors: ‘ + JSON.stringify(event));
+    } else if (event.field === ‘cvv’) {
+      console.log(‘CVV has errors: ‘ + JSON.stringify(event));
+    } else if (event.field === ‘expiry’) {
+      console.log(‘Expiry has errors: ‘ + JSON.stringify(event));
+    }
+});</p>
+
+<p>customCheckout.on(‘complete’, function(event) {
+    if (event.field === ‘card-number’) {
+      console.log(‘Card number is complete: ‘ + JSON.stringify(event));
+    } else if (event.field === ‘cvv’) {
+      console.log(‘CVV is complete: ‘ + JSON.stringify(event));
+    } else if (event.field === ‘expiry’) {
+      console.log(‘Expiry is complete: ‘ + JSON.stringify(event));
+    }
+});
+```</p>
+
+<h2 id="step-2-create-a-token">Step 2: Create a token</h2>
+
+<p>You request a token for the card data in the Custom Checkout text inputs at any time using <code>customCheckout.createToken</code>. It will only return a token if the card data is valid, otherwise it will return an error.</p>
+
+<p>The token returned is a nonce. It expires on-use or after 15 minutes.</p>
+
+<p><code>javascript
+customCheckout.createToken(function (result) {
+  if (result.error) {
+    console.log(result.error.message);
+    // display error message
+  } else {
+    console.log(result.token);
+    // process token using our Payments API
+  }
+});
+</code></p>
+
+<h2 id="step-3-create-a-payment">Step 3: Create a payment</h2>
+
+<p>Once you have a token representing credit card data, the next step is to pass to one of our APIs via your server. You can either pass it to the <a href="/docs/references/payment_APIs/">Payment API</a> to create a payment immediately, or pass it to the <a href="/docs/references/payment_APIs/">Payment Profile API</a> to save the card data for future payments.</p>
+
+<p>You can find out more about getting up-and-running with our APIs <a href="/docs/guides/merchant_quickstart/">here</a>.</p>

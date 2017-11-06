@@ -1,0 +1,176 @@
+<h1 id="visa-checkout">Visa Checkout</h1>
+
+<p><em>Note: This is a draft document. All information is accurate, but some information may be missing.
+It will completed soon.</em></p>
+
+<p>Visa Checkout simplifies and secures online payments by storing payment information.
+It removes the need for a customer to re-enter and share card information.</p>
+
+<p>Visa Checkout is a digital wallet. Customers load their digital wallet with their credit, debit and prepaid cards once. They can then retrieve their payment information at any checkout supporting the wallet.</p>
+
+<p>Visa Checkout benefits users by securing their payment information and saving them
+time checking out. MasterPass benefits merchants by reducing checkout abandonment.</p>
+
+<h2 id="standard-integration">Standard integration</h2>
+
+<p>A Visa Checkout payment can involve either one or two steps for a merchant.</p>
+
+<p>It will always begin with a user clicking on a Visa Checkout button. Visa Checkout’s
+SDK handles the event and pops a lightbox where the user can authenticate and select a payment card.
+Visa checkout then calls a callback function on the merchant’s webpage.</p>
+
+<p>The one step process involves simply listening for a callback from Visa’s SDK and calling our Payment API to complete the payment.</p>
+
+<p>The two step process involves listening for a callback from Visa’s SDK, calling
+our API to retrieve addresses, and then calling our Payment API to complete the payment.</p>
+
+<h3 id="caveats">Caveats</h3>
+
+<p>Bambora’s Visa Checkout integration is not compatible with 3D Secure.</p>
+
+<h3 id="testing">Testing</h3>
+
+<p>Visa Checkout is not enabled by default on test accounts. Contact us at (support.northamerica@bambora.com)[mailto:support.northamerica@bambora.com]
+and we will enable it.</p>
+
+<p>You can test visa checkout on sandbox-web.na.bambora.com.</p>
+
+<h3 id="visa-checkout-sdk">Visa Checkout SDK</h3>
+
+<p>You will need to add Visa Checkout to your page and register a listener to handle
+payments originating from it. You can find out more (here)[https://developer.visa.com/capabilities/visa_checkout/docs].</p>
+
+<h3 id="example-requests">Example requests:</h3>
+<p>The first sample request is optional. It is only required if you need to retrieve addresses.</p>
+
+<h4 id="first-request">First request</h4>
+
+<p><code>shell
+curl -X POST \
+  'https://sandbox-web.na.bambora.com/scripts/process_transaction_info.asp?
+  merchant_id=123456789&amp;api_passcode=1q2w3e4r5t6y7u8i9o&amp;requestType=STS&amp;
+  visaCheckoutCallID=6629877414595929001'
+</code></p>
+
+<h5 id="first-response">First response</h5>
+<p>```shell
+HTTP/1.1 200 OK
+Content-Type: text/html</p>
+
+<p>responseType=I&amp;visaCheckoutCallID=6629877414595929001&amp;cardLastFour=1234&amp;
+trnCardOwner=Jane Doe&amp;trnExpMonth=02&amp;trnExpYear=20&amp;ordName=Jane Doe
+&amp;ordAddress1=123 Main St.&amp;ordAddress2=&amp;ordCity=Victoria&amp;ordProvince=BC&amp;
+ordCountry=CA&amp;ordPostalCode=V8D 1A9&amp;ordPhoneNumber=7789671234&amp;
+ordEmailAddress=aengusbates@gmail.com&amp;shipName=Jane Doe&amp;
+shipAddress1=123 Main St.&amp;shipAddress2=&amp;shipCity=Victoria&amp;
+shipProvince=BC&amp;shipCountry=CA&amp;shipPostalCode=V8D 1A9&amp;shipPhoneNumber=7789671234
+```</p>
+
+<h4 id="second-request">Second request</h4>
+<p><code>shell
+curl -X POST \
+  'https://sandbox-web.na.bambora.com/scripts/process_transaction.asp?
+  merchant_id=123456789&amp;api_passcode=1q2w3e4r5t6y7u8i9o&amp;requestType=STS&amp;
+  trnAmount=10.00&amp;visaCheckoutCallID=6629877414595929001'
+</code></p>
+
+<h5 id="second-response">Second response</h5>
+<p>```shell
+HTTP/1.1 200 OK
+Content-Type: text/html</p>
+
+<p>trnStatus=1&amp;trnId=10000010&amp;trnOrderNumber=10000010&amp;trnAuthCode=TEST&amp;rspId=1&amp;
+rspMessage=Approved&amp;rspDesc=Approved&amp;responseType=T&amp;avsProcessed=1&amp;avsId=N&amp;
+avsResult=0&amp;avsAddrMatch=0&amp;avsPostalMatch=0&amp;
+avsMessage=Street+address+and+Postal%2FZIP+do+not+match%2E&amp;cvdId=5&amp;
+ref1=&amp;ref2=&amp;ref3=&amp;ref4=&amp;ref5=&amp;trnType=P&amp;paymentMethod=CC&amp;
+trnDate=8%2F26%2F2017+11%3A54%3A32+PM&amp;httpStatusCode=200&amp;errorCategory=1&amp;
+cardType=VI&amp;cardLastFour=1234&amp;trnAmount=10.00&amp;authorizingMerchantId=123456789
+```</p>
+
+<h2 id="advanced-integration">Advanced integration</h2>
+
+<p>If you have integrated and certified to Visa’s Visa Checkout API and are handling the redirect to the Visa Checkout Portal
+independently of Bambora’s internal integration, you will need to pass the Visa Checkout Call ID with your Payment REST API
+request to Bambora. This ensures that your transaction is picked up by the Card Issuer as being a Visa Checkout transaction.</p>
+
+<p>Note: This option must be enabled by us. Contact support if you want to use this method.</p>
+
+<p>The Visa Checkout Call ID must be sent with the transaction request using the following system variable:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>visa_checkout_call_id</td>
+      <td>The payment request ID returned back from Visa Checkout.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="request">Request</h4>
+<p><code>shell
+curl https://api.na.bambora.com/v1/payments \
+-H "Authorization: Passcode MzAwMjAwNTc4OjRCYUQ4MkQ5MTk3YjRjYzRiNzBhMjIxOTExZUU5Zjcw" \
+-H "Content-Type: application/json" \
+-d '{
+    "payment_method":"card",
+    "order_number":"MyOrderId000011223344",
+    "amount":15.99,
+    "card":{
+        "name":"John Doe",
+		"number": "4030000010001234",
+		"expiry_month": "12",
+		"expiry_year": "18",
+		"visa_checkout_call_id": "8102778486678528301"
+    }
+}'
+</code></p>
+
+<h5 id="response">Response</h5>
+<p><code>shell
+{
+    "id": "10000026",
+    "approved": "1",
+    "message_id": "1",
+    "message": "Approved",
+    "auth_code": "TEST",
+    "created": "2017-02-23T17:26:26",
+    "order_number": "MyOrderId000011223344",
+    "type": "P",
+    "payment_method": "CC",
+    "amount": 15.99,
+    "custom": {
+        "ref1": "",
+        "ref2": "",
+        "ref3": "",
+        "ref4": "",
+        "ref5": ""
+    },
+    "card": {
+        "card_type": "VI",
+        "last_four": "1234",
+        "address_match": 0,
+        "postal_result": 0,
+        "cvd_result": 1,
+	    "eci": 7
+    },
+  "links": [
+	    {
+		    "rel": "void",
+		    "href": "https://api.na.bambora.com/api/v1/payments/10000026/void",
+		    "method": "POST"
+	    },
+	    {
+		    "rel": "return",
+		    "href": "https://api.na.bambora.com/api/v1/payments/10000026/returns",
+		    "method": "POST"
+	    }
+  ]
+}
+</code></p>

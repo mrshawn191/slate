@@ -1,0 +1,53 @@
+<h1 id="ssl">SSL</h1>
+
+<p>SSL (Secure Sockets Layer) is used to established an encrypted link between our servers and your client.</p>
+
+<h2 id="ssl-certificates">SSL Certificates</h2>
+
+<p>To be able to create an SSL connection we use SSL Certificates.</p>
+
+<h3 id="openssl">OpenSSL</h3>
+
+<p>Some merchants use <a href="https://www.openssl.org">OpenSSL</a> to verify our SSL certificates.</p>
+
+<p>Since a server can have more than one certificate you will need to use the <code>-servername</code> argument to specify the host that you are checking.</p>
+
+<p><strong>Examples</strong></p>
+
+<p><code>shell
+openssl s_client -servername api.na.bambora.com -connect api.na.bambora.com:443
+</code></p>
+
+<p><code>shell
+openssl s_client -servername www.beanstream.com -connect www.beanstream.com:443
+</code></p>
+
+<h4 id="geotrust-local-certificate">GeoTrust Local Certificate</h4>
+<p>OpenSSL may output the following:</p>
+
+<p><code>shell
+...
+depth=1 /C=US/O=GeoTrust Inc./CN=GeoTrust SSL CA - G3
+verify error:num=20:unable to get local issuer certificate
+verify return:0
+...
+---
+</code></p>
+
+<p>You can resolve this by doing the following:</p>
+
+<ol>
+  <li>Download the latest <em>GeoTrust_Global_CA.pem</em> from <a href="https://www.geotrust.com/resources/root-certificates/index.html">GeoTrust</a></li>
+  <li>Run OpenSSL with the <code>-CAfile</code> argument pointing to the downloaded file</li>
+</ol>
+
+<p><strong>Examples</strong></p>
+
+<p><code>shell
+  openssl s_client -servername api.na.bambora.com -connect api.na.bambora.com:443 -CAfile "FILEPATH/GeoTrust_Global_CA.pem"
+ </code></p>
+
+<p><code>shell
+ openssl s_client -servername www.beanstream.com -connect www.beanstream.com:443 -CAfile "FILEPATH/GeoTrust_Global_CA.pem"
+</code></p>
+

@@ -1,0 +1,26 @@
+<h1 id="partner-quickstart">Partner Quickstart</h1>
+
+<p>Welcome to our partner setup guide. Learn how to request your partner account, and how to test the Onboarding API.</p>
+
+<p>This guide will show you how to create and configure a test account.</p>
+
+<p>This guide builds on the <a href="/docs/guides/merchant_quickstart/">Merchant Quickstart Guide</a>.</p>
+
+<h2 id="request-a-partner-account">1. Request a partner account</h2>
+
+<p>You can request a partner account <a href="/docs/forms/request_partner_account">here</a>. You will be emailed an API key for our sandbox environment.</p>
+
+<h2 id="authentication-for-sub-merchant">2. Authentication for Sub-Merchant</h2>
+<p>Partners can make calls to our Payment APIs on behalf of their sub-merchants if they are configured to do so. You can request this to be enabled.</p>
+
+<p>You will need an Authorization header as described in the <a href="/docs/guides/merchant_quickstart/">Merchant Quickstart Guide</a>:</p>
+
+<p><code>
+Authorization: Passcode Base64Encoded(your_partner_merchant_id:passcode)
+</code></p>
+
+<p>To process on behalf of a sub-merchant you will need a header with the merchant Id of your sub-merchant:</p>
+
+<p><code>
+Sub-Merchant-Id: your_sub_merchant_id
+</code></p>

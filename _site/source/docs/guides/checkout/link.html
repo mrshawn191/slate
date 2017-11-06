@@ -1,0 +1,66 @@
+<h2 id="create-links">Create links</h2>
+
+<p>Checkout is configured by the parameters passed in the URL of a GET request. The key/value pairs of the query string are secured by passing a hashed string created from the query string, in addition to the query string itself.</p>
+
+<p>The most basic URL contains just the <code>merchant_id</code> and <code>hashValue</code> parameters. If your merchant ID is “123456789” and your hash key is “abc”, you would create a SHA-1 hash of the string <code>merchant_id=123456789abc</code>. You would then pass the hashed string with the parameters <code>hashValue</code>.</p>
+
+<p><code>curl
+https://web.na.bambora.com/scripts/payment/payment.asp?merchant_id=123456789&amp;hashValue=468155ff50e868a98626b1a5a5de6474999b04fe
+</code></p>
+
+<p>Any parameters passed within the hashed string is secure and cannot be modified. Any parameters passed after the <code>hashValue</code> parameter are insecure and can be modified.</p>
+
+<p>You can quickly create links for testing or one-off payments using this <a href="https://dev.na.bambora.com/docs/forms/link_builder/">form</a>.</p>
+
+<h2 id="authorization">Authorization</h2>
+
+<p>Checkout links are authorized by passing your Merchant ID and a string hashed with your Hash Key. You can find both in the <a href="https://web.na.bambora.com">Member Area</a>.</p>
+
+<p>Your Merchant ID is permanently displayed at the top right corner of the screen. Your Hash Key is on the Order Settings panel. Click <strong>administration</strong> then <strong>account settings</strong>, and finally <strong>order settings</strong>.</p>
+
+<h3 id="sample-link">Sample link</h3>
+<p><code>curl
+https://web.na.bambora.com/scripts/payment/payment.asp?
+merchant_id=300203940
+&amp;trnAmount=10.00
+&amp;ordName=Jane+Smith
+&amp;ordPostalCode=V8T+4M3
+&amp;ordProvince=BC
+&amp;ordCountry=CA
+&amp;hashValue=ec6dccdc5ec2fc9314fdce5ea079abfa5db0d748
+</code></p>
+
+<h3 id="sample-response-redirect">Sample response redirect</h3>
+<p><code>curl
+https://example.com/checkout/response?
+trnApproved=1
+&amp;trnId=10000285
+&amp;messageId=1
+&amp;messageText=Approved
+&amp;authCode=TEST
+&amp;responseType=T
+&amp;trnAmount=10.00
+&amp;trnDate=8%2F13%2F2017+12%3A26%3A24+AM
+&amp;trnOrderNumber=10000285
+&amp;trnLanguage=eng
+&amp;trnCustomerName=
+&amp;trnEmailAddress=
+&amp;trnPhoneNumber=
+&amp;avsProcessed=0
+&amp;avsId=U
+&amp;avsResult=0
+&amp;avsAddrMatch=0
+&amp;avsPostalMatch=0
+&amp;avsMessage=Address+information+is+unavailable%2E
+&amp;cvdId=5
+&amp;cardType=VI
+&amp;trnType=P
+&amp;paymentMethod=CC
+&amp;ref1=
+&amp;ref2=
+&amp;ref3=
+&amp;ref4=
+&amp;ref5=
+&amp;eci=7
+</code></p>
+<div style="margin-bottom:24px;"></div>

@@ -1,0 +1,141 @@
+<h2 id="interac-online">Interac Online</h2>
+<p>Interac Online is a transaction method available to Canadian merchants only. It allows customers to authenticate direct debits without sharing their debit card details with the merchant. An Interac payment flow is similar to the <a href="/docs/guides/3D_secure/">3D Secure</a> payment flow. It has three steps:</p>
+
+<ol>
+  <li>Submit an initial Interac payment request to us. You will receive an Interac response with redirect code.</li>
+  <li>Redirect the customer to the bank portal using redirect code received from initial request. The customer logs in to approve the payment and the bank redirects the customer back to your site with success/failure information.</li>
+  <li>Submit final payment request to us.</li>
+</ol>
+
+<p>In addition to this guide feel free to check out our <a href="https://github.com/bambora/na-payment-apis-demo">Payment APIs Demo implementation</a> on GitHub.</p>
+
+<h4 id="apis">APIs</h4>
+
+<ul>
+  <li>Initial request: POST <code>https://api.na.bambora.com/v1/payments</code></li>
+  <li>Final request: POST <code>https://api.na.bambora.com/v1/payments/{id}/continue</code></li>
+</ul>
+
+<h3 id="step-1-submit-initial-request">Step 1: Submit initial request</h3>
+<p>Send a request to our Payments API to initiate the Interac process. The response from this request will provide you with the redirect HTML code that you render to the customer in order to redirect them to the banking portal.</p>
+
+<p>```shell
+POST /v1/payments</p>
+
+<p>curl https://api.na.bambora.com/v1/payments
+-H “Authorization: Passcode MzAwMjAwNTc4OjRCYU…”
+-H “Content-Type: application/json”
+-d ‘{
+      “order_number”:”MyOrderId-01234”,
+      “amount”:100.00,
+      “payment_method”:”interac”   <br />
+    }’
+```</p>
+
+<h4 id="response">Response</h4>
+<p><code>javascript
+// Response object (JSON)
+{
+  merchant_data (string, max length 32): ,
+  contents (string): ,
+  links (JSON):
+}
+</code></p>
+
+<p>Before returning the response to your users HTML client, you will need to save the <code>merchant_data</code> string in the users session. This value can be used as the <code>{id}</code> value when creating your ‘continue’ endpoint URL for the final request in step 3.</p>
+
+<p>The response will have HTML in the <code>contents</code>. This should be embedded in the user’s browser client and this needs to be displayed to the customer to redirect them to the Interac login page. Here the customer will log onto their bank account and approve the payment. An approved or declined payment will forward the customer back to the Funded or Non-funded URLs (respectively) on your website.</p>
+
+<p>```html
+<!-- Sample URL Decoded Response --></p>
+
+<html>
+<head></head>
+<body>
+&lt;FORM action="https://iOnlinegateway.asp" method=POST id=frmIOnline name=frmIOnline&gt;
+<input type="hidden" name="IDEBIT_MERCHNUM" value="12345678911" />
+<input type="hidden" name="IDEBIT_AMOUNT" value="10000" />
+<input type="hidden" name="IDEBIT_TERMID" value="12345678" />
+<input type="hidden" name="IDEBIT_CURRENCY" value="CAD" />
+<input type="hidden" name="IDEBIT_INVOICE" value="" />
+<input type="hidden" name="IDEBIT_MERCHDATA" value="2F86D946-5531-4495-9D82D7E6D83BA93" />
+<input type="hidden" name="IDEBIT_FUNDEDURL" value="http://www.myCompany.asp?funded=1" />
+<input type="hidden" name="IDEBIT_NOTFUNDEDURL" value="http.www.myCompany.asp?funded=0" />
+<input type="hidden" name="merchant_name" value="Test Company" />
+<input type="hidden" name="referHost" value="http://www.myCompany.asp" />
+<input type="hidden" name="referHost2" value="" />
+<input type="hidden" name="referHost3" value="www.myCompany.asp" />
+<input type="hidden" name="IDEBIT_MERCHLANG" value="en" />
+<input type="hidden" name="IDEBIT_VERSION" value="1" />
+
+<script language="JavaScript">document.frmIOnline.submit();</script>
+</body>
+</html>
+<p>```</p>
+
+<h3 id="step-2-redirect-request">Step 2: Redirect request</h3>
+
+<p>If the transaction is cancelled or declined at any point, the bank forwards a response to the merchant’s Non-funded URL. Otherwise, the bank response is forwarded to the merchant’s Funded URL. The Funded and Non-funded URLs are values the merchant must provide to us before account activation. These values are stored internally by us. Contact our customer support team to set these URLs.</p>
+
+<p>When you receive a redirect back from the bank site on your Funded URL you must gather the <code>idebit_</code> variables they pass to use in the ‘interac_response’ objects properties shown for the final request in step 3.</p>
+
+<p><code>javascript
+InteracResponse {
+  funded (string, max length 20): ,
+  idebit_track2 (string, max length 256): ,
+  idebit_isslang (string, max length 2): ,
+  idebit_version (number, max length 1): ,
+  idebit_issconf (string, max length 32): ,
+  idebit_issname (string, max length 32): ,
+  idebit_amount (number, max length 9): ,
+  idebit_invoice (string, max length 20):
+}
+</code></p>
+
+<h3 id="step-3-submit-final-request">Step 3: Submit final request</h3>
+
+<p>The final step is to submit a request to our continue endpoint to complete the transaction. The <code>{id}</code> in the URL should be the <code>merchant_data</code> from the first response (Step 2).</p>
+
+<p>Note: The <code>idebit_amount</code> is in cents.</p>
+
+<p>```shell
+POST /v1/payments/{id}/continue
+Content-Type: application/json</p>
+
+<p>curl https://api.na.bambora.com/v1/payments/{id}/continue
+-H “Authorization: Passcode MzAwMjAwNTc4OjRCYU…”
+-H “Content-Type: application/json”
+-d ‘{
+      “payment_method”: “interac”,
+      “interac_response”: {
+        “idebit_track2”: “&lt;string, max length 256)” ,
+        “idebit_isslang”: “&lt;string, max length 2)” ,
+        “idebit_version”: “&lt;number, max length 1)” ,
+        “idebit_issconf”: “&lt;string, max length 32)” ,
+        “idebit_issname”: “&lt;string, max length 32)” ,
+        “idebit_amount”: “&lt;number, max length 9)” ,
+        “idebit_invoice”: “&lt;string, max length 20)”
+      }
+    }’
+```</p>
+
+<h4 id="final-response">Final Response</h4>
+<p><code>javascript
+PaymentResponse {
+  payment_method (string): ,
+  id (number, max length 9): ,
+  approved (number, max length 1): ,
+  message_id (number, max length 3): ,
+  message (string, max length 32): ,
+  auth_code (string, max length 32): ,
+  created (date): ,
+  order_number (string, max length 30): ,
+  type (string, max length 16): ,
+  interac_online (json):
+  {
+    idebit_issconf (string, max length 32): ,
+    idebit_issname (string, max length 32): 
+  } ,
+  links (json):
+}
+</code></p>

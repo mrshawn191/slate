@@ -1,0 +1,197 @@
+<h1 id="payment-profile-response-codes">Payment Profile response codes</h1>
+<p>## Overview</p>
+
+<p>This document lists the response codes returned from the Payment Profile API. The “Code” and “Description” columns correspond to the response.code and response.message properties returned by the API response object.</p>
+
+<p>You should only map your responses handlers against message IDs as message strings are not guaranteed to be consistent over time.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Operation successful</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Failed card verification</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Secure connection required</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Invalid service version</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Invalid merchant id</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Invalid operation type</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Incorrect passcode</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Invalid customer code</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Session Timeout</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Unexpected error – Contact support</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Invalid XML message</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Passcode authentication access lockout</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Passcode authentication failure</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Merchant account closed or disabled</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Customer code to modify does not exist</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Customer code already exists</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Duplicate match on payment information</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>No fields to update in modification request</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Customer address/payment information failed data validation</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Invalid payment profile account status</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>User Cancelled</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Order number already completed</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>No match found on Status Response lookup</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>Duplicate match on billing information</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>Velocity identifier not assigned to customer code</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>Fail send email message</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>Operation not enabled</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>Invalid profile group</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>Invalid transaction id</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>No payment information available</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>No access to EFT</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>An answer was provided without a question</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>No answer was provided</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>Configuration settings are incomplete</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>Maximum number of credit cards is reached</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>No credit card found for customer code and card id</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>Credit card new information has no changes</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>Date input format must be YYYYMMDDHHMM</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>AccountRef parameter must be numeric (18,0)</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>Payment profile only card cannot be set to non-default</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>Reporting services error</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>accountRef value is already assigned to another customer of this merchant</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>Operation failed, this card has already been added to the profile</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>Operation failed, no matching card id</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>Parameters received outside of hash validation. Partial hash must be enabled</td>
+    </tr>
+  </tbody>
+</table>

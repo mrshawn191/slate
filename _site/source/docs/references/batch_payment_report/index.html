@@ -1,0 +1,219 @@
+<h1 id="batch-payment-report-api">Batch Payment Report API</h1>
+
+<p>This document lists and describes the properties expected in the request and response objects.</p>
+
+<ul>
+  <li><strong>URL</strong> - https://na.bambora.com/scripts/reporting/report.aspx</li>
+  <li><strong>Method</strong> - POST</li>
+</ul>
+
+<h2 id="request">Request</h2>
+
+<p>The API expects an XML document in the body of the request. The XML declaration should identify the version as “1.0” and the version as “UTF-8”.</p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</code></p>
+
+<p>The API requires the XML document to include <code>merchantId</code> and <code>passCode</code> elements for authorization, and, <code>serviceName</code> and <code>rptFormat</code> elements to identify the type and format of report to be returned. All other supported elements are filters to constrain the results in the report.</p>
+
+<p>Filters are assembled as in groups containing a column name (<code>rptFilterBy*</code>), an operation type (<code>rptOperationType*</code>) and a value (<code>rptFilterValue*</code>). The API requires the XML document to include all three, if any one is included.</p>
+
+<h3 id="elements">Elements</h3>
+
+<ul>
+  <li><strong>merchantId</strong> - The authorizing merchant ID. Numeric string. Length: 9 chars.</li>
+  <li><strong>passCode</strong> - The reporting passcode for the authorizing merchant. Alphanumeric string. Max length: 64 chars.</li>
+  <li><strong>rptVersion</strong> - Numeric string. API version. Current version: “2.0”.</li>
+  <li><strong>serviceName</strong> - Type of report. Informed by the type of batch files that you want to report on. Enum.
+    <ul>
+      <li><strong>BatchPaymentsEFT</strong> - EFT only</li>
+      <li><strong>BatchPaymentsACH</strong> - ACH only</li>
+      <li><strong>BatchSettlement</strong> - ACH or EFT</li>
+    </ul>
+  </li>
+  <li><strong>rptFormat</strong> - Format of the response
+    <ul>
+      <li><strong>JSON</strong>, <strong>XML</strong>, <strong>CSV</strong>, <strong>TSV</strong>, or <strong>XLS</strong></li>
+    </ul>
+  </li>
+  <li><strong>rptFilterBy1</strong>, <strong>rptFilterBy2</strong>, <strong>rptFilterBy3</strong>, <strong>rptFilterBy4</strong> - Enum
+    <ul>
+      <li><strong>batch_id</strong> - Batch identifier. This is a unique identifier per merchant account.</li>
+      <li><strong>trans_id</strong> - Batch transaction id. This is a unique identifier per transaction uploaded to a merchant account across all batch files. The unique transaction reference to a batch transaction is a combination of ‘merchant_id’, ‘batch_id’, and ‘trans_id’.</li>
+      <li><strong>state_id</strong> - The progress of valid transactions through the settlement process.</li>
+      <li><strong>status_id</strong> - Our validation of the format of the request</li>
+      <li><strong>returned_date</strong> - Date the bank has applied a return or reject against the transaction. YYYY-MM-DD</li>
+      <li><strong>noc_date</strong> - ACH only</li>
+    </ul>
+  </li>
+  <li><strong>rptOperationType1</strong>, <strong>rptOperationType2</strong>, <strong>rptOperationType3</strong>, <strong>rptOperationType4</strong> - Enum
+    <ul>
+      <li><strong>EQ</strong> - Equal to</li>
+      <li><strong>LT</strong> - Less than</li>
+      <li><strong>GT</strong> - Greater than</li>
+      <li><strong>LE</strong> - Less than or equal to</li>
+      <li><strong>GE</strong> - Greater than or equal to</li>
+      <li><strong>NE</strong> - Not equal to</li>
+    </ul>
+  </li>
+  <li><strong>rptFilterValue1</strong>, <strong>rptFilterValue2</strong>, <strong>rptFilterValue3</strong>, <strong>rptFilterValue4</strong> - Value to filter against</li>
+  <li><strong>rptAddCondition1</strong>, <strong>rptAddCondition2</strong>, <strong>rptAddCondition3</strong>, <strong>rptAddCondition4</strong> - Enum
+    <ul>
+      <li><strong>AND</strong></li>
+      <li><strong>OR</strong></li>
+    </ul>
+  </li>
+  <li><strong>rptSortBy1</strong>, <strong>rptSortBy2</strong> - Sort the results. Enum.
+    <ul>
+      <li><strong>batch_id</strong> - Batch identifier. This is a unique identifier per merchant account.</li>
+      <li><strong>trans_id</strong> - Batch transaction id. This is a unique identifier per transaction uploaded to a merchant account across all batch files. The unique transaction reference to a batch transaction is a combination of merchant_id, batch_id, and trans_id.</li>
+      <li><strong>state_id</strong> - The progress of valid transactions through the settlement process.</li>
+      <li><strong>status_id</strong> - Our validation of the format of the request</li>
+      <li><strong>returned_date</strong> - Date the bank has applied a return or reject against the transaction. YYYY-MM-DD</li>
+      <li><strong>noc_date</strong> - ACH only</li>
+    </ul>
+  </li>
+  <li><strong>rptFromDateTime</strong> - Batch Processing Date and Time Start</li>
+  <li><strong>rptToDateTime</strong> - Batch Processing Date and Time End</li>
+  <li><strong>rptStartRow</strong> - Start row for paging</li>
+  <li><strong>rptEndRow</strong> - End row for paging</li>
+  <li><strong>rptMerchantId</strong> - Partners only. The sub-merchant ID to report against. Enum or number.
+    <ul>
+      <li><strong>All</strong></li>
+      <li><strong>AllLive</strong></li>
+      <li>A valid merchant ID</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="response">Response</h2>
+
+<p>The format of the response object is relative to <code>rptFormat</code> element in the request in either JSON, XMl, TSV, CSV, or XLS formats.</p>
+
+<p>JSON and XMl response object contains a “code” property” indicating the success of the request. This will be a number between 1 and 8, inclusive, where “1” indicates success. It also has a message property with a description of the code.</p>
+
+<ul>
+  <li>Code: “<strong>1</strong>”, Message:	“Report Generated”</li>
+  <li>Code: “<strong>2</strong>”, Message:	“Unknown error”</li>
+  <li>Code: “<strong>3</strong>”, Message:	“Malformed xml request”</li>
+  <li>Code: “<strong>4</strong>”, Message:	“Unsupported content type”</li>
+  <li>Code: “<strong>5</strong>”, Message:	“Unsecure connection”</li>
+  <li>Code: “<strong>6</strong>”, Message:	“Data validation failed”</li>
+  <li>Code: “<strong>7</strong>”, Message:	“Authentication failed”</li>
+  <li>Code: “<strong>8</strong>”, Message:	“Authorization failed”</li>
+</ul>
+
+<h2 id="report-fields">Report Fields</h2>
+
+<p>This section documents the fields returned for each of the 4 reports.</p>
+
+<h3 id="batchpaymentseft">BatchPaymentsEFT</h3>
+<ul>
+  <li><strong>merchant_id</strong> - Authorizing merchant identifier. [Numeric. 9 digits.]</li>
+  <li><strong>batch_id</strong> - Batch identifier. This is unique per merchant account. [Numeric.]</li>
+  <li><strong>trans_id</strong> - Transaction identifier. This is unique per merchant account. [Numeric.]</li>
+  <li><strong>item_number</strong> - This is the transaction’s line number within a batch file. [Numeric.]</li>
+  <li><strong>payee_name</strong> - Merchant transaction reference field.</li>
+  <li><strong>reference</strong> -</li>
+  <li><strong>operation_type</strong> - Either ‘C’ to indicate a credit to the payee’s account or ‘D’ to indicate a debit to the payee’s account.</li>
+  <li><strong>amount</strong> -</li>
+  <li><strong>state_id</strong> - The progress of valid transactions through the settlement process.</li>
+  <li><strong>state_name</strong> - An enum relative to the state_id.</li>
+  <li><strong>status_id</strong> - Our validation of the format of the request</li>
+  <li><strong>status_name</strong> - An enum relative to the status_id.</li>
+  <li><strong>bank_descriptor</strong> - Text to display on the payee’s bank statement associated with the debit/credit.</li>
+  <li><strong>message_id</strong> - Comma separated listing of message IDs. (what are the message IDs?)</li>
+  <li><strong>customer_code</strong> - Payee’s Secure Payment Profile customer code.</li>
+  <li><strong>settlement_date</strong> - Date the credit/debit is expected to settle against the payee’s bank account. YYYY-MM-DD.</li>
+  <li><strong>returned_date</strong> - Date the bank has applied a return or reject against the transaction. YYYY-MM-DD</li>
+  <li><strong>return_type</strong> - rejected or returned. Enum.
+    <ul>
+      <li><strong>REJ</strong> -  The transaction was rejected.</li>
+      <li><strong>RET</strong> -  The transaction was returned.</li>
+    </ul>
+  </li>
+  <li><strong>eft_id</strong> - Globally unique identifier associated to a transaction that was processed with the bank.</li>
+</ul>
+
+<h3 id="batchpaymentsach">BatchPaymentsACH</h3>
+<ul>
+  <li><strong>merchant_id</strong> - Merchant identifier</li>
+  <li><strong>batch_id</strong> - Batch identifier. This is a unique identifier per merchant account.</li>
+  <li><strong>trans_id</strong> - Batch transaction id. This is a unique identifier per transaction uploaded to a merchant account across all batch files. The unique transaction reference to a batch transaction is a combination of merchant_id, batch_id, and trans_id.</li>
+  <li><strong>item_number</strong> - Numeric line number within a the batch file for the transaction.</li>
+  <li><strong>payee_name</strong> - Name of the bank account holder that is being debited or credited.</li>
+  <li><strong>reference</strong> - Merchant transaction reference field. This is equivalent to order number on credit card transactions</li>
+  <li><strong>operation_type</strong> - Identifying the transaction as a credit or debit transaction to the payee’s account.
+    <ul>
+      <li><strong>C</strong> - a credit to the payee’s account.</li>
+      <li><strong>D</strong> - a debit to the payee’s account.</li>
+    </ul>
+  </li>
+  <li><strong>amount</strong> - Amount of the transaction to debit/credit to the payee’s account in pennies.</li>
+  <li><strong>bank_account_type</strong> -
+    <ul>
+      <li><strong>PC</strong> - US Personal Checking account</li>
+      <li><strong>PS</strong> - US Personal Saving account</li>
+      <li><strong>CC</strong> - US Corporate Checking account</li>
+      <li><strong>CS</strong> - US Corporate Savings account</li>
+    </ul>
+  </li>
+  <li><strong>sec_code</strong> - The transaction Standard Entry Code.</li>
+  <li><strong>state_id</strong> - The progress of valid transactions through the settlement process.</li>
+  <li><strong>state_name</strong> - An enum relative to the state_id.</li>
+  <li><strong>status_id</strong> - Our validation of the format of the request</li>
+  <li><strong>status_name</strong> - An enum relative to the status_id.</li>
+  <li><strong>bank_descriptor</strong> - Text to display on the payee’s bank statement associated with the debit/credit.</li>
+  <li><strong>message_id</strong> - Comma separated listing of message IDs. (what are the message IDs?)</li>
+  <li><strong>customer_code</strong> - The payee’s Secure Payment Profile customer code.</li>
+  <li><strong>settlement_date</strong> - Date that the credit/debit is expected to settle against the payee’s bank account. YYYY-MM-DD</li>
+  <li><strong>returned_date</strong> - Date that the bank has applied a return or reject against the transaction. YYYY-MM-DD</li>
+  <li><strong>eft_id</strong> - The globally unique identifier associated to a transaction that was processed with the bank.</li>
+  <li><strong>noc_date</strong> - Date that the bank has returned a Notice of Change for the transaction. YYYY-MM-DD</li>
+  <li><strong>noc_account_type</strong> - If an ACH Notice of Change was received against the transaction this contains the account type text name/ID of the account type, e.g. Personal Checking (PC) or Corporate Checking (CC) etc.
+    <ul>
+      <li><strong>PC</strong> - US Personal Checking account</li>
+      <li><strong>PS</strong> - US Personal Saving account</li>
+      <li><strong>CC</strong> - US Corporate Checking account</li>
+      <li><strong>CS</strong> - US Corporate Savings account</li>
+    </ul>
+  </li>
+  <li><strong>noc_routing_number</strong> - If an ACH Notice of Change was received against the transaction this contains the routing number the payee’s bank account must be updated to.</li>
+  <li><strong>noc_account_number</strong> - If an ACH Notice of Change was received against the transaction this contains the account number the payee’s bank account must be updated to.</li>
+</ul>
+
+<h3 id="batchsettlement">BatchSettlement</h3>
+<ul>
+  <li><strong>merchant_id</strong> - Merchant identifier.</li>
+  <li><strong>settlement_id</strong> - Unique identifier to the settlement transaction.</li>
+  <li><strong>batch_id</strong> - Batch identifier. This is a unique identifier per merchant account.</li>
+  <li><strong>operation_type</strong> - Identifying the transaction as a credit or debit transaction to the payee’s account.
+    <ul>
+      <li><strong>C</strong> - a credit to the payee’s account.</li>
+      <li><strong>D</strong> - a debit to the payee’s account.</li>
+    </ul>
+  </li>
+  <li><strong>amount</strong> - The amount of the transaction to debit/credit to the payee’s account in pennies.</li>
+  <li><strong>sec_code</strong> - ACH Standard Entry Class (SEC) Code to designate how the transaction was authorized by the originator.</li>
+  <li><strong>state_id</strong> - The progress of valid transactions through the settlement process.</li>
+  <li><strong>state_name</strong> - An enum relative to the state_id.</li>
+  <li><strong>status_id</strong> - Our validation of the format of the request</li>
+  <li><strong>status_name</strong> - An enum relative to the status_id.</li>
+  <li><strong>bank_descriptor</strong> - The text to display on the payee’s bank statement associated with the debit/credit.</li>
+  <li><strong>message_id</strong> - Comma separated listing of message IDs. (but what are the IDs?)</li>
+  <li><strong>settlement_date</strong> - The date that the credit/debit is expected to settle against the payee’s bank account. YYYY-MM-DD</li>
+  <li><strong>returned_date</strong> - Date the bank applied a return or reject against the transaction. YYYY-MM-DD</li>
+  <li><strong>eft_id</strong> - Globally unique identifier associated to a transaction that was processed with the bank. (is this for eft and ach both? is this for the first or second transaction in a funds transfer?)</li>
+  <li><strong>noc_date</strong> - ACH transaction only. Date the bank returned a Notice of Change for the transaction. YYYY-MM-DD</li>
+  <li><strong>noc_account_type</strong> - ACH transaction only.
+    <ul>
+      <li><strong>PC</strong> - US Personal Checking account</li>
+      <li><strong>PS</strong> - US Personal Saving account</li>
+      <li><strong>CC</strong> - US Corporate Checking account</li>
+      <li><strong>CS</strong> - US Corporate Savings account</li>
+    </ul>
+  </li>
+  <li><strong>noc_routing_number</strong> - ACH transaction only.</li>
+  <li><strong>noc_account_number</strong> - ACH transaction only.</li>
+</ul>

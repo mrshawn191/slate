@@ -1,0 +1,58 @@
+<h1 id="custom-checkout">Custom Checkout</h1>
+
+<p>Custom Checkout minimizes the scope of your PCI compliance - limiting it to SAQ A. It does this by isolating credit card data from your servers. It serves card input fields from Bambora’s domain, not yours, while rendering them within iframes on your web page.</p>
+
+<h2 id="demo">Demo</h2>
+<p>Here is an example of a custom payment form styled with Bootstrap. Custom Checkout can be styled any way you choose. Try it out!</p>
+
+<p>You can use using the test card number 4030 0000 1000 1234, with a security code 123 and any expiry date in the future.</p>
+
+<div style="margin-bottom:24px;">
+<p data-height="177" data-theme-id="light" data-slug-hash="OgbOKP" data-default-tab="result" data-user="na-bambora" data-embed-version="2" data-pen-title="CustomCheckout-Bootstrap" class="codepen">See the Pen <a href="https://codepen.io/na-bambora/pen/OgbOKP/">CustomCheckout-Bootstrap</a> by na-bambora (<a href="https://codepen.io/na-bambora">@na-bambora</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
+<p>See <a href="/docs/guides/custom_checkout/demos/">more examples</a> of styled Custom Checkout. See a <a href="https://libs.na.bambora.com/customcheckout/1.0.0/demo.html?source=production">demo</a> of Custom Checkout’s eventing. See a <a href="https://demo.na.bambora.com">demo</a> of a complete payment flow Custom Checkout.</p>
+
+<h2 id="custom-checkout-vs-checkout">Custom Checkout vs Checkout</h2>
+
+<p>Checkout is an alternative to building your own payment form with Custom Checkout.</p>
+
+<ul>
+  <li>Both solutions are PCI SAQ A compliant.</li>
+  <li>Checkout is a payment form - it creates sale and pre-auth transactions. Custom Checkout is a tokenizaton library - it returns a token that you use when creating transactions via the Payment API.</li>
+  <li>Checkout involves redirecting the user to a payment form on bambora.com. Custom Checkout embeds Bambora hosted input fields in your webpage.</li>
+  <li>Checkout is brandable - you can set the primary color, a custom header and a custom footer. Custom Checkout allows you to build a fully customized payment form - you retain as much control over UI/UX as you do with native DOM elements.</li>
+</ul>
+
+<h2 id="migration">Migration</h2>
+
+<p>Custom Checkout replaces our legacy Payfields/CheckoutFields, Payform and Legato scripts. These, along with direct posts to our Token API, are classified as SAQ A-EP solutions.</p>
+
+<p>The token returned by Custom Checkout is identical to that returned by these other scripts. This means you can easily migrate to Custom Checkout by switching out the scripts on the client-side while leaving your server-side integration unchanged.</p>
+
+<h2 id="browser-support">Browser support</h2>
+
+<p>These are the browsers we actively test.</p>
+
+<h3 id="desktop">Desktop</h3>
+<ul>
+  <li>Chrome latest</li>
+  <li>Firefox latest</li>
+  <li>Internet Explorer 9+</li>
+  <li>Microsoft Edge</li>
+  <li>Safari 8+</li>
+</ul>
+
+<h3 id="ios">iOS</h3>
+<ul>
+  <li>Safari 8+</li>
+  <li>Chrome 48+ (iOS 9+)</li>
+</ul>
+
+<h3 id="android">Android</h3>
+<ul>
+  <li>Native browser 4.4+</li>
+  <li>Chrome</li>
+  <li>Firefox</li>
+</ul>

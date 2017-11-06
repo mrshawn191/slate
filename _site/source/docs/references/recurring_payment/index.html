@@ -1,0 +1,228 @@
+<h1 id="create-a-recurring-payment">Create a recurring payment</h1>
+
+<h2 id="request-parameters">Request parameters</h2>
+
+<p><strong>URL:</strong> https://api.na.bambora.com/scripts/process_transaction.asp &lt;/br&gt;
+<strong>Method:</strong> POST</p>
+
+<h3 id="authorization">Authorization</h3>
+<p>| Parameter | Format | Description |
+|———-|——–|————-|
+| requestType | BACKEND | Always pass “BACKEND” (case sensitive). |
+| merchant_id | 9 digits | Unique identifier for your Bambora merchant account (not “merchantId”). |
+| passcode | 32 digits | Payment API Passcode (not the Recurring Payment API passcode) |</p>
+
+<h3 id="schedule">Schedule</h3>
+<p>| Parameter | Format | Description |
+|———-|——–|————-|
+| trnRecurring | Binary digit. | Always pass “1” to flag as a recurring transaction. |
+| rbBillingPeriod | D, W, M, Y | Use with rbBillingIncrement to set billing frequency. Values: D – Days, W – Weeks, M – Months, Y – Years |
+| rbBillingIncrement | Numeric. | Use with rbBillingPeriod to specify the billing frequency. For example, if rbBillingPeriod=W and rbBillingIncrement=2, the card is charged every two weeks. |
+| rbEndMonth | 1 or 0 | Set to 1 to charge the card on the last day of the month (rbBillingPeriod must be M). |
+| rbCharge | 1 or 0 | Set to “0” to delay the first charge until the rbFirstBilling date. Defaults to “1” meaning the card is charged the trnAmount immediately. |
+| rbFirstBilling | MMDDYYYY | The date for the first payment. Defaults to the current date if no value is passed. rbCharge must be also be set. |
+| rbSecondBilling | MMDDYYYY | The start date of the regular billing schedule. If different to rbFirstBilling, the first payment will be prorated. |
+| rbExpiry | MMDDYYYY | The date the recurring billing account expires. If no value is passed the payment will continue indefinitely.  |</p>
+
+<h3 id="transaction">Transaction</h3>
+<p>| Parameter | Format | Description |
+|———-|——–|————-|
+| trnType |  | Always pass “P” for payment. |
+| trnAmount |  0.00 | Total transaction amount value. Should include taxes and any other charges. Max 9 digits and max 2 decimal places |</p>
+
+<h3 id="card-info">Card info</h3>
+<p>| Parameter | Format | Description |
+|———-|——–|————-|
+| singleUseToken | 32 chars |  |
+| customerCode | Max. 64 alphanumeric characters |  |
+| trnCardOwner | Max. 64 chars | Full name of the card holder exactly as on the credit card. |
+| trnCardNumber | Max. 20 digits | Customer’s credit card number. |
+| trnExpMonth | 2 digits | Card expiry month e.g. March = 03 |
+| trnExpYear | 2 digits | Card expiry years must be entered as a number less than 50 (2019=19). trnExpYear and trnExpMonth must be a date in the future. |
+| trnCardCvd | 4 digits Amex, 3 digits all other cards | Include the 3 or 4-digit CVD number from the back of the customer’s credit card. CVD numbers are not stored in the Bambora system and will only be used for a first recurring billing transaction if passed. |</p>
+
+<h3 id="billing-address">Billing address</h3>
+<p>| Parameter | Format | Description |
+|———-|——–|————-|
+| ordName | Max. 64 alphanumeric characters | Capture the first and last name of the customer placing the order. May be different from trnCardOwner. |
+| ordEmailAddress | Max. 64 alphanumeric characters. Format a@b.com | Email address for sending automated email receipts. |
+| ordPhoneNumber | Max. 32 alphanumeric characters | Collect a customer phone number for follow-up. |
+| ordAddress1 | Max. 64 alphanumeric characters | Collect a unique street address for billing. |
+| ordAddress2 | Max. 64 alphanumeric characters | Optional variable for longer addresses. |
+| ordCity | Max. 32 alphanumeric characters | Customer’s billing city. |
+| ordProvince | 2 characters | Must match a valid Province or State code. |
+| ordPostalCode | 16 alphanumeric characters | Customer’s postal code for billing. |
+| ordCountry | 2 characters | Must match a valid ISO Country Code |</p>
+
+<h3 id="schedule-1">Schedule</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account setup option</th>
+      <th>Required variables</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Basic account, billing immediately</td>
+      <td>trnRecurring, rbBillingPeriod, rbBillingIncrement</td>
+    </tr>
+    <tr>
+      <td>Bill on the last day of month</td>
+      <td>rbEndMonth, rbBillingPeriod—must be M for monthly</td>
+    </tr>
+    <tr>
+      <td>Delay first payment</td>
+      <td>rbCharge, rbFirstBilling</td>
+    </tr>
+    <tr>
+      <td>Prorate a first payment</td>
+      <td>rbFirstBilling, rbSecondBilling</td>
+    </tr>
+    <tr>
+      <td>Set an expiry date</td>
+      <td>rbExpiry=(date), rbNeverExpires=0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="response-parameters">Response parameters</h2>
+<p>Transaction information is returned as key/value pairs of the query string passed in the URL of a GET request.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rbAccountId</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>trnApproved</td>
+      <td>Binary digit</td>
+      <td>1 - transaction is approved, 0 - transaction is declined.</td>
+    </tr>
+    <tr>
+      <td>trnId</td>
+      <td>8 digits</td>
+      <td>The unique identifier the transaction.</td>
+    </tr>
+    <tr>
+      <td>authCode</td>
+      <td>Up to 32 alphanumeric characters</td>
+      <td>The unique identifier from the bank for approved transaction.</td>
+    </tr>
+    <tr>
+      <td>messageID</td>
+      <td>Up to 3 digits</td>
+      <td>The response code from the bank. See table.</td>
+    </tr>
+    <tr>
+      <td>messageText</td>
+      <td>Characters</td>
+      <td>Description of the messageID.</td>
+    </tr>
+    <tr>
+      <td>responseType</td>
+      <td>Single character</td>
+      <td>Always “T” as a completed transaction response.</td>
+    </tr>
+    <tr>
+      <td>trnAmount</td>
+      <td>Up to 9 digits</td>
+      <td>The amount of the transaction.</td>
+    </tr>
+    <tr>
+      <td>trnDate</td>
+      <td>20 alphanumeric</td>
+      <td>The date and time the transaction was processed.</td>
+    </tr>
+    <tr>
+      <td>trnOrderNumber</td>
+      <td>Up to 30 alphanumeric characters</td>
+      <td>The order number. Defaults to the trnId value.</td>
+    </tr>
+    <tr>
+      <td>trnLanguage</td>
+      <td>3 alpha chars</td>
+      <td><strong>eng</strong> - English, <strong>fre</strong> - French.</td>
+    </tr>
+    <tr>
+      <td>trnCustomerName</td>
+      <td>-</td>
+      <td>Always blank for Checkout transactions.</td>
+    </tr>
+    <tr>
+      <td>trnEmailAddress</td>
+      <td>-</td>
+      <td>Always blank for Checkout transactions.</td>
+    </tr>
+    <tr>
+      <td>trnPhoneNumber</td>
+      <td>-</td>
+      <td>Always blank for Checkout transactions</td>
+    </tr>
+    <tr>
+      <td>cvdID</td>
+      <td>Single digit</td>
+      <td>See table.</td>
+    </tr>
+    <tr>
+      <td>cardType</td>
+      <td>2 alpha chars</td>
+      <td>See table.</td>
+    </tr>
+    <tr>
+      <td>trnType</td>
+      <td>Up to 3 alphanumeric characters</td>
+      <td>Always “P” as a completed purchase.</td>
+    </tr>
+    <tr>
+      <td>paymentMethod</td>
+      <td>2 character alphanumeric</td>
+      <td>CC - credit card</td>
+    </tr>
+    <tr>
+      <td>ref1</td>
+      <td>Up to 256 alphanumeric characters</td>
+      <td>Custom order reference.</td>
+    </tr>
+    <tr>
+      <td>ref2</td>
+      <td>Up to 256 alphanumeric characters</td>
+      <td>Custom order reference.</td>
+    </tr>
+    <tr>
+      <td>ref3</td>
+      <td>Up to 256 alphanumeric characters</td>
+      <td>Custom order reference.</td>
+    </tr>
+    <tr>
+      <td>ref4</td>
+      <td>Up to 256 alphanumeric characters</td>
+      <td>Custom order reference.</td>
+    </tr>
+    <tr>
+      <td>ref5</td>
+      <td>Up to 256 alphanumeric characters</td>
+      <td>Custom order reference.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="avs">AVS</h3>
+<p>| Variable | Type | Description |
+| ——– | —- | ———– |
+| avsProcessed | Binary digit | 1 is a successful attempt, 0 is no attempt to perform AVS. |
+| avsID | Single digit | ID number from an AVS response. See table. |
+| avsResult | Binary digit | Both address and postal/ZIP code match. 1 is a match, 0 is a mismatch. |
+| avsAddrMatch | Binary digit | Street address match. 1 is a match, 0 is different. |
+| avsPostalMatch | Binary digit |  Postal/ZIP code match. 1 is a match, 0 is different. |
+| avsMessage | Up to 128 alphanumeric characters | Description of the avsID. |</p>
