@@ -15,7 +15,7 @@ hero_unit:
     hero_image: Dev_Portal_bambora_background.jpg
     big_heading: Developer Documentation.
     tag_line:  >
-        The single source of truth for our North America payment gateway.
+        The single source of truth 3 for our North America payment gateway.
     button:
         text: Get started
         link: /slate/docs/guides/merchant_quickstart/
